@@ -1,0 +1,91 @@
+{
+  "name": "combodo/itop",
+  "description": "IT Operations Portal",
+  "type": "project",
+  "license": "AGPL-3.0-only",
+  "require": {
+    "php": ">=7.4.0 <8.2.0",
+    "ext-ctype": "*",
+    "ext-dom": "*",
+    "ext-gd": "*",
+    "ext-iconv": "*",
+    "ext-json": "*",
+    "ext-mysqli": "*",
+    "ext-soap": "*",
+    "apereo/phpcas": "~1.6.0",
+    "combodo/tcpdf": "~6.4.4",
+    "firebase/php-jwt": "~6.4.0",
+    "guzzlehttp/guzzle": "^7.5.1",
+    "laminas/laminas-mail": "^2.11",
+    "laminas/laminas-servicemanager": "^3.5",
+    "league/oauth2-google": "^3.0",
+    "nikic/php-parser": "~4.14.0",
+    "pear/archive_tar": "~1.4.14",
+    "pelago/emogrifier": "^6.0.0",
+    "scssphp/scssphp": "^1.10.3",
+    "symfony/console": "5.4.*",
+    "symfony/dotenv": "5.4.*",
+    "symfony/framework-bundle": "5.4.*",
+    "symfony/http-foundation": "5.4.*",
+    "symfony/http-kernel": "5.4.*",
+    "symfony/twig-bundle": "5.4.*",
+    "symfony/yaml": "5.4.*",
+    "thenetworg/oauth2-azure": "^2.0"
+  },
+  "require-dev": {
+    "symfony/stopwatch": "5.4.*",
+    "symfony/web-profiler-bundle": "5.4.*"
+  },
+  "suggest": {
+    "ext-libsodium": "Required to use the AttributeEncryptedString.",
+    "ext-openssl": "Can be used as a polyfill if libsodium is not installed",
+    "ext-mcrypt": "Can be used as a polyfill if either libsodium and openssl are not installed (libsodium and openssl are more secure)",
+    "ext-ldap": "Required to use LDAP as an identity provider",
+    "ext-posix": "Not required by the core, but some extensions uses it.",
+    "ext-imap": "Required by the extension \"Mail to ticket automation\""
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.0"
+    },
+    "vendor-dir": "lib",
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "classmap-authoritative": true,
+    "platform-check": true
+  },
+  "autoload": {
+    "classmap": [
+      "core",
+      "application",
+      "sources"
+    ],
+    "exclude-from-classmap": [
+      "application/twigextension.class.inc.php",
+      "core/oql/build/PHP/",
+      "core/apc-emulation.php",
+      "application/startup.inc.php",
+      "application/loginform.class.inc.php",
+      "application/loginbasic.class.inc.php",
+      "application/logindefault.class.inc.php",
+      "application/loginexternal.class.inc.php",
+      "application/loginurl.class.inc.php"
+    ]
+  },
+  "conflict": {
+    "symfony/symfony": "*"
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "3.4.*"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": ["@rmDeniedTestDir"],
+    "post-update-cmd": ["@rmDeniedTestDir"],
+    "rmDeniedTestDir":  "@php .make/composer/rmDeniedTestDir.php"
+  }
+}
