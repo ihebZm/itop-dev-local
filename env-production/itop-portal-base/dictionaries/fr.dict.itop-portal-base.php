@@ -31,6 +31,10 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Portal:Button:Add' => 'Ajouter',
 	'Portal:Button:Remove' => 'Enlever',
 	'Portal:Button:Delete' => 'Supprimer',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Comptabilisé',
+	'Portal:Button:NonValidStatut' => 'Non Comptabilisé',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Vous êtes dans le mode <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Retourner au mode PRODUCTION',
 	'Error:HTTP:400' => 'Requête incorrecte',

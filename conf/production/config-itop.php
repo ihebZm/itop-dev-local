@@ -71,7 +71,7 @@ $MySettings = array(
 
 	'db_host' => 'localhost',
 
-	'db_name' => 'workflow_dev_cfac_windows_v2',
+	'db_name' => 'testing_new_attribute_workflow',
 
 	'db_pwd' => '',
 

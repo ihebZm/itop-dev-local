@@ -31,6 +31,10 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Portal:Button:Add' => 'Adicionar',
 	'Portal:Button:Remove' => 'Remover',
 	'Portal:Button:Delete' => 'Deletar',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Você está atualmente em <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Volte para o modo PRODUÇÃO',
 	'Error:HTTP:400' => 'Pedido ruim',

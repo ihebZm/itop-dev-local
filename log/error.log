@@ -1,1 +1,77 @@
-2023-07-21 16:01:41 | Info    | 1     | mysqldump -V 2>&1 said: mysqldump  Ver 10.19 Distrib 10.4.27-MariaDB, for Win64 (AMD64) | IssueLog |||
+2023-08-01 13:22:18 | Error   | 2     | Parse error: syntax error, unexpected 'bx' (T_STRING) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 541,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-01 13:22:28 | Error   | 2     | Parse error: syntax error, unexpected 'bx' (T_STRING) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 541,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-02 12:34:36 | Error   | 1     | Error: Unknown attribute num_journal from class Attachment. | IssueLog |||
+2023-08-03 01:28:09 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:48:49 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:48:53 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/3?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:49:27 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:56:19 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:57:26 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 01:57:35 | Error   | 2     | Unknown attribute num_journal from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-08-03 03:05:12 | Error   | 1     | Error: Failed to write cache file "C:\xampp\htdocs\iTop-develop\web/data/cache-production/twig/templates/c9/c96d0ae8d80ed8de8b162ac4c0b4abad5dd4e6225f08e3f29d0cc1a3aadcc696.php".. | IssueLog |||
+2023-08-03 03:05:12 | Error   | 1     | Error: Twig Exception when rendering 'templates/pages/backoffice/nicewebpage/layout.html.twig (3) - ' : An exception has been thrown during the rendering of a template ("Failed to write cache file "C:\xampp\htdocs\iTop-develop\web/data/cache-production/twig/templates/9f/9fc77f7c0a14b0599f4fe09ec094fb35730f26ad3be120efa2c940c93b49c660.php".").. | IssueLog |||
+2023-08-03 12:36:47 | Error   | 1     | Erreur: DateTimeFormat::Format: Unexpected date value: 1. | IssueLog |||
+2023-08-03 12:39:06 | Error   | 1     | Erreur: DateTimeFormat::Format: Unexpected date value: 1. | IssueLog |||
+2023-08-03 12:39:40 | Error   | 1     | Erreur: DateTimeFormat::Format: Unexpected date value: 1. | IssueLog |||
+2023-08-04 10:10:51 | Error   |       | Uncaught MySQLException: Could not connect to the DB server: host = localhost, user = root, mysql_errno = 2002, mysql_error = Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+ in C:\xampp\htdocs\iTop-develop\web\core\cmdbsource.class.inc.php:185
+ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\cmdbsource.class.inc.php',
+  'line' => 185,
+)

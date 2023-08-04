@@ -31,6 +31,10 @@ Dict::Add('IT IT', 'Italian', 'Italiano', array(
 	'Portal:Button:Add' => 'Aggiungi',
 	'Portal:Button:Remove' => 'Rimuovi',
 	'Portal:Button:Delete' => 'Elimina',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Sei attualmente in modalità <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Ritorna alla modalità Produzione',
 	'Error:HTTP:400' => 'Bad request~~',

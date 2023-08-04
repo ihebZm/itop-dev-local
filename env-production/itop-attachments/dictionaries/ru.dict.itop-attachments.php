@@ -13,6 +13,9 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Attachments:EmptyTabTitle' => 'Вложения',
 	'Attachments:FieldsetTitle' => 'Вложения',
 	'Attachments:DeleteBtn' => 'Удалить',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Вложение %1$s добавлено.',
 	'Attachments:History_File_Removed' => 'Вложение %1$s удалено.',
 	'Attachments:AddAttachment' => 'Добавить вложение:',
@@ -57,6 +60,12 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Attachments:File:Thumbnail' => 'Предпросмотр',
 	'Attachments:File:Name' => 'Имя файла',
 	'Attachments:File:Date' => 'Дата',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Пользователь',
 	'Attachments:File:Size' => 'Размер',
 	'Attachments:File:MimeType' => 'Тип',
@@ -72,4 +81,14 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Class:Attachment/Attribute:user_id+' => '',
 	'Class:Attachment/Attribute:contact_id' => 'Контакт',
 	'Class:Attachment/Attribute:contact_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 ));

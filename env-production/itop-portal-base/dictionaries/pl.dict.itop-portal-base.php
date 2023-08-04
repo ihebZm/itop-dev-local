@@ -31,6 +31,10 @@ Dict::Add('PL PL', 'Polish', 'Polski', array(
 	'Portal:Button:Add' => 'Dodaj',
 	'Portal:Button:Remove' => 'Usuń',
 	'Portal:Button:Delete' => 'Kasuj',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Aktualnie jesteś w trybie <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Wróć do trybu PRODUKCYJNEGO',
 	'Error:HTTP:400' => 'Zła prośba',

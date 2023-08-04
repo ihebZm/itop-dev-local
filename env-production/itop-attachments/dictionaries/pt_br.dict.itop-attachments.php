@@ -26,6 +26,9 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Attachments:EmptyTabTitle' => 'Anexos',
 	'Attachments:FieldsetTitle' => 'Anexos',
 	'Attachments:DeleteBtn' => 'Excluir',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Anexo %1$s adicionado.',
 	'Attachments:History_File_Removed' => 'Anexo %1$s excluído.',
 	'Attachments:AddAttachment' => 'Adicionar anexo: ',
@@ -70,6 +73,12 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Attachments:File:Thumbnail' => 'Ícone',
 	'Attachments:File:Name' => 'Nome do arquivo',
 	'Attachments:File:Date' => 'Data de envio',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Enviado por',
 	'Attachments:File:Size' => 'Tamanho',
 	'Attachments:File:MimeType' => 'Tipo',
@@ -85,4 +94,14 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Class:Attachment/Attribute:user_id+' => '',
 	'Class:Attachment/Attribute:contact_id' => 'Identificador do contato',
 	'Class:Attachment/Attribute:contact_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 ));

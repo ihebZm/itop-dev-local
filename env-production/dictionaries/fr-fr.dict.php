@@ -2404,6 +2404,9 @@ Lors de l\'association à un déclencheur, on attribue à chaque action un numé
 	'Attachments:EmptyTabTitle' => 'Pièces jointes',
 	'Attachments:FieldsetTitle' => 'Pièces jointes',
 	'Attachments:DeleteBtn' => 'Supprimer',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Comptabiliser Le Fichier',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Ajout de la pièce jointe: %1$s.',
 	'Attachments:History_File_Removed' => 'Suppression de la pièce jointe: %1$s.',
 	'Attachments:AddAttachment' => 'Sélectionnez tous vos fichiers et déposez-les dans ce formulaire: ',
@@ -2432,11 +2435,27 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Organisation de l\'Item',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Statut Compté',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Numéro Journal',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Date Comptable',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Numéro Pièce',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Contenu',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Icône',
 	'Attachments:File:Name' => 'Nom du fichier',
 	'Attachments:File:Date' => 'Date de chargement',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Etat Fichier',
+	'Attachments:File:num_journal' => 'Numéro Journal',
+	'Attachments:File:date_comptabilisation' => 'Date Comptable',
+	'Attachments:File:num_piece' => 'Numéro Pièce',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Chargé par',
 	'Attachments:File:Size' => 'Taille',
 	'Attachments:File:MimeType' => 'Type',
@@ -2510,6 +2529,10 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Portal:Button:Add' => 'Ajouter',
 	'Portal:Button:Remove' => 'Enlever',
 	'Portal:Button:Delete' => 'Supprimer',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Comptabilisé',
+	'Portal:Button:NonValidStatut' => 'Non Comptabilisé',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Vous êtes dans le mode <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Retourner au mode PRODUCTION',
 	'Error:HTTP:400' => 'Requête incorrecte',
@@ -2613,7 +2636,7 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Suivez vos Courrier en cours.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Ouvertes',
 	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Résolues',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Fermé',
 	'Brick:Portal:ClosedRequests:Title' => 'Requêtes fermées',
 	'Class:Organization' => 'Organisation',
 	'Class:Organization+' => '',

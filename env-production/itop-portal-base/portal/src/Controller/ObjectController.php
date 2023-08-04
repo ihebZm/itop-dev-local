@@ -1168,6 +1168,12 @@ class ObjectController extends BrickController
 						$oAttachment->Set('user_id', UserRights::GetUserObject());
 						$oAttachment->SetDefaultOrgId();
 						$oAttachment->Set('contents', $oDocument);
+						// ^ customization cfac for disable attachement
+						$oAttachment->Set('status_comp', false);
+						$oAttachment->Set('num_journal', '');
+						$oAttachment->Set('date_comptabilisation', null);
+						$oAttachment->Set('num_piece', '');
+						// ^ customization cfac for disable attachement
 						$iAttId = $oAttachment->DBInsert();
 
 						$aData['msg'] = htmlentities($oDocument->GetFileName(), ENT_QUOTES, 'UTF-8');
@@ -1182,6 +1188,12 @@ class ObjectController extends BrickController
 						$aData['preview'] = $oDocument->IsPreviewAvailable();
 						$aData['file_size'] = $oDocument->GetFormattedSize();
 						$aData['creation_date'] = $oAttachment->Get('creation_date');
+						// ^ customization cfac for disable attachement
+						$aData['status_comp'] = $oAttachment->Get('status_comp');
+						$aData['num_journal'] = $oAttachment->Get('num_journal');
+						$aData['date_comptabilisation'] = $oAttachment->Get('date_comptabilisation');
+						$aData['num_piece'] = $oAttachment->Get('num_piece');
+						// ^ customization cfac for disable attachement
 						$aData['user_id_friendlyname'] = $oAttachment->Get('user_id_friendlyname');
 						$aData['file_type'] = $oDocument->GetMimeType();
 					}

@@ -2310,6 +2310,9 @@ W przypadku powiązania z wyzwalaczem, każde działanie otrzymuje numer "porzą
 	'Attachments:EmptyTabTitle' => 'Załączniki',
 	'Attachments:FieldsetTitle' => 'Załączniki',
 	'Attachments:DeleteBtn' => 'Usuń',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Załącznik %1$s dodano.',
 	'Attachments:History_File_Removed' => 'Załącznik %1$s usunięto.',
 	'Attachments:AddAttachment' => 'Dodaj załącznik: ',
@@ -2338,11 +2341,27 @@ lub zapytaj administratora iTop, czy dysk serwera iTop jest pełny.',
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Organizacja pozycji',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Zawartość',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Ikona',
 	'Attachments:File:Name' => 'Nazwa pliku',
 	'Attachments:File:Date' => 'Data przesłania',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Przesłany przez',
 	'Attachments:File:Size' => 'Rozmiar',
 	'Attachments:File:MimeType' => 'Typ',
@@ -2416,6 +2435,10 @@ lub zapytaj administratora iTop, czy dysk serwera iTop jest pełny.',
 	'Portal:Button:Add' => 'Dodaj',
 	'Portal:Button:Remove' => 'Usuń',
 	'Portal:Button:Delete' => 'Kasuj',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Aktualnie jesteś w trybie <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Wróć do trybu PRODUKCYJNEGO',
 	'Error:HTTP:400' => 'Zła prośba',

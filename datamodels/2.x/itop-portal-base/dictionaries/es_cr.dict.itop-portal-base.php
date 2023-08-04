@@ -35,6 +35,10 @@ Dict::Add('ES CR', 'Spanish', 'Español, Castellano', array(
 	'Portal:Button:Add' => 'Añadir',
 	'Portal:Button:Remove' => 'Eliminar',
 	'Portal:Button:Delete' => 'Borrar',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Se encuentra en modo <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Regresar a modo PRODUCTION',
 	'Error:HTTP:400' => 'Solicitud Incorrecta',

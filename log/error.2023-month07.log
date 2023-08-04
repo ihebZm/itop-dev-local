@@ -1,0 +1,160 @@
+2023-07-21 16:01:41 | Info    | 1     | mysqldump -V 2>&1 said: mysqldump  Ver 10.19 Distrib 10.4.27-MariaDB, for Win64 (AMD64) | IssueLog |||
+2023-07-24 10:53:05 | Error   | 2     | Could not create brick (Combodo\iTop\Portal\Brick\ManageBrick) from XML because of a DOM problem : ManageBrick: Default display mode "top-list" must be one of the available display modes (list, pie-chart, bar-chart) (/module_design[itop-portal]/bricks/brick[ongoing-courrier-for-portal-user] at line 452) | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Brick\\BrickCollection.php',
+  'line' => 211,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-24 10:53:38 | Error   | 2     | Could not create brick (Combodo\iTop\Portal\Brick\ManageBrick) from XML because of a DOM problem : ManageBrick: Default display mode "badge" must be one of the available display modes (list, pie-chart, bar-chart) (/module_design[itop-portal]/bricks/brick[ongoing-courrier-for-portal-user] at line 452) | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Brick\\BrickCollection.php',
+  'line' => 211,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-24 16:02:15 | Error   |       | Uncaught Exception: ERROR missing parameter 'allowed_values' in AttributeDateTime declaration for class AttributeDateTime (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 5819) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(5819): AttributeDefinition->__construct('status_comp', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\model.itop-attachments.php(66): AttributeDateTime->__construct('status_comp', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): Attachment::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\application\star | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-07-24 16:09:09 | Error   | 1     | Uncaught Error: Call to undefined method TableDetailsAttachmentsRenderer::GetDeleteAttachmentButton() in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:547
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(419): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, true, Object(Attachment), Array, Array)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(158): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 547,
+)
+2023-07-26 13:26:47 | Error   | 1     | Uncaught ArgumentCountError: Too few arguments to function TableDetailsAttachmentsRenderer::AddAttachmentsTableLine(), 6 passed in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php on line 483 and exactly 7 expected in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:547
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(483): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, Array, true, Object(Attachment), Array, Array)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(158): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40) | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 547,
+)
+2023-07-26 13:42:00 | Error   | 1     | Uncaught Error: Call to a member function GetKey() on bool in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:549
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(483): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, Array, true, Object(Attachment), Array, Array, NULL)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(158): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRe | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 549,
+)
+2023-07-27 10:56:36 | Error   | 1     | Uncaught Error: Call to undefined method TableDetailsAttachmentsRenderer::GetDeleteAttachmentButton() in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:617
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(472): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, Array, true, Object(Attachment), Array, Array, Array)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(160): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstrac | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 617,
+)
+2023-07-27 11:52:16 | Error   | 1     | Uncaught Error: Call to a member function GetKey() on bool in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:509
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(446): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, NULL, true, Object(Attachment), Array, Array)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(158): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 509,
+)
+2023-07-27 12:15:47 | Error   | 1     | Uncaught Error: Call to undefined function alert() in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:625
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(461): TableDetailsAttachmentsRenderer->AddAttachmentsTableLine(true, Array, true, Object(Attachment), Array, Array, Array)
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(160): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRe | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 625,
+)
+2023-07-27 16:25:26 | Error   | 2     | Type error: Too few arguments to function Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer::GetAttachmentTableRow(), 12 passed in C:\xampp\htdocs\iTop-develop\web\sources\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer.php on line 430 and exactly 13 expected | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 504,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-27 16:25:38 | Error   | 2     | Type error: Too few arguments to function Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer::GetAttachmentTableRow(), 12 passed in C:\xampp\htdocs\iTop-develop\web\sources\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer.php on line 430 and exactly 13 expected | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 504,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-27 16:26:02 | Error   | 2     | Type error: Too few arguments to function Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer::GetAttachmentTableRow(), 12 passed in C:\xampp\htdocs\iTop-develop\web\sources\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer.php on line 430 and exactly 13 expected | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 503,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-28 13:15:23 | Error   | 1     | Error: Unknown attribute status_comp from class Attachment. | IssueLog |||
+2023-07-28 15:44:05 | Error   | 1     | Error: Unknown attribute status_comp from class Attachment. | IssueLog |||
+2023-07-28 15:46:08 | Error   | 1     | Error: Unknown attribute status_comp from class Attachment. | IssueLog |||
+2023-07-28 15:46:10 | Error   | 1     | Error: Unknown attribute status_comp from class Attachment. | IssueLog |||
+2023-07-28 15:46:29 | Error   | 1     | Error: Unknown attribute status_comp from class Attachment. | IssueLog |||
+2023-07-31 09:50:37 | Error   | 2     | Unknown attribute status_comp from class Attachment | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-31 09:52:07 | Error   | 2     | Type error: Too few arguments to function Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer::GetAttachmentTableRow(), 12 passed in C:\xampp\htdocs\iTop-develop\web\sources\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer.php on line 184 and exactly 13 expected | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 510,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/18/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxOCJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-31 09:53:39 | Error   | 2     | Type error: Too few arguments to function Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer::GetAttachmentTableRow(), 12 passed in C:\xampp\htdocs\iTop-develop\web\sources\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer.php on line 184 and exactly 13 expected | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 510,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/18/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxOCJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-07-31 12:29:36 | Error   | 1     | Error: Twig Exception when rendering 'templates/pages/backoffice/itopwebpage/layout.html.twig (3) - ' : An exception has been thrown during the rendering of a template ("Failed to write cache file "C:\xampp\htdocs\iTop-develop\web/data/cache-production/twig/templates/0a/0ae10218a25676314ee6b7f1de7196b9d97f385d8ed7ef3330edab6a86901b38.php".").. | IssueLog |||
+2023-07-31 12:29:36 | Error   | 1     | Uncaught RuntimeException: Failed to write cache file "C:\xampp\htdocs\iTop-develop\web/data/cache-production/twig/templates/9f/9fc77f7c0a14b0599f4fe09ec094fb35730f26ad3be120efa2c940c93b49c660.php". in C:\xampp\htdocs\iTop-develop\web\lib\twig\twig\src\Cache\FilesystemCache.php:80
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\lib\twig\twig\src\Environment.php(487): Twig\Cache\FilesystemCache->write('C:\\xampp\\htdocs...', '<?php\n\nuse Twig...')
+#1 C:\xampp\htdocs\iTop-develop\web\lib\twig\twig\src\Environment.php(445): Twig\Environment->loadClass('__TwigTemplate_...', 'pages/backoffic...', NULL)
+#2 C:\xampp\htdocs\iTop-develop\web\lib\twig\twig\src\Template.php(375): Twig\Environment->loadTemplate('pages/backoffic...', NULL)
+#3 C:\xampp\htdocs\iTop-develop\web\data\cache-production\twig\templates\0a\0ae10218a25676314ee6b7f1de7196b9d97f385d8ed7ef3330edab6a86901b38.php(33): Twig\Template->loadTemplate('pages/backoffic...', 'pages/backoffic...', 3)
+#4 C:\xampp\htdocs\iTop-develop\web\lib\twig\twig\src\Templa | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\application\\TwigBase\\Twig\\TwigHelper.php',
+  'line' => 193,
+)

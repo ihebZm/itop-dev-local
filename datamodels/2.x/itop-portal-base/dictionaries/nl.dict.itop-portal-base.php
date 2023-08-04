@@ -34,6 +34,10 @@ Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
 	'Portal:Button:Add' => 'Toevoegen',
 	'Portal:Button:Remove' => 'Verwijderen',
 	'Portal:Button:Delete' => 'Verwijderen',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Je werkt momenteel in de <strong>%1$s</strong>-omgeving',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Keer terug naar de productie-omgeving',
 	'Error:HTTP:400' => 'Ongeldig verzoek',

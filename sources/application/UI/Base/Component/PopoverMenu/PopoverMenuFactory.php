@@ -223,6 +223,14 @@ class PopoverMenuFactory
 				'return ShowAboutBox("'.Dict::S('UI:AboutBox').'");'
 			)
 		);
+		// About box
+		$aItems[] = PopoverMenuItemFactory::MakeFromApplicationPopupMenuItem(
+			new JSPopupMenuItem(
+				'UI:AboutBox',
+				Dict::S('UI:AboutBox'),
+				'return ShowAboutBox("'.Dict::S('UI:AboutBox').'");'
+			)
+		);
 
 		return $aItems;
 	}

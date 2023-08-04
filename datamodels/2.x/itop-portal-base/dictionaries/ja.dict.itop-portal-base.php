@@ -31,6 +31,10 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Portal:Button:Add' => 'Add~~',
 	'Portal:Button:Remove' => 'Remove~~',
 	'Portal:Button:Delete' => 'Delete~~',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted~~',
+	'Portal:Button:NonValidStatut' => 'Not Counted~~',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'You are currently in <strong>%1$s</strong> mode~~',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Go back to PRODUCTION mode~~',
 	'Error:HTTP:400' => 'Bad request~~',

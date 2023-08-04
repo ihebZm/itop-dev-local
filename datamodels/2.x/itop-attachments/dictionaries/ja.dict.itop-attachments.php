@@ -24,6 +24,9 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Attachments:EmptyTabTitle' => '添付',
 	'Attachments:FieldsetTitle' => '添付',
 	'Attachments:DeleteBtn' => '削除',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => '添付 %1$s を追加しました。',
 	'Attachments:History_File_Removed' => '添付 %1$s を削除しました。',
 	'Attachments:AddAttachment' => '添付追加: ',
@@ -68,6 +71,12 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Attachments:File:Thumbnail' => 'Icon~~',
 	'Attachments:File:Name' => 'File name~~',
 	'Attachments:File:Date' => 'Upload date~~',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File~~',
+	'Attachments:File:num_journal' => 'Journal Number~~',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date~~',
+	'Attachments:File:num_piece' => 'Piece Number~~',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Uploaded by~~',
 	'Attachments:File:Size' => 'Size~~',
 	'Attachments:File:MimeType' => 'Type~~',
@@ -83,4 +92,14 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Class:Attachment/Attribute:user_id+' => '~~',
 	'Class:Attachment/Attribute:contact_id' => 'Contact id~~',
 	'Class:Attachment/Attribute:contact_id+' => '~~',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Status Counted~~',
+	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number~~',
+	'Class:Attachment/Attribute:num_journal+' => '~~',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date~~',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '~~',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number~~',
+	'Class:Attachment/Attribute:num_piece+' => '~~',
+	//^ end customization cfac
 ));

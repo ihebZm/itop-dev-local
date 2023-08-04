@@ -17,6 +17,8 @@
  * You should have received a copy of the GNU Affero General Public License
  */
 
+use Combodo\iTop\Application\UI\Base\Component\Alert\Alert;
+
 require_once('../../approot.inc.php');
 require_once(APPROOT.'/application/application.inc.php');
 
@@ -35,7 +37,10 @@ function RenderAttachments(AjaxPage $oPage, $iTransactionId)
 	$oObject = MetaModel::GetObject($sClass, $sId, false);
 	$bEditMode = utils::ReadParam('edit_mode', 0);
 	$aAttachmentsDeleted = utils::ReadParam('attachments_deleted', array());
-
+	//^ customization cfac for disable attachement
+	$aAttachmentsDisabled = utils::ReadParam('attachments_disabled', array());
+	//^ customization cfac for disable attachement
+	
 	$oPage->SetContentType('text/html');
 	$oAttachmentsRenderer = AttachmentsRendererFactory::GetInstance($oPage, $sClass, $sId, $iTransactionId);
 
@@ -44,7 +49,7 @@ function RenderAttachments(AjaxPage $oPage, $iTransactionId)
 		: AttachmentPlugIn::IsReadonlyState($oObject, $oObject->GetState(), AttachmentPlugIn::ENUM_GUI_BACKOFFICE);
 	if ($bEditMode && !$bIsReadOnlyState)
 	{
-		$oAttachmentsRenderer->AddAttachmentsListContent(true, $aAttachmentsDeleted);
+		$oAttachmentsRenderer->AddAttachmentsListContent(true, $aAttachmentsDeleted, $aAttachmentsDisabled);
 	}
 	else
 	{
@@ -102,6 +107,12 @@ try
 					$oAttachment->Set('user_id', UserRights::GetUserObject());
 					$oAttachment->SetDefaultOrgId();
 					$oAttachment->Set('contents', $oDoc);
+					// ^ customization cfac for disable attachement
+					$oAttachment->Set('status_comp', false);
+					$oAttachment->Set('num_journal', '');
+					$oAttachment->Set('date_comptabilisation', null);
+					$oAttachment->Set('num_piece', '');
+					// ^ customization cfac for disable attachement
 					$iAttId = $oAttachment->DBInsert();
 
 					$aResult['msg'] = htmlentities($oDoc->GetFileName(), ENT_QUOTES, 'UTF-8');
@@ -126,6 +137,18 @@ try
 				$oAttachment->DBDelete();
 			}
 			break;
+
+		//^ customization cfac for disable attachement
+		case 'disable':
+			$iAttachmentId = utils::ReadParam('att_id', '');
+			$oSearch = DBObjectSearch::FromOQL("SELECT Attachment WHERE id = :id");
+			$oSet = new DBObjectSet($oSearch, array(), array('id' => $iAttachmentId));
+			while ($oAttachment = $oSet->Fetch())
+			{
+				$oAttachment->DBDelete();
+			}
+			break;
+		//^ end customization cfac
 
 		case 'refresh_attachments_render':
 			$sTempId = utils::ReadParam('temp_id', '', false, 'transaction_id');

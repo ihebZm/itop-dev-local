@@ -2401,6 +2401,9 @@ Wenn Aktionen mit Trigger verknüpft sind, bekommt jede Aktion eine Auftragsnumm
 	'Attachments:EmptyTabTitle' => 'Attachments',
 	'Attachments:FieldsetTitle' => 'Attachments',
 	'Attachments:DeleteBtn' => 'Löschen',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Attachment %1$s hinzugefügt.',
 	'Attachments:History_File_Removed' => 'Attachment %1$s entfernt.',
 	'Attachments:AddAttachment' => 'Attachment hinzufügen: ',
@@ -2429,11 +2432,27 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Item Organisation',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'piece number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Inhalt',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Icon',
 	'Attachments:File:Name' => 'Dateiname',
 	'Attachments:File:Date' => 'Upload-Datum',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'hochgeladen von',
 	'Attachments:File:Size' => 'Größe',
 	'Attachments:File:MimeType' => 'Typ',
@@ -2507,6 +2526,10 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	'Portal:Button:Add' => 'Hinzu',
 	'Portal:Button:Remove' => 'Entfernen',
 	'Portal:Button:Delete' => 'Löschen',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Sie sind im Moment im <strong>%1$s</strong> Modus',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Zurück zum PRODUCTION Modus',
 	'Error:HTTP:400' => 'Bad Request',

@@ -25,6 +25,9 @@ Dict::Add('DA DA', 'Danish', 'Dansk', array(
 	'Attachments:EmptyTabTitle' => 'Vedhæftninger',
 	'Attachments:FieldsetTitle' => 'Vedhæftninger',
 	'Attachments:DeleteBtn' => 'Slet',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Vedhæftning %1$s tilføjet.',
 	'Attachments:History_File_Removed' => 'Vedhæftning %1$s fjernet.',
 	'Attachments:AddAttachment' => 'Vedhæft: ',
@@ -69,6 +72,12 @@ Dict::Add('DA DA', 'Danish', 'Dansk', array(
 	'Attachments:File:Thumbnail' => 'Icon~~',
 	'Attachments:File:Name' => 'File name~~',
 	'Attachments:File:Date' => 'Upload date~~',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File~~',
+	'Attachments:File:num_journal' => 'Journal Number~~',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date~~',
+	'Attachments:File:num_piece' => 'Piece Number~~',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Uploaded by~~',
 	'Attachments:File:Size' => 'Size~~',
 	'Attachments:File:MimeType' => 'Type~~',
@@ -84,4 +93,14 @@ Dict::Add('DA DA', 'Danish', 'Dansk', array(
 	'Class:Attachment/Attribute:user_id+' => '~~',
 	'Class:Attachment/Attribute:contact_id' => 'Contact id~~',
 	'Class:Attachment/Attribute:contact_id+' => '~~',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status~~',
+	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number~~',
+	'Class:Attachment/Attribute:num_journal+' => '~~',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date~~',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '~~',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number~~',
+	'Class:Attachment/Attribute:num_piece+' => '~~',
+	//^ end customization cfac
 ));

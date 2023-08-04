@@ -2215,6 +2215,9 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Attachments:EmptyTabTitle' => 'Prílohy',
  'Attachments:FieldsetTitle' => 'Prílohy',
  'Attachments:DeleteBtn' => 'Odstrániť',
+ //^ customization cfac for disable attachement
+ 'Attachments:DisableBtn' => 'Accounted The File',
+ //^ end customization cfac
  'Attachments:History_File_Added' => 'Príloha %1$s pridaná.',
  'Attachments:History_File_Removed' => 'Príloha %1$s odstránená.',
  'Attachments:AddAttachment' => 'Pridaj prílohu: ',

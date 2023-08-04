@@ -228,7 +228,7 @@
               <levels>
                 <level id="1">
                   <!-- Note : We could have used just a class tag and put the OQL in the scope for everybody -->
-                  <oql><![CDATA[SELECT ServiceSubcategory WHERE ServiceSubcategory.status != 'obsolete']]></oql>
+                  <oql><![CDATA[SELECT ServiceSubcategory WHERE ServiceSubcategory.status != 'obsolete' AND ServiceSubcategory.name != 'Asssitance Comptable et Fiscale Mensuelle Type A']]></oql>
                   <parent_att>service_id</parent_att>
                   <name_att/>
                   <tooltip_att>description</tooltip_att>
@@ -332,17 +332,17 @@
               <title>Brick:Portal:OngoingRequests:Tab:OnGoing</title>
               <!-- Optional. A string or dictionary entry to display under the page title for this tab -->
               <!-- <description>Brick:Portal:OngoingRequests:Tab:OnGoing+</description> -->
-              <condition><![CDATA[SELECT Ticket AS T WHERE operational_status NOT IN ('closed', 'resolved')]]></condition>
+              <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status NOT IN ('closed', 'resolved') AND servicesubcategory_name != 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
             <group id="resolved">
               <rank>2</rank>
               <title>Brick:Portal:OngoingRequests:Tab:Resolved</title>
-              <condition><![CDATA[SELECT Ticket AS T WHERE operational_status = 'resolved']]></condition>
+              <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status = 'resolved' AND servicesubcategory_name != 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
             <group id="waiting_approval">
               <rank>3</rank>
               <title>Brick:Portal:OngoingRequests:Tab:Waiting_Approval</title>
-              <condition><![CDATA[SELECT Ticket AS T WHERE operational_status = 'waiting_for_approval']]></condition>
+              <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status = 'waiting_for_approval' AND servicesubcategory_name != 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
           </groups>
         </tabs>
@@ -360,14 +360,14 @@
       <active>true</active>
       <width>6</width>
       <rank>
-        <default>20</default>
+        <default>30</default>
       </rank>
       <title>
         <default>Brick:Portal:NewCourrier:Title</default>
       </title>
       <description>Brick:Portal:NewCourrier:Title+</description>
       <decoration_class>
-        <default>fc fc-new-request fc-2x</default>
+        <default _delta="force">fas fa-paper-plane fa-2x fa-fw</default>
       </decoration_class>
       <!-- <fields  /> Optional tag to add attributes to the table by their code, can be specified for each level -->
       <levels>
@@ -473,7 +473,7 @@
       <!--</display_modes>-->
       <description>Brick:Portal:OngoingCourrier:Title+</description>
       <decoration_class>
-        <default>fc fc-ongoing-request fc-2x</default>
+        <default _delta="force">fas fa-folder-open fa-2x fa-fw</default>
       </decoration_class>
       <oql><![CDATA[SELECT Ticket]]></oql>
       <!-- Optional tag to define if the action should be done in a modal window ("modal"), a new window ("new") or the current window ("self") -->
@@ -491,6 +491,20 @@
         <field id="priority"/>
         <field id="caller_id"/>
       </fields>
+      <!-- Optional: display type can be 'pie-chart', 'bar-chart', 'list' -->
+      <display_modes>
+        <!-- How the data can be displayed in the ManageBrick -->
+        <availables>
+          <mode id="list"/>
+          <mode id="pie-chart"/>
+          <mode id="bar-chart"/>
+        </availables>
+        <!-- How the ManageBrick get displayed by default when open -->
+        <default>list</default>
+        <!-- How the ManageBrick is displayed in the Homepage and in an AggregatePageBrick -->
+        <!-- Possible values are text|badge|pie-chart|bar-chart|top-list -->
+        <tile>top-list</tile>
+      </display_modes>
       <!-- Optional tag to add attributes to the table by their code -->
       <grouping>
         <!-- Mandatory -->

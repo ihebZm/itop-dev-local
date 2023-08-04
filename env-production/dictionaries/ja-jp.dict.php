@@ -2402,6 +2402,9 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Attachments:EmptyTabTitle' => '添付',
 	'Attachments:FieldsetTitle' => '添付',
 	'Attachments:DeleteBtn' => '削除',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => '添付 %1$s を追加しました。',
 	'Attachments:History_File_Removed' => '添付 %1$s を削除しました。',
 	'Attachments:AddAttachment' => '添付追加: ',
@@ -2430,11 +2433,27 @@ or ask your iTop administrator if the iTop server disk is full.',
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Item organization',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Contents',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Icon',
 	'Attachments:File:Name' => 'File name',
 	'Attachments:File:Date' => 'Upload date',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Uploaded by',
 	'Attachments:File:Size' => 'Size',
 	'Attachments:File:MimeType' => 'Type',
@@ -2508,6 +2527,10 @@ or ask your iTop administrator if the iTop server disk is full.',
 	'Portal:Button:Add' => 'Add',
 	'Portal:Button:Remove' => 'Remove',
 	'Portal:Button:Delete' => 'Delete',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'You are currently in <strong>%1$s</strong> mode',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Go back to PRODUCTION mode',
 	'Error:HTTP:400' => 'Bad request',

@@ -2402,6 +2402,9 @@ Dict::SetEntries('RU RU', array(
 	'Attachments:EmptyTabTitle' => 'Вложения',
 	'Attachments:FieldsetTitle' => 'Вложения',
 	'Attachments:DeleteBtn' => 'Удалить',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Вложение %1$s добавлено.',
 	'Attachments:History_File_Removed' => 'Вложение %1$s удалено.',
 	'Attachments:AddAttachment' => 'Добавить вложение:',
@@ -2430,11 +2433,27 @@ or ask your iTop administrator if the iTop server disk is full.',
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Id организации объекта',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Содержимое',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Предпросмотр',
 	'Attachments:File:Name' => 'Имя файла',
 	'Attachments:File:Date' => 'Дата',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Пользователь',
 	'Attachments:File:Size' => 'Размер',
 	'Attachments:File:MimeType' => 'Тип',
@@ -2508,6 +2527,10 @@ or ask your iTop administrator if the iTop server disk is full.',
 	'Portal:Button:Add' => 'Добавить',
 	'Portal:Button:Remove' => 'Удалить',
 	'Portal:Button:Delete' => 'Удалить',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Вы находитесь в режиме <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Вернуться в режим PRODUCTION',
 	'Error:HTTP:400' => 'Некорректный запрос',

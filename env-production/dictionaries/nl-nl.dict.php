@@ -2405,6 +2405,9 @@ Bij die koppeling wordt aan elke actie een volgorde-nummer gegeven. Dit bepaalt 
 	'Attachments:EmptyTabTitle' => 'Bijlagen',
 	'Attachments:FieldsetTitle' => 'Bijlagen',
 	'Attachments:DeleteBtn' => 'Verwijder',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Bijlage %1$s toegevoegd.',
 	'Attachments:History_File_Removed' => 'Bijlage %1$s verwijderd.',
 	'Attachments:AddAttachment' => 'Voeg bijlage toe: ',
@@ -2433,11 +2436,27 @@ of vraag de iTop administrator om de opslagruimte van de iTop-server na te kijke
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Organisatie item',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Inhoud',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Pictogram',
 	'Attachments:File:Name' => 'Bestandsnaam',
 	'Attachments:File:Date' => 'Geüpload op',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Geüpload door',
 	'Attachments:File:Size' => 'Grootte',
 	'Attachments:File:MimeType' => 'Type',
@@ -2511,6 +2530,10 @@ of vraag de iTop administrator om de opslagruimte van de iTop-server na te kijke
 	'Portal:Button:Add' => 'Toevoegen',
 	'Portal:Button:Remove' => 'Verwijderen',
 	'Portal:Button:Delete' => 'Verwijderen',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Je werkt momenteel in de <strong>%1$s</strong>-omgeving',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Keer terug naar de productie-omgeving',
 	'Error:HTTP:400' => 'Ongeldig verzoek',

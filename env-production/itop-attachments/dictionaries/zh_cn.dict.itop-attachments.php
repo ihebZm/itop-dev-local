@@ -21,6 +21,9 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Attachments:EmptyTabTitle' => '附件',
 	'Attachments:FieldsetTitle' => '附件',
 	'Attachments:DeleteBtn' => '删除',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => '附件 %1$s 已添加.',
 	'Attachments:History_File_Removed' => '附件 %1$s 已移除.',
 	'Attachments:AddAttachment' => '添加附件: ',
@@ -63,6 +66,12 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Attachments:File:Thumbnail' => '图标',
 	'Attachments:File:Name' => '文件名',
 	'Attachments:File:Date' => '上传日期',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => '上传者',
 	'Attachments:File:Size' => '大小',
 	'Attachments:File:MimeType' => '类型',
@@ -78,4 +87,14 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Class:Attachment/Attribute:user_id+' => '~~',
 	'Class:Attachment/Attribute:contact_id' => '联系人 id',
 	'Class:Attachment/Attribute:contact_id+' => '~~',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number~~',
+	'Class:Attachment/Attribute:num_journal+' => '~~',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date~~',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '~~',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number~~',
+	'Class:Attachment/Attribute:num_piece+' => '~~',
+	//^ end customization cfac
 ));

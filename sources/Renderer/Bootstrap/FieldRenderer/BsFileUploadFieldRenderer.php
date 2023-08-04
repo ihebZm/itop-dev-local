@@ -191,6 +191,10 @@ JS
 			'{{sFileSize}}',
 			'{{iFileSizeRaw}}',
 			'{{sAttachmentDate}}',
+			false,
+			'',
+			null,
+			'',
 			'{{iAttachmentDateRaw}}',
 			$bIsDeleteAllowed
 		));
@@ -252,6 +256,7 @@ JS
 							{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
 							{search: "{{sFileSize}}", replace:data.result.file_size },
 							{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							{search: "{{sAttachmentStatusComp}}", replace:data.result.status_comp },
 						];
 						var sAttachmentRow = attachmentRowTemplate   ;
 						$.each(replaces, function(indexInArray, value ) {
@@ -426,6 +431,15 @@ HTML
 					$iAttachmentDateRaw = AttributeDateTime::GetAsUnixSeconds($sAttachmentDate);
 				}
 
+				// ^ customization cfac for disable attachement
+				$bIsStatusComp = ($oAttachment->Get('status_comp') == 0);
+				$sAttachmentStatusComp = '';
+				if (!$bIsStatusComp)
+				{
+					$sAttachmentStatusComp = $oAttachment->Get('status_comp');
+				}
+				// ^ customization cfac for disable attachement
+
 				$oOutput->Addhtml(self::GetAttachmentTableRow(
 					$iAttId,
 					$sLineStyle,
@@ -438,6 +452,7 @@ HTML
 					$iFileSizeRaw,
 					$sAttachmentDate,
 					$iAttachmentDateRaw,
+					$sAttachmentStatusComp,
 					$bIsDeleteAllowed
 				));
 			}
@@ -462,9 +477,14 @@ HTML
 		$sTitleFileName = Dict::S('Attachments:File:Name');
 		$sTitleFileSize = Dict::S('Attachments:File:Size');
 		$sTitleFileDate = Dict::S('Attachments:File:Date');
+		//^ customization cfac for disable attachement
+		$sTitleFileStatusComp = Dict::S('Attachments:File:status');
+		//^ end customization cfac
 
 		// Optional column
-		$sDeleteHeaderAsHtml = ($bIsDeleteAllowed) ? '<th role="delete" data-priority="1"></th>' : '';
+		//^ customization cfac for disable attachement
+		//$sDeleteHeaderAsHtml = ($bIsDeleteAllowed) ? '<th role="delete" data-priority="1"></th>' : '';
+		//^ end customization cfac
 
 		return <<<HTML
 	<thead>
@@ -472,7 +492,10 @@ HTML
 		<th role="filename" data-priority="1">$sTitleFileName</th>
 		<th role="formatted-size">$sTitleFileSize</th>
 		<th role="upload-date">$sTitleFileDate</th>
-		$sDeleteHeaderAsHtml
+		<th role="status-file">$sTitleFileStatusComp</th>
+		<!-- //^ customization cfac for disable attachement
+			$sDeleteHeaderAsHtml
+		//^ end customization cfac -->
 	</thead>
 HTML;
 	}
@@ -489,6 +512,7 @@ HTML;
 	 * @param integer $iFileSizeRaw
 	 * @param string $sAttachmentDate
 	 * @param integer $iAttachmentDateRaw
+	 * @param boolean $sAttachmentStatusComp
 	 * @param boolean $bIsDeleteAllowed
 	 *
 	 * @return string
@@ -496,13 +520,13 @@ HTML;
 	 */
 	protected static function GetAttachmentTableRow(
 		$iAttId, $sLineStyle, $sDocDownloadUrl, $bHasPreview, $sAttachmentThumbUrl, $sFileName, $sAttachmentMeta, $sFileSize,
-		$iFileSizeRaw, $sAttachmentDate, $iAttachmentDateRaw, $bIsDeleteAllowed
+		$iFileSizeRaw, $sAttachmentDate, $iAttachmentDateRaw, $sAttachmentStatusComp, $bIsDeleteAllowed
 	) {
 		$sDeleteCell = '';
 		if ($bIsDeleteAllowed)
 		{
 			$sDeleteBtnLabel = Dict::S('Portal:Button:Delete');
-			$sDeleteCell = '<td role="delete"><input id="btn_remove_'.$iAttId.'" type="button" class="btn btn-xs btn-primary" value="'.$sDeleteBtnLabel.'"></td>';
+			//$sDeleteCell = '<td role="delete"><input id="btn_remove_'.$iAttId.'" type="button" class="btn btn-xs btn-primary" value="'.$sDeleteBtnLabel.'"></td>';
 		}
 		$sHtml =  "<tr id=\"display_attachment_{$iAttId}\" class=\"attachment\" $sLineStyle>";
 
@@ -511,11 +535,26 @@ HTML;
 		} else {
 			$sHtml .= "<td role=\"icon\"><a href=\"$sDocDownloadUrl\" target=\"_blank\"><img src=\"$sAttachmentThumbUrl\" ></a></td>";
 		}
+		// ^ customization cfac for disable attachement
+		echo($sFileName.'******'.$sAttachmentStatusComp);
+		if ($sAttachmentStatusComp==true)
+		{
+			$sStatusBtnLabelValid = Dict::S('Portal:Button:ValidStatut');
+			$sStatusCompCell = '<td role="status-comp" style="text-align: center; vertical-align: middle;"><input id="status_id_portal_user" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelValid.'" disabled></td>';
+		} else {
+			$sStatusBtnLabelNonValid = Dict::S('Portal:Button:NonValidStatut');
+			$sStatusCompCell = '<td role="status-comp" style="text-align: center; vertical-align: middle;"><input id="status_id_portal_user" style="font-size: 10px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled></td>';
+		}
+
+		// ^ customization cfac for disable attachement
 
 		$sHtml .=  <<<HTML
 	 <td role="filename"><a href="$sDocDownloadUrl" target="_blank">$sFileName</a>$sAttachmentMeta</td>
 	  <td role="formatted-size" data-order="$iFileSizeRaw">$sFileSize</td>
 	  <td role="upload-date" data-order="$iAttachmentDateRaw">$sAttachmentDate</td>
+	  <!-- // ^ customization cfac for disable attachement -->
+	  $sStatusCompCell
+	  <!-- // ^ customization cfac for disable attachement -->
 	  $sDeleteCell
 	</tr>
 HTML;

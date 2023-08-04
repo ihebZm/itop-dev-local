@@ -22,6 +22,9 @@ Dict::Add('PL PL', 'Polish', 'Polski', array(
 	'Attachments:EmptyTabTitle' => 'Załączniki',
 	'Attachments:FieldsetTitle' => 'Załączniki',
 	'Attachments:DeleteBtn' => 'Usuń',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Załącznik %1$s dodano.',
 	'Attachments:History_File_Removed' => 'Załącznik %1$s usunięto.',
 	'Attachments:AddAttachment' => 'Dodaj załącznik: ',
@@ -66,6 +69,12 @@ Dict::Add('PL PL', 'Polish', 'Polski', array(
 	'Attachments:File:Thumbnail' => 'Ikona',
 	'Attachments:File:Name' => 'Nazwa pliku',
 	'Attachments:File:Date' => 'Data przesłania',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Przesłany przez',
 	'Attachments:File:Size' => 'Rozmiar',
 	'Attachments:File:MimeType' => 'Typ',
@@ -81,4 +90,14 @@ Dict::Add('PL PL', 'Polish', 'Polski', array(
 	'Class:Attachment/Attribute:user_id+' => '',
 	'Class:Attachment/Attribute:contact_id' => 'Id kontaktu',
 	'Class:Attachment/Attribute:contact_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Status Counted~~',
+	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number~~',
+	'Class:Attachment/Attribute:num_journal+' => '~~',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date~~',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '~~',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number~~',
+	'Class:Attachment/Attribute:num_piece+' => '~~',
+	//^ end customization cfac
 ));

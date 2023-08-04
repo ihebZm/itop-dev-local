@@ -40,6 +40,10 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Portal:Button:Add' => 'Добавить',
 	'Portal:Button:Remove' => 'Удалить',
 	'Portal:Button:Delete' => 'Удалить',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Вы находитесь в режиме <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Вернуться в режим PRODUCTION',
 	'Error:HTTP:400' => 'Некорректный запрос',

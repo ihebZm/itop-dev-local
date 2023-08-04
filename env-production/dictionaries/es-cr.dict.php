@@ -2407,6 +2407,9 @@ Cuando se asocien con un disparador, cada acción recibe un número de "orden", 
 	'Attachments:EmptyTabTitle' => 'Anexos',
 	'Attachments:FieldsetTitle' => 'Anexos',
 	'Attachments:DeleteBtn' => 'Borrar',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Anexo %1$s agregado.',
 	'Attachments:History_File_Removed' => 'Anexo %1$s removido.',
 	'Attachments:AddAttachment' => 'Agregar Anexo: ',
@@ -2435,11 +2438,27 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Organización de Elemento',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'piece number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Contenido',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Ícono',
 	'Attachments:File:Name' => 'Nombre de Archivo',
 	'Attachments:File:Date' => 'Fecha de Carga',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Cargado por',
 	'Attachments:File:Size' => 'Tamaño',
 	'Attachments:File:MimeType' => 'Tipo',
@@ -2513,6 +2532,10 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	'Portal:Button:Add' => 'Añadir',
 	'Portal:Button:Remove' => 'Eliminar',
 	'Portal:Button:Delete' => 'Borrar',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Se encuentra en modo <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Regresar a modo PRODUCTION',
 	'Error:HTTP:400' => 'Solicitud Incorrecta',

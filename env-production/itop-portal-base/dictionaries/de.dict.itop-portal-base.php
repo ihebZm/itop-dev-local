@@ -31,6 +31,10 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Portal:Button:Add' => 'Hinzu',
 	'Portal:Button:Remove' => 'Entfernen',
 	'Portal:Button:Delete' => 'Löschen',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Sie sind im Moment im <strong>%1$s</strong> Modus',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Zurück zum PRODUCTION Modus',
 	'Error:HTTP:400' => 'Bad Request',

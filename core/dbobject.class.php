@@ -3766,6 +3766,9 @@ abstract class DBObject implements iDisplay
 
 		return $oDeletionPlan;
 	}
+	//^ customization cfac for disable attachement
+
+	//^ end customization cfac
 
      /**
      * @overwritable-hook You can extend this method in order to provide your own logic.

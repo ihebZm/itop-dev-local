@@ -100,6 +100,28 @@
 			      <attribute id="user_id"></attribute>
 		      </dependencies>
 	      </field>
+		  <!-- ^ start customization Cfac-->
+		  <field id="status_comp" xsi:type="AttributeBoolean">
+		  	<sql>status_comp</sql>
+			<default_value>false</default_value>
+			<is_null_allowed>true</is_null_allowed>
+	      </field>
+    	  <field id="num_journal" xsi:type="AttributeString">
+		  	<sql>num_journal</sql>
+			<default_value/>
+			<is_null_allowed>false</is_null_allowed>
+	      </field>
+		  <field id="date_comptabilisation" xsi:type="AttributeDateTime">
+		  	<sql>date_comptabilisation</sql>
+			<default_value>null</default_value>
+			<is_null_allowed>true</is_null_allowed>
+	      </field>
+		  <field id="num_piece" xsi:type="AttributeString">
+		  	<sql>num_piece</sql>
+			<default_value/>
+			<is_null_allowed>false</is_null_allowed>
+	      </field>
+		  <!-- ^ end customization Cfac-->
       </fields>
       <methods>
         <method id="MapContextParam">

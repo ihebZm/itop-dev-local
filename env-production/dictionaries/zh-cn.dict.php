@@ -2403,6 +2403,9 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Attachments:EmptyTabTitle' => '附件',
 	'Attachments:FieldsetTitle' => '附件',
 	'Attachments:DeleteBtn' => '删除',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => '附件 %1$s 已添加.',
 	'Attachments:History_File_Removed' => '附件 %1$s 已移除.',
 	'Attachments:AddAttachment' => '添加附件: ',
@@ -2429,11 +2432,27 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Item 组织',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => '内容',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => '图标',
 	'Attachments:File:Name' => '文件名',
 	'Attachments:File:Date' => '上传日期',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Status File',
+	'Attachments:File:num_journal' => 'Journal Number',
+	'Attachments:File:date_comptabilisation' => 'Accounting Date',
+	'Attachments:File:num_piece' => 'Piece Number',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => '上传者',
 	'Attachments:File:Size' => '大小',
 	'Attachments:File:MimeType' => '类型',
@@ -2507,6 +2526,10 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Portal:Button:Add' => '添加',
 	'Portal:Button:Remove' => '移除',
 	'Portal:Button:Delete' => '删除',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => '您目前处于 <strong>%1$s</strong> 模式',
 	'Portal:EnvironmentBanner:GoToProduction' => '回到产品模式',
 	'Error:HTTP:400' => 'Bad request',

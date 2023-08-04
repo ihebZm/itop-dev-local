@@ -21,6 +21,9 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Attachments:EmptyTabTitle' => 'Pièces jointes',
 	'Attachments:FieldsetTitle' => 'Pièces jointes',
 	'Attachments:DeleteBtn' => 'Supprimer',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Comptabiliser Le Fichier',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Ajout de la pièce jointe: %1$s.',
 	'Attachments:History_File_Removed' => 'Suppression de la pièce jointe: %1$s.',
 	'Attachments:AddAttachment' => 'Sélectionnez tous vos fichiers et déposez-les dans ce formulaire: ',
@@ -65,6 +68,12 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Attachments:File:Thumbnail' => 'Icône',
 	'Attachments:File:Name' => 'Nom du fichier',
 	'Attachments:File:Date' => 'Date de chargement',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Etat du Fichier',
+	'Attachments:File:num_journal' => 'Numéro Journal',
+	'Attachments:File:date_comptabilisation' => 'Date Comptable',
+	'Attachments:File:num_piece' => 'Numéro Pièce',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Chargé par',
 	'Attachments:File:Size' => 'Taille',
 	'Attachments:File:MimeType' => 'Type',
@@ -80,4 +89,14 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:Attachment/Attribute:user_id+' => '',
 	'Class:Attachment/Attribute:contact_id' => 'Contact',
 	'Class:Attachment/Attribute:contact_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Etat compté~~',
+	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:num_journal' => 'Numéro journal~~',
+	'Class:Attachment/Attribute:num_journal+' => '~~',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Date comptable~~',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '~~',
+	'Class:Attachment/Attribute:num_piece' => 'numéro pièce~~',
+	'Class:Attachment/Attribute:num_piece+' => '~~',
+	//^ end customization cfac
 ));

@@ -2403,6 +2403,9 @@ When associated with a trigger, each action is given an "order" number, specifyi
 	'Attachments:EmptyTabTitle' => 'Anexos',
 	'Attachments:FieldsetTitle' => 'Anexos',
 	'Attachments:DeleteBtn' => 'Excluir',
+	//^ customization cfac for disable attachement
+	'Attachments:DisableBtn' => 'Accounted The File',
+	//^ end customization cfac
 	'Attachments:History_File_Added' => 'Anexo %1$s adicionado.',
 	'Attachments:History_File_Removed' => 'Anexo %1$s excluído.',
 	'Attachments:AddAttachment' => 'Adicionar anexo: ',
@@ -2431,11 +2434,27 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Attachment/Attribute:item_id+' => '',
 	'Class:Attachment/Attribute:item_org_id' => 'Organização do item',
 	'Class:Attachment/Attribute:item_org_id+' => '',
+	//^ customization cfac for disable attachement
+	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
+	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
+	'Class:Attachment/Attribute:num_journal+' => '',
+	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
+	'Class:Attachment/Attribute:date_comptabilisation+' => '',
+	'Class:Attachment/Attribute:num_piece' => 'Piece Number',
+	'Class:Attachment/Attribute:num_piece+' => '',
+	//^ end customization cfac
 	'Class:Attachment/Attribute:contents' => 'Conteúdo',
 	'Class:Attachment/Attribute:contents+' => '',
 	'Attachments:File:Thumbnail' => 'Ícone',
 	'Attachments:File:Name' => 'Nome do arquivo',
 	'Attachments:File:Date' => 'Data de envio',
+	//^ customization cfac for disable attachement
+	'Attachments:File:status' => 'Etat Fichier',
+	'Attachments:File:num_journal' => 'Numéro Journal',
+	'Attachments:File:date_comptabilisation' => 'Date Comptable',
+	'Attachments:File:num_piece' => 'Numéro Pièce',
+	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Enviado por',
 	'Attachments:File:Size' => 'Tamanho',
 	'Attachments:File:MimeType' => 'Tipo',
@@ -2509,6 +2528,10 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Portal:Button:Add' => 'Adicionar',
 	'Portal:Button:Remove' => 'Remover',
 	'Portal:Button:Delete' => 'Deletar',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Você está atualmente em <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Volte para o modo PRODUÇÃO',
 	'Error:HTTP:400' => 'Pedido ruim',

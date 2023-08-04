@@ -31,6 +31,10 @@ Dict::Add('CS CZ', 'Czech', 'Čeština', array(
 	'Portal:Button:Add' => 'Přidat',
 	'Portal:Button:Remove' => 'Odebrat',
 	'Portal:Button:Delete' => 'Smazat',
+	// ^ customization cfac for disable attachement
+	'Portal:Button:ValidStatut' => 'Counted',
+	'Portal:Button:NonValidStatut' => 'Not Counted',
+	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'You are currently in <strong>%1$s</strong> mode~~',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Go back to PRODUCTION mode~~',
 	'Error:HTTP:400' => 'Bad request~~',

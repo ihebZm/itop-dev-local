@@ -61,6 +61,12 @@ class Attachment extends DBObject
 		MetaModel::Init_AddAttribute(new AttributeInteger("item_org_id", array("allowed_values"=>null, "sql"=>'item_org_id', "default_value"=>'0', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeBlob("contents", array("is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeDateTime("creation_date", array("allowed_values"=>null, "sql"=>'creation_date', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		//^ customization cfac for disable attachement
+		MetaModel::Init_AddAttribute(new AttributeBoolean("status_comp", array("allowed_values"=>null, "sql"=>'status_comp', "default_value"=>false, "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeString("num_journal", array("allowed_values"=>null, "sql"=>'num_journal', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeDateTime("date_comptabilisation", array("allowed_values"=>null, "sql"=>'date_comptabilisation', "default_value"=>'', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeString("num_piece", array("allowed_values"=>null, "sql"=>'num_piece', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		//^ end customization cfac
 		MetaModel::Init_AddAttribute(new AttributeExternalKey("user_id", array("targetclass"=>'User', "allowed_values"=>null, "sql"=>'user_id', "is_null_allowed"=>true, "on_target_delete"=>DEL_MANUAL, "depends_on"=>array(), "allow_target_creation"=>false, "display_style"=>'select', "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeExternalField("contact_id", array("allowed_values"=>null, "extkey_attcode"=>'user_id', "target_attcode"=>'contactid', "always_load_in_tables"=>false)));
 
