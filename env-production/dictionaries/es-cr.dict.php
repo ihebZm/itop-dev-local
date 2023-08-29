@@ -2441,6 +2441,8 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
 	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:type_attachment' => 'Attachment type',
+	'Class:Attachment/Attribute:type_attachment+' => '',
 	'Class:Attachment/Attribute:num_journal' => 'Journal number',
 	'Class:Attachment/Attribute:num_journal+' => '',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting date',
@@ -2455,9 +2457,11 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	'Attachments:File:Date' => 'Fecha de Carga',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Status File',
+	'Attachments:File:type_attachment' => 'Document Type',
 	'Attachments:File:num_journal' => 'Journal Number',
 	'Attachments:File:date_comptabilisation' => 'Accounting Date',
 	'Attachments:File:num_piece' => 'Piece Number',
+	'Attachments:Form:editAccounting' => 'Edit Selected Attachment',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Cargado por',
 	'Attachments:File:Size' => 'Tamaño',
@@ -2535,6 +2539,17 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Counted',
 	'Portal:Button:NonValidStatut' => 'Not Counted',
+	'Portal:Button:TypeAchat' => 'Buying',
+	'Portal:Button:TypeVente' => 'Sale',
+	'Portal:Button:TypeBanque' => 'Bank',
+	'Portal:Button:TypeOther' => 'Other',
+	'Portal:Button:TypeUndefined' => 'No Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Se encuentra en modo <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Regresar a modo PRODUCTION',
@@ -2633,13 +2648,16 @@ o pregunte al administador de iTop si el servidor que ha quedado sin espacio en 
 	'Brick:Portal:OngoingRequests:Tab:OnGoing' => 'En proceso',
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Solucionado',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
+	// ^ customisation cfac courrier
 	'Brick:Portal:NewCourrier:Title' => 'gestiones de documentos',
 	'Brick:Portal:NewCourrier:Title+' => 'Revise sus gestiones de documentos. Compruebe el progreso, agregue comentarios, adjunte documentos, entienda la solución. </ P>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Requerimientos en Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => 'Revise sus requerimientos en Courrier. Compruebe el progreso, agregue comentarios, adjunte documentos, entienda la solución. </ P>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier En proceso',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Solucionado',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Solucionado',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
+	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Requerimientos Cerrados',
 	'Class:Organization' => 'Organización',
 	'Class:Organization+' => 'Organización',

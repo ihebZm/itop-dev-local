@@ -2438,6 +2438,8 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Statut Compté',
 	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:type_attachment' => 'Type Pièce Jointe',
+	'Class:Attachment/Attribute:type_attachment+' => '',
 	'Class:Attachment/Attribute:num_journal' => 'Numéro Journal',
 	'Class:Attachment/Attribute:num_journal+' => '',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Date Comptable',
@@ -2452,9 +2454,11 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Attachments:File:Date' => 'Date de chargement',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Etat Fichier',
+	'Attachments:File:type_attachment' => 'Type de Document',
 	'Attachments:File:num_journal' => 'Numéro Journal',
 	'Attachments:File:date_comptabilisation' => 'Date Comptable',
 	'Attachments:File:num_piece' => 'Numéro Pièce',
+	'Attachments:Form:editAccounting' => 'Modifier La Pièce Jointe Sélectionnée',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Chargé par',
 	'Attachments:File:Size' => 'Taille',
@@ -2532,6 +2536,17 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Comptabilisé',
 	'Portal:Button:NonValidStatut' => 'Non Comptabilisé',
+	'Portal:Button:TypeAchat' => 'Achat',
+	'Portal:Button:TypeVente' => 'Vente',
+	'Portal:Button:TypeBanque' => 'Banque',
+	'Portal:Button:TypeOther' => 'Autre',
+	'Portal:Button:TypeUndefined' => 'Pas De Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Documents de Vente',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Documents d\'achat',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Documents de Banque',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Autre Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Documents inconnus',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Vous êtes dans le mode <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Retourner au mode PRODUCTION',
@@ -2630,13 +2645,16 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Brick:Portal:OngoingRequests:Tab:OnGoing' => 'Ouvertes',
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Résolues',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
+	// ^ customisation cfac courrier
 	'Brick:Portal:NewCourrier:Title' => 'gestions de documents',
 	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de documents.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Courrier en cours',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Suivez vos Courrier en cours.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
-	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Ouvertes',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Résolues',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Fermé',
+	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Non Comptabiliser',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Résolues',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Comptabiliser',
+	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Requêtes fermées',
 	'Class:Organization' => 'Organisation',
 	'Class:Organization+' => '',

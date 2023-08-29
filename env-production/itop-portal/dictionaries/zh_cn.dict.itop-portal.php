@@ -46,8 +46,9 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Brick:Portal:OngoingCourrier:Title' => '正在处理的工单',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>跟踪正在处理的工单.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => '正在处理',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => '已解决',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => '已解决',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
 	// ^ customisation cfac courrie
 	'Brick:Portal:ClosedRequests:Title' => '已关闭的工单',
 ));

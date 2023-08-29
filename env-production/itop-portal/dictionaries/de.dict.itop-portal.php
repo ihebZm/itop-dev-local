@@ -46,7 +46,8 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Offene Störungen/Anfragen',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Hier können Sie Ihre laufenden Anfragen und Störungsmeldungen ansehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Offen',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Gelöst',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Gelöst',
 	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Geschlossene Störungen/Anfragen',

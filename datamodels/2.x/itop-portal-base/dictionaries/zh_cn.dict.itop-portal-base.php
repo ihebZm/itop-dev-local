@@ -34,6 +34,17 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Counted',
 	'Portal:Button:NonValidStatut' => 'Not Counted',
+	'Portal:Button:TypeAchat' => 'Buying',
+	'Portal:Button:TypeVente' => 'Sale',
+	'Portal:Button:TypeBanque' => 'Bank',
+	'Portal:Button:TypeOther' => 'Other',
+	'Portal:Button:TypeUndefined' => 'No Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => '您目前处于 <strong>%1$s</strong> 模式',
 	'Portal:EnvironmentBanner:GoToProduction' => '回到产品模式',

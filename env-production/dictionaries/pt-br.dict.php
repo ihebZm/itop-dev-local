@@ -2437,6 +2437,8 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
 	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:type_attachment' => 'Attachment Type',
+	'Class:Attachment/Attribute:type_attachment+' => '',
 	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
 	'Class:Attachment/Attribute:num_journal+' => '',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
@@ -2451,9 +2453,11 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Attachments:File:Date' => 'Data de envio',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Etat Fichier',
+	'Attachments:File:type_attachment' => 'Document Type',
 	'Attachments:File:num_journal' => 'Numéro Journal',
 	'Attachments:File:date_comptabilisation' => 'Date Comptable',
 	'Attachments:File:num_piece' => 'Numéro Pièce',
+	'Attachments:Form:editAccounting' => 'Edit Selected Attachment',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Enviado por',
 	'Attachments:File:Size' => 'Tamanho',
@@ -2531,6 +2535,17 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Counted',
 	'Portal:Button:NonValidStatut' => 'Not Counted',
+	'Portal:Button:TypeAchat' => 'Buying',
+	'Portal:Button:TypeVente' => 'Sale',
+	'Portal:Button:TypeBanque' => 'Bank',
+	'Portal:Button:TypeOther' => 'Other',
+	'Portal:Button:TypeUndefined' => 'No Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Você está atualmente em <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Volte para o modo PRODUÇÃO',
@@ -2629,13 +2644,16 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Brick:Portal:OngoingRequests:Tab:OnGoing' => 'Abrir',
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Resolvido',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
+	// ^ customisation cfac courrier
 	'Brick:Portal:NewCourrier:Title' => 'gestão de documentos',
 	'Brick:Portal:NewCourrier:Title+' => '<p>Acompanhar suas solicitações gestão de documentos, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Em Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Acompanhar suas solicitações em Courrier, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Abrir',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Resolvido',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Resolvido',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
+	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Fechar solicitações',
 	'Class:Organization' => 'Organização',
 	'Class:Organization+' => '',

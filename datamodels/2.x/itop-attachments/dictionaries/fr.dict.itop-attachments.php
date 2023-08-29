@@ -70,9 +70,11 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Attachments:File:Date' => 'Date de chargement',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Etat du Fichier',
+	'Attachments:File:type_attachment' => 'Type de Document',
 	'Attachments:File:num_journal' => 'Numéro Journal',
 	'Attachments:File:date_comptabilisation' => 'Date Comptable',
 	'Attachments:File:num_piece' => 'Numéro Pièce',
+	'Attachments:Form:editAccounting' => 'Modifier La Pièce Jointe Sélectionnée',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Chargé par',
 	'Attachments:File:Size' => 'Taille',
@@ -92,6 +94,8 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Etat compté~~',
 	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:type_attachment' => 'Type Pièce Jointe~~',
+	'Class:Attachment/Attribute:type_attachment+' => '~~',
 	'Class:Attachment/Attribute:num_journal' => 'Numéro journal~~',
 	'Class:Attachment/Attribute:num_journal+' => '~~',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Date comptable~~',

@@ -46,7 +46,8 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Otevřené požadavky',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Sledujte své otevřené Courrier.</p><p>Zkontrolujte stav, přidejte komentář, přiložte dokumenty, potvrďte řešení.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Probíhající',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'CourrierVyřešené',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'CourrierVyřešené',
 	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier požadavky',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Geschlossene Störungen/Anfragen',

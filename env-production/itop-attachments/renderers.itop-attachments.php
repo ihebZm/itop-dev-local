@@ -189,6 +189,14 @@ abstract class AbstractAttachmentsRenderer
 		$sMaxUploadLabel = AttachmentPlugIn::GetMaxUpload();
 		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
 		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
+		//^ customization cfac for disable attachment
+		$formEditAcc = Dict::S('Attachments:Form:editAccounting');
+		$fileDateCompta = Dict::S('Attachments:File:date_comptabilisation');
+		$fileNumJournal = Dict::S('Attachments:File:num_journal');
+		$fileNumPiece = Dict::S('Attachments:File:num_piece');
+		$buttonValidStatus = Dict::S('Portal:Button:ValidStatut');
+		$buttonNonValidStatus = Dict::S('Portal:Button:NonValidStatut');
+		//^ customization cfac for disable attachment
 		$this->oPage->add('<div id="ibo-attachment--upload-file">');
 		$this->oPage->add('<div id="ibo-attachment--upload-file--upload-button-container">');
 		$this->oPage->add(Dict::S('Attachments:AddAttachment'));
@@ -197,6 +205,30 @@ abstract class AbstractAttachmentsRenderer
 		$this->oPage->AddUiBlock($oAddButton);
 		$this->oPage->add('<span style="display:none;" id="attachment_loading"><img src="../images/indicator.gif"></span> '.$sMaxUploadLabel);
 		$this->oPage->add('</div>');
+		$this->oPage->add('
+		<div id="formContainer" style="display: none;">
+		<span style="font-size: 20px; padding: 0px 0px 0px 10px; line-height: 2.5em;">'.$formEditAcc.'</span>
+		<form id="edit-form" method="POST" action="update-data.php">
+			<input class="form-control" type="hidden" name="idatt" id="updateId">
+			<div>
+				<label class="ibo-field--label" for="dateComptabilisation" style="font-size: 15px; line-height: 2.5em;">'.$fileDateCompta.'</label>
+				<input class="ibo-input ibo-input-string" autocomplete="off" maxlength="255" style="width: 300px; transform: translate(20px, 0px);" type="datetime-local" id="dateComptabilisation" name="dateComptabilisation" disabled>
+			</div>
+			<div>
+				<label class="ibo-field--label" for="numJournal" style="font-size: 15px; line-height: 2em;">'.$fileNumJournal.'</label>
+				<input class="ibo-input ibo-input-string" maxlength="255" style="width: 300px; transform: translate(20px, 0px);" type="text" id="numJournal" name="numJournal">
+			</div>
+			<div>
+				<label class="ibo-field--label" for="numPiece" style="font-size:15px; line-height: 2em;">'.$fileNumPiece.'</label>
+				<input class="ibo-input ibo-input-string" maxlength="255" style="width: 300px; transform: translate(20px, 0px);" type="text" id="numPiece" name="numPiece">
+			</div>
+			<div style="padding: 15px 50px 15px 50px;">
+				<input id="status_comp_button_Valid" type="submit" style="font-size: 13px; background-color: #357a38; width: 124px; height: 38px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" class="btn btn-xs btn-primary;" value="'.$buttonValidStatus.'">
+				<input id="status_comp_button_nonValid" type="submit" name="submit" style="font-size: 13px; background-color: #660000; width: 124px; height: 38px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" class="btn btn-xs btn-primary" value="'.$buttonNonValidStatus.'">
+			</div>
+			</form>
+		</div>');
+
 		$this->oPage->add('<div class="ibo-attachment--upload-file--drop-zone-hint ibo-svg-illustration--container">');
 		$this->oPage->add(file_get_contents(APPROOT.'images/illustrations/undraw_upload.svg'));
 		$this->oPage->add(Dict::S('UI:Attachments:DropYourFileHint').'</div>');
@@ -212,10 +244,10 @@ abstract class AbstractAttachmentsRenderer
 		var sContentNode = '#AttachmentsListContainer',
 			aAttachmentsDeletedHiddenInputs = $('#AttachmentsListContainer table>tbody>tr[id^="display_attachment_"]>td input[name="removed_attachments[]"]'),
 			aAttachmentsDeletedIds = aAttachmentsDeletedHiddenInputs.map(function() { return $(this).val() }).toArray();
-			//^ customization cfac for disable attachement
+			//^ customization cfac for disable attachment
 			aAttachmentsDisabledHiddenInputs = $('#AttachmentsListContainer table>tbody>tr[id^="display_attachment_"]>td input[name="disabled_attachments[]"]'),
 			aAttachmentsDisabledIds = aAttachmentsDisabledHiddenInputs.map(function() { return $(this).val() }).toArray();
-			//^ customization cfac for disable attachement
+			//^ customization cfac for disable attachment
 		$(sContentNode).block();
 		$.post(GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
 		   { 
@@ -225,9 +257,9 @@ abstract class AbstractAttachmentsRenderer
 		   	    temp_id: '$this->sTransactionId', 
 		   	    edit_mode: 1, 
 		   	    attachments_deleted: aAttachmentsDeletedIds,
-				//^ customization cfac for disable attachement
+				//^ customization cfac for disable attachment
 				attachments_disabled: aAttachmentsDisabledIds
-				//^ customization cfac for disable attachement
+				//^ customization cfac for disable attachment
 	        },
 		   function(data) {
 			 $(sContentNode).html(data);
@@ -365,7 +397,7 @@ JS
 	protected function GetAttachmentHiddenInput($iAttachmentId, $bIsDeletedAttachment, $bIsDisabledAttachment)
 	{
 		$sInputNamePrefix = $bIsDeletedAttachment ? 'removed_' : '';
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		$sInputNamePrefixDisable = $bIsDisabledAttachment ? 'disabled_' : '';
 		//^ end customization cfac
 		
@@ -387,7 +419,8 @@ JS
 		return $oButton;
 	}
 
-	//^ customization cfac for disable attachement
+	//^ customization cfac for disable attachment
+	//,".$iAttNumJournal.",".$iAttNumPiece."     ,$iAttNumJournal,$iAttNumPiece
 	protected function GetDisableAttachmentButton($iAttId)
 	{
 		$oButton = ButtonUIBlockFactory::MakeIconAction('fas fa-calculator', Dict::S('Attachments:DisableBtn'),
@@ -415,10 +448,68 @@ JS
 		if (bDisable)
 		{
 			$('#attachment_'+att_id).attr('name', 'disabled_attachments[]');
-			$('#display_attachment_'+att_id).hide();
-			$('#attachment_plugin').trigger('disable_attachment', [att_id]);
+			$('#display_attachment_'+att_id);
+			showForm(att_id);
+			submitForm(att_id);
+			//$('#attachment_plugin').trigger('disable_attachment', [att_id]);
 		}
+		closeForm(att_id);
 		return false; // Do not submit the form !
+	}
+	function showForm(att_id) {
+		//  enable the form to edit the attachment section
+            var formContainer = document.getElementById('formContainer');
+            formContainer.style.display = 'block';
+		//  retrive the date static for the edition of attachment
+			var currentDate = new Date();
+			dateTime = moment(currentDate).format("YYYY-MM-DDTkk:mm");
+		// retrieve elements of a table to put them in the form
+		//fieldIdAtt = document.getElementById('id_att'+att_id+'_row').textContent;
+		    fieldDateComp = document.getElementById('date_comp_'+att_id+'_row').textContent;
+		    fieldNumJournal = document.getElementById('num_journal_'+att_id+'_row').textContent;
+		    fieldNumpiece = document.getElementById('num_piece_'+att_id+'_row').textContent;
+		// Fetch data from the server and populate the form fields
+			document.getElementById('dateComptabilisation').value = dateTime;
+			document.getElementById('numJournal').value = document.getElementById('num_journal_'+att_id+'_row').textContent;
+			document.getElementById('numPiece').value = document.getElementById('num_piece_'+att_id+'_row').textContent;
+			console.log(fieldNumpiece);
+	}
+	//closing the form if button clicked
+	function closeForm(att_id) {
+		document.getElementById('status_comp_button_nonValid').addEventListener("click", function(event) {
+			var formContainer = document.getElementById('formContainer');
+			formContainer.style.display = 'none';
+		});
+	}
+	function submitForm(att_id) {
+		document.getElementById('status_comp_button_Valid').addEventListener("click", function(event) {
+				event.preventDefault();
+
+				// Get the form data
+				var id= att_id;               
+				var editDateComptabilisation= $("input[name='dateComptabilisation']").val();
+				var editNumJournal= $("input[name='numJournal']").val();
+				var editNumPiece= $("input[name='numPiece']").val();
+				// Assuming you are using AJAX to send data to the server and update the database
+				console.log(id);
+				$.ajax({
+					method:"POST",
+					url: "update-data.php",
+					data:{
+						updateId:id,
+						DateComptabilisation: editDateComptabilisation,
+						NumJournal: editNumJournal,
+						NumPiece: editNumPiece
+					},
+      				dataType: "json",
+					success: function(data){
+						console.log("thunk you bank egype:")
+						console.log(data);
+						var formContainer = document.getElementById('formContainer');
+						formContainer.style.display = 'none';
+					}
+				});	
+		});
 	}
 JS;
 	}
@@ -468,8 +559,9 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		$sFileDate = Dict::S('Attachments:File:Date');
 		$sFileUploader = Dict::S('Attachments:File:Uploader');
 		$sFileType = Dict::S('Attachments:File:MimeType');
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		$sFileStatusComp = Dict::S('Attachments:File:status');
+		$sFileTypeAttachment = Dict::S('Attachments:File:type_attachment');
 		$sFileNumJournal = Dict::S('Attachments:File:num_journal');
 		$sFileDateComp = Dict::S('Attachments:File:date_comptabilisation');
 		$sFileNumPiece = Dict::S('Attachments:File:num_piece');
@@ -480,7 +572,7 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 			$this->oPage->add_script($this->GetDeleteAttachmentJs());
 		}
 		
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		if ($bWithDisableButton)
 		{
 			$this->oPage->add_script($this->GetDisableAttachmentJs());
@@ -501,7 +593,6 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 			$bIsEven = ($bIsEven) ? false : true;
 			$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oTempAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled);
 		}
-
 		$aAttribs = array(
 			'icon' => array('label' => $sThumbnail, 'description' => $sThumbnail),
 			'filename' => array('label' => $sFileName, 'description' => $sFileName),
@@ -509,8 +600,9 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 			'upload-date' => array('label' => $sFileDate, 'description' => $sFileDate),
 			'uploader' => array('label' => $sFileUploader, 'description' => $sFileUploader),
 			'type' => array('label' => $sFileType, 'description' => $sFileType),
-			//^ customization cfac for disable attachement
+			//^ customization cfac for disable attachment
 			'status-comp' => array('label' => $sFileStatusComp, 'description' => $sFileStatusComp),
+			'type-attachment' => array('label' => $sFileTypeAttachment, 'description' => $sFileTypeAttachment),
 			'num-journal' => array('label' => $sFileNumJournal, 'description' => $sFileNumJournal),
 			'date-comptabilisation' => array('label' => $sFileDateComp, 'description' => $sFileDateComp),
 			'num-piece' => array('label' => $sFileNumPiece, 'description' => $sFileNumPiece),
@@ -521,7 +613,7 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 			$aAttribs['delete'] = array('label' => '', 'description' => '');
 		}
 
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		if ($bWithDisableButton) {
 			$aAttribs['disable'] = array('label' => '', 'description' => '');
 		}
@@ -573,7 +665,7 @@ JS
 			$bIsDeletedAttachment = true;
 		}
 
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		$bIsDisabledAttachment = false;
 		if (in_array($iAttachmentId, $aAttachmentsDisabled, true))
 		{
@@ -603,43 +695,65 @@ JS
 			$sAttachmentDateFormatted = AttributeDateTime::GetFormat()->Format($oAttachmentDate);
 		}
 
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		$sStatusComp = $oAttachment->Get('status_comp');
 		if ($sStatusComp==true)
 		{
 			$sStatusBtnLabelValid = Dict::S('Portal:Button:ValidStatut');
-			$sStatusCompCell = '<input id="status_comp_id_portal_user" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sStatusBtnLabelValid.'" disabled>';
+			$sStatusCompCell = '<input id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sStatusBtnLabelValid.'" disabled>';
 		} else {
 			$sStatusBtnLabelNonValid = Dict::S('Portal:Button:NonValidStatut');
-			$sStatusCompCell = '<input id="status_comp_id_portal_user" style="font-size: 10px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled>';
+			$sStatusCompCell = '<input id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled>';
+		}
+
+		// ! To DO the translation and the show of the application and the output
+		$sTypeAttachment = $oAttachment->Get('type_attachment');
+		$sTypeAttachmentCompCell = '';
+		
+		if ($sTypeAttachment != null )
+		{
+			if ($sTypeAttachment == "attachment_achat") {
+				$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelAchat.'</p>';
+			} else if ($sTypeAttachment == "attachment_vente") {
+				$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelVente.'</p>';
+			} else if ($sTypeAttachment == "attachment_banque") {
+				$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelBanque.'</p>';
+			} else if ($sTypeAttachment == "attachment_other") {
+				$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+				echo($sTypeBtnLabelOther);
+				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelOther.'</p>';
+			}
 		}
 
 		$sNumJournal = $oAttachment->Get('num_journal');
 		if ($sNumJournal != '')
 		{
-			$sNumJournalCell = '<p id="num_journal_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sNumJournal.'</p>';
+			$sNumJournalCell = '<p id="num_journal_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sNumJournal.'</p>';
 		} else {
 			$sNumJournalBtnLabelNonValid = Dict::S('UI:UndefinedObject');
-			$sNumJournalCell = '<p id="num_journal_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;" class="p2">'.$sNumJournalBtnLabelNonValid.'</p>';
+			$sNumJournalCell = '<p id="num_journal_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;" class="p2">'.$sNumJournalBtnLabelNonValid.'</p>';
 		}
 
 		$sDateComp = $oAttachment->Get('date_comptabilisation');
 
 		if (!empty($sDateComp))
 		{
-			$sDateCompCell = '<p id="date_comp_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sDateComp.'</p>';
+			$sDateCompCell = '<p id="date_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sDateComp.'</p>';
 		} else {
 			$sDateCompBtnLabelNonValid = Dict::S('UI:UndefinedObject');
-			$sDateCompCell = '<p id="date_comp_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;" class="p2">'.$sDateCompBtnLabelNonValid.'</p>';
+			$sDateCompCell = '<p id="date_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;" class="p2">'.$sDateCompBtnLabelNonValid.'</p>';
 		}
 
 		$sNumPiece = $oAttachment->Get('num_piece');
 		if ($sNumPiece != '')
 		{
-			$sNumPieceCompCell = '<p id="num_piece_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sNumPiece.'</p>';
+			$sNumPieceCompCell = '<p id="num_piece_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: #FC0 1px 0 10px; text-align: center; padding: 17px;">'.$sNumPiece.'</p>';
 		} else {
 			$sNumPieceBtnLabelNonValid = Dict::S('UI:UndefinedObject');
-			$sNumPieceCompCell = '<p id="num_piece_id_portal_user" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;">'.$sNumPieceBtnLabelNonValid.'</p>';
+			$sNumPieceCompCell = '<p id="num_piece_'.$iAttachmentId.'_row" style="font-size: 9.5px; line-height: 150%; text-shadow: -5px 2px 1px RGBa(0,0,160,0.3), 0px 0px 10px RGBa(160,0,0,0.8); text-align: center; padding: 17px;">'.$sNumPieceBtnLabelNonValid.'</p>';
 		}
 		
 		//^ end customization cfac
@@ -676,8 +790,9 @@ JS
 			'upload-date' => $sAttachmentDateFormatted,
 			'uploader' => $sAttachmentUploaderForHtml,
 			'type' => $sFileType,
-			//^ customization cfac for disable attachement
+			//^ customization cfac for disable attachment
 			'status-comp' => $sStatusCompCell,
+			'type-attachment' => $sTypeAttachmentCompCell,
 			'num-journal' => $sNumJournalCell,
 			'date-comptabilisation' => $sDateCompCell,
 			'num-piece' => $sNumPieceCompCell,
@@ -699,13 +814,24 @@ JS
 		}
 
 
-		//^ customization cfac for disable attachement
+		//^ customization cfac for disable attachment
 		if ($bIsDisabledAttachment) {
 			$aAttachmentLine['@class'] = 'ibo-is-hidden';
 		}
-
+		
 		if ($bWithDisableButton)
 		{
+			$iStatusComp = $oAttachment->Get('status_comp');
+			$iStatusComp = $oAttachment->Get('type_attachment');
+			$iDateComptabilisation = $oAttachment->Get('date_comptabilisation');
+			$iNumJournal = $oAttachment->Get('num_journal');
+			$iNumPiece = $oAttachment->Get('num_piece');
+			/*echo($iStatusComp);
+			echo($iDateComptabilisation);
+			echo($iNumJournal);
+			echo($iNumPiece);
+			echo($iAttachmentId);*/
+
 			$sDisableButton = $this->GetDisableAttachmentButton($iAttachmentId);
 
 			$oBlockRenderer = new BlockRenderer($sDisableButton);

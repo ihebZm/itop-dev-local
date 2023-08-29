@@ -63,6 +63,7 @@ class Attachment extends DBObject
 		MetaModel::Init_AddAttribute(new AttributeDateTime("creation_date", array("allowed_values"=>null, "sql"=>'creation_date', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		//^ customization cfac for disable attachement
 		MetaModel::Init_AddAttribute(new AttributeBoolean("status_comp", array("allowed_values"=>null, "sql"=>'status_comp', "default_value"=>false, "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("type_attachment", array("allowed_values"=>null, "sql"=>'type_attachment', "default_value"=>'attachment_unkown', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeString("num_journal", array("allowed_values"=>null, "sql"=>'num_journal', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeDateTime("date_comptabilisation", array("allowed_values"=>null, "sql"=>'date_comptabilisation', "default_value"=>'', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeString("num_piece", array("allowed_values"=>null, "sql"=>'num_piece', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));

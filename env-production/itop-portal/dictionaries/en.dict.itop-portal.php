@@ -47,9 +47,10 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Brick:Portal:NewCourrier:Title+' => '<p>Follow up with your New courrier.</p><p>Check the progress, add comments, attach documents, acknowledge the solution.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Ongoing courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Follow up with your ongoing Courrier.</p><p>Check the progress, add comments, attach documents, acknowledge the solution.</p>',
-	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Non comptabiliser',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Comptabiliser',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Not Counted',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Comptabiliser',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Closed requests',
 ));

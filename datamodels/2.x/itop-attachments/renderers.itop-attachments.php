@@ -472,6 +472,7 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		$sFileType = Dict::S('Attachments:File:MimeType');
 		//^ customization cfac for disable attachement
 		$sFileStatusComp = Dict::S('Attachments:File:status');
+		$sFileTypeAttachment = Dict::S('Attachments:File:type_attachment');
 		$sFileNumJournal = Dict::S('Attachments:File:num_journal');
 		$sFileDateComp = Dict::S('Attachments:File:date_comptabilisation');
 		$sFileNumPiece = Dict::S('Attachments:File:num_piece');
@@ -617,6 +618,27 @@ JS
 			$sStatusCompCell = '<input id="status_id_portal_user" style="font-size: 10px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled>';
 		}
 
+		$sTypeAttachment = $oAttachment->Get('type_attachment');
+		if ($sTypeAttachment!=null)
+		{
+			if ($sTypeAttachment='attachment_achat') {
+				$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+				$sTypeAttachmentCompCell = '<input id="type_attachment_'.$iAttachmentId.'_row" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelAchat.'" disabled>';
+			} else if ($sTypeAttachment='attachment_vente') {
+				$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+				$sTypeAttachmentCompCell = '<input id="type_attachment_'.$iAttachmentId.'_row" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelVente.'" disabled>';
+			} else if ($sTypeAttachment='attachment_banque') {
+				$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+				$sTypeAttachmentCompCell = '<input id="type_attachment_'.$iAttachmentId.'_row" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelBanque.'" disabled>';
+			} else if ($sTypeAttachment='attachment_other') {
+				$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+				$sTypeAttachmentCompCell = '<input id="type_attachment_'.$iAttachmentId.'_row" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelOther.'" disabled>';
+			}	
+		} else {
+			$sStatusBtnLabelNonValid = Dict::S('Portal:Button:TypeUndefined');
+			$sTypeAttachmentCompCell = '<input id="status_id_portal_user" style="font-size: 10px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled>';
+		}
+
 		$sNumJournal = $oAttachment->Get('num_journal');
 		if ($sNumJournal==true)
 		{
@@ -682,6 +704,7 @@ JS
 			'type' => $sFileType,
 			//^ customization cfac for disable attachement
 			'status-comp' => $sStatusCompCell,
+			'type-attachment' => $sTypeAttachmentCompCell,
 			'num-journal' => $sNumJournalCell,
 			'date-comptabilisation' => $sDateCompCell,
 			'num-piece' => $sNumPieceCompCell,

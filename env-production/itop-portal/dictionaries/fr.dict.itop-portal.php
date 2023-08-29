@@ -45,9 +45,10 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de documents.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Courrier en cours',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Suivez vos Courrier en cours.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
-	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Ouvertes',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Résolues',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Non Comptabiliser',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Résolues',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Comptabiliser',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Requêtes fermées',
 ));

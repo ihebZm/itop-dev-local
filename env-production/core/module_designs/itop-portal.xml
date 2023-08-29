@@ -523,11 +523,13 @@
               <!-- <description>Brick:Portal:OngoingRequests:Tab:OnGoing+</description> -->
               <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status NOT IN ('closed', 'resolved') AND servicesubcategory_name = 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
+            <!-- //* Disable customisation cfac courrier
             <group id="resolved">
               <rank>2</rank>
               <title>Brick:Portal:OngoingCourrier:Tab:Resolved</title>
               <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status = 'resolved' AND servicesubcategory_name = 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
+            -->
             <group id="waiting_approval">
               <rank>3</rank>
               <title>Brick:Portal:OngoingCourrier:Tab:closed</title>

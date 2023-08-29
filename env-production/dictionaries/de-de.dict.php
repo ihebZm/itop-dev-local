@@ -2435,6 +2435,8 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
 	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:type_attachment' => 'Attachment type',
+	'Class:Attachment/Attribute:type_attachment+' => '',
 	'Class:Attachment/Attribute:num_journal' => 'Journal number',
 	'Class:Attachment/Attribute:num_journal+' => '',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting date',
@@ -2449,9 +2451,11 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	'Attachments:File:Date' => 'Upload-Datum',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Status File',
+	'Attachments:File:type_attachment' => 'Document Type',
 	'Attachments:File:num_journal' => 'Journal Number',
 	'Attachments:File:date_comptabilisation' => 'Accounting Date',
 	'Attachments:File:num_piece' => 'Piece Number',
+	'Attachments:Form:editAccounting' => 'Edit Selected Attachment',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'hochgeladen von',
 	'Attachments:File:Size' => 'Größe',
@@ -2529,6 +2533,17 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Counted',
 	'Portal:Button:NonValidStatut' => 'Not Counted',
+	'Portal:Button:TypeAchat' => 'Buying',
+	'Portal:Button:TypeVente' => 'Sale',
+	'Portal:Button:TypeBanque' => 'Bank',
+	'Portal:Button:TypeOther' => 'Other',
+	'Portal:Button:TypeUndefined' => 'No Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Sie sind im Moment im <strong>%1$s</strong> Modus',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Zurück zum PRODUCTION Modus',
@@ -2627,13 +2642,16 @@ oder melden Sie dem iTop Administrator diesen Fehler, weil eventuell kein ausrei
 	'Brick:Portal:OngoingRequests:Tab:OnGoing' => 'Offen',
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Gelöst',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
+	// ^ customisation cfac courrier
 	'Brick:Portal:NewCourrier:Title' => 'Dokumentenverwaltungen',
 	'Brick:Portal:NewCourrier:Title+' => '<p>Hier können Sie Ihre Dokumentenverwaltungen einsehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Offene Störungen/Anfragen',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Hier können Sie Ihre laufenden Anfragen und Störungsmeldungen ansehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Offen',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Gelöst',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Gelöst',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
+	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Geschlossene Störungen/Anfragen',
 	'Class:Organization' => 'Organisation',
 	'Class:Organization+' => '',

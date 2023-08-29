@@ -106,6 +106,11 @@
 			<default_value>false</default_value>
 			<is_null_allowed>true</is_null_allowed>
 	      </field>
+		  <field id="type_attachment" xsi:type="AttributeString">
+            <sql>type_attachment</sql>
+            <default_value>true</default_value>
+			<is_null_allowed>false</is_null_allowed>
+          </field>
     	  <field id="num_journal" xsi:type="AttributeString">
 		  	<sql>num_journal</sql>
 			<default_value/>
@@ -120,7 +125,7 @@
 		  	<sql>num_piece</sql>
 			<default_value/>
 			<is_null_allowed>false</is_null_allowed>
-	      </field>
+	      </field> 
 		  <!-- ^ end customization Cfac-->
       </fields>
       <methods>

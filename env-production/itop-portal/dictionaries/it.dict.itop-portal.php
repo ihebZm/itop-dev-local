@@ -46,8 +46,9 @@ Dict::Add('IT IT', 'Italian', 'Italiano', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Richieste in Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Segui le tue richieste in Courrier.</p><p>Verifica i progressi, aggiungi dei commenti, allega i documenti, scopri la soluzione.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Aperte',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Risolte',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Risolte',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Richieste Chiuse',
 ));

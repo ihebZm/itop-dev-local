@@ -46,7 +46,8 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Текущие Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Следите за&nbsp;открытыми Courrier.</p><p>Проверяйте ход решения, добавляйте комментарии и&nbsp;вложения, подтверждайте решение.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier В работе',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Решенные',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Решенные',
 	// ^ customisation cfac courrie
 	'Brick:Portal:ClosedRequests:Title' => 'Закрытые запросы',
 ));

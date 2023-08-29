@@ -46,8 +46,9 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Em Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Acompanhar suas solicitações em Courrier, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Abrir',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Resolvido',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Resolvido',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
 	// ^ customisation cfac courrie
 	'Brick:Portal:ClosedRequests:Title' => 'Fechar solicitações',
 ));

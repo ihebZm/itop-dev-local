@@ -76,9 +76,11 @@ Dict::Add('ES CR', 'Spanish', 'Español, Castellano', array(
 	'Attachments:File:Date' => 'Fecha de Carga',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Status File',
+	'Attachments:File:type_attachment' => 'Document Type',
 	'Attachments:File:num_journal' => 'Journal Number',
 	'Attachments:File:date_comptabilisation' => 'Accounting Date',
 	'Attachments:File:num_piece' => 'Piece Number',
+	'Attachments:Form:editAccounting' => 'Edit Selected Attachment',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => 'Cargado por',
 	'Attachments:File:Size' => 'Tamaño',
@@ -98,6 +100,8 @@ Dict::Add('ES CR', 'Spanish', 'Español, Castellano', array(
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Status Counted~~',
 	'Class:Attachment/Attribute:status_comp+' => '~~',
+	'Class:Attachment/Attribute:type_attachment' => 'Attachment Type~~',
+	'Class:Attachment/Attribute:type_attachment+' => '~~',
 	'Class:Attachment/Attribute:num_journal' => 'Journal Number~~',
 	'Class:Attachment/Attribute:num_journal+' => '~~',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date~~',

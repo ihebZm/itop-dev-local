@@ -34,6 +34,17 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Comptabilisé',
 	'Portal:Button:NonValidStatut' => 'Non Comptabilisé',
+	'Portal:Button:TypeAchat' => 'Achat',
+	'Portal:Button:TypeVente' => 'Vente',
+	'Portal:Button:TypeBanque' => 'Banque',
+	'Portal:Button:TypeOther' => 'Autre',
+	'Portal:Button:TypeUndefined' => 'Pas De Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Documents de Vente',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Documents d\'achat',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Documents de Banque',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Autre Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Documents inconnus',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Vous êtes dans le mode <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Retourner au mode PRODUCTION',

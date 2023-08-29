@@ -46,8 +46,9 @@ Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
 	'Brick:Portal:OngoingCourrier:Title' => 'Lopende Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Verder gaan met jouw openstaande Courrier.</p><p>Controleer de voortgang, voeg commentaar of documenten toe, bevestig de geboden oplossing.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Openstaand',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Opgelost',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//	'Brick:Portal:OngoingCourrier:Tab:Resolved' => 'Courrier Opgelost',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
 	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => 'Gesloten verzoeken',
 ));

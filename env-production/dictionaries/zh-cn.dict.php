@@ -2435,6 +2435,8 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	//^ customization cfac for disable attachement
 	'Class:Attachment/Attribute:status_comp' => 'Counted Status',
 	'Class:Attachment/Attribute:status_comp+' => '',
+	'Class:Attachment/Attribute:type_attachment' => 'Attachment Type',
+	'Class:Attachment/Attribute:type_attachment+' => '',
 	'Class:Attachment/Attribute:num_journal' => 'Journal Number',
 	'Class:Attachment/Attribute:num_journal+' => '',
 	'Class:Attachment/Attribute:date_comptabilisation' => 'Accounting Date',
@@ -2449,9 +2451,11 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Attachments:File:Date' => '上传日期',
 	//^ customization cfac for disable attachement
 	'Attachments:File:status' => 'Status File',
+	'Attachments:File:type_attachment' => 'Document Type',
 	'Attachments:File:num_journal' => 'Journal Number',
 	'Attachments:File:date_comptabilisation' => 'Accounting Date',
 	'Attachments:File:num_piece' => 'Piece Number',
+	'Attachments:Form:editAccounting' => 'Edit Selected Attachment',
 	//^ end customization cfac
 	'Attachments:File:Uploader' => '上传者',
 	'Attachments:File:Size' => '大小',
@@ -2529,6 +2533,17 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	// ^ customization cfac for disable attachement
 	'Portal:Button:ValidStatut' => 'Counted',
 	'Portal:Button:NonValidStatut' => 'Not Counted',
+	'Portal:Button:TypeAchat' => 'Buying',
+	'Portal:Button:TypeVente' => 'Sale',
+	'Portal:Button:TypeBanque' => 'Bank',
+	'Portal:Button:TypeOther' => 'Other',
+	'Portal:Button:TypeUndefined' => 'No Type',
+	//* this section for table attachement title -->
+	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
+	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
+	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
+	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
+	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => '您目前处于 <strong>%1$s</strong> 模式',
 	'Portal:EnvironmentBanner:GoToProduction' => '回到产品模式',
@@ -2627,13 +2642,16 @@ We hope you’ll enjoy this version as much as we enjoyed imagining and creating
 	'Brick:Portal:OngoingRequests:Tab:OnGoing' => '正在处理',
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => '已解决',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
+	// ^ customisation cfac courrier
 	'Brick:Portal:NewCourrier:Title' => '文件管理',
 	'Brick:Portal:NewCourrier:Title+' => '<p>跟踪正在处理的工作文档管理.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => '正在处理的工单',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>跟踪正在处理的工单.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => '正在处理',
-	'Brick:Portal:OngoingCourrier:Tab:Resolved' => '已解决',
-	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Closed',
+	//* Disable customisation cfac courrier
+	//  'Brick:Portal:OngoingCourrier:Tab:Resolved' => '已解决',
+	'Brick:Portal:OngoingCourrier:Tab:closed' => 'Courrier Counted',
+	// ^ customisation cfac courrier
 	'Brick:Portal:ClosedRequests:Title' => '已关闭的工单',
 	'Class:Organization' => '组织',
 	'Class:Organization+' => '',
