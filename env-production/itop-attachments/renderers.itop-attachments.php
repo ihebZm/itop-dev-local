@@ -99,6 +99,8 @@ abstract class AbstractAttachmentsRenderer
 	protected $oTempAttachmentsSet;
 	/** @var \DBObjectSet */
 	protected $oAttachmentsSet;
+	/** @var \DBObjectSet */
+	protected $oAttachmentsRequestSourrce;
 
 	/**
 	 * @param \WebPage $oPage
@@ -120,6 +122,10 @@ abstract class AbstractAttachmentsRenderer
 
 		$oSearchTemp = DBObjectSearch::FromOQL('SELECT Attachment WHERE temp_id = :temp_id');
 		$this->oTempAttachmentsSet = new DBObjectSet($oSearchTemp, array(), array('temp_id' => $this->sTransactionId));
+
+		// & get service type A for courrier show or not
+		$oSearchRequestService = DBObjectSearch::FromOQL('SELECT UserRequest WHERE id = :item_id');
+		$this->oAttachmentsRequestSourrce = new DBObjectSet($oSearchRequestService, array(), array('item_id' => $iObjKey));
 	}
 
 	/**
@@ -136,6 +142,21 @@ abstract class AbstractAttachmentsRenderer
 	public function GetAttachmentsSet()
 	{
 		return $this->oAttachmentsSet;
+	}
+// ! this to do this function just get liste to do the counting or any editing 
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsCourrierSet()
+	{
+		$CourrierValidator = false;
+		while ($oIsCourrier = $this->oAttachmentsRequestSourrce->Fetch())
+		{
+			if($oIsCourrier->Get('servicesubcategory_id') == 18) {
+				$CourrierValidator = true;
+			}	
+		}
+		return $CourrierValidator;
 	}
 
 	public function GetAttachmentsCount()
@@ -205,7 +226,7 @@ abstract class AbstractAttachmentsRenderer
 		$this->oPage->AddUiBlock($oAddButton);
 		$this->oPage->add('<span style="display:none;" id="attachment_loading"><img src="../images/indicator.gif"></span> '.$sMaxUploadLabel);
 		$this->oPage->add('</div>');
-		$this->oPage->add('
+/*		$this->oPage->add('
 		<div id="formContainer" style="display: none;">
 		<span style="font-size: 20px; padding: 0px 0px 0px 10px; line-height: 2.5em;">'.$formEditAcc.'</span>
 		<form id="edit-form" method="POST" action="update-data.php">
@@ -228,7 +249,7 @@ abstract class AbstractAttachmentsRenderer
 			</div>
 			</form>
 		</div>');
-
+*/
 		$this->oPage->add('<div class="ibo-attachment--upload-file--drop-zone-hint ibo-svg-illustration--container">');
 		$this->oPage->add(file_get_contents(APPROOT.'images/illustrations/undraw_upload.svg'));
 		$this->oPage->add(Dict::S('UI:Attachments:DropYourFileHint').'</div>');
@@ -440,7 +461,7 @@ JS
 		return <<<JS
 	function DisableAttachment(att_id)
 	{
-		var bDisable = true;
+/*		var bDisable = true;
 		if ($('#display_attachment_'+att_id).hasClass('image-in-use'))
 		{
 			bDisable = window.confirm('This image is used in a description. Disable it anyway?');
@@ -454,9 +475,11 @@ JS
 			//$('#attachment_plugin').trigger('disable_attachment', [att_id]);
 		}
 		closeForm(att_id);
+		*/
 		return false; // Do not submit the form !
 	}
 	function showForm(att_id) {
+		/*
 		//  enable the form to edit the attachment section
             var formContainer = document.getElementById('formContainer');
             formContainer.style.display = 'block';
@@ -473,6 +496,7 @@ JS
 			document.getElementById('numJournal').value = document.getElementById('num_journal_'+att_id+'_row').textContent;
 			document.getElementById('numPiece').value = document.getElementById('num_piece_'+att_id+'_row').textContent;
 			console.log(fieldNumpiece);
+			*/
 	}
 	//closing the form if button clicked
 	function closeForm(att_id) {
@@ -545,6 +569,9 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 {
 	public function AddAttachmentsListContent($bWithDeleteButton, $bWithDisableButton, $aAttachmentsDeleted = array(), $aAttachmentsDisabled = array())
 	{
+		// ^ this function is to call the validator of courrier
+		$CourrierValidator = $this->GetAttachmentsCourrierSet();
+
 		if ($this->GetAttachmentsCount() === 0)
 		{
 			$this->oPage->add(Dict::S('Attachments:NoAttachment'));
@@ -560,11 +587,13 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		$sFileUploader = Dict::S('Attachments:File:Uploader');
 		$sFileType = Dict::S('Attachments:File:MimeType');
 		//^ customization cfac for disable attachment
-		$sFileStatusComp = Dict::S('Attachments:File:status');
-		$sFileTypeAttachment = Dict::S('Attachments:File:type_attachment');
-		$sFileNumJournal = Dict::S('Attachments:File:num_journal');
-		$sFileDateComp = Dict::S('Attachments:File:date_comptabilisation');
-		$sFileNumPiece = Dict::S('Attachments:File:num_piece');
+		if($CourrierValidator){
+			$sFileStatusComp = Dict::S('Attachments:File:status');
+			$sFileTypeAttachment = Dict::S('Attachments:File:type_attachment');
+			$sFileNumJournal = Dict::S('Attachments:File:num_journal');
+			$sFileDateComp = Dict::S('Attachments:File:date_comptabilisation');
+			$sFileNumPiece = Dict::S('Attachments:File:num_piece');
+		}
 		//^ end customization cfac
 
 		if ($bWithDeleteButton)
@@ -573,25 +602,32 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		}
 		
 		//^ customization cfac for disable attachment
-		if ($bWithDisableButton)
+		if ($bWithDisableButton && $CourrierValidator)
 		{
 			$this->oPage->add_script($this->GetDisableAttachmentJs());
 		}
 		//^ end customization cfac
-
-
+		
 		$bIsEven = false;
 		$aAttachmentsDate = AttachmentsHelper::GetAttachmentsDateAddedFromDb($this->sObjClass, $this->iObjKey);
 		$aData = array();
 		while ($oAttachment = $this->oAttachmentsSet->Fetch())
 		{
 			$bIsEven = ($bIsEven) ? false : true;
-			$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled);
+			if($CourrierValidator){
+				$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled);
+			} else {
+				$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton = false, $bIsEven, $oAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled = array());
+			}
 		}
 		while ($oTempAttachment = $this->oTempAttachmentsSet->Fetch())
 		{
 			$bIsEven = ($bIsEven) ? false : true;
-			$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oTempAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled);
+			if($CourrierValidator){
+				$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oTempAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled);
+			} else {
+				$aData[] = $this->AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton = false, $bIsEven, $oTempAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled = array());		
+			}
 		}
 		$aAttribs = array(
 			'icon' => array('label' => $sThumbnail, 'description' => $sThumbnail),
@@ -600,21 +636,31 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 			'upload-date' => array('label' => $sFileDate, 'description' => $sFileDate),
 			'uploader' => array('label' => $sFileUploader, 'description' => $sFileUploader),
 			'type' => array('label' => $sFileType, 'description' => $sFileType),
-			//^ customization cfac for disable attachment
-			'status-comp' => array('label' => $sFileStatusComp, 'description' => $sFileStatusComp),
-			'type-attachment' => array('label' => $sFileTypeAttachment, 'description' => $sFileTypeAttachment),
-			'num-journal' => array('label' => $sFileNumJournal, 'description' => $sFileNumJournal),
-			'date-comptabilisation' => array('label' => $sFileDateComp, 'description' => $sFileDateComp),
-			'num-piece' => array('label' => $sFileNumPiece, 'description' => $sFileNumPiece),
-			//^ end customization cfac
 		);
+		if($CourrierValidator){
+			$aAttribs = array(
+				'icon' => array('label' => $sThumbnail, 'description' => $sThumbnail),
+				'filename' => array('label' => $sFileName, 'description' => $sFileName),
+				'formatted-size' => array('label' => $sFileSize, 'description' => $sFileSize),
+				'upload-date' => array('label' => $sFileDate, 'description' => $sFileDate),
+				'uploader' => array('label' => $sFileUploader, 'description' => $sFileUploader),
+				'type' => array('label' => $sFileType, 'description' => $sFileType),
+				//^ customization cfac for disable attachment
+				'status-comp' => array('label' => $sFileStatusComp, 'description' => $sFileStatusComp),
+				'type-attachment' => array('label' => $sFileTypeAttachment, 'description' => $sFileTypeAttachment),
+				'num-journal' => array('label' => $sFileNumJournal, 'description' => $sFileNumJournal),
+				'date-comptabilisation' => array('label' => $sFileDateComp, 'description' => $sFileDateComp),
+				'num-piece' => array('label' => $sFileNumPiece, 'description' => $sFileNumPiece),
+				//^ end customization cfac
+			);
+		}
 
 		if ($bWithDeleteButton) {
 			$aAttribs['delete'] = array('label' => '', 'description' => '');
 		}
 
 		//^ customization cfac for disable attachment
-		if ($bWithDisableButton) {
+		if ($bWithDisableButton && $CourrierValidator) {
 			$aAttribs['disable'] = array('label' => '', 'description' => '');
 		}
 		//^ end customization cfac
@@ -656,7 +702,11 @@ JS
 	 * @throws \Exception
 	 */
 	private function AddAttachmentsTableLine($bWithDeleteButton, $bWithDisableButton, $bIsEven, $oAttachment, $aAttachmentsDate, $aAttachmentsDeleted, $aAttachmentsDisabled)
-	{
+	{	
+		// ^ this function is to call the validator of courrier
+		$CourrierValidator = $this->GetAttachmentsCourrierSet();
+		
+		
 		$iAttachmentId = $oAttachment->GetKey();
 
 		$bIsDeletedAttachment = false;
@@ -667,7 +717,7 @@ JS
 
 		//^ customization cfac for disable attachment
 		$bIsDisabledAttachment = false;
-		if (in_array($iAttachmentId, $aAttachmentsDisabled, true))
+		if (in_array($iAttachmentId, $aAttachmentsDisabled, true) && $CourrierValidator)
 		{
 			$bIsDisabledAttachment = true;
 		}
@@ -696,35 +746,92 @@ JS
 		}
 
 		//^ customization cfac for disable attachment
+
 		$sStatusComp = $oAttachment->Get('status_comp');
 		if ($sStatusComp==true)
 		{
 			$sStatusBtnLabelValid = Dict::S('Portal:Button:ValidStatut');
-			$sStatusCompCell = '<input id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sStatusBtnLabelValid.'" disabled>';
+			$sStatusCompCell = '<p id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #357a38; width: 104px; height: 40px; border: none; color: white; text-align: center; text-decoration: none; display: inline-block; cursor: pointer; border-radius: 25% 10%;" class="btn btn-xs btn-primary;" disabled>'.$sStatusBtnLabelValid.'</p>';
 		} else {
 			$sStatusBtnLabelNonValid = Dict::S('Portal:Button:NonValidStatut');
-			$sStatusCompCell = '<input id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'" disabled>';
+			$sStatusCompCell = '<p id="status_comp_'.$iAttachmentId.'_row" style="font-size: 9.5px; background-color: #660000; width: 104px; height: 40px; border: none; color: white; text-align: center; text-decoration: none; display: inline-block; cursor: pointer; border-radius: 25% 10%;" class="btn btn-xs btn-primary" disabled>'.$sStatusBtnLabelNonValid.'</p>';
 		}
-
-		// ! To DO the translation and the show of the application and the output
+		
+		// & this section is for displace a select button for document type
 		$sTypeAttachment = $oAttachment->Get('type_attachment');
 		$sTypeAttachmentCompCell = '';
+		$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+		$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+		$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+		$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+		$sTypeBtnLabelUnkown = Dict::S('Portal:Button:TypeUndefined');
+		if (!$bIsDeletedAttachment) {
+			// ! to change this section for showing type doc
+			//$selectButton = '<input id="type_doc_back_portal_" style="font-size: 14px; background-color: ; width: 125px; height: 32px; border: none; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 50% 50%; font-weight: bolder;" type="button" class="btn btn-xs btn-primary;" value="" disabled>';
+			$selectButton = '<p id="type_doc_back_portal_" style="font-size: 14px; background-color: ; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder;" class="btn btn-xs btn-primary;">value=""</p>';
+			if ($sTypeAttachment != null )
+			{
+				if ($sTypeAttachment == "attachment_achat") {
+					// ^ this is showing label of Achat document
+					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
+					$changedSizeingSelect = str_replace('background-color:','background-color: #A7C7E7; color: #0047AB;', $changedSizeingSelect);
+					$changedSelected = str_replace('value=""', $sTypeBtnLabelAchat, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_vente") {
+					// ^ this is showing label of vente document
+					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
+					$changedSizeingSelect = str_replace('background-color:','background-color: #AFE1AF; color: #097969;', $changedSizeingSelect);
+					$changedSelected = str_replace('value=""', $sTypeBtnLabelVente, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_banque") {
+					// ^ this is showing label of banque document
+					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
+					$changedSizeingSelect = str_replace('background-color:','background-color: #FFE5B4; color: #CD7F32;', $changedSizeingSelect);
+					$changedSelected = str_replace('value=""',$sTypeBtnLabelBanque, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_other") {
+					// ^ this is showing label of other document
+					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
+					$changedSizeingSelect = str_replace('background-color:','background-color: #f8baba; color: #A52A2A;', $changedSizeingSelect);
+					$changedSelected = str_replace('value=""',$sTypeBtnLabelOther, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_unkown") {
+					// ^ this is showing label of unkown document
+					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
+					$changedSizeingSelect = str_replace('background-color:','background-color: #d3d3d3; color: #676767;', $changedSizeingSelect);
+					$changedSelected = str_replace('value=""',$sTypeBtnLabelUnkown, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				}
+			}
+		}
 		
-		if ($sTypeAttachment != null )
+		if ($bWithDeleteButton)
 		{
-			if ($sTypeAttachment == "attachment_achat") {
-				$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
-				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelAchat.'</p>';
-			} else if ($sTypeAttachment == "attachment_vente") {
-				$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
-				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelVente.'</p>';
-			} else if ($sTypeAttachment == "attachment_banque") {
-				$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
-				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelBanque.'</p>';
-			} else if ($sTypeAttachment == "attachment_other") {
-				$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
-				echo($sTypeBtnLabelOther);
-				$sTypeAttachmentCompCell = '<p>'.$sTypeBtnLabelOther.'</p>';
+			$selectButton = '<select class="form-select" style="width: 125px; text-align-last:center;" aria-label="Select button for document type"><option value="1" style="text-align: center; background-color: #A7C7E7; color: #0047AB; font-size: 15px;">'.$sTypeBtnLabelAchat.'</option><option value="2" style="text-align: center; background-color: #AFE1AF; color: #097969; font-size: 15px;">'.$sTypeBtnLabelVente.'</option><option value="3" style="text-align: center; background-color: #FFE5B4; color: #CD7F32; font-size: 15px;">'.$sTypeBtnLabelBanque.'</option><option value="4" style="text-align: center; background-color: #f8baba; color: #A52A2A; font-size: 15px;">'.$sTypeBtnLabelOther.'</option><option value="5" style="text-align: center; background-color: #d3d3d3; color: #676767; font-size: 15px;">'.$sTypeBtnLabelUnkown.'</option></select>';
+			$selectedOption = 'selected';
+			if ($sTypeAttachment != null )
+			{
+				if ($sTypeAttachment == "attachment_achat") {
+					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
+					$changedSelected = str_replace('value="1"', 'value="1"' .$selectedOption, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_vente") {
+					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
+					$changedSelected = str_replace('value="2"', 'value="2"' . $selectedOption, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_banque") {
+					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
+					$changedSelected = str_replace('value="3"', 'value="3"' . $selectedOption, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_other") {
+					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
+					$changedSelected = str_replace('value="4"', 'value="4"' . $selectedOption, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				} else if ($sTypeAttachment == "attachment_unkown") {
+					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
+					$changedSelected = str_replace('value="5"', 'value="5"' . $selectedOption, $changedSizeingSelect);
+					$sTypeAttachmentCompCell = $changedSelected;
+				}
 			}
 		}
 
@@ -780,7 +887,6 @@ JS
 			$sPreviewMarkup = utils::HtmlEntities('<img src="'.$sDocDownloadUrl.'" style="max-width: '.$iMaxWidth.'"/>');
 		}
 
-		
 		$aAttachmentLine = array(
 			'@id' => $sTrId,
 			'@meta' => 'data-file-type="'.utils::HtmlEntities($sFileType).'" data-file-size-raw="'.utils::HtmlEntities($iFileSize).'" data-file-size-formatted="'.utils::HtmlEntities($sFileFormattedSize).'" data-file-uploader="'.utils::HtmlEntities($sAttachmentUploader).'"',
@@ -790,15 +896,27 @@ JS
 			'upload-date' => $sAttachmentDateFormatted,
 			'uploader' => $sAttachmentUploaderForHtml,
 			'type' => $sFileType,
-			//^ customization cfac for disable attachment
-			'status-comp' => $sStatusCompCell,
-			'type-attachment' => $sTypeAttachmentCompCell,
-			'num-journal' => $sNumJournalCell,
-			'date-comptabilisation' => $sDateCompCell,
-			'num-piece' => $sNumPieceCompCell,
-			//^ end customization cfac
 			'js' => '',
 		);
+
+			$aAttachmentLine = array(
+				'@id' => $sTrId,
+				'@meta' => 'data-file-type="'.utils::HtmlEntities($sFileType).'" data-file-size-raw="'.utils::HtmlEntities($iFileSize).'" data-file-size-formatted="'.utils::HtmlEntities($sFileFormattedSize).'" data-file-uploader="'.utils::HtmlEntities($sAttachmentUploader).'"',
+				'icon' => '<a href="'.$sDocDownloadUrl.'" target="_blank" class="trigger-preview '.$sIconClass.'"><img class="ibo-attachment--datatable--icon-preview '.$sIconClass.'" data-tooltip-content="'.$sPreviewMarkup.'" data-tooltip-html-enabled="true" src="'.$sAttachmentThumbUrl.'"></a>',
+				'filename' => '<a href="'.$sDocDownloadUrl.'" target="_blank" class="$sIconClass">'.$sFileName.'</a>'.$sAttachmentMeta,
+				'formatted-size' => $sFileFormattedSize,
+				'upload-date' => $sAttachmentDateFormatted,
+				'uploader' => $sAttachmentUploaderForHtml,
+				'type' => $sFileType,
+				//^ customization cfac for disable attachment
+				'status-comp' => $sStatusCompCell,
+				'type-attachment' => $sTypeAttachmentCompCell,
+				'num-journal' => $sNumJournalCell,
+				'date-comptabilisation' => $sDateCompCell,
+				'num-piece' => $sNumPieceCompCell,
+				//^ end customization cfac
+				'js' => '',
+			);
 
 		if ($bIsDeletedAttachment) {
 			$aAttachmentLine['@class'] = 'ibo-is-hidden';
