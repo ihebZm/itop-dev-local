@@ -614,3 +614,54 @@ array (
   'line' => 1638,
   'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
 )
+2023-09-06 15:10:10 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 1) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-06 15:10:17 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 1) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/6?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-06 15:10:29 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 1) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-06 15:10:34 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 1) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-06 18:02:33 | Error   | 2     | Attempted to call an undefined method named "GetUploadEndpointVente" of class "Combodo\iTop\Form\Field\FileUploadField".
+Did you mean to call e.g. "GetUploadEndpoint" or "SetUploadEndpoint"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 579,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-06 18:02:47 | Error   | 2     | Attempted to call an undefined method named "GetUploadEndpointVente" of class "Combodo\iTop\Form\Field\FileUploadField".
+Did you mean to call e.g. "GetUploadEndpoint" or "SetUploadEndpoint"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 579,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-07 12:55:15 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1226,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
