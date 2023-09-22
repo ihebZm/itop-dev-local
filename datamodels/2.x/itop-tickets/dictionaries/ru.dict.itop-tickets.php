@@ -138,6 +138,11 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Ticket:relation'                                               => 'Зависимости',
 	'Ticket:log'                                                    => 'Журнал',
 	'Ticket:Type'                                                   => 'Приоритет',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Поддержка',
 	'Ticket:resolution'                                             => 'Решение',
 	'Ticket:SLA'                                                    => 'Отчёт SLA',

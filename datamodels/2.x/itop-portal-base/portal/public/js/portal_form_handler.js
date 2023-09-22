@@ -443,7 +443,14 @@ $(function()
 			this.element.find('.attachments_container :input[name="removed_attachments[]"]').each(function(iIndex, oElement){
 				aResult.removed_attachments_ids.push($(oElement).val());
 			});
-			
+			// ^ Actual attachments customization CFAC courrier
+			this.element.find('.attachments_container_vente :input[name="attachments[]"]').each(function(iIndex, oElement){
+				aResult.actual_attachments_ids.push($(oElement).val());
+			});
+			// ^ Removed attachments customization CFAC courrier
+			this.element.find('.attachments_container_vente :input[name="removed_attachments[]"]').each(function(iIndex, oElement){
+				aResult.removed_attachments_ids.push($(oElement).val());
+			});
 			return aResult;
 		}
 	});

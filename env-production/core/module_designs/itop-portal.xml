@@ -889,6 +889,44 @@
               </div>
             </fieldset>
           </div>
+          <!-- ^ customization courrier cfac -->
+          <div class="col-sm-4">
+            <fieldset>
+								<legend>{{'Ticket:courrier:Process'|dict_s}}</legend>
+              <div class="col-sm-12">
+                <div class="form_field" data-field-id="type_person" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="numero_start_invoice_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="numero_end_invoice_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="numero_last_month_invoice_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="amount_turnover_vente" data-field-flags="read_only"></div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="col-sm-4">
+            <fieldset>
+                <legend>{{'Ticket:courrier:Check'|dict_s}}</legend>
+              <div class="col-sm-12">
+                <div class="form_field" data-field-id="bank_slip_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="transaction_notice_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="sr_certificates_vente" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="invoice_achat" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="statements_and_documents_banque" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="comment_on_reconciliation_statement_banque" data-field-flags="read_only"></div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-sm-4">
+            <fieldset>
+                <legend>{{'Ticket:courrier:Validation'|dict_s}}</legend>
+              <div class="col-sm-12">
+                <div class="form_field" data-field-id="exceptional_order_courrier" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="month_courrier" data-field-flags="read_only"></div>
+                <div class="form_field" data-field-id="block_client_ur" data-field-flags="read_only"></div>
+              </div>
+            </fieldset>
+          </div>
+          <!-- ^ customization courrier cfac -->
         </div>
         <div>
           <div class="form_field" data-field-id="contacts_list"/>

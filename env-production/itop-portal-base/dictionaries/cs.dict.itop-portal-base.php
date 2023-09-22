@@ -40,11 +40,21 @@ Dict::Add('CS CZ', 'Czech', 'Čeština', array(
 	'Portal:Button:TypeOther' => 'Other',
 	'Portal:Button:TypeUndefined' => 'No Type',
 	//* this section for table attachement title -->
+	'Portal:FieldLabel:CourrierTitle' => 'Accounting Document',
 	'Portal:FieldLabel:TypeAttachmentVente' => 'Sales Documents',
 	'Portal:FieldLabel:TypeAttachmentAchat' => 'Purchase Documents',
 	'Portal:FieldLabel:TypeAttachmentBanque' => 'Bank Documents',
 	'Portal:FieldLabel:TypeAttachmentOther' => 'Other Documents',
 	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Unknown Documents',
+	//* this section is reserved to show the message of payment
+	'Portal:FieldLabel:1MessageBlock' => 'Thank you for your trust in our file system management service.',
+	'Portal:FieldLabel:2MessageBlock' => 'Your access to the application is ready to be activated, but for this we need to settle the payment associated with your subscription.',
+	'Portal:FieldLabel:3MessageBlock' => 'Please make payment as soon as possible to activate your in-app service.',
+	'Portal:FieldLabel:4MessageBlock' => 'Once payment is confirmed, you will be able to take full advantage of all the features of our file system management service.',
+	'Portal:FieldLabel:5MessageBlock' => 'If you have any questions or need help making payment,',
+	'Portal:FieldLabel:6MessageBlock' => 'do not hesitate to contact us at \'<Strong>direction@cfac.com.tn</Strong>\' or at <Strong>55 555 555</Strong>',
+	'Portal:FieldLabel:7MessageBlock' => 'We thank you for your cooperation and look forward to providing you with an exceptional experience with our file system management application.',
+	'Portal:FieldLabel:8MessageBlock' => 'Sincerely.',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'You are currently in <strong>%1$s</strong> mode~~',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Go back to PRODUCTION mode~~',

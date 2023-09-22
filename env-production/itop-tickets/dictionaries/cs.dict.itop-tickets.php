@@ -162,6 +162,11 @@ Dict::Add('CS CZ', 'Czech', 'Čeština', array(
 	'Ticket:relation'                                               => 'Vztahy',
 	'Ticket:log'                                                    => 'Komunikace',
 	'Ticket:Type'                                                   => 'Kvalifikace',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Podpora',
 	'Ticket:resolution'                                             => 'Řešení',
 	'Ticket:SLA'                                                    => 'SLA zpráva',

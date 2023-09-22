@@ -165,6 +165,11 @@ Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
 	'Ticket:relation'                                               => 'Relaties',
 	'Ticket:log'                                                    => 'Communicatie',
 	'Ticket:Type'                                                   => 'Kwalificaties',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Support',
 	'Ticket:resolution'                                             => 'Oplossing',
 	'Ticket:SLA'                                                    => 'Rapportage SLA',

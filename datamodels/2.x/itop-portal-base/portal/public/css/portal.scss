@@ -1570,6 +1570,35 @@ table .group-actions .item-action-wrapper .panel-body > p:last-child{
 		}
 	}
 }
+
+/* //^ FileUpload  customization courrier vente CFAC GROUP */
+.attachments_container_vente {
+	.attachments-list {
+		thead > tr > th {
+			text-align: center;
+		}
+
+		tbody > tr > td {
+			padding: 0.5rem 8px;
+			text-align: left;
+			vertical-align: middle;
+
+			&[role="icon"] {
+				text-align: center;
+
+				img{
+					max-height: 32px;
+				}
+			}
+			&[role="formatted-size"] {
+				text-align: right;
+			}
+			&[role="delete"] {
+				text-align: center;
+			}
+		}
+	}
+}
 .attachment-tooltip {
 		max-width: 100%;
 		max-height: 100%;

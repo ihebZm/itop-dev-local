@@ -159,6 +159,11 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
 	'Ticket:relation'                                               => 'Vzťahy',
 	'Ticket:log'                                                    => 'Komunikácie',
 	'Ticket:Type'                                                   => 'Kvalifikácia',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Podpora',
 	'Ticket:resolution'                                             => 'Riešenie',
 	'Ticket:SLA'                                                    => 'SLA report',

@@ -40,11 +40,21 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Portal:Button:TypeOther' => 'Autre',
 	'Portal:Button:TypeUndefined' => 'Pas De Type',
 	//* this section for table attachement title -->
+	'Portal:FieldLabel:CourrierTitle' => 'Document Comptable',
 	'Portal:FieldLabel:TypeAttachmentVente' => 'Documents de Vente',
 	'Portal:FieldLabel:TypeAttachmentAchat' => 'Documents d\'achat',
 	'Portal:FieldLabel:TypeAttachmentBanque' => 'Documents de Banque',
 	'Portal:FieldLabel:TypeAttachmentOther' => 'Autre Documents',
 	'Portal:FieldLabel:TypeAttachmentUnknown' => 'Documents inconnus',
+	//* this section is reserved to show the message of payment
+	'Portal:FieldLabel:1MessageBlock' => 'Nous vous remercions de votre confiance envers notre service de gestion de système de fichiers.',
+	'Portal:FieldLabel:2MessageBlock' => 'Votre accès à l\'application est prêt à être activé, mais pour cela, nous avons besoin de régler le paiement associé à votre abonnement.',
+	'Portal:FieldLabel:3MessageBlock' => 'Veuillez effectuer le paiement dès que possible pour activer vos service à l\'application. ',
+	'Portal:FieldLabel:4MessageBlock' => 'Une fois le paiement confirmé, vous pourrez profiter pleinement de toutes les fonctionnalités de notre service de gestion de système de fichiers.',
+	'Portal:FieldLabel:5MessageBlock' => 'Si vous avez des questions ou avez besoin d\'aide pour effectuer le paiement, ',
+	'Portal:FieldLabel:6MessageBlock' => 'n\'hésitez pas à nous contacter à l\'adresse \'<Strong>direction@cfac.com.tn</Strong>\' ou au <Strong>55 555 555</Strong>.',
+	'Portal:FieldLabel:7MessageBlock' => 'Nous vous remercions de votre coopération et nous sommes impatients de vous offrir une expérience exceptionnelle avec notre application de gestion de système de fichiers.',
+	'Portal:FieldLabel:8MessageBlock' => 'Cordialement.',
 	// ^ customization cfac for disable attachement
 	'Portal:EnvironmentBanner:Title' => 'Vous êtes dans le mode <strong>%1$s</strong>',
 	'Portal:EnvironmentBanner:GoToProduction' => 'Retourner au mode PRODUCTION',

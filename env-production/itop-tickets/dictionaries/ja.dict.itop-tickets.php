@@ -146,6 +146,11 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Ticket:relation'                                               => '関係',
 	'Ticket:log'                                                    => 'コミュニケーション',
 	'Ticket:Type'                                                   => '条件',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'サポート',
 	'Ticket:resolution'                                             => '解決',
 	'Ticket:SLA'                                                    => 'SLA レポート',

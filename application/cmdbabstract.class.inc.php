@@ -3729,7 +3729,7 @@ HTML;
 				switch ($oDoc->GetMimeType())
 				{
 					case 'application/pdf':
-						$oPage->add("<iframe id='preview_$sAttCode' src=\"$sDisplayUrl\" width=\"100%\" height=\"400\">Loading...</iframe>\n");
+						$oPage->add("<iframe id='preview_$sAttCode' src=\"$sDisplayUrl\" width=\"100%\" height=\"1100\">Loading...</iframe>\n");
 						break;
 
 					default:

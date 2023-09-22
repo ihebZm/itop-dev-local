@@ -76,7 +76,35 @@ class UserRequest extends Ticket
 		MetaModel::Init_AddAttribute(new AttributeEnum("user_satisfaction", array("allowed_values"=>new ValueSetEnum("1,2,3,4"), "display_style"=>'list', "sql"=>'user_satisfaction', "default_value"=>'1', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeText("user_comment", array("allowed_values"=>null, "sql"=>'user_commment', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeCustomFields("service_details", array("handler_class"=>'RequestTemplateFieldsHandler', "always_load_in_tables"=>false)));
+		
+		// ^ start here castomization courrier Cfac
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("type_person", array("allowed_values"=>new ValueSetEnum("moral_person,physical_person"), "display_style"=>'list', "sql"=>'type_person', "default_value"=>'moral_person', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the integer value model.customer-survey
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_start_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_start_invoice_vente', "default_value"=>'0', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_end_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_end_invoice_vente', "default_value"=>'0', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_last_month_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_last_month_invoice_vente', "default_value"=>'0', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeDecimal("amount_turnover_vente", array("allowed_values"=>null, "sql"=>'amount_turnover_vente', "default_value"=>'0', "is_null_allowed"=>true, "depends_on"=>array(), "digits"=>5, "decimals"=>3, "always_load_in_tables"=>false)));
 
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("bank_slip_vente", array("allowed_values"=>new ValueSetEnum("yes,no"), "display_style"=>'list', "sql"=>'bank_slip_vente', "default_value"=>'no', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("transaction_notice_vente", array("allowed_values"=>new ValueSetEnum("yes,no"), "display_style"=>'list', "sql"=>'transaction_notice_vente', "default_value"=>'no', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("sr_certificates_vente", array("allowed_values"=>new ValueSetEnum("yes,no"), "display_style"=>'list', "sql"=>'sr_certificates_vente', "default_value"=>'no', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("invoice_achat", array("allowed_values"=>new ValueSetEnum("with_stamp,payment_choice"), "display_style"=>'list', "sql"=>'invoice_achat', "default_value"=>'with_stamp', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("statements_and_documents_banque", array("allowed_values"=>new ValueSetEnum("yes,no"), "display_style"=>'list', "sql"=>'statements_and_documents_banque', "default_value"=>'no', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the escalation_reason
+		MetaModel::Init_AddAttribute(new AttributeText("comment_on_reconciliation_statement_banque", array("allowed_values"=>null, "sql"=>'comment_on_reconciliation_statement_banque', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("exceptional_order_courrier", array("allowed_values"=>new ValueSetEnum("yes,no"), "display_style"=>'list', "sql"=>'exceptional_order_courrier', "default_value"=>'no', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("month_courrier", array("allowed_values"=>new ValueSetEnum("1,2,3,4,5,6,7,8,9,10,11,12"), "display_style"=>'list', "sql"=>'month_courrier', "default_value"=>'1', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("block_client_ur", array("allowed_values"=>new ValueSetEnum("1,2"), "display_style"=>'list', "sql"=>'block_client_ur', "default_value"=>'2', "is_null_allowed"=>false, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		// ^ start here castomization courrier Cfac
 		// Lifecycle (status attribute: status)
 		//
 		MetaModel::Init_DefineStimulus(new StimulusUserAction("ev_assign", array()));
@@ -388,6 +416,21 @@ class UserRequest extends Ticket
 					'sla_ttr_passed' => OPT_ATT_READONLY,
 					'ttr_escalation_deadline' => OPT_ATT_HIDDEN,
 					'sla_ttr_over' => OPT_ATT_READONLY,
+					//^ customization courrier cfac 
+					'type_person' => OPT_ATT_READONLY,
+					'numero_start_invoice_vente' => OPT_ATT_READONLY,
+					'numero_end_invoice_vente' => OPT_ATT_READONLY,
+					'numero_last_month_invoice_vente' => OPT_ATT_READONLY,
+					'amount_turnover_vente' => OPT_ATT_READONLY,
+					'bank_slip_vente' => OPT_ATT_READONLY,
+					'transaction_notice_vente' => OPT_ATT_READONLY,
+					'sr_certificates_vente' => OPT_ATT_READONLY,
+					'invoice_achat' => OPT_ATT_READONLY,
+					'statements_and_documents_banque' => OPT_ATT_READONLY,
+					'comment_on_reconciliation_statement_banque' => OPT_ATT_READONLY,
+					'exceptional_order_courrier' => OPT_ATT_READONLY,
+					'month_courrier' => OPT_ATT_READONLY,
+					'block_client_ur' => OPT_ATT_READONLY,
 				),
 			)
 		);
@@ -467,6 +510,15 @@ class UserRequest extends Ticket
       4 => 'escalation_reason',
       5 => 'pending_reason',
     ),
+	// ^ customization courrier cfac
+	'fieldset:Ticket:courrier:Process' => 
+	array (
+		0 => 'type_person',
+		1 => 'numero_start_invoice_vente',
+		2 => 'numero_end_invoice_vente',
+		3 => 'numero_last_month_invoice_vente',
+		4 => 'amount_turnover_vente',
+	),
   ),
   'col:col2' => 
   array (
@@ -493,6 +545,17 @@ class UserRequest extends Ticket
       6 => 'resolution_date',
       7 => 'close_date',
     ),
+	// ^ customization courrier cfac
+	'fieldset:Ticket:courrier:Check' => 
+	array (
+		0 => 'bank_slip_vente',
+		1 => 'transaction_notice_vente',
+		2 => 'sr_certificates_vente',
+		3 => 'invoice_achat',
+		4 => 'statements_and_documents_banque',
+		5 => 'comment_on_reconciliation_statement_banque',
+	),
+	// ^ customization courrier cfac
   ),
   'col:col3' => 
   array (
@@ -518,6 +581,14 @@ class UserRequest extends Ticket
       2 => 'sla_ttr_passed',
       3 => 'sla_ttr_over',
     ),
+	// ^ customization courrier cfac
+	'fieldset:Ticket:courrier:Validation' => 
+	array (
+		0 => 'exceptional_order_courrier',
+		1 => 'month_courrier',
+		2 => 'block_client_ur',
+	),
+	// ^ customization courrier cfac
   ),
   4 => 'public_log',
   5 => 'private_log',
@@ -547,6 +618,22 @@ class UserRequest extends Ticket
   21 => 'user_satisfaction',
   22 => 'sla_tto_passed',
   23 => 'sla_ttr_passed',
+  //^ customization courrier cfac
+  24 => 'type_person',
+  25 => 'numero_start_invoice_vente',
+  26 => 'numero_end_invoice_vente',
+  27 => 'numero_last_month_invoice_vente',
+  28 => 'amount_turnover_vente',
+  29 => 'bank_slip_vente',
+  30 => 'transaction_notice_vente',
+  31 => 'sr_certificates_vente',
+  32 => 'invoice_achat',
+  33 => 'statements_and_documents_banque',
+  34 => 'comment_on_reconciliation_statement_banque',
+  35 => 'exceptional_order_courrier',
+  36 => 'month_courrier',
+  37 => 'block_client_ur',
+  //^ customization courrier cfac 
 ));
 		MetaModel::Init_SetZListItems('list', array (
   0 => 'title',

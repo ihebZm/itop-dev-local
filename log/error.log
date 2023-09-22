@@ -665,3 +665,552 @@ array (
   'line' => 1226,
   'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
 )
+2023-09-08 17:00:12 | Error   | 2     | Call to a member function Count() on null | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1608,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-11 09:35:20 | Error   |       | Uncaught MySQLException: Could not connect to the DB server: host = localhost, user = root, mysql_errno = 2002, mysql_error = Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+ in C:\xampp\htdocs\iTop-develop\web\core\cmdbsource.class.inc.php:185
+ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\cmdbsource.class.inc.php',
+  'line' => 185,
+)
+2023-09-11 18:09:47 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 447,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-11 18:10:07 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 447,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-11 18:11:03 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 447,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 09:43:49 | Error   |       | #0 C:\xampp\htdocs\iTop-develop\web\sources\application\WebPage\WebPage.php(1337): Combodo\iTop\Application\TwigBase\Twig\TwigHelper::RenderTemplate(Object(Twig\Environment), Array, 'pages/backoffic...')
+#1 C:\xampp\htdocs\iTop-develop\web\application\loginform.class.inc.php(50): WebPage->output()
+#2 C:\xampp\htdocs\iTop-develop\web\application\applicationextension.inc.php(91): LoginForm->OnReadCredentials(0)
+#3 C:\xampp\htdocs\iTop-develop\web\application\loginwebpage.class.inc.php(483): AbstractLoginFSMExtension->LoginAction('read credential...', 0)
+#4 C:\xampp\htdocs\iTop-develop\web\application\loginwebpage.class.inc.php(1010): LoginWebPage::Login(0)
+#5 C:\xampp\htdocs\iTop-develop\web\application\loginwebpage.class.inc.php(990): LoginWebPage::DoLoginEx('backoffice', false, 0)
+#6 C:\xampp\htdocs\iTop-develop\web\pages\UI.php(312): LoginWebPage::DoLogin()
+#7 {main} | IssueLog |||
+2023-09-12 11:40:08 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 483,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:40:24 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 480,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:41:04 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 483,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:41:14 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 483,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:41:24 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 480,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:47:15 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 473,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 11:47:37 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 473,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 12:39:04 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 456,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 12:39:54 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 456,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 12:41:04 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 477,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 13:25:52 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 440,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 13:28:49 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 459,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-12 14:43:43 | Error   | 2     | Valeur de l'attribut incorrecte 'Type PiÃ¨ce Jointe' (type_attachment) : Null not allowed: issues = {0=>Valeur de l'attribut incorrecte 'Type PiÃ¨ce Jointe' (type_attachment) : Null not allowed}, class = Attachment, id =  | CoreCannotSaveObjectException |||
+array (
+  'exception class' => 'CoreCannotSaveObjectException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobject.class.php',
+  'line' => 2812,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-19 14:17:49 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:18:30 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:18:31 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:18:33 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:18:34 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:18:39 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:20:17 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:20:18 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:20:20 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:22:31 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:22:46 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:22:49 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-19 14:22:54 | Error   |       | Uncaught Exception: ERROR missing parameter 'digits' in AttributeDecimal declaration for class AttributeDecimal (C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php - 2824) in C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php:281
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(213): AttributeDefinition->ConsistencyCheck()
+#1 C:\xampp\htdocs\iTop-develop\web\core\attributedef.class.inc.php(2824): AttributeDefinition->__construct('amount_turnover...', Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(88): AttributeDecimal->__construct('amount_turnover...', Array)
+#3 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(3066): UserRequest::Init()
+#4 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6679): MetaModel::InitClasses('')
+#5 C:\xampp\htdocs\iTop-develop\web\core\metamodel.class.php(6529): MetaModel::LoadConfig(Object(Config), true)
+#6 C:\xampp\htdocs\iTop-develop\web\ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\attributedef.class.inc.php',
+  'line' => 281,
+)
+2023-09-20 11:00:34 | Error   | 2     | Call to a member function GetHtml() on null | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\FormRenderer.php',
+  'line' => 254,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 11:01:27 | Error   | 2     | Call to a member function GetHtml() on null | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\FormRenderer.php',
+  'line' => 254,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 11:04:20 | Error   | 2     | Parse error: syntax error, unexpected 'else' (T_ELSE) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1980,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 11:08:01 | Error   | 2     | Attempted to call function "alert" from namespace "Combodo\iTop\Renderer\Bootstrap\FieldRenderer". | Symfony\Component\Debug\Exception\UndefinedFunctionException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedFunctionException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1980,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 11:21:31 | Error   | 2     | Call to a member function Get() on int | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 131,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 11:21:47 | Error   | 2     | Unknown attribute email from class UserRequest | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:06:34 | Error   | 2     | Parse error: syntax error, unexpected '$oOutput' (T_VARIABLE) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1987,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:11:05 | Error   | 2     | Unexpected input at line 1: : | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\oql\\oql-lexer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:11:26 | Error   | 2     | Unexpected input at line 1: : | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\oql\\oql-lexer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:20:07 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1984,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:20:32 | Error   | 2     | Unexpected token DOT - found '.' at 13 in 'SELECT Person.id WHERE id = :current_contact_id' | OQLParserSyntaxErrorException |||
+array (
+  'exception class' => 'OQLParserSyntaxErrorException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\oql\\oql-parser.php',
+  'line' => 1783,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:20:43 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1984,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:23:39 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1984,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:51:42 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1985,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:54:02 | Error   | 2     | Call to a member function Fetch() on null | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1985,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 12:54:44 | Error   | 2     | Call to a member function Fetch() on null | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1987,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 13:05:20 | Error   | 2     | Parse error: syntax error, unexpected 'private' (T_PRIVATE) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1982,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 13:14:56 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1985,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 13:15:13 | Error   | 2     | Attempted to call an undefined method named "Get" of class "DBObjectSearch".
+Did you mean to call e.g. "GetArchiveMode", "GetClass", "GetClassAlias", "GetClassName", "GetCriteria", "GetCriteria_FullText", "GetCriteria_PointingTo", "GetCriteria_ReferencedBy", "GetExpectedArguments", "GetFirstJoinedClass", "GetFirstJoinedClassAlias", "GetFirstResult", "GetInternalParams", "GetInternalParamsByRef", "GetJoinedClasses", "GetModifierProperties", "GetPolymorphicExpression", "GetQueryParams", "GetSQLQueryStructure", "GetSelectedClasses" or "GetShowObsoleteData"? | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1985,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 13:39:36 | Error   | 2     | Unexpected input at line 1: : | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\oql\\oql-lexer.php',
+  'line' => 200,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 13:43:28 | Error   | 2     | Parse error: syntax error, unexpected 'class' (T_CLASS), expecting ')' | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1985,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/10?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 17:35:07 | Error   | 2     | Call to a member function Count() on string | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 136,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:26:22 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/4/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiI0In19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:28:06 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:28:10 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/15/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjIiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNSJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:28:22 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/15/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjIiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNSJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:28:26 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/15/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjIiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNSJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:31:32 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/4/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiI0In19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:33:21 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/4/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiI0In19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-20 18:35:06 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/3/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIzIn19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-22 09:51:12 | Error   | 1     | Erreur: Twig Exception when rendering 'templates/base/components/fieldset/layout.html.twig (5) - ' : Unknown "str_contains" function.. | IssueLog |||
+2023-09-22 09:57:29 | Error   | 1     | Erreur: Twig Exception when rendering 'templates/base/components/fieldset/layout.html.twig (6) - ' : Unknown "print_r" function.. | IssueLog |||
+2023-09-22 14:00:00 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/4/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiI0In19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-09-22 14:23:28 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/3/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjMiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIzIn19&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)

@@ -146,6 +146,11 @@ Dict::Add('HU HU', 'Hungarian', 'Magyar', array(
 	'Ticket:relation'                                               => 'Kapcsolatok',
 	'Ticket:log'                                                    => 'Kommunikáció',
 	'Ticket:Type'                                                   => 'Qualification~~',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination~~',
+	'Ticket:courrier:Check'                                         => 'Courrier check~~',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation~~',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Support~~',
 	'Ticket:resolution'                                             => 'Resolution~~',
 	'Ticket:SLA'                                                    => 'SLA report~~',

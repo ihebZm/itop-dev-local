@@ -160,6 +160,11 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Ticket:relation'                                               => 'Relações',
 	'Ticket:log'                                                    => 'Comunicação',
 	'Ticket:Type'                                                   => 'Qualificação',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Suporte',
 	'Ticket:resolution'                                             => 'Resolução',
 	'Ticket:SLA'                                                    => 'Relatório SLA',

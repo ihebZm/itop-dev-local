@@ -203,6 +203,182 @@
 					<default_value>4</default_value>
 					<is_null_allowed>false</is_null_allowed>
 				</field>
+				<!-- ^ customization courrier cfac -->
+				<field id="type_person" xsi:type="AttributeEnum">
+					<values>
+						<value id="moral_person">
+							<code>moral_person</code>
+						</value>
+						<value id="physical_person">
+							<code>physical_person</code>
+						</value>
+					</values>
+					<sql>type_person</sql>
+					<default_value>moral_person</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="numero_start_invoice_vente" xsi:type="AttributeInteger">
+					<sql>numero_start_invoice_vente</sql>
+                    <default_value>0</default_value>
+                    <is_null_allowed>true</is_null_allowed>
+				</field>
+				<field id="numero_end_invoice_vente" xsi:type="AttributeInteger">
+					<sql>numero_end_invoice_vente</sql>
+                    <default_value>0</default_value>
+                    <is_null_allowed>true</is_null_allowed>
+				</field>
+				<field id="numero_last_month_invoice_vente" xsi:type="AttributeInteger">
+					<sql>numero_last_month_invoice_vente</sql>
+                    <default_value>0</default_value>
+                    <is_null_allowed>true</is_null_allowed>
+				</field>
+				<field id="amount_turnover_vente" xsi:type="AttributeDecimal">
+					<sql>amount_turnover_vente</sql>
+                    <default_value>0</default_value>
+                    <is_null_allowed>true</is_null_allowed>
+					<digits>5</digits>
+					<decimals>3</decimals>
+				</field>
+				<field id="comment_on_reconciliation_statement_banque" xsi:type="AttributeText">
+					<sql>comment_on_reconciliation_statement_banque</sql>
+					<default_value/>
+					<is_null_allowed>true</is_null_allowed>
+				</field>
+				<field id="bank_slip_vente" xsi:type="AttributeEnum">
+					<values>
+						<value id="yes">
+							<code>yes</code>
+						</value>
+						<value id="no">
+							<code>no</code>
+						</value>
+					</values>
+					<sql>bank_slip_vente</sql>
+					<default_value>no</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="transaction_notice_vente" xsi:type="AttributeEnum">
+					<values>
+						<value id="yes">
+							<code>yes</code>
+						</value>
+						<value id="no">
+							<code>no</code>
+						</value>
+					</values>
+					<sql>transaction_notice_vente</sql>
+					<default_value>no</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="sr_certificates_vente" xsi:type="AttributeEnum">
+					<values>
+						<value id="yes">
+							<code>yes</code>
+						</value>
+						<value id="no">
+							<code>no</code>
+						</value>
+					</values>
+					<sql>sr_certificates_vente</sql>
+					<default_value>no</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="invoice_achat" xsi:type="AttributeEnum">
+					<values>
+						<value id="with_stamp">
+							<code>with_stamp</code>
+						</value>
+						<value id="payment_choice">
+							<code>payment_choice</code>
+						</value>
+					</values>
+					<sql>invoice_achat</sql>
+					<default_value>with_stamp</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="statements_and_documents_banque" xsi:type="AttributeEnum">
+					<values>
+						<value id="yes">
+							<code>yes</code>
+						</value>
+						<value id="no">
+							<code>no</code>
+						</value>
+					</values>
+					<sql>statements_and_documents_banque</sql>
+					<default_value>no</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="exceptional_order_courrier" xsi:type="AttributeEnum">
+					<values>
+						<value id="yes">
+							<code>yes</code>
+						</value>
+						<value id="no">
+							<code>no</code>
+						</value>
+					</values>
+					<sql>exceptional_order_courrier</sql>
+					<default_value>no</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="month_courrier" xsi:type="AttributeEnum">
+					<values>
+						<value id="1">
+							<code>1</code>
+						</value>
+						<value id="2">
+							<code>2</code>
+						</value>
+						<value id="3">
+							<code>3</code>
+						</value>
+						<value id="4">
+							<code>4</code>
+						</value>
+						<value id="5">
+							<code>5</code>
+						</value>
+						<value id="6">
+							<code>6</code>
+						</value>
+						<value id="7">
+							<code>7</code>
+						</value>
+						<value id="8">
+							<code>8</code>
+						</value>
+						<value id="9">
+							<code>9</code>
+						</value>
+						<value id="10">
+							<code>10</code>
+						</value>
+						<value id="11">
+							<code>11</code>
+						</value>
+						<value id="12">
+							<code>12</code>
+						</value>
+					</values>
+					<sql>month_courrier</sql>
+					<default_value>1</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<field id="block_client_ur" xsi:type="AttributeEnum">
+					<values>
+						<value id="1">
+							<code>1</code>
+						</value>
+						<value id="2">
+							<code>2</code>
+						</value>
+					</values>
+					<sql>block_client_ur</sql>
+					<default_value>1</default_value>
+					<is_null_allowed>false</is_null_allowed>
+				</field>
+				<!-- ^ customization courrier cfac -->
 				<field id="origin" xsi:type="AttributeEnum">
 					<values>
 						<value id="mail">
@@ -1105,6 +1281,50 @@
 							<attribute id="sla_ttr_over">
 								<read_only/>
 							</attribute>
+							<!-- ^ customization courrier cfac -->
+							<attribute id="type_person">
+								<read_only/>
+							</attribute>
+							<attribute id="numero_start_invoice_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="numero_end_invoice_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="numero_last_month_invoice_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="amount_turnover_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="bank_slip_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="transaction_notice_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="sr_certificates_vente">
+								<read_only/>
+							</attribute>
+							<attribute id="invoice_achat">
+								<read_only/>
+							</attribute>
+							<attribute id="statements_and_documents_banque">
+								<read_only/>
+							</attribute>
+							<attribute id="comment_on_reconciliation_statement_banque">
+								<read_only/>
+							</attribute>
+							<attribute id="exceptional_order_courrier">
+								<read_only/>
+							</attribute>
+							<attribute id="month_courrier">
+								<read_only/>
+							</attribute>
+							<attribute id="block_client_ur">
+								<read_only/>
+							</attribute>
+							<!-- ^ customization courrier cfac -->
 						</flags>
 						<transitions>
 							<transition id="ev_close">
@@ -1628,6 +1848,26 @@
 										</item>
 									</items>
 								</item>
+								<item id="fieldset:Ticket:courrier:Process">
+									<rank>30</rank>
+									<items>
+										<item id="type_person">
+											<rank>10</rank>
+										</item>
+										<item id="numero_start_invoice_vente">
+											<rank>20</rank>
+										</item>
+										<item id="numero_end_invoice_vente">
+											<rank>30</rank>
+										</item>
+										<item id="numero_last_month_invoice_vente">
+											<rank>40</rank>
+										</item>
+										<item id="amount_turnover_vente">
+											<rank>50</rank>
+										</item>
+									</items>
+								</item>
 							</items>
 						</item>
 						<item id="col:col2">
@@ -1693,6 +1933,31 @@
 										</item>
 									</items>
 								</item>
+								<!-- ^ customization courrier cfac -->
+								<item id="fieldset:Ticket:courrier:Check">
+									<rank>40</rank>
+									<items>
+										<item id="bank_slip_vente">
+											<rank>10</rank>
+										</item>
+										<item id="transaction_notice_vente">
+											<rank>20</rank>
+										</item>
+										<item id="sr_certificates_vente">
+											<rank>30</rank>
+										</item>
+										<item id="invoice_achat">
+											<rank>40</rank>
+										</item>
+										<item id="statements_and_documents_banque">
+											<rank>50</rank>
+										</item>
+										<item id="comment_on_reconciliation_statement_banque">
+											<rank>60</rank>
+										</item>
+									</items>
+								</item>
+								<!-- ^ customization end here-->  
 							</items>
 						</item>
 						<item id="col:col3">
@@ -1744,16 +2009,32 @@
 										<item id="sla_tto_over">
 											<rank>20</rank>
 										</item>
-                    <item id="sla_ttr_passed">
-                      <rank>30</rank>
-                    </item>
-                    <item id="sla_ttr_over">
-                      <rank>40</rank>
-                    </item>
-                  </items>
-                </item>
-              </items>
-            </item>
+										<item id="sla_ttr_passed">
+											<rank>30</rank>
+										</item>
+										<item id="sla_ttr_over">
+											<rank>40</rank>
+										</item>
+                  					</items>
+                				</item>
+								<!-- ^ customization start here-->  
+								<item id="fieldset:Ticket:courrier:Validation">
+									<rank>40</rank>
+									<items>
+										<item id="exceptional_order_courrier">
+											<rank>10</rank>
+										</item>
+										<item id="month_courrier">
+											<rank>20</rank>
+										</item>
+										<item id="block_client_ur">
+											<rank>30</rank>
+										</item>
+                  					</items>
+                				</item>
+								<!-- ^ customization end here-->  
+              				</items>
+            			</item>
             <item id="public_log">
               <rank>100</rank>
             </item>
@@ -1836,6 +2117,50 @@
 						<item id="sla_ttr_passed">
 							<rank>240</rank>
 						</item>
+						<!-- ^ customization courrier cfac -->
+						<item id="type_person">
+							<rank>250</rank>
+						</item>
+						<item id="numero_start_invoice_vente">
+							<rank>260</rank>
+						</item>
+						<item id="numero_end_invoice_vente">
+							<rank>270</rank>
+						</item>
+						<item id="numero_last_month_invoice_vente">
+							<rank>280</rank>
+						</item>
+						<item id="amount_turnover_vente">
+							<rank>290</rank>
+						</item>
+						<item id="bank_slip_vente">
+							<rank>300</rank>
+						</item>
+						<item id="transaction_notice_vente">
+							<rank>310</rank>
+						</item>
+						<item id="sr_certificates_vente">
+							<rank>320</rank>
+						</item>
+						<item id="invoice_achat">
+							<rank>330</rank>
+						</item>
+						<item id="statements_and_documents_banque">
+							<rank>340</rank>
+						</item>
+						<item id="comment_on_reconciliation_statement_banque">
+							<rank>350</rank>
+						</item>
+						<item id="exceptional_order_courrier">
+							<rank>360</rank>
+						</item>
+						<item id="month_courrier">
+							<rank>370</rank>
+						</item>
+						<item id="block_client_ur">
+							<rank>380</rank>
+						</item>
+						<!-- ^ customization courrier cfac -->
 					</items>
 				</search>
 				<list>

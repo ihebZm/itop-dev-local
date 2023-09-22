@@ -159,6 +159,11 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Ticket:relation'                                               => '相关信息',
 	'Ticket:log'                                                    => '日志',
 	'Ticket:Type'                                                   => '风险评估',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => '支持信息',
 	'Ticket:resolution'                                             => '解决方案',
 	'Ticket:SLA'                                                    => 'SLA 报告',

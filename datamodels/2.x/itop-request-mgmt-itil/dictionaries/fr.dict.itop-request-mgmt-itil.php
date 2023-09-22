@@ -110,6 +110,121 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:UserRequest/Attribute:urgency/Value:3+' => 'moyenne',
 	'Class:UserRequest/Attribute:urgency/Value:4' => 'basse',
 	'Class:UserRequest/Attribute:urgency/Value:4+' => 'basse',
+	// ^ Start Here customization des courrier
+
+	// add attribute type person vente -->
+	'Class:UserRequest/Attribute:type_person' => 'Type de personne',
+	'Class:UserRequest/Attribute:type_person+' => '',
+	'Class:UserRequest/Attribute:type_personne/Value:physical_person' => 'Personne physique',
+	'Class:UserRequest/Attribute:type_personne/Value:physical_person+' => '',
+	'Class:UserRequest/Attribute:type_personne/Value:moral_person' => 'Personne morale',
+	'Class:UserRequest/Attribute:type_personne/Value:moral_person+' => '',
+   
+	// add attribute numero first invoice vente -->
+	'Class:UserRequest/Attribute:numero_start_invoice_vente' => 'Numéro de départ de la facture de vente',
+	'Class:UserRequest/Attribute:numero_start_invoice_vente+' => '',
+
+	//add attribute numero last invoice vente -->
+	'Class:UserRequest/Attribute:numero_end_invoice_vente' => 'Numéro de finition de la facture de vente',
+	'Class:UserRequest/Attribute:numero_end_invoice_vente+' => '',
+	
+	// add attribute numero last month vente -->
+	'Class:UserRequest/Attribute:numero_last_month_invoice_vente' => 'Numéro de facture de vente du mois dernier',
+	'Class:UserRequest/Attribute:numero_last_month_invoice_vente+' => '',
+	
+	//add attribute chiffre d'affaires vente -->
+	'Class:UserRequest/Attribute:amount_turnover_vente' => 'Montant du chiffre d\'affaires',
+	'Class:UserRequest/Attribute:amount_turnover_vente+' => '',
+	
+	// add attribute bordereau bancaire vente -->
+	'Class:UserRequest/Attribute:bank_slip_vente' => 'Bordereau de vente bancaire',
+	'Class:UserRequest/Attribute:bank_slip_vente+' => '',
+	'Class:UserRequest/Attribute:bank_slip_vente/Value:yes' =>'Oui',
+	'Class:UserRequest/Attribute:bank_slip_vente/Value:yes+' => '',
+	'Class:UserRequest/Attribute:bank_slip_vente/Value:no' => 'Non',
+	'Class:UserRequest/Attribute:bank_slip_vente/Value:no+' => '',
+	
+	// add attribute avis d'opérations vente -->
+	'Class:UserRequest/Attribute:transaction_notice_vente' => 'Avis d\'opération de vente',
+	'Class:UserRequest/Attribute:transaction_notice_vente+' => '',
+	'Class:UserRequest/Attribute:transaction_notice_vente/Value:yes' => 'Oui',
+	'Class:UserRequest/Attribute:transaction_notice_vente/Value:yes+' => '',
+	'Class:UserRequest/Attribute:transaction_notice_vente/Value:no' => 'Non',
+	'Class:UserRequest/Attribute:transaction_notice_vente/Value:no+' => '',
+	
+	// add attribute certificats de RS clients vente -->
+	'Class:UserRequest/Attribute:sr_certificates_vente' => 'Certificats RS clients',
+	'Class:UserRequest/Attribute:sr_certificates_vente+' => '',
+	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes' => 'Oui',
+	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '',
+	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'Non',
+	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
+	
+	// add attribute facture achat -->
+	'Class:UserRequest/Attribute:invoice_achat' => 'Achat sans aucune mention de paiement',
+	'Class:UserRequest/Attribute:invoice_achat+' => '',
+	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'Avec cachet',
+	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
+	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Choix de paiement',
+	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
+
+	// add attribute statement and documents facture banque -->
+	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Relevés bancaires et documents d\'achat',
+	'Class:UserRequest/Attribute:statements_and_documents_banque+' => '',
+	'Class:UserRequest/Attribute:statements_and_documents_banque/Value:yes' => 'Oui',
+	'Class:UserRequest/Attribute:statements_and_documents_banque/Value:yes+' => '',
+	'Class:UserRequest/Attribute:statements_and_documents_banque/Value:no' => 'Non',
+	'Class:UserRequest/Attribute:statements_and_documents_banque/Value:no+' => '',
+
+	// add attribute comment on reconciliation statement facture banque -->
+	'Class:UserRequest/Attribute:comment_on_reconciliation_statement_banque' => 'commenter l\'état de rapprochement du mois précédent',
+	'Class:UserRequest/Attribute:comment_on_reconciliation_statement_banque+' => '',
+	
+	// add attribute exceptional order courrier (Visa) -->
+	'Class:UserRequest/Attribute:exceptional_order_courrier' => 'courrier de commande exceptionnelle (Visa)',
+	'Class:UserRequest/Attribute:exceptional_order_courrier+' => '',
+	'Class:UserRequest/Attribute:exceptional_order_courrier/Value:yes' => 'Oui',
+	'Class:UserRequest/Attribute:exceptional_order_courrier/Value:yes+' => '',
+	'Class:UserRequest/Attribute:exceptional_order_courrier/Value:no' => 'Non',
+	'Class:UserRequest/Attribute:exceptional_order_courrier/Value:no+' => '',
+
+	// add attribute month courrier -->
+	'Class:UserRequest/Attribute:month_courrier' => 'Mois de courrier',
+	'Class:UserRequest/Attribute:month_courrier+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:1' => 'Janvier',
+	'Class:UserRequest/Attribute:month_courrier/Value:1+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:2' => 'Février',
+	'Class:UserRequest/Attribute:month_courrier/Value:2+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:3' => 'Mars',
+	'Class:UserRequest/Attribute:month_courrier/Value:3+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:4' => 'Avril',
+	'Class:UserRequest/Attribute:month_courrier/Value:4+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:5' => 'Mai',
+	'Class:UserRequest/Attribute:month_courrier/Value:5+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:6' => 'Juin',
+	'Class:UserRequest/Attribute:month_courrier/Value:6+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:7' => 'Juillet',
+	'Class:UserRequest/Attribute:month_courrier/Value:7+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:8' => 'Août',
+	'Class:UserRequest/Attribute:month_courrier/Value:8+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:9' => 'Septembre',
+	'Class:UserRequest/Attribute:month_courrier/Value:9+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:10' => 'Octobre',
+	'Class:UserRequest/Attribute:month_courrier/Value:10+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:11' => 'Novembre',
+	'Class:UserRequest/Attribute:month_courrier/Value:11+' => '',
+	'Class:UserRequest/Attribute:month_courrier/Value:12' => 'Décembre',
+	'Class:UserRequest/Attribute:month_courrier/Value:12+' => '',
+
+	// add attribute to block client URL -->
+	'Class:UserRequest/Attribute:block_client_ur' => 'Bloquer le client si:',
+	'Class:UserRequest/Attribute:block_client_ur+' => '',
+	'Class:UserRequest/Attribute:block_client_ur/Value:1' => 'Il n\'a pas effectué le paiement',
+	'Class:UserRequest/Attribute:block_client_ur/Value:1+' => '',
+	'Class:UserRequest/Attribute:block_client_ur/Value:2' => 'Il a payé ses paiements',
+	'Class:UserRequest/Attribute:block_client_ur/Value:2+' => '',
+	
+	// ^ End Here customization des courrier -->
 	'Class:UserRequest/Attribute:origin' => 'Origine',
 	'Class:UserRequest/Attribute:origin+' => '',
 	'Class:UserRequest/Attribute:origin/Value:mail' => 'email',

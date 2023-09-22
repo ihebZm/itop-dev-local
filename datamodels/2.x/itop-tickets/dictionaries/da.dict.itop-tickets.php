@@ -147,6 +147,11 @@ Dict::Add('DA DA', 'Danish', 'Dansk', array(
 	'Ticket:relation'                                               => 'Betegnelse',
 	'Ticket:log'                                                    => 'Kommunikation',
 	'Ticket:Type'                                                   => 'Qualifikation',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Support',
 	'Ticket:resolution'                                             => 'Løsning',
 	'Ticket:SLA'                                                    => 'SLA Report',

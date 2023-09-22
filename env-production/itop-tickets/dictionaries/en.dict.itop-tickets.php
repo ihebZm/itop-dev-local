@@ -163,6 +163,11 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Ticket:relation'                                               => 'Relations',
 	'Ticket:log'                                                    => 'Communications',
 	'Ticket:Type'                                                   => 'Qualification',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Support',
 	'Ticket:resolution'                                             => 'Resolution',
 	'Ticket:SLA'                                                    => 'SLA report',

@@ -100,13 +100,13 @@ class BsFileUploadFieldRenderer extends BsFieldRenderer
 			$this->oAttachmentsSetOther = new DBObjectSet($oSearch4, array(), array('class' => $sObjectClass, 'item_id' => $this->oField->GetObject()->GetKey()));
 			// & 4 Section of Attachement for other the section to copy END From HERE
 
-			// & 2 Section of Attachement for unknown the section to copy Start From HERE
+			// & 5 Section of Attachement for unknown the section to copy Start From HERE
 			$oSearch5 = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = \'attachment_unkown\'');
 			// Note : AllowAllData set to true here instead of checking scope's flag because we are displaying a value that has been set and validated
 			$oSearch5->AllowAllData();
 			$sObjectClass = get_class($this->oField->GetObject());
 			$this->oAttachmentsSetUnKnown = new DBObjectSet($oSearch5, array(), array('class' => $sObjectClass, 'item_id' => $this->oField->GetObject()->GetKey()));
-			// & 2 Section of Attachement for other the section to copy END From HERE
+			// & 5 Section of Attachement for other the section to copy END From HERE
 		}
 	}
 
@@ -125,11 +125,24 @@ class BsFileUploadFieldRenderer extends BsFieldRenderer
 
 		// & this the validator that the request is a courrier
 		$CourrierValidator = false;
+		
 		if($this->oField->GetObject()->Get('servicesubcategory_name') == 'Asssitance Comptable et Fiscale Mensuelle Type A'){
+			
 			$CourrierValidator = true;
+
+		}
+
+		if($this->oField->GetObject()->Get('block_client_ur') == '1') {
+
+			$blockClientValidatorPayment = true;
+
+		} else {
+
+			$blockClientValidatorPayment = false;
+
 		}
 		
-		if(!$CourrierValidator){
+		if(!$CourrierValidator && !$blockClientValidatorPayment){
 		// Starting field container
 		$oOutput->AddHtml('<div class="form-group">');
 
@@ -419,17 +432,94 @@ JS
 		return $oOutput;
 
 		} else {
-
+			// ^ this validation for payment on invoice service to open acces to workflow
+			if (!$blockClientValidatorPayment) {
+			$oOutput->AddJs(
+			<<<JS
+				var buttonVente = document.getElementById('type_doc_id_portal_user_vente');
+				var buttonAchat = document.getElementById('type_doc_id_portal_user_achat');
+				var buttonBanque = document.getElementById('type_doc_id_portal_user_banque');
+				var buttonOther = document.getElementById('type_doc_id_portal_user_other');
+				var buttonUnknown = document.getElementById('type_doc_id_portal_user_unknown');
+				var dragValueAttach = 5;
+				document.getElementById("vente-form").style.display="none";
+				document.getElementById("achat-form").style.display="none";
+				document.getElementById("banque-form").style.display="none";
+				document.getElementById("other-form").style.display="none";
+				document.getElementById("unknown-form").style.display="block";
+			//& customization courrier cfac vente 
+				buttonVente.addEventListener('click', () => {
+					dragValueAttach = 1;
+					document.getElementById("vente-form").style.display="block";
+					document.getElementById("achat-form").style.display="none";
+					document.getElementById("banque-form").style.display="none";
+					document.getElementById("other-form").style.display="none";
+					document.getElementById("unknown-form").style.display="none";
+				});
+			//& customization courrier cfac Achat 
+				buttonAchat.addEventListener('click', () => {
+					dragValueAttach = 2;
+					document.getElementById("vente-form").style.display="none";
+					document.getElementById("achat-form").style.display="block";
+					document.getElementById("banque-form").style.display="none";
+					document.getElementById("other-form").style.display="none";
+					document.getElementById("unknown-form").style.display="none";
+				});
+			//& customization courrier cfac Banque 
+				buttonBanque.addEventListener('click', () => {
+					dragValueAttach = 3;
+					document.getElementById("vente-form").style.display="none";
+					document.getElementById("achat-form").style.display="none";
+					document.getElementById("banque-form").style.display="block";
+					document.getElementById("other-form").style.display="none";
+					document.getElementById("unknown-form").style.display="none";
+				});
+			//& customization courrier cfac Other 
+				buttonOther.addEventListener('click', () => {
+					dragValueAttach = 4;
+					document.getElementById("vente-form").style.display="none";
+					document.getElementById("achat-form").style.display="none";
+					document.getElementById("banque-form").style.display="none";
+					document.getElementById("other-form").style.display="block";
+					document.getElementById("unknown-form").style.display="none";
+				});
+			//& customization courrier cfac Unknown 
+				buttonUnknown.addEventListener('click', () => {
+					dragValueAttach = 5;
+					document.getElementById("vente-form").style.display="none";
+					document.getElementById("achat-form").style.display="none";
+					document.getElementById("banque-form").style.display="none";
+					document.getElementById("other-form").style.display="none";
+					document.getElementById("unknown-form").style.display="block";
+				});
+		JS
+		);
 		// & 1 Section of Attachement the Vente section Start From HERE
-		$oOutput->AddHtml('<div class="form-group">');
+		// ! To DO this title for the Courrier set up preparation
+		
+		$aLabelCourrierTitle = Dict::S('Portal:FieldLabel:CourrierTitle');
+		$sTypeLabelAttachV = Dict::S('Portal:Button:TypeVente');
+		$sTypeLabelAttachA = Dict::S('Portal:Button:TypeAchat');
+		$sTypeLabelAttachB = Dict::S('Portal:Button:TypeBanque');
+		$sTypeLabelAttachO = Dict::S('Portal:Button:TypeOther');
+		$sTypeLabelAttachU = Dict::S('Portal:Button:TypeUndefined');
+
+		$sTypeAttachSelectedV = '<span id="type_doc_id_portal_user_vente" class="list-group-item list-group-item-action list-group-item-success" style="font-size: 12px; font-weight: bold; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%; cursor:pointer;" type="button">'.$sTypeLabelAttachV.'</span>';	
+		$sTypeAttachSelectedA = '<span id="type_doc_id_portal_user_achat" class="list-group-item list-group-item-action list-group-item-info" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%; cursor:pointer;" type="button">'.$sTypeLabelAttachA.'</span>';
+		$sTypeAttachSelectedB = '<span id="type_doc_id_portal_user_banque" class="list-group-item list-group-item-action list-group-item-warning" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%; cursor:pointer;" type="button">'.$sTypeLabelAttachB.'</span>';
+		$sTypeAttachSelectedO = '<span id="type_doc_id_portal_user_other" class="list-group-item list-group-item-action list-group-item-danger" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%; cursor:pointer;" type="button">'.$sTypeLabelAttachO.'</span>';
+		$sTypeAttachSelectedU = '<span id="type_doc_id_portal_user_unknown" class="list-group-item list-group-item-action list-group-item-dark" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%; cursor:pointer;" type="button">'.$sTypeLabelAttachU.'</span>';
+		
+		$oOutput->AddHtml('<div><h3><mark>'.$aLabelCourrierTitle.'</mark>: '.$sTypeAttachSelectedV.' '.$sTypeAttachSelectedA.' '.$sTypeAttachSelectedB.' '.$sTypeAttachSelectedO.' '.$sTypeAttachSelectedU.'</h3></div></br>');
+		$oOutput->AddHtml('<div id="vente-form" class="form-group">');
 
 		$sCollapseTogglerIconVisibleClassVente = 'glyphicon-menu-down';
 		$sCollapseTogglerIconHiddenClassVente = 'glyphicon-menu-down collapsed';
 		$sCollapseTogglerClassVente = 'form_linkedset_toggler';
 		$sCollapseTogglerIdVente = $sCollapseTogglerClassVente . '_' . $this->oField->GetGlobalId();
-		$sFieldWrapperIdVente = 'form_upload_wrapper_' . $this->oField->GetGlobalId();
+		$sFieldWrapperIdVente = 'form_upload_wrapper_vente_' . $this->oField->GetGlobalId();
 		$sFieldDescriptionForHTMLTagVente = ($this->oField->HasDescription()) ? 'data-tooltip-content="'.utils::HtmlEntities($this->oField->GetDescription()).'"' : '';
-
+		
 		// If collapsed
 		$sCollapseTogglerClassVente .= ' collapsed';
 		$sCollapseTogglerExpandedVente = 'false';
@@ -446,7 +536,7 @@ JS
 				->AddHtml('<a id="' . $sCollapseTogglerIdVente . '" class="' . $sCollapseTogglerClassVente . '" data-toggle="collapse" href="#' . $sFieldWrapperIdVente . '" aria-expanded="' . $sCollapseTogglerExpandedVente . '" aria-controls="' . $sFieldWrapperIdVente . '">')
 				//->AddHtml($this->oField->GetLabel(),true)
 				->AddHtml(' <span class="attachments-typeDoc">'.$aLabelVente.'</span>')
-				->AddHtml(' (<span class="attachments-count">'.$iAttachmentsCountVente.'</span>)')
+				->AddHtml(' (<span class="attachments-count-vente">'.$iAttachmentsCountVente.'</span>)')
 				->AddHtml('<span class="glyphicon ' . $sCollapseTogglerIconClassVente . '">')
 				->AddHtml('</a>')
 				->AddHtml('</label>');
@@ -464,11 +554,12 @@ JS
 		$this->PrepareExistingFilesVente($oOutput, $bIsDeleteAllowed);
 		$oOutput->Addhtml('</div>');
 
-		$sAttachmentTableId = $this->GetAttachmentsTableId();
+		$sAttachmentTableIdVente = $this->GetAttachmentsTableId();
 		$sNoAttachmentLabelVente = json_encode(Dict::S('Attachments:NoAttachment'));
 		$sDeleteColumnDefVente = $bIsDeleteAllowed ? '{ targets: [4], orderable: false},' : '';
 		$oOutput->AddJs(
 			<<<JS
+			if(dragValueAttach==1){
 // Collapse handlers
 // - Collapsing by default to optimize form space
 // It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
@@ -495,7 +586,7 @@ var oTable_{$this->oField->GetGlobalId()};
 // Build datatable
 var buildTable_{$this->oField->GetGlobalId()} = function()
 {
-	oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableId").DataTable( {
+	oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableIdVente").DataTable( {
 		"dom": "tp",
 	    "order": [[3, "asc"]],
 	    "columnDefs": [
@@ -508,6 +599,7 @@ var buildTable_{$this->oField->GetGlobalId()} = function()
 		}
 	} );
 }
+}		
 JS
 		);
 
@@ -531,7 +623,7 @@ JS
 		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
 		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
 		// Note : This is based on itop-attachement/main.itop-attachments.php
-		$sAttachmentTableRowTemplateVente = json_encode(self::GetAttachmentTableRow(
+		$sAttachmentTableRowTemplateVente = json_encode(self::GetAttachmentCourrierTableRow(
 			'{{iAttId}}',
 			'{{sLineStyle}}',
 			'{{sDocDownloadUrl}}',
@@ -542,182 +634,186 @@ JS
 			'{{sFileSize}}',
 			'{{iFileSizeRaw}}',
 			'{{sAttachmentDate}}',
-			'{{sAttachmentTypeAttachment}}',
+			'attachment_vente',
 			'{{sAttachmentStatusComp}}',
 			'{{iAttachmentDateRaw}}',
 			$bIsDeleteAllowed
 		));
-		$sAttachmentTableId = $this->GetAttachmentsTableId();
+		$sAttachmentTableIdVente = $this->GetAttachmentsTableId();
 		$oOutput->AddJs(
 			<<<JS
-			var attachmentRowTemplateVente = $sAttachmentTableRowTemplateVente;
-			function RemoveAttachment(sAttId)
-			{
-				$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
-				$('#display_attachment_' + sAttId).hide();
-				DecreaseAttachementsCount();
-			}
-			function IncreaseAttachementsCount()
-			{
-				UpdateAttachmentsCount(1);
-			}
-			function DecreaseAttachementsCount()
-			{
-				UpdateAttachmentsCount(-1);
-			}
-			function UpdateAttachmentsCount(iIncrement)
-			{
-				var countContainerVente = $("a#$sCollapseTogglerIdVente>span.attachments-count"),
-				iCountCurrentValueVente = parseInt(countContainerVente.text());
-				countContainerVente.text(iCountCurrentValueVente+iIncrement);
-			}
-
-			$('#{$this->oField->GetGlobalId()}').fileupload({
-				url: '{$this->oField->GetUploadEndpoint()}',
-				formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
-				dataType: 'json',
-				pasteZone: null, // Don't accept files via Chrome's copy/paste
-				done: function (e, data) {
-					if((data.result.error !== undefined) && window.console)
-					{
-						console.log(data.result.error);
-					}
-					else
-					{
-						var \$oAttachmentTBodyVente = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableId>tbody'),
-							iAttId = data.result.att_id,
-							sDownloadLinkVente = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
-							sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
-
-						// hide "no attachment" line if present
-						\$oAttachmentFirstRow = \$oAttachmentTBodyVente.find("tr:first-child");
-						\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
-						
-						// update attachments count
-						IncreaseAttachementsCount();
-						 
-						var replaces = [
-							{search: "{{iAttId}}", replace:iAttId },
-							{search: "{{lineStyle}}", replace:'' },
-							{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkVente },
-							{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
-							{search: "{{sFileName}}", replace: data.result.msg },
-							{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
-							{search: "{{sFileSize}}", replace:data.result.file_size },
-							{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
-						];
-						var sAttachmentRowVente = attachmentRowTemplateVente   ;
-						$.each(replaces, function(indexInArray, value ) {
-							var re = new RegExp(value.search, 'gi');
-							sAttachmentRowVente = sAttachmentRowVente.replace(re, value.replace);
-						});
-						
-						var oElem = $(sAttachmentRowVente);
-						if(!data.result.preview){
-							oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
-							oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
-						}
-						\$oAttachmentTBodyVente.append(oElem);
-						// Remove button handler
-						$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
-							oEvent.preventDefault();
-							RemoveAttachment(data.result.att_id);
-						});
-					}
-				},
-			    send: function(e, data){
-			        // Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
-			        // Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
-			        var iTotalSizeInBytes = 0;
-			        for(var i = 0; i < data.files.length; i++)
-			        {
-			            iTotalSizeInBytes += data.files[i].size;
-			        }
-			        
-			        if(iTotalSizeInBytes > $iMaxUploadInBytes)
-			        {
-			            alert('$sFileTooBigLabelForJS');
-				        return false;
-				    }
-			    },
-				start: function() {
-					// Scrolling to dropzone so the user can see that attachments are uploaded
-					$(this)[0].scrollIntoView();
-					// Showing loader
-					$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
-				},
-				stop: function() {
-					// Hiding the loader
-					$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
-					// Adding this field to the touched fields of the field set so the cancel event is called if necessary
-					$(this).closest(".field_set").trigger("field_change", {
-						id: '{$this->oField->GetGlobalId()}',
-						name: '{$this->oField->GetId()}'
-					});
-				}
-			});
-
-			// Remove button handler
-			$('.attachments_container table#$sAttachmentTableId>tbody>tr>td :button').on('click', function(oEvent){
-				oEvent.preventDefault();
-				RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
-			});
-
-			// Handles a drag / drop overlay
-			if($('#drag_overlay').length === 0)
-			{
-				$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
-			}
-
-			// Handles highlighting of the drop zone
-			// Note : This is inspired by itop-attachments/main.attachments.php
-			$(document).on('dragover', function(oEvent){
-				var bFiles = false;
-				if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+			if(dragValueAttach==1){
+				var attachmentRowTemplateVente = $sAttachmentTableRowTemplateVente;
+				function RemoveAttachment(sAttId)
 				{
-					for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
-					{
-						if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
-						{
-							bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
-							break;
-						}
+					$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
+					$('#display_attachment_' + sAttId).hide();
+					DecreaseAttachementsCountVente();
+				}
+				function IncreaseAttachementsCountVente()
+				{
+					UpdateAttachmentsCountVente(1);
+				}
+				function DecreaseAttachementsCountVente()
+				{
+					UpdateAttachmentsCountVente(-1);
+				}
+				function UpdateAttachmentsCountVente(iIncrement)
+				{
+					var countContainerVente = $("a#$sCollapseTogglerIdVente>span.attachments-count-vente"),
+					iCountCurrentValueVente = parseInt(countContainerVente.text());
+					countContainerVente.text(iCountCurrentValueVente+iIncrement);
+				}
 
-						if (oEvent.dataTransfer.types[i] == "Files")
+				$('#{$this->oField->GetGlobalId()}').fileupload({
+					url: '{$this->oField->GetUploadEndpoint()}',
+					formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
+					dataType: 'json',
+					pasteZone: null, // Don't accept files via Chrome's copy/paste
+					done: function (e, data) {
+						if((data.result.error !== undefined) && window.console)
 						{
-							bFiles = true;
-							break;
+							console.log(data.result.error);
+						}
+						else
+						{
+							var \$oAttachmentTBodyVente = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableIdVente>tbody'),
+								iAttId = data.result.att_id,
+								sDownloadLinkVente = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
+								sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
+
+							// hide "no attachment" line if present
+							\$oAttachmentFirstRow = \$oAttachmentTBodyVente.find("tr:first-child");
+							\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
+							
+							// update attachments count
+							IncreaseAttachementsCountVente();
+							
+							var replaces = [
+								{search: "{{iAttId}}", replace:iAttId },
+								{search: "{{lineStyle}}", replace:'' },
+								{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkVente },
+								{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
+								{search: "{{sFileName}}", replace: data.result.msg },
+								{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
+								{search: "{{sFileSize}}", replace:data.result.file_size },
+								{search: "{{sAttachmentTypeAttachment}}", replace:data.result.type_attachment },
+								{search: "{{sAttachmentStatusComp}}", replace:data.result.status_comp },
+								{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							];
+							var sAttachmentRowVente = attachmentRowTemplateVente   ;
+							$.each(replaces, function(indexInArray, value ) {
+								var re = new RegExp(value.search, 'gi');
+								sAttachmentRowVente = sAttachmentRowVente.replace(re, value.replace);
+							});
+							
+							var oElem = $(sAttachmentRowVente);
+							if(!data.result.preview){
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
+							}
+							\$oAttachmentTBodyVente.append(oElem);
+							// Remove button handler
+							$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
+								oEvent.preventDefault();
+								RemoveAttachment(data.result.att_id);
+							});
+						}
+					},
+					send: function(e, data){
+						// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+						// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+						var iTotalSizeInBytes = 0;
+						for(var i = 0; i < data.files.length; i++)
+						{
+							iTotalSizeInBytes += data.files[i].size;
+						}
+						
+						if(iTotalSizeInBytes > $iMaxUploadInBytes)
+						{
+							alert('$sFileTooBigLabelForJS');
+							return false;
+						}
+					},
+					start: function() {
+						// Scrolling to dropzone so the user can see that attachments are uploaded
+						$(this)[0].scrollIntoView();
+						// Showing loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
+					},
+					stop: function() {
+						// Hiding the loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
+						// Adding this field to the touched fields of the field set so the cancel event is called if necessary
+						$(this).closest(".field_set").trigger("field_change", {
+							id: '{$this->oField->GetGlobalId()}',
+							name: '{$this->oField->GetId()}'
+						});
+					}
+				});
+
+				// Remove button handler
+				$('.attachments_container table#$sAttachmentTableIdVente>tbody>tr>td :button').on('click', function(oEvent){
+					oEvent.preventDefault();
+					RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
+				});
+
+				// Handles a drag / drop overlay
+				if($('#drag_overlay').length === 0)
+				{
+					$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
+				}
+
+				// Handles highlighting of the drop zone
+				// Note : This is inspired by itop-attachments/main.attachments.php
+				$(document).on('dragover', function(oEvent){
+					var bFiles = false;
+					if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+					{
+						for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
+						{
+							if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
+							{
+								bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
+								break;
+							}
+
+							if (oEvent.dataTransfer.types[i] == "Files")
+							{
+								bFiles = true;
+								break;
+							}
 						}
 					}
-				}
 
-				if (!bFiles) return; // Not dragging files
+					if (!bFiles) return; // Not dragging files
 
-				var oDropZone = $('#drag_overlay');
-				var oTimeout = window.dropZoneTimeout;
-				// This is to detect when there is no drag over because there is no "drag out" event
-				if (!oTimeout) {
-					oDropZone.removeClass('drag_out').addClass('drag_in');
-				} else {
-					clearTimeout(oTimeout);
-				}
-				window.dropZoneTimeout = setTimeout(function () {
-					window.dropZoneTimeout = null;
-					oDropZone.removeClass('drag_in').addClass('drag_out');
-				}, 200);
-			});
+					var oDropZone = $('#drag_overlay');
+					var oTimeout = window.dropZoneTimeout;
+					// This is to detect when there is no drag over because there is no "drag out" event
+					if (!oTimeout) {
+						oDropZone.removeClass('drag_out').addClass('drag_in');
+					} else {
+						clearTimeout(oTimeout);
+					}
+					window.dropZoneTimeout = setTimeout(function () {
+						window.dropZoneTimeout = null;
+						oDropZone.removeClass('drag_in').addClass('drag_out');
+					}, 200);
+				});
+			}
 JS
 		);
 		// & 1 Section of Attachement the Vente section to copy END From HERE
 
 		// & 2 Section of Attachement the Achat section to copy Start From HERE
-		$oOutput->AddHtml('<div class="form-group">');
+		$oOutput->AddHtml('<div id="achat-form" class="form-group">');
 
 		$sCollapseTogglerIconVisibleClassAchat = 'glyphicon-menu-down';
 		$sCollapseTogglerIconHiddenClassAchat = 'glyphicon-menu-down collapsed';
 		$sCollapseTogglerClassAchat = 'form_linkedset_toggler';
 		$sCollapseTogglerIdAchat = $sCollapseTogglerClassAchat . '_' . $this->oField->GetGlobalId();
-		$sFieldWrapperIdAchat = 'form_upload_wrapper_' . $this->oField->GetGlobalId();
+		$sFieldWrapperIdAchat = 'form_upload_wrapper_achat_' . $this->oField->GetGlobalId();
 		$sFieldDescriptionForHTMLTagAchat = ($this->oField->HasDescription()) ? 'data-tooltip-content="'.utils::HtmlEntities($this->oField->GetDescription()).'"' : '';
 
 		// If collapsed
@@ -725,26 +821,25 @@ JS
 		$sCollapseTogglerExpandedAchat = 'false';
 		$sCollapseTogglerIconClassAchat = $sCollapseTogglerIconHiddenClassAchat;
 		$sCollapseJSInitStateAchat = 'false';
-		$aLabelAchat = Dict::S('Portal:FieldLabel:TypeAttachmentAchat');
+
 		// Label
 		$oOutput->AddHtml('<div class="form_field_label">');
 		if ($this->oField->GetLabel() !== '')
 		{
-			$iAttachmentsCountAchat = $this->oAttachmentsSetAchat->Count();
+			$iAttachmentsCountAchatDoc = $this->oAttachmentsSetAchat->Count();
 			$oOutput
 				->AddHtml('<label for="'.$this->oField->GetGlobalId().'" class="control-label" '.$sFieldDescriptionForHTMLTagAchat.'>')
 				->AddHtml('<a id="' . $sCollapseTogglerIdAchat . '" class="' . $sCollapseTogglerClassAchat . '" data-toggle="collapse" href="#' . $sFieldWrapperIdAchat . '" aria-expanded="' . $sCollapseTogglerExpandedAchat . '" aria-controls="' . $sFieldWrapperIdAchat . '">')
-				//->AddHtml($this->oField->GetLabel(),true)
-				->AddHtml(' <span class="attachments-typeDoc">'.$aLabelAchat.'</span>')
-				->AddHtml(' (<span class="attachments-count">'.$iAttachmentsCountAchat.'</span>)')
+				->AddHtml(Dict::S('Portal:FieldLabel:TypeAttachmentAchat'),true)
+				->AddHtml(' (<span class="attachments-count-achat">'.$iAttachmentsCountAchatDoc.'</span>)')
 				->AddHtml('<span class="glyphicon ' . $sCollapseTogglerIconClassAchat . '">')
 				->AddHtml('</a>')
 				->AddHtml('</label>');
 		}
 		$oOutput->AddHtml('</div>');
-
+		// ! TO DO this is where to change for attachement customization
 		// Value
-		$oOutput->AddHtml('<div class="form_field_control form_upload_wrapper collapse" id="'.$sFieldWrapperIdVente.'">');
+		$oOutput->AddHtml('<div class="form_field_control form_upload_wrapper collapse" id="'.$sFieldWrapperIdAchat.'">');
 		// - Field feedback
 		$oOutput->AddHtml('<div class="help-block"></div>');
 		// Starting files container
@@ -754,50 +849,52 @@ JS
 		$this->PrepareExistingFilesAchat($oOutput, $bIsDeleteAllowed);
 		$oOutput->Addhtml('</div>');
 
-		$sAttachmentTableId = $this->GetAttachmentsTableId();
+		$sAttachmentTableIdAchat = $this->GetAttachmentsTableId();
 		$sNoAttachmentLabelAchat = json_encode(Dict::S('Attachments:NoAttachment'));
 		$sDeleteColumnDefAchat = $bIsDeleteAllowed ? '{ targets: [4], orderable: false},' : '';
 		$oOutput->AddJs(
 			<<<JS
-// Collapse handlers
-// - Collapsing by default to optimize form space
-// It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
-$('#{$sFieldWrapperIdAchat}').collapse({toggle: {$sCollapseJSInitStateAchat}});
-// - Change toggle icon class
-$('#{$sFieldWrapperIdAchat}')
-	.on('shown.bs.collapse', function(){
-		// Creating the table if null (first expand). If we create it on start, it will be displayed as if it was in a micro screen due to the div being "display: none;"
-		if(oTable_{$this->oField->GetGlobalId()} === undefined)
-		{
-			buildTable_{$this->oField->GetGlobalId()}();
- 		}
-	})
-	.on('show.bs.collapse', function(){
-		$('#{$sCollapseTogglerIdAchat} > span.glyphicon').removeClass('{$sCollapseTogglerIconHiddenClassAchat}').addClass('{$sCollapseTogglerIconVisibleClassAchat}');
-	})
-	.on('hide.bs.collapse', function(){
-		$('#{$sCollapseTogglerIdAchat} > span.glyphicon').removeClass('{$sCollapseTogglerIconVisibleClassAchat}').addClass('{$sCollapseTogglerIconHiddenClassAchat}');
-	});
+			if(dragValueAttach==2){
+				// Collapse handlers
+				// - Collapsing by default to optimize form space
+				// It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
+				$('#{$sFieldWrapperIdAchat}').collapse({toggle: {$sCollapseJSInitStateAchat}});
+				// - Change toggle icon class
+				$('#{$sFieldWrapperIdAchat}')
+					.on('shown.bs.collapse', function(){
+						// Creating the table if null (first expand). If we create it on start, it will be displayed as if it was in a micro screen due to the div being "display: none;"
+						if(oTable_{$this->oField->GetGlobalId()} === undefined)
+						{
+							buildTable_{$this->oField->GetGlobalId()}();
+						}
+					})
+					.on('show.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdAchat} > span.glyphicon').removeClass('{$sCollapseTogglerIconHiddenClassAchat}').addClass('{$sCollapseTogglerIconVisibleClassAchat}');
+					})
+					.on('hide.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdAchat} > span.glyphicon').removeClass('{$sCollapseTogglerIconVisibleClassAchat}').addClass('{$sCollapseTogglerIconHiddenClassAchat}');
+					});
 
-var oTable_{$this->oField->GetGlobalId()};
+				var oTable_{$this->oField->GetGlobalId()};
 
 
-// Build datatable
-var buildTable_{$this->oField->GetGlobalId()} = function()
-{
-	oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableId").DataTable( {
-		"dom": "tp",
-	    "order": [[3, "asc"]],
-	    "columnDefs": [
-	        $sDeleteColumnDefAchat
-	        { targets: '_all', orderable: true },
-	    ],
-	    "language": {
-			"infoEmpty": $sNoAttachmentLabelAchat,
-			"zeroRecords": $sNoAttachmentLabelAchat
-		}
-	} );
-}
+				// Build datatable
+				var buildTable_{$this->oField->GetGlobalId()} = function()
+				{
+					oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableIdAchat").DataTable( {
+						"dom": "tp",
+						"order": [[3, "asc"]],
+						"columnDefs": [
+							$sDeleteColumnDefAchat
+							{ targets: '_all', orderable: true },
+						],
+						"language": {
+							"infoEmpty": $sNoAttachmentLabelAchat,
+							"zeroRecords": $sNoAttachmentLabelAchat
+						}
+					} );
+				}
+			}
 JS
 		);
 
@@ -821,7 +918,7 @@ JS
 		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
 		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
 		// Note : This is based on itop-attachement/main.itop-attachments.php
-		$sAttachmentTableRowTemplateAchat = json_encode(self::GetAttachmentTableRow(
+		$sAttachmentTableRowTemplateAchat = json_encode(self::GetAttachmentCourrierTableRow(
 			'{{iAttId}}',
 			'{{sLineStyle}}',
 			'{{sDocDownloadUrl}}',
@@ -832,184 +929,184 @@ JS
 			'{{sFileSize}}',
 			'{{iFileSizeRaw}}',
 			'{{sAttachmentDate}}',
-			'{{sAttachmentTypeAttachment}}',
+			'attachment_achat',
 			'{{sAttachmentStatusComp}}',
 			'{{iAttachmentDateRaw}}',
 			$bIsDeleteAllowed
 		));
-		$sAttachmentTableId = $this->GetAttachmentsTableId();
+		$sAttachmentTableIdAchat = $this->GetAttachmentsTableId();
 		$oOutput->AddJs(
 			<<<JS
-			var attachmentRowTemplateAchat = $sAttachmentTableRowTemplateAchat;
-			function RemoveAttachment(sAttId)
-			{
-				$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
-				$('#display_attachment_' + sAttId).hide();
-				DecreaseAttachementsCount();
-			}
-			function IncreaseAttachementsCount()
-			{
-				UpdateAttachmentsCount(1);
-			}
-			function DecreaseAttachementsCount()
-			{
-				UpdateAttachmentsCount(-1);
-			}
-			function UpdateAttachmentsCount(iIncrement)
-			{
-				var countContainerAchat = $("a#$sCollapseTogglerIdAchat>span.attachments-count"),
-				iCountCurrentValueAchat = parseInt(countContainerAchat.text());
-				countContainerAchat.text(iCountCurrentValueAchat+iIncrement);
-			}
-
-			$('#{$this->oField->GetGlobalId()}').fileupload({
-				url: '{$this->oField->GetUploadEndpoint()}',
-				formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
-				dataType: 'json',
-				pasteZone: null, // Don't accept files via Chrome's copy/paste
-				done: function (e, data) {
-					if((data.result.error !== undefined) && window.console)
-					{
-						console.log(data.result.error);
-					}
-					else
-					{
-						var \$oAttachmentTBodyAchat = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableId>tbody'),
-							iAttId = data.result.att_id,
-							sDownloadLinkAchat = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
-							sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
-
-						// hide "no attachment" line if present
-						\$oAttachmentFirstRow = \$oAttachmentTBodyAchat.find("tr:first-child");
-						\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
-						
-						// update attachments count
-						IncreaseAttachementsCount();
-						 
-						var replaces = [
-							{search: "{{iAttId}}", replace:iAttId },
-							{search: "{{lineStyle}}", replace:'' },
-							{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkAchat },
-							{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
-							{search: "{{sFileName}}", replace: data.result.msg },
-							{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
-							{search: "{{sFileSize}}", replace:data.result.file_size },
-							{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
-						];
-						var sAttachmentRowAchat = attachmentRowTemplateAchat   ;
-						$.each(replaces, function(indexInArray, value ) {
-							var re = new RegExp(value.search, 'gi');
-							sAttachmentRowAchat = sAttachmentRowAchat.replace(re, value.replace);
-						});
-						
-						var oElem = $(sAttachmentRowAchat);
-						if(!data.result.preview){
-							oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
-							oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
-						}
-						\$oAttachmentTBodyAchat.append(oElem);
-						// Remove button handler
-						$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
-							oEvent.preventDefault();
-							RemoveAttachment(data.result.att_id);
-						});
-					}
-				},
-			    send: function(e, data){
-			        // Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
-			        // Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
-			        var iTotalSizeInBytes = 0;
-			        for(var i = 0; i < data.files.length; i++)
-			        {
-			            iTotalSizeInBytes += data.files[i].size;
-			        }
-			        
-			        if(iTotalSizeInBytes > $iMaxUploadInBytes)
-			        {
-			            alert('$sFileTooBigLabelForJS');
-				        return false;
-				    }
-			    },
-				start: function() {
-					// Scrolling to dropzone so the user can see that attachments are uploaded
-					$(this)[0].scrollIntoView();
-					// Showing loader
-					$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
-				},
-				stop: function() {
-					// Hiding the loader
-					$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
-					// Adding this field to the touched fields of the field set so the cancel event is called if necessary
-					$(this).closest(".field_set").trigger("field_change", {
-						id: '{$this->oField->GetGlobalId()}',
-						name: '{$this->oField->GetId()}'
-					});
-				}
-			});
-
-			// Remove button handler
-			$('.attachments_container table#$sAttachmentTableId>tbody>tr>td :button').on('click', function(oEvent){
-				oEvent.preventDefault();
-				RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
-			});
-
-			// Handles a drag / drop overlay
-			if($('#drag_overlay').length === 0)
-			{
-				$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
-			}
-
-			// Handles highlighting of the drop zone
-			// Note : This is inspired by itop-attachments/main.attachments.php
-			$(document).on('dragover', function(oEvent){
-				var bFiles = false;
-				if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+			if(dragValueAttach==1){
+				var attachmentRowTemplateAchat = $sAttachmentTableRowTemplateAchat;
+				function RemoveAttachment(sAttId)
 				{
-					for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
-					{
-						if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
-						{
-							bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
-							break;
-						}
+					$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
+					$('#display_attachment_' + sAttId).hide();
+					DecreaseAttachementsCountAchat();
+				}
+				function IncreaseAttachementsCountAchat()
+				{
+					UpdateAttachmentsCountAchat(1);
+				}
+				function DecreaseAttachementsCountAchat()
+				{
+					UpdateAttachmentsCountAchat(-1);
+				}
+				function UpdateAttachmentsCountAchat(iIncrement)
+				{
+					var countContainerAchat = $("a#$sCollapseTogglerIdAchat>span.attachments-count-achat"),
+					iCountCurrentValueAchat = parseInt(countContainerAchat.text());
+					countContainerAchat.text(iCountCurrentValueAchat+iIncrement);
+				}
 
-						if (oEvent.dataTransfer.types[i] == "Files")
+				$('#{$this->oField->GetGlobalId()}').fileupload({
+					url: '{$this->oField->GetUploadEndpoint()}',
+					formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
+					dataType: 'json',
+					pasteZone: null, // Don't accept files via Chrome's copy/paste
+					done: function (e, data) {
+						if((data.result.error !== undefined) && window.console)
 						{
-							bFiles = true;
-							break;
+							console.log(data.result.error);
+						}
+						else
+						{
+							var \$oAttachmentTBodyAchat = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableIdVente>tbody'),
+								iAttId = data.result.att_id,
+								sDownloadLinkAchat = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
+								sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
+
+							// hide "no attachment" line if present
+							\$oAttachmentFirstRow = \$oAttachmentTBodyAchat.find("tr:first-child");
+							\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
+							
+							// update attachments count
+							IncreaseAttachementsCountAchat();
+							
+							var replaces = [
+								{search: "{{iAttId}}", replace:iAttId },
+								{search: "{{lineStyle}}", replace:'' },
+								{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkAchat },
+								{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
+								{search: "{{sFileName}}", replace: data.result.msg },
+								{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
+								{search: "{{sFileSize}}", replace:data.result.file_size },
+								{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							];
+							var sAttachmentRowAchat = attachmentRowTemplateAchat   ;
+							$.each(replaces, function(indexInArray, value ) {
+								var re = new RegExp(value.search, 'gi');
+								sAttachmentRowAchat = sAttachmentRowAchat.replace(re, value.replace);
+							});
+							
+							var oElem = $(sAttachmentRowAchat);
+							if(!data.result.preview){
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
+							}
+							\$oAttachmentTBodyAchat.append(oElem);
+							// Remove button handler
+							$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
+								oEvent.preventDefault();
+								RemoveAttachment(data.result.att_id);
+							});
+						}
+					},
+					send: function(e, data){
+						// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+						// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+						var iTotalSizeInBytes = 0;
+						for(var i = 0; i < data.files.length; i++)
+						{
+							iTotalSizeInBytes += data.files[i].size;
+						}
+						
+						if(iTotalSizeInBytes > $iMaxUploadInBytes)
+						{
+							alert('$sFileTooBigLabelForJS');
+							return false;
+						}
+					},
+					start: function() {
+						// Scrolling to dropzone so the user can see that attachments are uploaded
+						$(this)[0].scrollIntoView();
+						// Showing loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
+					},
+					stop: function() {
+						// Hiding the loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
+						// Adding this field to the touched fields of the field set so the cancel event is called if necessary
+						$(this).closest(".field_set").trigger("field_change", {
+							id: '{$this->oField->GetGlobalId()}',
+							name: '{$this->oField->GetId()}'
+						});
+					}
+				});
+
+				// Remove button handler
+				$('.attachments_container table#$sAttachmentTableIdAchat>tbody>tr>td :button').on('click', function(oEvent){
+					oEvent.preventDefault();
+					RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
+				});
+
+				// Handles a drag / drop overlay
+				if($('#drag_overlay').length === 0)
+				{
+					$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
+				}
+
+				// Handles highlighting of the drop zone
+				// Note : This is inspired by itop-attachments/main.attachments.php
+				$(document).on('dragover', function(oEvent){
+					var bFiles = false;
+					if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+					{
+						for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
+						{
+							if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
+							{
+								bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
+								break;
+							}
+
+							if (oEvent.dataTransfer.types[i] == "Files")
+							{
+								bFiles = true;
+								break;
+							}
 						}
 					}
-				}
 
-				if (!bFiles) return; // Not dragging files
+					if (!bFiles) return; // Not dragging files
 
-				var oDropZone = $('#drag_overlay');
-				var oTimeout = window.dropZoneTimeout;
-				// This is to detect when there is no drag over because there is no "drag out" event
-				if (!oTimeout) {
-					oDropZone.removeClass('drag_out').addClass('drag_in');
-				} else {
-					clearTimeout(oTimeout);
-				}
-				window.dropZoneTimeout = setTimeout(function () {
-					window.dropZoneTimeout = null;
-					oDropZone.removeClass('drag_in').addClass('drag_out');
-				}, 200);
-			});
+					var oDropZone = $('#drag_overlay');
+					var oTimeout = window.dropZoneTimeout;
+					// This is to detect when there is no drag over because there is no "drag out" event
+					if (!oTimeout) {
+						oDropZone.removeClass('drag_out').addClass('drag_in');
+					} else {
+						clearTimeout(oTimeout);
+					}
+					window.dropZoneTimeout = setTimeout(function () {
+						window.dropZoneTimeout = null;
+						oDropZone.removeClass('drag_in').addClass('drag_out');
+					}, 200);
+				});
+			}
 JS
 		);
 		// & 2 Section of Attachement the Achat section to copy END From HERE
 
 		// & 3 Section of Attachement the Banque section to copy Start From HERE
-	/*	
-		// Starting field container
-		$oOutput->AddHtml('<div class="form-group">');
+		$oOutput->AddHtml('<div id="banque-form" class="form-group">');
 
-		$sCollapseTogglerIconVisibleClassBanque = 'glyphicon-menu-down_';
-		$sCollapseTogglerIconHiddenClassBanque = 'glyphicon-menu-down collapsed_';
-		$sCollapseTogglerClassBanque = 'form_linkedset_toggler_';
+		$sCollapseTogglerIconVisibleClassBanque = 'glyphicon-menu-down';
+		$sCollapseTogglerIconHiddenClassBanque = 'glyphicon-menu-down collapsed';
+		$sCollapseTogglerClassBanque = 'form_linkedset_toggler';
 		$sCollapseTogglerIdBanque = $sCollapseTogglerClassBanque . '_' . $this->oField->GetGlobalId();
-		$sFieldWrapperIdBanque = 'form_upload_wrapper_Banque_' . $this->oField->GetGlobalId();
+		$sFieldWrapperIdBanque = 'form_upload_wrapper_banque_' . $this->oField->GetGlobalId();
 		$sFieldDescriptionForHTMLTagBanque = ($this->oField->HasDescription()) ? 'data-tooltip-content="'.utils::HtmlEntities($this->oField->GetDescription()).'"' : '';
 
 		// If collapsed
@@ -1017,7 +1114,7 @@ JS
 		$sCollapseTogglerExpandedBanque = 'false';
 		$sCollapseTogglerIconClassBanque = $sCollapseTogglerIconHiddenClassBanque;
 		$sCollapseJSInitStateBanque = 'false';
-
+		$aLabelBanque = Dict::S('Portal:FieldLabel:TypeAttachmentBanque');
 		// Label
 		$oOutput->AddHtml('<div class="form_field_label">');
 		if ($this->oField->GetLabel() !== '')
@@ -1026,8 +1123,9 @@ JS
 			$oOutput
 				->AddHtml('<label for="'.$this->oField->GetGlobalId().'" class="control-label" '.$sFieldDescriptionForHTMLTagBanque.'>')
 				->AddHtml('<a id="' . $sCollapseTogglerIdBanque . '" class="' . $sCollapseTogglerClassBanque . '" data-toggle="collapse" href="#' . $sFieldWrapperIdBanque . '" aria-expanded="' . $sCollapseTogglerExpandedBanque . '" aria-controls="' . $sFieldWrapperIdBanque . '">')
-				->AddHtml(Dict::S('Portal:FieldLabel:TypeAttachmentBanque'),true)
-				->AddHtml(' (<span class="attachments-count">'.$iAttachmentsCountBanqueDoc.'</span>)')
+				//->AddHtml($this->oField->GetLabel(),true)
+				->AddHtml(' <span class="attachments-typeDoc">'.$aLabelBanque.'</span>')
+				->AddHtml(' (<span class="attachments-count-banque">'.$iAttachmentsCountBanqueDoc.'</span>)')
 				->AddHtml('<span class="glyphicon ' . $sCollapseTogglerIconClassBanque . '">')
 				->AddHtml('</a>')
 				->AddHtml('</label>');
@@ -1044,21 +1142,266 @@ JS
 		$oOutput->AddHtml('<div class="attachments_container row">');
 		$this->PrepareExistingFilesBanque($oOutput, $bIsDeleteAllowed);
 		$oOutput->Addhtml('</div>');
+
+		$sAttachmentTableIdBanque = $this->GetAttachmentsTableId();
+		$sNoAttachmentLabelBanque = json_encode(Dict::S('Attachments:NoAttachment'));
+		$sDeleteColumnDefBanque = $bIsDeleteAllowed ? '{ targets: [4], orderable: false},' : '';
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==3){
+				// Collapse handlers
+				// - Collapsing by default to optimize form space
+				// It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
+				$('#{$sFieldWrapperIdBanque}').collapse({toggle: {$sCollapseJSInitStateBanque}});
+				// - Change toggle icon class
+				$('#{$sFieldWrapperIdBanque}')
+					.on('shown.bs.collapse', function(){
+						// Creating the table if null (first expand). If we create it on start, it will be displayed as if it was in a micro screen due to the div being "display: none;"
+						if(oTable_{$this->oField->GetGlobalId()} === undefined)
+						{
+							buildTable_{$this->oField->GetGlobalId()}();
+						}
+					})
+					.on('show.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdBanque} > span.glyphicon').removeClass('{$sCollapseTogglerIconHiddenClassBanque}').addClass('{$sCollapseTogglerIconVisibleClassBanque}');
+					})
+					.on('hide.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdBanque} > span.glyphicon').removeClass('{$sCollapseTogglerIconVisibleClassBanque}').addClass('{$sCollapseTogglerIconHiddenClassBanque}');
+					});
+
+				var oTable_{$this->oField->GetGlobalId()};
+
+
+				// Build datatable
+				var buildTable_{$this->oField->GetGlobalId()} = function()
+				{
+					oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableIdBanque").DataTable( {
+						"dom": "tp",
+						"order": [[3, "asc"]],
+						"columnDefs": [
+							$sDeleteColumnDefBanque
+							{ targets: '_all', orderable: true },
+						],
+						"language": {
+							"infoEmpty": $sNoAttachmentLabelBanque,
+							"zeroRecords": $sNoAttachmentLabelBanque
+						}
+					} );
+				}
+			}
+JS
+		);
+
+		// Removing upload input if in read only
+		// TODO : Add max upload size when itop attachment has been refactored
+		if (!$this->oField->GetReadOnly())
+		{
+			//$oOutput->AddHtml('<div class="upload_container">'.Dict::S('Attachments:AddAttachment').'<input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+			$oOutput->AddHtml('<div class="upload_container"><input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+		}
 		// Ending files container
 		$oOutput->AddHtml('</div>');
 		$oOutput->AddHtml('</div>');
+
+		// Ending field container
+		$oOutput->AddHtml('</div>');
+
+		// JS for file upload
+		$iMaxUploadInBytes = AttachmentPlugIn::GetMaxUploadSize();
+		$sMaxUploadLabel = AttachmentPlugIn::GetMaxUpload();
+		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
+		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
+		// Note : This is based on itop-attachement/main.itop-attachments.php
+		$sAttachmentTableRowTemplateBanque = json_encode(self::GetAttachmentCourrierTableRow(
+			'{{iAttId}}',
+			'{{sLineStyle}}',
+			'{{sDocDownloadUrl}}',
+		     true,
+			'{{sAttachmentThumbUrl}}',
+			'{{sFileName}}',
+			'{{sAttachmentMeta}}',
+			'{{sFileSize}}',
+			'{{iFileSizeRaw}}',
+			'{{sAttachmentDate}}',
+			'attachment_banque',
+			'{{sAttachmentStatusComp}}',
+			'{{iAttachmentDateRaw}}',
+			$bIsDeleteAllowed
+		));
+		$sAttachmentTableIdBanque = $this->GetAttachmentsTableId();
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==3){
+				var attachmentRowTemplateBanque = $sAttachmentTableRowTemplateBanque;
+				function RemoveAttachment(sAttId)
+				{
+					$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
+					$('#display_attachment_' + sAttId).hide();
+					DecreaseAttachementsCountBanque();
+				}
+				function IncreaseAttachementsCountBanque()
+				{
+					UpdateAttachmentsCountBanque(1);
+				}
+				function DecreaseAttachementsCountBanque()
+				{
+					UpdateAttachmentsCountBanque(-1);
+				}
+				function UpdateAttachmentsCountBanque(iIncrement)
+				{
+					var countContainerBanque = $("a#$sCollapseTogglerIdBanque>span.attachments-count-banque"),
+					iCountCurrentValueBanque = parseInt(countContainerBanque.text());
+					countContainerBanque.text(iCountCurrentValueBanque+iIncrement);
+				}
+
+				$('#{$this->oField->GetGlobalId()}').fileupload({
+					url: '{$this->oField->GetUploadEndpoint()}',
+					formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
+					dataType: 'json',
+					pasteZone: null, // Don't accept files via Chrome's copy/paste
+					done: function (e, data) {
+						if((data.result.error !== undefined) && window.console)
+						{
+							console.log(data.result.error);
+						}
+						else
+						{
+							var \$oAttachmentTBodyBanque = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableIdBanque>tbody'),
+								iAttId = data.result.att_id,
+								sDownloadLinkBanque = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
+								sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
+
+							// hide "no attachment" line if present
+							\$oAttachmentFirstRow = \$oAttachmentTBodyBanque.find("tr:first-child");
+							\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
+							
+							// update attachments count
+							IncreaseAttachementsCountBanque();
+							
+							var replaces = [
+								{search: "{{iAttId}}", replace:iAttId },
+								{search: "{{lineStyle}}", replace:'' },
+								{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkBanque },
+								{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
+								{search: "{{sFileName}}", replace: data.result.msg },
+								{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
+								{search: "{{sFileSize}}", replace:data.result.file_size },
+								{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							];
+							var sAttachmentRowBanque = attachmentRowTemplateBanque   ;
+							$.each(replaces, function(indexInArray, value ) {
+								var re = new RegExp(value.search, 'gi');
+								sAttachmentRowBanque = sAttachmentRowBanque.replace(re, value.replace);
+							});
+							
+							var oElem = $(sAttachmentRowBanque);
+							if(!data.result.preview){
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
+							}
+							\$oAttachmentTBodyBanque.append(oElem);
+							// Remove button handler
+							$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
+								oEvent.preventDefault();
+								RemoveAttachment(data.result.att_id);
+							});
+						}
+					},
+					send: function(e, data){
+						// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+						// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+						var iTotalSizeInBytes = 0;
+						for(var i = 0; i < data.files.length; i++)
+						{
+							iTotalSizeInBytes += data.files[i].size;
+						}
+						
+						if(iTotalSizeInBytes > $iMaxUploadInBytes)
+						{
+							alert('$sFileTooBigLabelForJS');
+							return false;
+						}
+					},
+					start: function() {
+						// Scrolling to dropzone so the user can see that attachments are uploaded
+						$(this)[0].scrollIntoView();
+						// Showing loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
+					},
+					stop: function() {
+						// Hiding the loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
+						// Adding this field to the touched fields of the field set so the cancel event is called if necessary
+						$(this).closest(".field_set").trigger("field_change", {
+							id: '{$this->oField->GetGlobalId()}',
+							name: '{$this->oField->GetId()}'
+						});
+					}
+				});
+
+				// Remove button handler
+				$('.attachments_container table#$sAttachmentTableIdBanque>tbody>tr>td :button').on('click', function(oEvent){
+					oEvent.preventDefault();
+					RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
+				});
+
+				// Handles a drag / drop overlay
+				if($('#drag_overlay').length === 0)
+				{
+					$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
+				}
+
+				// Handles highlighting of the drop zone
+				// Note : This is inspired by itop-attachments/main.attachments.php
+				$(document).on('dragover', function(oEvent){
+					var bFiles = false;
+					if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+					{
+						for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
+						{
+							if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
+							{
+								bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
+								break;
+							}
+
+							if (oEvent.dataTransfer.types[i] == "Files")
+							{
+								bFiles = true;
+								break;
+							}
+						}
+					}
+
+					if (!bFiles) return; // Not dragging files
+
+					var oDropZone = $('#drag_overlay');
+					var oTimeout = window.dropZoneTimeout;
+					// This is to detect when there is no drag over because there is no "drag out" event
+					if (!oTimeout) {
+						oDropZone.removeClass('drag_out').addClass('drag_in');
+					} else {
+						clearTimeout(oTimeout);
+					}
+					window.dropZoneTimeout = setTimeout(function () {
+						window.dropZoneTimeout = null;
+						oDropZone.removeClass('drag_in').addClass('drag_out');
+					}, 200);
+				});
+			}
+JS
+		);
 		// & 3 Section of Attachement the Banque section to copy END From HERE
 
 		// & 4 Section of Attachement the Other section to copy Start From HERE
-		
-		// Starting field container
-		$oOutput->AddHtml('<div class="form-group">');
 
-		$sCollapseTogglerIconVisibleClassOther = 'glyphicon-menu-down_';
-		$sCollapseTogglerIconHiddenClassOther = 'glyphicon-menu-down collapsed_';
-		$sCollapseTogglerClassOther = 'form_linkedset_toggler_';
+		$oOutput->AddHtml('<div id="other-form" class="form-group">');
+
+		$sCollapseTogglerIconVisibleClassOther = 'glyphicon-menu-down';
+		$sCollapseTogglerIconHiddenClassOther = 'glyphicon-menu-down collapsed';
+		$sCollapseTogglerClassOther = 'form_linkedset_toggler';
 		$sCollapseTogglerIdOther = $sCollapseTogglerClassOther . '_' . $this->oField->GetGlobalId();
-		$sFieldWrapperIdOther = 'form_upload_wrapper_Other_' . $this->oField->GetGlobalId();
+		$sFieldWrapperIdOther = 'form_upload_wrapper_other_' . $this->oField->GetGlobalId();
 		$sFieldDescriptionForHTMLTagOther = ($this->oField->HasDescription()) ? 'data-tooltip-content="'.utils::HtmlEntities($this->oField->GetDescription()).'"' : '';
 
 		// If collapsed
@@ -1066,7 +1409,7 @@ JS
 		$sCollapseTogglerExpandedOther = 'false';
 		$sCollapseTogglerIconClassOther = $sCollapseTogglerIconHiddenClassOther;
 		$sCollapseJSInitStateOther = 'false';
-
+		$aLabelOther = Dict::S('Portal:FieldLabel:TypeAttachmentOther');
 		// Label
 		$oOutput->AddHtml('<div class="form_field_label">');
 		if ($this->oField->GetLabel() !== '')
@@ -1075,8 +1418,9 @@ JS
 			$oOutput
 				->AddHtml('<label for="'.$this->oField->GetGlobalId().'" class="control-label" '.$sFieldDescriptionForHTMLTagOther.'>')
 				->AddHtml('<a id="' . $sCollapseTogglerIdOther . '" class="' . $sCollapseTogglerClassOther . '" data-toggle="collapse" href="#' . $sFieldWrapperIdOther . '" aria-expanded="' . $sCollapseTogglerExpandedOther . '" aria-controls="' . $sFieldWrapperIdOther . '">')
-				->AddHtml(Dict::S('Portal:FieldLabel:TypeAttachmentOther'),true)
-				->AddHtml(' (<span class="attachments-count">'.$iAttachmentsCountOtherDoc.'</span>)')
+				//->AddHtml($this->oField->GetLabel(),true)
+				->AddHtml(' <span class="attachments-typeDoc">'.$aLabelOther.'</span>')
+				->AddHtml(' (<span class="attachments-count-other">'.$iAttachmentsCountOtherDoc.'</span>)')
 				->AddHtml('<span class="glyphicon ' . $sCollapseTogglerIconClassOther . '">')
 				->AddHtml('</a>')
 				->AddHtml('</label>');
@@ -1093,21 +1437,265 @@ JS
 		$oOutput->AddHtml('<div class="attachments_container row">');
 		$this->PrepareExistingFilesOther($oOutput, $bIsDeleteAllowed);
 		$oOutput->Addhtml('</div>');
+
+		$sAttachmentTableIdOther = $this->GetAttachmentsTableId();
+		$sNoAttachmentLabelOther = json_encode(Dict::S('Attachments:NoAttachment'));
+		$sDeleteColumnDefOther = $bIsDeleteAllowed ? '{ targets: [4], orderable: false},' : '';
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==4){
+				// Collapse handlers
+				// - Collapsing by default to optimize form space
+				// It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
+				$('#{$sFieldWrapperIdOther}').collapse({toggle: {$sCollapseJSInitStateOther}});
+				// - Change toggle icon class
+				$('#{$sFieldWrapperIdOther}')
+					.on('shown.bs.collapse', function(){
+						// Creating the table if null (first expand). If we create it on start, it will be displayed as if it was in a micro screen due to the div being "display: none;"
+						if(oTable_{$this->oField->GetGlobalId()} === undefined)
+						{
+							buildTable_{$this->oField->GetGlobalId()}();
+						}
+					})
+					.on('show.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdOther} > span.glyphicon').removeClass('{$sCollapseTogglerIconHiddenClassOther}').addClass('{$sCollapseTogglerIconVisibleClassOther}');
+					})
+					.on('hide.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdOther} > span.glyphicon').removeClass('{$sCollapseTogglerIconVisibleClassOther}').addClass('{$sCollapseTogglerIconHiddenClassOther}');
+					});
+
+				var oTable_{$this->oField->GetGlobalId()};
+
+
+				// Build datatable
+				var buildTable_{$this->oField->GetGlobalId()} = function()
+				{
+					oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableIdOther").DataTable( {
+						"dom": "tp",
+						"order": [[3, "asc"]],
+						"columnDefs": [
+							$sDeleteColumnDefOther
+							{ targets: '_all', orderable: true },
+						],
+						"language": {
+							"infoEmpty": $sNoAttachmentLabelOther,
+							"zeroRecords": $sNoAttachmentLabelOther
+						}
+					} );
+				}
+			}
+JS
+		);
+
+		// Removing upload input if in read only
+		// TODO : Add max upload size when itop attachment has been refactored
+		if (!$this->oField->GetReadOnly())
+		{
+			//$oOutput->AddHtml('<div class="upload_container">'.Dict::S('Attachments:AddAttachment').'<input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+			$oOutput->AddHtml('<div class="upload_container"><input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+		}
 		// Ending files container
 		$oOutput->AddHtml('</div>');
 		$oOutput->AddHtml('</div>');
+
+		// Ending field container
+		$oOutput->AddHtml('</div>');
+
+		// JS for file upload
+		$iMaxUploadInBytes = AttachmentPlugIn::GetMaxUploadSize();
+		$sMaxUploadLabel = AttachmentPlugIn::GetMaxUpload();
+		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
+		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
+		// Note : This is based on itop-attachement/main.itop-attachments.php
+		$sAttachmentTableRowTemplateOther = json_encode(self::GetAttachmentCourrierTableRow(
+			'{{iAttId}}',
+			'{{sLineStyle}}',
+			'{{sDocDownloadUrl}}',
+		     true,
+			'{{sAttachmentThumbUrl}}',
+			'{{sFileName}}',
+			'{{sAttachmentMeta}}',
+			'{{sFileSize}}',
+			'{{iFileSizeRaw}}',
+			'{{sAttachmentDate}}',
+			'attachment_other',
+			'{{sAttachmentStatusComp}}',
+			'{{iAttachmentDateRaw}}',
+			$bIsDeleteAllowed
+		));
+		$sAttachmentTableIdOther = $this->GetAttachmentsTableId();
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==4){
+				var attachmentRowTemplateOther = $sAttachmentTableRowTemplateOther;
+				function RemoveAttachment(sAttId)
+				{
+					$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
+					$('#display_attachment_' + sAttId).hide();
+					DecreaseAttachementsCountOther();
+				}
+				function IncreaseAttachementsCountOther()
+				{
+					UpdateAttachmentsCountOther(1);
+				}
+				function DecreaseAttachementsCountOther()
+				{
+					UpdateAttachmentsCountOther(-1);
+				}
+				function UpdateAttachmentsCountOther(iIncrement)
+				{
+					var countContainerOther = $("a#$sCollapseTogglerIdOther>span.attachments-count-other"),
+					iCountCurrentValueOther = parseInt(countContainerOther.text());
+					countContainerOther.text(iCountCurrentValueOther+iIncrement);
+				}
+
+				$('#{$this->oField->GetGlobalId()}').fileupload({
+					url: '{$this->oField->GetUploadEndpoint()}',
+					formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
+					dataType: 'json',
+					pasteZone: null, // Don't accept files via Chrome's copy/paste
+					done: function (e, data) {
+						if((data.result.error !== undefined) && window.console)
+						{
+							console.log(data.result.error);
+						}
+						else
+						{
+							var \$oAttachmentTBodyOther = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableIdOther>tbody'),
+								iAttId = data.result.att_id,
+								sDownloadLinkOther = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
+								sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
+
+							// hide "no attachment" line if present
+							\$oAttachmentFirstRow = \$oAttachmentTBodyOther.find("tr:first-child");
+							\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
+							
+							// update attachments count
+							IncreaseAttachementsCountOther();
+							
+							var replaces = [
+								{search: "{{iAttId}}", replace:iAttId },
+								{search: "{{lineStyle}}", replace:'' },
+								{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkOther },
+								{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
+								{search: "{{sFileName}}", replace: data.result.msg },
+								{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
+								{search: "{{sFileSize}}", replace:data.result.file_size },
+								{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							];
+							var sAttachmentRowOther = attachmentRowTemplateOther   ;
+							$.each(replaces, function(indexInArray, value ) {
+								var re = new RegExp(value.search, 'gi');
+								sAttachmentRowOther = sAttachmentRowOther.replace(re, value.replace);
+							});
+							
+							var oElem = $(sAttachmentRowOther);
+							if(!data.result.preview){
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
+							}
+							\$oAttachmentTBodyOther.append(oElem);
+							// Remove button handler
+							$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
+								oEvent.preventDefault();
+								RemoveAttachment(data.result.att_id);
+							});
+						}
+					},
+					send: function(e, data){
+						// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+						// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+						var iTotalSizeInBytes = 0;
+						for(var i = 0; i < data.files.length; i++)
+						{
+							iTotalSizeInBytes += data.files[i].size;
+						}
+						
+						if(iTotalSizeInBytes > $iMaxUploadInBytes)
+						{
+							alert('$sFileTooBigLabelForJS');
+							return false;
+						}
+					},
+					start: function() {
+						// Scrolling to dropzone so the user can see that attachments are uploaded
+						$(this)[0].scrollIntoView();
+						// Showing loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
+					},
+					stop: function() {
+						// Hiding the loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
+						// Adding this field to the touched fields of the field set so the cancel event is called if necessary
+						$(this).closest(".field_set").trigger("field_change", {
+							id: '{$this->oField->GetGlobalId()}',
+							name: '{$this->oField->GetId()}'
+						});
+					}
+				});
+
+				// Remove button handler
+				$('.attachments_container table#$sAttachmentTableIdOther>tbody>tr>td :button').on('click', function(oEvent){
+					oEvent.preventDefault();
+					RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
+				});
+
+				// Handles a drag / drop overlay
+				if($('#drag_overlay').length === 0)
+				{
+					$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
+				}
+
+				// Handles highlighting of the drop zone
+				// Note : This is inspired by itop-attachments/main.attachments.php
+				$(document).on('dragover', function(oEvent){
+					var bFiles = false;
+					if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+					{
+						for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
+						{
+							if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
+							{
+								bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
+								break;
+							}
+
+							if (oEvent.dataTransfer.types[i] == "Files")
+							{
+								bFiles = true;
+								break;
+							}
+						}
+					}
+
+					if (!bFiles) return; // Not dragging files
+
+					var oDropZone = $('#drag_overlay');
+					var oTimeout = window.dropZoneTimeout;
+					// This is to detect when there is no drag over because there is no "drag out" event
+					if (!oTimeout) {
+						oDropZone.removeClass('drag_out').addClass('drag_in');
+					} else {
+						clearTimeout(oTimeout);
+					}
+					window.dropZoneTimeout = setTimeout(function () {
+						window.dropZoneTimeout = null;
+						oDropZone.removeClass('drag_in').addClass('drag_out');
+					}, 200);
+				});
+			}
+JS
+		);
 		// & 4 Section of Attachement the Other section to copy END From HERE
 
 		// & 5 Section of Attachement the Unknown section to copy Start From HERE
-		
-		// Starting field container
-		$oOutput->AddHtml('<div class="form-group">');
+		$oOutput->AddHtml('<div id="unknown-form" class="form-group">');
 
-		$sCollapseTogglerIconVisibleClassUnknown = 'glyphicon-menu-down_';
-		$sCollapseTogglerIconHiddenClassUnknown = 'glyphicon-menu-down collapsed_';
-		$sCollapseTogglerClassUnknown = 'form_linkedset_toggler_';
+		$sCollapseTogglerIconVisibleClassUnknown = 'glyphicon-menu-down';
+		$sCollapseTogglerIconHiddenClassUnknown = 'glyphicon-menu-down collapsed';
+		$sCollapseTogglerClassUnknown = 'form_linkedset_toggler';
 		$sCollapseTogglerIdUnknown = $sCollapseTogglerClassUnknown . '_' . $this->oField->GetGlobalId();
-		$sFieldWrapperIdUnknown = 'form_upload_wrapper_Unknown_' . $this->oField->GetGlobalId();
+		$sFieldWrapperIdUnknown = 'form_upload_wrapper_unknown_' . $this->oField->GetGlobalId();
 		$sFieldDescriptionForHTMLTagUnknown = ($this->oField->HasDescription()) ? 'data-tooltip-content="'.utils::HtmlEntities($this->oField->GetDescription()).'"' : '';
 
 		// If collapsed
@@ -1115,7 +1703,7 @@ JS
 		$sCollapseTogglerExpandedUnknown = 'false';
 		$sCollapseTogglerIconClassUnknown = $sCollapseTogglerIconHiddenClassUnknown;
 		$sCollapseJSInitStateUnknown = 'false';
-
+		$aLabelUnknown = Dict::S('Portal:FieldLabel:TypeAttachmentUnknown');
 		// Label
 		$oOutput->AddHtml('<div class="form_field_label">');
 		if ($this->oField->GetLabel() !== '')
@@ -1124,8 +1712,9 @@ JS
 			$oOutput
 				->AddHtml('<label for="'.$this->oField->GetGlobalId().'" class="control-label" '.$sFieldDescriptionForHTMLTagUnknown.'>')
 				->AddHtml('<a id="' . $sCollapseTogglerIdUnknown . '" class="' . $sCollapseTogglerClassUnknown . '" data-toggle="collapse" href="#' . $sFieldWrapperIdUnknown . '" aria-expanded="' . $sCollapseTogglerExpandedUnknown . '" aria-controls="' . $sFieldWrapperIdUnknown . '">')
-				->AddHtml(Dict::S('Portal:FieldLabel:TypeAttachmentUnknown'),true)
-				->AddHtml(' (<span class="attachments-count">'.$iAttachmentsCountUnknownDoc.'</span>)')
+				//->AddHtml($this->oField->GetLabel(),true)
+				->AddHtml(' <span class="attachments-typeDoc">'.$aLabelUnknown.'</span>')
+				->AddHtml(' (<span class="attachments-count-unknown">'.$iAttachmentsCountUnknownDoc.'</span>)')
 				->AddHtml('<span class="glyphicon ' . $sCollapseTogglerIconClassUnknown . '">')
 				->AddHtml('</a>')
 				->AddHtml('</label>');
@@ -1140,11 +1729,287 @@ JS
 		$oOutput->AddHtml('<div class="fileupload_field_content">');
 		// Files list
 		$oOutput->AddHtml('<div class="attachments_container row">');
-		$this->PrepareExistingFilesUnKnown($oOutput, $bIsDeleteAllowed);
+		$this->PrepareExistingFilesUnknown($oOutput, $bIsDeleteAllowed);
 		$oOutput->Addhtml('</div>');
+
+		$sAttachmentTableIdUnknown = $this->GetAttachmentsTableId();
+		$sNoAttachmentLabelUnknown = json_encode(Dict::S('Attachments:NoAttachment'));
+		$sDeleteColumnDefUnknown = $bIsDeleteAllowed ? '{ targets: [4], orderable: false},' : '';
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==5){
+				// Collapse handlers
+				// - Collapsing by default to optimize form space
+				// It would be better to be able to construct the widget as collapsed, but in this case, datatables thinks the container is very small and therefore renders the table as if it was in microbox.
+				$('#{$sFieldWrapperIdUnknown}').collapse({toggle: {$sCollapseJSInitStateUnknown}});
+				// - Change toggle icon class
+				$('#{$sFieldWrapperIdUnknown}')
+					.on('shown.bs.collapse', function(){
+						// Creating the table if null (first expand). If we create it on start, it will be displayed as if it was in a micro screen due to the div being "display: none;"
+						if(oTable_{$this->oField->GetGlobalId()} === undefined)
+						{
+							buildTable_{$this->oField->GetGlobalId()}();
+						}
+					})
+					.on('show.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdUnknown} > span.glyphicon').removeClass('{$sCollapseTogglerIconHiddenClassUnknown}').addClass('{$sCollapseTogglerIconVisibleClassUnknown}');
+					})
+					.on('hide.bs.collapse', function(){
+						$('#{$sCollapseTogglerIdUnknown} > span.glyphicon').removeClass('{$sCollapseTogglerIconVisibleClassUnknown}').addClass('{$sCollapseTogglerIconHiddenClassUnknown}');
+					});
+
+				var oTable_{$this->oField->GetGlobalId()};
+
+
+				// Build datatable
+				var buildTable_{$this->oField->GetGlobalId()} = function()
+				{
+					oTable_{$this->oField->GetGlobalId()} = $("table#$sAttachmentTableIdUnknown").DataTable( {
+						"dom": "tp",
+						"order": [[3, "asc"]],
+						"columnDefs": [
+							$sDeleteColumnDefUnknown
+							{ targets: '_all', orderable: true },
+						],
+						"language": {
+							"infoEmpty": $sNoAttachmentLabelUnknown,
+							"zeroRecords": $sNoAttachmentLabelUnknown
+						}
+					} );
+				}
+			}
+JS
+		);
+
+		// Removing upload input if in read only
+		// TODO : Add max upload size when itop attachment has been refactored
+		if (!$this->oField->GetReadOnly())
+		{
+			//$oOutput->AddHtml('<div class="upload_container">'.Dict::S('Attachments:AddAttachment').'<input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+			$oOutput->AddHtml('<div class="upload_container"><input type="file" id="'.$this->oField->GetGlobalId().'" name="'.$this->oField->GetId().'" /><span class="loader glyphicon glyphicon-refresh"></span>'.InlineImage::GetMaxUpload().'</div>');
+		}
+		// Ending files container
+		$oOutput->AddHtml('</div>');
+		$oOutput->AddHtml('</div>');
+
+		// Ending field container
+		$oOutput->AddHtml('</div>');
+
+		// JS for file upload
+		$iMaxUploadInBytes = AttachmentPlugIn::GetMaxUploadSize();
+		$sMaxUploadLabel = AttachmentPlugIn::GetMaxUpload();
+		$sFileTooBigLabel = Dict::Format('Attachments:Error:FileTooLarge', $sMaxUploadLabel);
+		$sFileTooBigLabelForJS = addslashes($sFileTooBigLabel);
+		// Note : This is based on itop-attachement/main.itop-attachments.php
+		$sAttachmentTableRowTemplateUnknown = json_encode(self::GetAttachmentCourrierTableRow(
+			'{{iAttId}}',
+			'{{sLineStyle}}',
+			'{{sDocDownloadUrl}}',
+		     true,
+			'{{sAttachmentThumbUrl}}',
+			'{{sFileName}}',
+			'{{sAttachmentMeta}}',
+			'{{sFileSize}}',
+			'{{iFileSizeRaw}}',
+			'{{sAttachmentDate}}',
+			'attachment_unkown',
+			'{{sAttachmentStatusComp}}',
+			'{{iAttachmentDateRaw}}',
+			$bIsDeleteAllowed
+		));
+		$sAttachmentTableIdUnknown = $this->GetAttachmentsTableId();
+		$oOutput->AddJs(
+			<<<JS
+			if(dragValueAttach==5){
+				var attachmentRowTemplateUnknown = $sAttachmentTableRowTemplateUnknown;
+				function RemoveAttachment(sAttId)
+				{
+					$('#attachment_' + sAttId).attr('name', 'removed_attachments[]');
+					$('#display_attachment_' + sAttId).hide();
+					DecreaseAttachementsCountUnknown();
+				}
+				function IncreaseAttachementsCountUnknown()
+				{
+					UpdateAttachmentsCountUnknown(1);
+				}
+				function DecreaseAttachementsCountUnknown()
+				{
+					UpdateAttachmentsCountUnknown(-1);
+				}
+				function UpdateAttachmentsCountUnknown(iIncrement)
+				{
+					var countContainerUnknown = $("a#$sCollapseTogglerIdUnknown>span.attachments-count-unknown"),
+					iCountCurrentValueUnknown = parseInt(countContainerUnknown.text());
+					countContainerUnknown.text(iCountCurrentValueUnknown+iIncrement);
+				}
+
+				$('#{$this->oField->GetGlobalId()}').fileupload({
+					url: '{$this->oField->GetUploadEndpoint()}',
+					formData: { operation: 'add', temp_id: '{$sTempId}', object_class: '{$sObjectClass}', 'field_name': '{$this->oField->GetId()}' },
+					dataType: 'json',
+					pasteZone: null, // Don't accept files via Chrome's copy/paste
+					done: function (e, data) {
+						if((data.result.error !== undefined) && window.console)
+						{
+							console.log(data.result.error);
+						}
+						else
+						{
+							var \$oAttachmentTBodyUnknown = $(this).closest('.fileupload_field_content').find('.attachments_container table#$sAttachmentTableIdUnknown>tbody'),
+								iAttId = data.result.att_id,
+								sDownloadLinkUnknown = '{$this->oField->GetDownloadEndpoint()}'.replace(/-sAttachmentId-/, iAttId),
+								sAttachmentMeta = '<input id="attachment_'+iAttId+'" type="hidden" name="attachments[]" value="'+iAttId+'"/>';
+
+							// hide "no attachment" line if present
+							\$oAttachmentFirstRow = \$oAttachmentTBodyUnknown.find("tr:first-child");
+							\$oAttachmentFirstRow.find("td[colspan]").closest("tr").hide();
+							
+							// update attachments count
+							IncreaseAttachementsCountUnknown();
+							
+							var replaces = [
+								{search: "{{iAttId}}", replace:iAttId },
+								{search: "{{lineStyle}}", replace:'' },
+								{search: "{{sDocDownloadUrl}}", replace:sDownloadLinkUnknown },
+								{search: "{{sAttachmentThumbUrl}}", replace:data.result.icon },
+								{search: "{{sFileName}}", replace: data.result.msg },
+								{search: "{{sAttachmentMeta}}", replace:sAttachmentMeta },
+								{search: "{{sFileSize}}", replace:data.result.file_size },
+								{search: "{{sAttachmentDate}}", replace:data.result.creation_date },
+							];
+							var sAttachmentRowUnknown = attachmentRowTemplateUnknown   ;
+							$.each(replaces, function(indexInArray, value ) {
+								var re = new RegExp(value.search, 'gi');
+								sAttachmentRowUnknown = sAttachmentRowUnknown.replace(re, value.replace);
+							});
+							
+							var oElem = $(sAttachmentRowUnknown);
+							if(!data.result.preview){
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-content');
+								oElem.find('[data-tooltip-html-enabled="true"]').removeAttr('data-tooltip-html-enabled');
+							}
+							\$oAttachmentTBodyUnknown.append(oElem);
+							// Remove button handler
+							$('#display_attachment_'+data.result.att_id+' :button').on('click', function(oEvent){
+								oEvent.preventDefault();
+								RemoveAttachment(data.result.att_id);
+							});
+						}
+					},
+					send: function(e, data){
+						// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+						// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+						var iTotalSizeInBytes = 0;
+						for(var i = 0; i < data.files.length; i++)
+						{
+							iTotalSizeInBytes += data.files[i].size;
+						}
+						
+						if(iTotalSizeInBytes > $iMaxUploadInBytes)
+						{
+							alert('$sFileTooBigLabelForJS');
+							return false;
+						}
+					},
+					start: function() {
+						// Scrolling to dropzone so the user can see that attachments are uploaded
+						$(this)[0].scrollIntoView();
+						// Showing loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'visible');
+					},
+					stop: function() {
+						// Hiding the loader
+						$(this).closest('.upload_container').find('.loader').css('visibility', 'hidden');
+						// Adding this field to the touched fields of the field set so the cancel event is called if necessary
+						$(this).closest(".field_set").trigger("field_change", {
+							id: '{$this->oField->GetGlobalId()}',
+							name: '{$this->oField->GetId()}'
+						});
+					}
+				});
+
+				// Remove button handler
+				$('.attachments_container table#$sAttachmentTableIdUnknown>tbody>tr>td :button').on('click', function(oEvent){
+					oEvent.preventDefault();
+					RemoveAttachment($(this).closest('.attachment').find(':input[name="attachments[]"]').val());
+				});
+
+				// Handles a drag / drop overlay
+				if($('#drag_overlay').length === 0)
+				{
+					$('body').append( $('<div id="drag_overlay" class="global_overlay"><div class="overlay_content"><div class="content_uploader"><div class="icon glyphicon glyphicon-cloud-upload"></div><div class="message">{$sUploadDropZoneLabel}</div></div></div></div>') );
+				}
+
+				// Handles highlighting of the drop zone
+				// Note : This is inspired by itop-attachments/main.attachments.php
+				$(document).on('dragover', function(oEvent){
+					var bFiles = false;
+					if (oEvent.dataTransfer && oEvent.dataTransfer.types)
+					{
+						for (var i = 0; i < oEvent.dataTransfer.types.length; i++)
+						{
+							if (oEvent.dataTransfer.types[i] == "application/x-moz-nativeimage")
+							{
+								bFiles = false; // mozilla contains "Files" in the types list when dragging images inside the page, but it also contains "application/x-moz-nativeimage" before
+								break;
+							}
+
+							if (oEvent.dataTransfer.types[i] == "Files")
+							{
+								bFiles = true;
+								break;
+							}
+						}
+					}
+
+					if (!bFiles) return; // Not dragging files
+
+					var oDropZone = $('#drag_overlay');
+					var oTimeout = window.dropZoneTimeout;
+					// This is to detect when there is no drag over because there is no "drag out" event
+					if (!oTimeout) {
+						oDropZone.removeClass('drag_out').addClass('drag_in');
+					} else {
+						clearTimeout(oTimeout);
+					}
+					window.dropZoneTimeout = setTimeout(function () {
+						window.dropZoneTimeout = null;
+						oDropZone.removeClass('drag_in').addClass('drag_out');
+					}, 200);
+				});
+			}
+JS
+		);
 		// & 5 Section of Attachement the Unknown section to copy END From HERE
-*/
+
 		return $oOutput;
+	} else {
+		
+		$aLabelMessage1 = Dict::S('Portal:FieldLabel:1MessageBlock');
+		$aLabelMessage2 = Dict::S('Portal:FieldLabel:2MessageBlock');
+		$aLabelMessage3 = Dict::S('Portal:FieldLabel:3MessageBlock');
+		$aLabelMessage4 = Dict::S('Portal:FieldLabel:4MessageBlock');
+		$aLabelMessage5 = Dict::S('Portal:FieldLabel:5MessageBlock');
+		$aLabelMessage6 = Dict::S('Portal:FieldLabel:6MessageBlock');
+		$aLabelMessage7 = Dict::S('Portal:FieldLabel:7MessageBlock');
+		$aLabelMessage8 = Dict::S('Portal:FieldLabel:8MessageBlock');
+		//$idDemandeur = $this->oField->GetObject()->Get('caller_id');
+		$nameDemandeur = $this->oField->GetObject()->Get('caller_name');
+		//$nameOrgDemandeur = $this->oField->GetObject()->Get('org_name');
+		var_dump($nameDemandeur);
+		$oOutput->AddHtml('<div class="form-group">');
+		$oOutput->AddHtml('<p style="font-size: 18px; padding: 8px 13px; margin: 1px 1px;">Cher(e) <Strong role="alert">'.$nameDemandeur.',</Strong></br></br>'); 
+		$oOutput->AddHtml($aLabelMessage1.'</br>');
+		$oOutput->AddHtml($aLabelMessage2.'</br>');
+		$oOutput->AddHtml($aLabelMessage3.'</br></br>');
+		$oOutput->AddHtml($aLabelMessage4.'</br>');
+		$oOutput->AddHtml($aLabelMessage5.'</br></br>');
+		$oOutput->AddHtml($aLabelMessage6.'</br></br>');
+		$oOutput->AddHtml($aLabelMessage7.'</br></br>');
+		$oOutput->AddHtml($aLabelMessage8.'</p>');
+		$oOutput->AddHtml('</div>');
+		return $oOutput;
+	}
 	}
 	}
 
@@ -1349,9 +2214,9 @@ HTML
 					$sFileSize,
 					$iFileSizeRaw,
 					$sAttachmentDate,
-					$iAttachmentDateRaw,
 					$sAttachmentTypeAttachment,
 					$sAttachmentStatusComp,
+					$iAttachmentDateRaw,
 					$bIsDeleteAllowed
 				));
 			}
@@ -1460,9 +2325,9 @@ HTML
 					$sFileSize,
 					$iFileSizeRaw,
 					$sAttachmentDate,
-					$iAttachmentDateRaw,
 					$sAttachmentTypeAttachment,
 					$sAttachmentStatusComp,
+					$iAttachmentDateRaw,
 					$bIsDeleteAllowed
 				));
 			}
@@ -1571,9 +2436,9 @@ HTML
 					$sFileSize,
 					$iFileSizeRaw,
 					$sAttachmentDate,
-					$iAttachmentDateRaw,
 					$sAttachmentTypeAttachment,
 					$sAttachmentStatusComp,
+					$iAttachmentDateRaw,
 					$bIsDeleteAllowed
 				));
 			}
@@ -1682,9 +2547,9 @@ HTML
 					$sFileSize,
 					$iFileSizeRaw,
 					$sAttachmentDate,
-					$iAttachmentDateRaw,
 					$sAttachmentTypeAttachment,
 					$sAttachmentStatusComp,
+					$iAttachmentDateRaw,
 					$bIsDeleteAllowed
 				));
 			}
@@ -1794,9 +2659,9 @@ HTML
 					$sFileSize,
 					$iFileSizeRaw,
 					$sAttachmentDate,
-					$iAttachmentDateRaw,
 					$sAttachmentTypeAttachment,
 					$sAttachmentStatusComp,
+					$iAttachmentDateRaw,
 					$bIsDeleteAllowed
 				));
 			}
@@ -1856,17 +2721,17 @@ HTML;
 
 		// Optional column
 		//^ customization cfac for disable attachement
-		$sDeleteHeaderAsHtml = ($bIsDeleteAllowed) ? '<th role="delete" data-priority="1" style="width:10%"></th>' : '';
+		$sDeleteHeaderAsHtml = ($bIsDeleteAllowed) ? '<th role="delete" data-priority="1" style="width:15%"></th>' : '';
 		//^ end customization cfac
 
 		return <<<HTML
 	<thead>
-		<th role="icon" style="width:10%">$sTitleThumbnail</th>
-		<th role="filename" data-priority="1" style="width:25%">$sTitleFileName</th>
-		<th role="formatted-size" style="width:10%">$sTitleFileSize</th>
-		<th role="upload-date">$sTitleFileDate</th>
-		<th role="type-file" style="width:18%">$sFileTypeAttachment</th>
-		<th role="status-file">$sTitleFileStatusComp</th>
+		<th role="icon" style="width:11%">$sTitleThumbnail</th>
+		<th role="filename" data-priority="1" style="width:12%">$sTitleFileName</th>
+		<th role="formatted-size" style="width:11%">$sTitleFileSize</th>
+		<th role="upload-date" style="width:17%">$sTitleFileDate</th>
+		<th role="type-file" style="width:15%">$sFileTypeAttachment</th>
+		<th role="status-file" style="width:21%">$sTitleFileStatusComp</th>
 		<!-- ^ customization cfac for disable attachement -->
 			$sDeleteHeaderAsHtml
 		<!--^ end customization cfac -->
@@ -1942,14 +2807,14 @@ HTML;
 	 */
 	protected static function GetAttachmentCourrierTableRow(
 		$iAttId, $sLineStyle, $sDocDownloadUrl, $bHasPreview, $sAttachmentThumbUrl, $sFileName, $sAttachmentMeta, $sFileSize,
-		$iFileSizeRaw, $sAttachmentDate, $iAttachmentDateRaw, $sAttachmentTypeAttachment, $sAttachmentStatusComp, $bIsDeleteAllowed
+		$iFileSizeRaw, $sAttachmentDate, $sAttachmentTypeAttachment, $sAttachmentStatusComp, $iAttachmentDateRaw, $bIsDeleteAllowed
 	) {
 		$sDeleteCell = '';
-		if ($bIsDeleteAllowed && !$sAttachmentStatusComp)
+		if ($bIsDeleteAllowed && $sAttachmentStatusComp !=1)
 		{
 			$sDeleteBtnLabel = Dict::S('Portal:Button:Delete');
 			$sDeleteCell = '<td role="delete"><input id="btn_remove_'.$iAttId.'" type="button" class="btn btn-xs btn-primary" value="'.$sDeleteBtnLabel.'"></td>';
-		}else {
+		} else {
 			$sDeleteBtnLabel = Dict::S('Portal:Button:Delete');
 			$sDeleteCell = '<td role="delete"><input id="btn_remove_'.$iAttId.'" type="button" class="btn btn-xs btn-primary" value="'.$sDeleteBtnLabel.'" disabled></td>';
 		}
@@ -1962,8 +2827,7 @@ HTML;
 			$sHtml .= "<td role=\"icon\"><a href=\"$sDocDownloadUrl\" target=\"_blank\"><img src=\"$sAttachmentThumbUrl\" ></a></td>";
 		}
 		// ^ customization cfac for disable attachement
-		
-		if ($sAttachmentStatusComp == true)
+		if ($sAttachmentStatusComp == 1)
 		{
 			$sStatusBtnLabelValid = Dict::S('Portal:Button:ValidStatut');
 			$sStatusCompCell = '<td role="status-comp" style="text-align: center; vertical-align: middle;"><p id="status_id_portal_user" style="font-size: 11px; font-weight: bold; background-color: #357a38; width: 120px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" class="btn btn-xs btn-primary" disabled>'.$sStatusBtnLabelValid.'</p></td>';
@@ -1973,30 +2837,30 @@ HTML;
 		}
 		//! function to show the type by enum value TO DO
 		
-			if($sAttachmentTypeAttachment == 'attachment_achat'){
+			if($sAttachmentTypeAttachment == "attachment_achat") {
 
 				$sTypeLabelAttach = Dict::S('Portal:Button:TypeAchat');
 				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_achat" class="list-group-item list-group-item-action list-group-item-info" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeLabelAttach.'</li></td>';
 
-			} else if($sAttachmentTypeAttachment == 'attachment_vente'){
+			} else if($sAttachmentTypeAttachment == "attachment_vente") {
 
 				$sTypeLabelAttach = Dict::S('Portal:Button:TypeVente');
 				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_vente" class="list-group-item list-group-item-action list-group-item-success" style="font-size: 12px; font-weight: bold; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeLabelAttach.'</li></td>';	
 			
-			} else if($sAttachmentTypeAttachment == 'attachment_banque'){
+			} else if($sAttachmentTypeAttachment == "attachment_banque") {
 
 				$sTypeLabelAttach = Dict::S('Portal:Button:TypeBanque');
 				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_banque" class="list-group-item list-group-item-action list-group-item-warning" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeLabelAttach.'</li></td>';
 
-			} else if ($sAttachmentTypeAttachment == 'attachment_other'){
+			} else if ($sAttachmentTypeAttachment == "attachment_other") {
 
 				$sTypeLabelAttach = Dict::S('Portal:Button:TypeOther');
 				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_other" class="list-group-item list-group-item-action list-group-item-danger" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeLabelAttach.'</li></td>';
 
-			} else {
-
+			} else if ($sAttachmentTypeAttachment == "attachment_unkown") {
+				
 				$sTypeUndefinedLabelAttachNot = Dict::S('Portal:Button:TypeUndefined');
-				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_undefined" class="list-group-item list-group-item-action list-group-item-dark" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeUndefinedLabelAttachNot.'</li></td>';
+				$sTypeAttachCell = '<td role="type-document" style="text-align: center; vertical-align: middle;"><li id="type_doc_id_portal_user_unknown" class="list-group-item list-group-item-action list-group-item-dark" style="font-size: 12px; font-weight: bold; width: 85px; height: 28px; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; border-radius: 25% 10%;">'.$sTypeUndefinedLabelAttachNot.'</li></td>';
 
 			}
 

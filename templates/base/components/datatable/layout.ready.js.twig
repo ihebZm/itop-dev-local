@@ -190,6 +190,7 @@ var oTable{{ sListIDForVarSuffix }} = $('#{{ oUIBlock.GetId() }}').DataTable({
                 if (rowData["{{ aColumn["class_alias"] }}/{{ aColumn["attribute_code"] }}/raw"]) {
                     $(td).attr('data-value-raw', rowData["{{ aColumn["class_alias"] }}/{{ aColumn["attribute_code"] }}/raw"]);
                 }
+                {# TODO if it s needed Validation courrier customization cfac #}
             },
             render: {
                 display: function (data, type, row) {  {{ aColumn["render"]|raw }}},

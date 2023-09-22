@@ -149,6 +149,11 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Ticket:relation'                                               => 'Beziehungen',
 	'Ticket:log'                                                    => 'Kommunikation',
 	'Ticket:Type'                                                   => 'Qualifikation',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Support',
 	'Ticket:resolution'                                             => 'Lösung',
 	'Ticket:SLA'                                                    => 'SLA-Report',

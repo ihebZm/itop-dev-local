@@ -164,6 +164,11 @@ Dict::Add('TR TR', 'Turkish', 'Türkçe', array(
 	'Ticket:relation'                                               => 'İlişkiler',
 	'Ticket:log'                                                    => 'İletişim',
 	'Ticket:Type'                                                   => 'Yeterlilik',
+	//customization courrier cfac 
+	'Ticket:courrier:Process'                                       => 'Courrier process coordination',
+	'Ticket:courrier:Check'                                         => 'Courrier check',
+	'Ticket:courrier:Validation'                                    => 'Courrier Validation',
+	//customization courrier cfac 
 	'Ticket:support'                                                => 'Destek',
 	'Ticket:resolution'                                             => 'Çözünürlük',
 	'Ticket:SLA'                                                    => 'SLA raporu',

@@ -1669,6 +1669,94 @@ table .group-actions .item-action-wrapper .panel-body > p:last-child {
   text-align: center;
 }
 
+/* ^ FileUpload customization courrier vente CFAC GROUP*/
+.attachments_container_vente .attachments-list thead > tr > th {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td {
+  padding: 0.5rem 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] img {
+  max-height: 32px;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=formatted-size] {
+  text-align: right;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=delete] {
+  text-align: center;
+}
+
+/* ^ FileUpload customization courrier vente CFAC GROUP*/
+.attachments_container_vente .attachments-list thead > tr > th {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td {
+  padding: 0.5rem 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] img {
+  max-height: 32px;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=formatted-size] {
+  text-align: right;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=delete] {
+  text-align: center;
+}
+
+/* ^ FileUpload customization courrier vente CFAC GROUP*/
+.attachments_container_vente .attachments-list thead > tr > th {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td {
+  padding: 0.5rem 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] img {
+  max-height: 32px;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=formatted-size] {
+  text-align: right;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=delete] {
+  text-align: center;
+}
+
+/* ^ FileUpload customization courrier vente CFAC GROUP*/
+.attachments_container_vente .attachments-list thead > tr > th {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td {
+  padding: 0.5rem 8px;
+  text-align: left;
+  vertical-align: middle;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] {
+  text-align: center;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=icon] img {
+  max-height: 32px;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=formatted-size] {
+  text-align: right;
+}
+.attachments_container_vente .attachments-list tbody > tr > td[role=delete] {
+  text-align: center;
+}
+
 .attachment-tooltip {
   max-width: 100%;
   max-height: 100%;
