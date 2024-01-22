@@ -31,6 +31,10 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Активный',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Неактивный',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Неактивный',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => 'Вышестоящая',
 	'Class:Organization/Attribute:parent_id+' => 'Вышестоящая организация',
 	'Class:Organization/Attribute:parent_name' => 'Вышестоящая',

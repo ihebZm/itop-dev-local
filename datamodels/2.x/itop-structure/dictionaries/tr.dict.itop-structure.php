@@ -45,6 +45,10 @@ Dict::Add('TR TR', 'Turkish', 'Türkçe', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Etkin',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Etkin değil',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Etkin değil',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+
 	'Class:Organization/Attribute:parent_id' => 'Bağlı olduğu kurum',
 	'Class:Organization/Attribute:parent_id+' => 'Bağlı olduğu kurum',
 	'Class:Organization/Attribute:parent_name' => 'Bağlı olduğu kurumun adı',

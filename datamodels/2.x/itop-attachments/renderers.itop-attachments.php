@@ -155,7 +155,7 @@ abstract class AbstractAttachmentsRenderer
 	public function RenderEditAttachmentsList($aAttachmentsDeleted = array(), $aAttachmentsDisabled = array())
 	{
 		$this->AddUploadButton();
-
+		$this->SelectiveUploadButton();
 		$this->oPage->add('<div id="'.self::ATTACHMENTS_LIST_CONTAINER_ID.'">');
 		$this->AddAttachmentsListContent(true, $aAttachmentsDeleted, $aAttachmentsDisabled);
 		$this->oPage->add('</div>');
@@ -180,6 +180,29 @@ abstract class AbstractAttachmentsRenderer
 	{
 		$this->AddAttachmentsListContent(false, array());
 	}
+
+	// ^ START HERE customization courrier cfac
+	protected function SelectiveUploadButton()
+	{
+		$sTypeSelectiveUpload1='';
+		$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+		$sTypeSelectiveUpload1 .= '<input id="type_attachment_vente_upload_button" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelVente.'">';
+
+		$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+		$sTypeSelectiveUpload1 .= '<input id="type_attachment_achat_upload_button" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelAchat.'">';
+
+		$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+		$sTypeSelectiveUpload1 .= '<input id="type_attachment_banque_upload_button" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelBanque.'">';
+
+		$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+		$sTypeSelectiveUpload1 .= '<input id="type_attachment_other_upload_button" style="font-size: 10px; background-color: #357a38; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary;" value="'.$sTypeBtnLabelOther.'">';
+
+		$sStatusBtnLabelNonValid = Dict::S('Portal:Button:TypeUndefined');
+		$sTypeSelectiveUpload1 .= '<input id="type_attachment_unknown_upload_button" style="font-size: 10px; background-color: #660000; width: 104px; height: 28px; border: none; color: white; padding: 8px 13px; text-align: center; text-decoration: none; display: inline-block; margin: 1px 1px; cursor: pointer; border-radius: 25% 10%;" type="button" class="btn btn-xs btn-primary" value="'.$sStatusBtnLabelNonValid.'">';
+
+		$this->oPage->add('<div>'.$sTypeSelectiveUpload1.'</div>');
+	}
+	// ^ END HERE customization courrier cfac
 
 	protected function AddUploadButton()
 	{
@@ -209,6 +232,7 @@ abstract class AbstractAttachmentsRenderer
 			<<<JS
 	function RefreshAttachmentsDisplay(dataUpload)
 	{
+		// ! TODO changing value of attachments type to display it 
 		var sContentNode = '#AttachmentsListContainer',
 			aAttachmentsDeletedHiddenInputs = $('#AttachmentsListContainer table>tbody>tr[id^="display_attachment_"]>td input[name="removed_attachments[]"]'),
 			aAttachmentsDeletedIds = aAttachmentsDeletedHiddenInputs.map(function() { return $(this).val() }).toArray();

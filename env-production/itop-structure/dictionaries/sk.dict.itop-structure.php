@@ -43,6 +43,10 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
 	'Class:Organization/Attribute:status/Value:active+' => '',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Neaktívna',
 	'Class:Organization/Attribute:status/Value:inactive+' => '',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => '',
+	
 	'Class:Organization/Attribute:parent_id' => 'Nadradená organizácia',
 	'Class:Organization/Attribute:parent_id+' => '',
 	'Class:Organization/Attribute:parent_name' => 'Nadradená organizácia',

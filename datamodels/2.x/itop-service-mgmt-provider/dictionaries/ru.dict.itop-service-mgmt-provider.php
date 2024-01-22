@@ -101,6 +101,10 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Class:Contract/Attribute:cost_currency/Value:dollars+' => '',
 	'Class:Contract/Attribute:cost_currency/Value:euros' => 'Евро',
 	'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+	// * this been added as a customization for cfac contracts
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+	
 	'Class:Contract/Attribute:contracttype_id' => 'Тип договора',
 	'Class:Contract/Attribute:contracttype_id+' => '',
 	'Class:Contract/Attribute:contracttype_name' => 'Тип договора',

@@ -165,14 +165,6 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'Non',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
-	
-	// add attribute facture achat -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Achat sans aucune mention de paiement',
-	'Class:UserRequest/Attribute:invoice_achat+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'Avec cachet',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Choix de paiement',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
 
 	// add attribute statement and documents facture banque -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Relevés bancaires et documents d\'achat',
@@ -287,6 +279,7 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '',
 	'Class:UserRequest/Attribute:time_spent' => 'Délai de résolution',
 	'Class:UserRequest/Attribute:time_spent+' => '',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => 'Code de résolution',
 	'Class:UserRequest/Attribute:resolution_code+' => '',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'assistance',
@@ -303,6 +296,19 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'mise à jour système',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => 'formation',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => 'formation',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'A Valider',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'A Valider',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'En Attente',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'En Attente',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'A Refaire',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'A Refaire',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'A Cloturer',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'A Cloturer',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => 'Solution',
 	'Class:UserRequest/Attribute:solution+' => '',
 	'Class:UserRequest/Attribute:pending_reason' => 'Raison de suspension',

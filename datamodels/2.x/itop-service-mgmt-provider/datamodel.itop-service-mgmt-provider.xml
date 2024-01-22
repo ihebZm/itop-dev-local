@@ -137,6 +137,10 @@
             <value id="euros">
               <code>euros</code>
             </value>
+            <!-- * this been added as a customization for cfac contracts -->
+            <value id="dinar_tunisien">
+              <code>dinar_tunisien</code>
+            </value>
           </values>
           <sql>cost_currency</sql>
           <default_value/>

@@ -43,6 +43,10 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'アクティブ',
 	'Class:Organization/Attribute:status/Value:inactive' => '非アクティブ',
 	'Class:Organization/Attribute:status/Value:inactive+' => '非アクティブ',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => '親',
 	'Class:Organization/Attribute:parent_id+' => '親組織',
 	'Class:Organization/Attribute:parent_name' => '親名前',

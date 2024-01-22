@@ -2656,8 +2656,8 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Résolues',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'gestions de documents',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de documents.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Courrier comptable',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de Courrier comptable.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Courrier en cours',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Suivez vos Courrier en cours.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Non Comptabiliser',
@@ -2678,6 +2678,10 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Organization/Attribute:status/Value:active+' => 'active',
 	'Class:Organization/Attribute:status/Value:inactive' => 'inactive',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inactive',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'non payé',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'non payé',
+
 	'Class:Organization/Attribute:parent_id' => 'Organisation Parent',
 	'Class:Organization/Attribute:parent_id+' => 'Organisation parent',
 	'Class:Organization/Attribute:parent_name' => 'Nom du parent',
@@ -4376,6 +4380,112 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Incident/Attribute:urgency/Value:3+' => 'moyenne',
 	'Class:Incident/Attribute:urgency/Value:4' => 'basse',
 	'Class:Incident/Attribute:urgency/Value:4+' => 'basse',
+	// ^ Start Here customization des courrier
+	// add attribute type person vente -->
+	'Class:Incident/Attribute:type_person' => 'type person',
+	'Class:Incident/Attribute:type_person+' => '',
+	'Class:Incident/Attribute:type_personne/Value:physical_person' => 'Physical person',
+	'Class:Incident/Attribute:type_personne/Value:physical_person+' => '',
+	'Class:Incident/Attribute:type_personne/Value:moral_person' => 'Moral person',
+	'Class:Incident/Attribute:type_personne/Value:moral_person+' => '',
+   
+	// add attribute numero first invoice vente -->
+	'Class:Incident/Attribute:numero_start_invoice_vente' => 'Sales invoice starting number',
+	'Class:Incident/Attribute:numero_start_invoice_vente+' => '',
+
+	//add attribute numero last invoice vente -->
+	'Class:Incident/Attribute:numero_end_invoice_vente' => 'Sales invoice finishing number',
+	'Class:Incident/Attribute:numero_end_invoice_vente+' => '',
+	
+	// add attribute numero last month vente -->
+	'Class:Incident/Attribute:numero_last_month_invoice_vente' => 'Sales invoice last month number',
+	'Class:Incident/Attribute:numero_last_month_invoice_vente+' => '',
+	
+	//add attribute chiffre d'affaires vente -->
+	'Class:Incident/Attribute:amount_turnover_vente' => 'Amount of the turnover',
+	'Class:Incident/Attribute:amount_turnover_vente+' => '',
+	
+	// add attribute bordereau bancaire vente -->
+	'Class:Incident/Attribute:bank_slip_vente' => 'Bank sales slip',
+	'Class:Incident/Attribute:bank_slip_vente+' => '',
+	'Class:Incident/Attribute:bank_slip_vente/Value:yes' =>'Yes',
+	'Class:Incident/Attribute:bank_slip_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:bank_slip_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:bank_slip_vente/Value:no+' => '',
+	
+	// add attribute avis d'opérations vente -->
+	'Class:Incident/Attribute:transaction_notice_vente' => 'Sale transaction notice',
+	'Class:Incident/Attribute:transaction_notice_vente+' => '',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:no+' => '',
+	
+	// add attribute certificats de RS clients vente -->
+	'Class:Incident/Attribute:sr_certificates_vente' => 'customer RS certificates',
+	'Class:Incident/Attribute:sr_certificates_vente+' => '',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:no+' => '',
+
+	// add attribute statement and documents facture banque -->
+	'Class:Incident/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
+	'Class:Incident/Attribute:statements_and_documents_banque+' => '',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:yes+' => '',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:no' => 'No',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:no+' => '',
+
+	// add attribute comment on reconciliation statement facture banque -->
+	'Class:Incident/Attribute:comment_on_reconciliation_statement_banque' => 'comment on the reconciliation statement from the previous month',
+	'Class:Incident/Attribute:comment_on_reconciliation_statement_banque+' => '',
+	
+	// add attribute exceptional order courrier (Visa) -->
+	'Class:Incident/Attribute:exceptional_order_courrier' => 'exceptional order courrier (Visa)',
+	'Class:Incident/Attribute:exceptional_order_courrier+' => '',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:yes+' => '',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:no' => 'No',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:no+' => '',
+
+	// add attribute month courrier -->
+	'Class:Incident/Attribute:month_courrier' => 'Month of courrier',
+	'Class:Incident/Attribute:month_courrier+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:1' => 'January',
+	'Class:Incident/Attribute:month_courrier/Value:1+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:2' => 'February',
+	'Class:Incident/Attribute:month_courrier/Value:2+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:3' => 'March',
+	'Class:Incident/Attribute:month_courrier/Value:3+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:4' => 'April',
+	'Class:Incident/Attribute:month_courrier/Value:4+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:5' => 'May',
+	'Class:Incident/Attribute:month_courrier/Value:5+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:6' => 'June',
+	'Class:Incident/Attribute:month_courrier/Value:6+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:7' => 'July',
+	'Class:Incident/Attribute:month_courrier/Value:7+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:8' => 'August',
+	'Class:Incident/Attribute:month_courrier/Value:8+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:9' => 'September',
+	'Class:Incident/Attribute:month_courrier/Value:9+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:10' => 'October',
+	'Class:Incident/Attribute:month_courrier/Value:10+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:11' => 'november',
+	'Class:Incident/Attribute:month_courrier/Value:11+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:12' => 'December',
+	'Class:Incident/Attribute:month_courrier/Value:12+' => '',
+
+	// add attribute to block client URL -->
+	'Class:Incident/Attribute:block_client_ur' => 'Block client if :',
+	'Class:Incident/Attribute:block_client_ur+' => '',
+	'Class:Incident/Attribute:block_client_ur/Value:1' => 'He didn\'t make the payment',
+	'Class:Incident/Attribute:block_client_ur/Value:1+' => '',
+	'Class:Incident/Attribute:block_client_ur/Value:2' => 'He did pay his payments',
+	'Class:Incident/Attribute:block_client_ur/Value:2+' => '',
+	
+	// ^ End Here customization des courrier -->
 	'Class:Incident/Attribute:origin' => 'Origine',
 	'Class:Incident/Attribute:origin+' => '',
 	'Class:Incident/Attribute:origin/Value:mail' => 'email',
@@ -4428,6 +4538,7 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Incident/Attribute:sla_ttr_over+' => '',
 	'Class:Incident/Attribute:time_spent' => 'Délai de résolution',
 	'Class:Incident/Attribute:time_spent+' => '',
+	/*
 	'Class:Incident/Attribute:resolution_code' => 'Code de résolution',
 	'Class:Incident/Attribute:resolution_code+' => '',
 	'Class:Incident/Attribute:resolution_code/Value:assistance' => 'assistance',
@@ -4444,6 +4555,19 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Incident/Attribute:resolution_code/Value:system update+' => 'mise à jour système',
 	'Class:Incident/Attribute:resolution_code/Value:training' => 'formation',
 	'Class:Incident/Attribute:resolution_code/Value:training+' => 'formation',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:Incident/Attribute:resolution_code' => 'resolution code',
+	'Class:Incident/Attribute:resolution_code+' => '',
+	'Class:Incident/Attribute:resolution_code/Value:a valider' => 'A Valider',
+	'Class:Incident/Attribute:resolution_code/Value:a valider+' => 'A Valider',
+	'Class:Incident/Attribute:resolution_code/Value:en attente' => 'En Attente',
+	'Class:Incident/Attribute:resolution_code/Value:en attente+' => 'En Attente',
+	'Class:Incident/Attribute:resolution_code/Value:a refaire' => 'A Refaire',
+	'Class:Incident/Attribute:resolution_code/Value:a refaire+' => 'A Refaire',
+	'Class:Incident/Attribute:resolution_code/Value:a cloturer' => 'A Cloturer',
+	'Class:Incident/Attribute:resolution_code/Value:a cloturer+' => 'A Cloturer',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:Incident/Attribute:solution' => 'Solution',
 	'Class:Incident/Attribute:solution+' => '',
 	'Class:Incident/Attribute:pending_reason' => 'Raison de suspension',
@@ -4881,14 +5005,6 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'Non',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
-	
-	// add attribute facture achat in portal client -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Achat sans aucune mention de paiement',
-	'Class:UserRequest/Attribute:invoice_achat+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'Avec cachet',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Choix de paiement',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
 
 	// add attribute statement and documents facture banque in portal client -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Relevés bancaires et documents d\'achat',
@@ -5003,6 +5119,7 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '',
 	'Class:UserRequest/Attribute:time_spent' => 'Délai de résolution',
 	'Class:UserRequest/Attribute:time_spent+' => '',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => 'Code de résolution',
 	'Class:UserRequest/Attribute:resolution_code+' => '',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'assistance',
@@ -5019,6 +5136,19 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'mise à jour système',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => 'formation',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => 'formation',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'A Valider',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'A Valider',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'En Attente',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'En Attente',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'A Refaire',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'A Refaire',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'A Cloturer',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'A Cloturer',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => 'Solution',
 	'Class:UserRequest/Attribute:solution+' => '',
 	'Class:UserRequest/Attribute:pending_reason' => 'Raison de suspension',
@@ -5142,6 +5272,10 @@ Soit demandez à votre administrateur système s\'il reste de la place disque di
 	'Class:Contract/Attribute:cost_currency/Value:dollars+' => '',
 	'Class:Contract/Attribute:cost_currency/Value:euros' => 'Euros',
 	'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+	// * this been added as a customization for cfac contracts
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+
 	'Class:Contract/Attribute:contracttype_id' => 'Type de contrat',
 	'Class:Contract/Attribute:contracttype_id+' => '',
 	'Class:Contract/Attribute:contracttype_name' => 'Nom Type de contrat',

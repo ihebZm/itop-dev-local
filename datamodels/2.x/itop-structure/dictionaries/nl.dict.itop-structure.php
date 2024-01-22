@@ -50,6 +50,10 @@ Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Actief',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inactief',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inactief',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => 'Hoofdorganisatie',
 	'Class:Organization/Attribute:parent_id+' => 'Hoofdorganisatie',
 	'Class:Organization/Attribute:parent_name' => 'Naam hoofdorganisatie',

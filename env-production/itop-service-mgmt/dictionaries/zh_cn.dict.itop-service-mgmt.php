@@ -113,6 +113,10 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Class:Contract/Attribute:cost_currency/Value:dollars+' => '',
 	'Class:Contract/Attribute:cost_currency/Value:euros' => '欧元',
 	'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+	// * this been added as a customization for cfac contracts
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+	
 	'Class:Contract/Attribute:contracttype_id' => '合同类型',
 	'Class:Contract/Attribute:contracttype_id+' => '',
 	'Class:Contract/Attribute:contracttype_name' => '合同类型名称',

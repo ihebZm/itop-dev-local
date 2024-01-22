@@ -1153,6 +1153,10 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Class:Organization/Attribute:status/Value:active+' => '',
  'Class:Organization/Attribute:status/Value:inactive' => 'Neaktívna',
  'Class:Organization/Attribute:status/Value:inactive+' => '',
+ // customization cfac unpaid organization
+ 'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+ 'Class:Organization/Attribute:status/Value:unpaid+' => '',
+
  'Class:Organization/Attribute:parent_id' => 'Nadradená organizácia',
  'Class:Organization/Attribute:parent_id+' => '',
  'Class:Organization/Attribute:deliverymodel_id' => 'Model dodávky',
@@ -2141,14 +2145,6 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'No',
  'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
 
- // add attribute facture achat -->
- 'Class:UserRequest/Attribute:invoice_achat' => 'Purchase without any mention of payment',
- 'Class:UserRequest/Attribute:invoice_achat+' => '',
- 'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'With stamp',
- 'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
- 'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Payment choice',
- 'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
-
  // add attribute statement and documents facture banque -->
  'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
  'Class:UserRequest/Attribute:statements_and_documents_banque+' => '',
@@ -2254,6 +2250,7 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Class:UserRequest/Attribute:sla_ttr_over+' => '',
  'Class:UserRequest/Attribute:time_spent' => 'Oneskorenie vyriešenia',
  'Class:UserRequest/Attribute:time_spent+' => '',
+ /*
  'Class:UserRequest/Attribute:resolution_code' => 'Kód riešenia',
  'Class:UserRequest/Attribute:resolution_code+' => '',
  'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'Asistencia',
@@ -2270,6 +2267,19 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Class:UserRequest/Attribute:resolution_code/Value:system update+' => '',
  'Class:UserRequest/Attribute:resolution_code/Value:training' => 'Školenie',
  'Class:UserRequest/Attribute:resolution_code/Value:training+' => '',
+ */
+ // ^ START HERE Customization CFAC resolution de demande
+ 'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+ 'Class:UserRequest/Attribute:resolution_code+' => '',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'To Validate',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => '',
+ 'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'On Hold',
+ 'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => '',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'To Redo',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => '',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'To Close',
+ 'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => '',
+ // ^ END HERE Customization CFAC resolution de demande
  'Class:UserRequest/Attribute:solution' => 'Riešenie',
  'Class:UserRequest/Attribute:solution+' => '',
  'Class:UserRequest/Attribute:pending_reason' => 'Dôvod pozdržania',
@@ -2909,6 +2919,10 @@ Dict::Add('SK SK', 'Slovak', 'Slovenčina', array(
  'Class:Contract/Attribute:cost_currency/Value:dollars+' => '',
  'Class:Contract/Attribute:cost_currency/Value:euros' => 'EUR',
  'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+ // * this been added as a customization for cfac contracts
+ 'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+ 'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+
  'Class:Contract/Attribute:contracttype_id' => 'Typ zmluvy',
  'Class:Contract/Attribute:contracttype_id+' => '',
  'Class:Contract/Attribute:contracttype_name' => 'Názov typu zmluvy',

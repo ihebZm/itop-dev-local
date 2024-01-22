@@ -41,8 +41,8 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'gestions de documents',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de documents.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'gestions de Courrier comptable',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Suivez vos gestions de Courrier comptable.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Courrier en cours',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Suivez vos Courrier en cours.</p><p>Consultez l\'avancement, ajoutez des commentaires ou des pièces jointes, validez la solution.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Non Comptabiliser',

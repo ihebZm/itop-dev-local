@@ -23,6 +23,9 @@ $ibo-lifecycle-active-state-primary-color: $ibo-color-green-700 !default;
 $ibo-lifecycle-active-state-secondary-color: $ibo-color-white-100 !default;
 $ibo-lifecycle-inactive-state-primary-color: $ibo-color-orange-400 !default;
 $ibo-lifecycle-inactive-state-secondary-color: $ibo-color-white-100 !default;
+//customization cfac unpaid
+$ibo-lifecycle-unpaid-state-primary-color: $ibo-color-red-500 !default;
+$ibo-lifecycle-unpaid-state-secondary-color: $ibo-color-red-500 !default;
 
 $ibo-lifecycle-states-colors: (
 		'new': (
@@ -58,6 +61,11 @@ $ibo-lifecycle-states-colors: (
 				'primary-color': $ibo-lifecycle-inactive-state-primary-color,
 				'secondary-color': $ibo-lifecycle-inactive-state-secondary-color,
 		),
+		//customization cfac unpaid
+		'unpaid': (
+			'primary-color': $ibo-lifecycle-unpaid-state-primary-color,
+			'secondary-color': $ibo-lifecycle-unpaid-state-secondary-color,
+		),
 );
 
 /* CSS varibales */
@@ -79,4 +87,9 @@ $ibo-lifecycle-states-colors: (
 	--ibo-lifecycle-active-state-secondary-color: #{$ibo-lifecycle-active-state-secondary-color};
 	--ibo-lifecycle-inactive-state-primary-color: #{$ibo-lifecycle-inactive-state-primary-color};
 	--ibo-lifecycle-inactive-state-secondary-color: #{$ibo-lifecycle-inactive-state-secondary-color};
+
+	//customization cfac unpaid
+	--ibo-lifecycle-inactive-state-primary-color: #{$ibo-lifecycle-unpaid-state-primary-color};
+	--ibo-lifecycle-inactive-state-secondary-color: #{$ibo-lifecycle-unpaid-state-secondary-color};
+
 }

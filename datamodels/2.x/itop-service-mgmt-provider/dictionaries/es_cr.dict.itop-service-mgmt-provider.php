@@ -124,6 +124,10 @@ Dict::Add('ES CR', 'Spanish', 'Español, Castellano', array(
 	'Class:Contract/Attribute:cost_currency/Value:dollars+' => 'Dólares de E.U.A',
 	'Class:Contract/Attribute:cost_currency/Value:euros' => 'Euros',
 	'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+	// * this been added as a customization for cfac contracts
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+	
 	'Class:Contract/Attribute:contracttype_id' => 'Tipo de Contrato',
 	'Class:Contract/Attribute:contracttype_id+' => 'Tipo de Contrato',
 	'Class:Contract/Attribute:contracttype_name' => 'Tipo de Contrato',

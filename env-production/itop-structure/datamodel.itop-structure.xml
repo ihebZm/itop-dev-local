@@ -66,6 +66,15 @@
                 <decoration_classes/>
               </style>
             </value>
+            <!-- custoization cfac unpaid organization-->
+            <value id="unpaid">
+              <code>unpaid</code>
+              <style>
+                <main_color>$ibo-lifecycle-unpaid-state-primary-color</main_color>
+                <complementary_color>$ibo-lifecycle-unpaid-state-secondary-color</complementary_color>
+                <decoration_classes/>
+              </style>
+            </value>
           </values>
           <sql>status</sql>
           <default_value>active</default_value>
@@ -240,6 +249,15 @@
               <style>
                 <main_color>$ibo-lifecycle-inactive-state-primary-color</main_color>
                 <complementary_color>$ibo-lifecycle-inactive-state-secondary-color</complementary_color>
+                <decoration_classes/>
+              </style>
+            </value>
+            <!-- custoization cfac unpaid organization-->
+            <value id="unpaid">
+              <code>unpaid</code>
+              <style>
+                <main_color>$ibo-lifecycle-unpaid-state-primary-color</main_color>
+                <complementary_color>$ibo-lifecycle-unpaid-state-secondary-color</complementary_color>
                 <decoration_classes/>
               </style>
             </value>
@@ -429,6 +447,15 @@
               <style>
                 <main_color>$ibo-lifecycle-inactive-state-primary-color</main_color>
                 <complementary_color>$ibo-lifecycle-inactive-state-secondary-color</complementary_color>
+                <decoration_classes/>
+              </style>
+            </value>
+            <!-- customization cfac unpaid organization-->
+            <value id="unpaid">
+              <code>unpaid</code>
+              <style>
+                <main_color>$ibo-lifecycle-unpaid-state-primary-color</main_color>
+                <complementary_color>$ibo-lifecycle-unpaid-state-secondary-color</complementary_color>
                 <decoration_classes/>
               </style>
             </value>

@@ -59,7 +59,10 @@ class Incident extends Ticket
 		MetaModel::Init_AddAttribute(new AttributeSubItem("sla_ttr_passed", array("target_attcode"=>'ttr', "item_code"=>'100_passed', "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeSubItem("sla_ttr_over", array("target_attcode"=>'ttr', "item_code"=>'100_overrun', "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeDuration("time_spent", array("allowed_values"=>null, "sql"=>'time_spent', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
-		MetaModel::Init_AddAttribute(new AttributeEnum("resolution_code", array("allowed_values"=>new ValueSetEnum("assistance,other,software patch,training,hardware repair,system update,bug fixed"), "display_style"=>'list', "sql"=>'resolution_code', "default_value"=>'assistance', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		// ^ START HERE Customization CFAC resolution de demande
+		MetaModel::Init_AddAttribute(new AttributeEnum("resolution_code", array("allowed_values"=>new ValueSetEnum("a valider,en attente,a refaire,a cloturer"), "display_style"=>'list', "sql"=>'resolution_code', "default_value"=>'a valider', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		//MetaModel::Init_AddAttribute(new AttributeEnum("resolution_code", array("allowed_values"=>new ValueSetEnum("assistance,other,software patch,training,hardware repair,system update,bug fixed"), "display_style"=>'list', "sql"=>'resolution_code', "default_value"=>'assistance', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		// ^ END HERE Customization CFAC resolution de demande
 		MetaModel::Init_AddAttribute(new AttributeText("solution", array("allowed_values"=>null, "sql"=>'solution', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeText("pending_reason", array("allowed_values"=>null, "sql"=>'pending_reason', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeExternalKey("parent_incident_id", array("targetclass"=>'Incident', "allowed_values"=>new ValueSetObjects("SELECT Incident WHERE id != :this->id AND status NOT IN ('resolved','closed')"), "sql"=>'parent_incident_id', "is_null_allowed"=>true, "on_target_delete"=>DEL_MANUAL, "depends_on"=>array(), "display_style"=>'select', "always_load_in_tables"=>false)));
@@ -74,6 +77,34 @@ class Incident extends Ticket
 		MetaModel::Init_AddAttribute(new AttributeEnum("user_satisfaction", array("allowed_values"=>new ValueSetEnum("1,2,3,4"), "display_style"=>'list', "sql"=>'user_satisfaction', "default_value"=>'1', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeText("user_comment", array("allowed_values"=>null, "sql"=>'user_commment', "default_value"=>'', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
 		MetaModel::Init_AddAttribute(new AttributeCustomFields("service_details", array("handler_class"=>'RequestTemplateFieldsHandler', "always_load_in_tables"=>false)));
+		
+		// ^ start here castomization courrier Cfac
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("type_person", array("allowed_values"=>new ValueSetEnum("not_defined,moral_person,physical_person"), "display_style"=>'list', "sql"=>'type_person', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the integer value model.customer-survey
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_start_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_start_invoice_vente', "default_value"=>null, "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_end_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_end_invoice_vente', "default_value"=>null, "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeInteger("numero_last_month_invoice_vente", array("allowed_values"=>null, "sql"=>'numero_last_month_invoice_vente', "default_value"=>null, "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeDecimal("amount_turnover_vente", array("allowed_values"=>null, "sql"=>'amount_turnover_vente', "default_value"=>null, "is_null_allowed"=>true, "depends_on"=>array(), "digits"=>5, "decimals"=>3, "always_load_in_tables"=>false)));
+
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("bank_slip_vente", array("allowed_values"=>new ValueSetEnum("not_defined,yes,no"), "display_style"=>'list', "sql"=>'bank_slip_vente', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("transaction_notice_vente", array("allowed_values"=>new ValueSetEnum("not_defined,yes,no"), "display_style"=>'list', "sql"=>'transaction_notice_vente', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("sr_certificates_vente", array("allowed_values"=>new ValueSetEnum("not_defined,yes,no"), "display_style"=>'list', "sql"=>'sr_certificates_vente', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("statements_and_documents_banque", array("allowed_values"=>new ValueSetEnum("not_defined,yes,no"), "display_style"=>'list', "sql"=>'statements_and_documents_banque', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the escalation_reason
+		MetaModel::Init_AddAttribute(new AttributeText("comment_on_reconciliation_statement_banque", array("allowed_values"=>null, "sql"=>'comment_on_reconciliation_statement_banque', "default_value"=>null, "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		MetaModel::Init_AddAttribute(new AttributeEnum("exceptional_order_courrier", array("allowed_values"=>new ValueSetEnum("not_defined,yes,no"), "display_style"=>'list', "sql"=>'exceptional_order_courrier', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("month_courrier", array("allowed_values"=>new ValueSetEnum("not_defined,1,2,3,4,5,6,7,8,9,10,11,12"), "display_style"=>'list', "sql"=>'month_courrier', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		//this copy of the priority
+		MetaModel::Init_AddAttribute(new AttributeEnum("block_client_ur", array("allowed_values"=>new ValueSetEnum("not_defined,1,2"), "display_style"=>'list', "sql"=>'block_client_ur', "default_value"=>'not_defined', "is_null_allowed"=>true, "depends_on"=>array(), "always_load_in_tables"=>false)));
+		
+		// ^ start here castomization courrier Cfac
 
 		// Lifecycle (status attribute: status)
 		//
@@ -118,6 +149,20 @@ class Incident extends Ticket
 					'ttr_escalation_deadline' => OPT_ATT_HIDDEN,
 					'sla_ttr_over' => OPT_ATT_HIDDEN,
 					'service_details' => OPT_ATT_NORMAL,
+					//^ customization courrier cfac 
+					'type_person' => OPT_ATT_READONLY,
+					'numero_start_invoice_vente' => OPT_ATT_READONLY,
+					'numero_end_invoice_vente' => OPT_ATT_READONLY,
+					'numero_last_month_invoice_vente' => OPT_ATT_READONLY,
+					'amount_turnover_vente' => OPT_ATT_READONLY,
+					'bank_slip_vente' => OPT_ATT_READONLY,
+					'transaction_notice_vente' => OPT_ATT_READONLY,
+					'sr_certificates_vente' => OPT_ATT_READONLY,
+					'statements_and_documents_banque' => OPT_ATT_READONLY,
+					'comment_on_reconciliation_statement_banque' => OPT_ATT_READONLY,
+					'exceptional_order_courrier' => OPT_ATT_READONLY,
+					'month_courrier' => OPT_ATT_READONLY,
+					'block_client_ur' => OPT_ATT_READONLY,
 				),
 			)
 		);
@@ -466,6 +511,20 @@ class Incident extends Ticket
   20 => 'user_satisfaction',
   21 => 'sla_tto_passed',
   22 => 'sla_ttr_passed',
+  //^ customization courrier cfac
+  24 => 'type_person',
+  25 => 'numero_start_invoice_vente',
+  26 => 'numero_end_invoice_vente',
+  27 => 'numero_last_month_invoice_vente',
+  28 => 'amount_turnover_vente',
+  29 => 'bank_slip_vente',
+  30 => 'transaction_notice_vente',
+  31 => 'sr_certificates_vente',
+  32 => 'statements_and_documents_banque',
+  33 => 'comment_on_reconciliation_statement_banque',
+  34 => 'exceptional_order_courrier',
+  35 => 'month_courrier',
+  36 => 'block_client_ur',
 ));
 		MetaModel::Init_SetZListItems('list', array (
   0 => 'title',

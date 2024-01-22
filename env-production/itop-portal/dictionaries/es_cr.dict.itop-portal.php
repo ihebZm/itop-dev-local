@@ -41,8 +41,8 @@ Dict::Add('ES CR', 'Spanish', 'Español, Castellano', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'gestiones de documentos',
-	'Brick:Portal:NewCourrier:Title+' => 'Revise sus gestiones de documentos. Compruebe el progreso, agregue comentarios, adjunte documentos, entienda la solución. </ P>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => 'Revise sus accounting mail. Compruebe el progreso, agregue comentarios, adjunte documentos, entienda la solución. </ P>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Requerimientos en Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => 'Revise sus requerimientos en Courrier. Compruebe el progreso, agregue comentarios, adjunte documentos, entienda la solución. </ P>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier En proceso',

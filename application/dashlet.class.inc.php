@@ -2043,7 +2043,7 @@ class DashletHeaderDynamic extends Dashlet
 		$this->aProperties['subtitle'] = Dict::S('UI:DashletHeaderDynamic:Prop-Subtitle:Default');
 		$this->aProperties['query'] = 'SELECT Contact';
 		$this->aProperties['group_by'] = 'status';
-		$this->aProperties['values'] = array('active', 'inactive');
+		$this->aProperties['values'] = array('active', 'inactive','unpaid');
 	}
 
 	/**

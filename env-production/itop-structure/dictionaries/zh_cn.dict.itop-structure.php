@@ -63,6 +63,10 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Class:Organization/Attribute:status/Value:active+' => '启用',
 	'Class:Organization/Attribute:status/Value:inactive' => '停用',
 	'Class:Organization/Attribute:status/Value:inactive+' => '停用',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => '父级',
 	'Class:Organization/Attribute:parent_id+' => '父级组织',
 	'Class:Organization/Attribute:parent_name' => '父级名称',

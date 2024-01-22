@@ -2655,8 +2655,8 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Brick:Portal:OngoingRequests:Tab:Resolved' => 'Resolvido',
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'gestão de documentos',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Acompanhar suas solicitações gestão de documentos, adicionar comentários, anexar documentos e confirmar a solução.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Acompanhar suas solicitações accounting mail, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Em Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Acompanhar suas solicitações em Courrier, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Abrir',
@@ -2677,6 +2677,10 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Organization/Attribute:status/Value:active+' => 'Ativo',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inativo',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inativo',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => 'Principal',
 	'Class:Organization/Attribute:parent_id+' => 'Organização principal',
 	'Class:Organization/Attribute:parent_name' => 'Nome principal',
@@ -4375,6 +4379,112 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Incident/Attribute:urgency/Value:3+' => 'Média',
 	'Class:Incident/Attribute:urgency/Value:4' => 'Baixa',
 	'Class:Incident/Attribute:urgency/Value:4+' => 'Baixa',
+	// ^ Start Here customization des courrier
+	// add attribute type person vente -->
+	'Class:Incident/Attribute:type_person' => 'type person',
+	'Class:Incident/Attribute:type_person+' => '',
+	'Class:Incident/Attribute:type_personne/Value:physical_person' => 'Physical person',
+	'Class:Incident/Attribute:type_personne/Value:physical_person+' => '',
+	'Class:Incident/Attribute:type_personne/Value:moral_person' => 'Moral person',
+	'Class:Incident/Attribute:type_personne/Value:moral_person+' => '',
+   
+	// add attribute numero first invoice vente -->
+	'Class:Incident/Attribute:numero_start_invoice_vente' => 'Sales invoice starting number',
+	'Class:Incident/Attribute:numero_start_invoice_vente+' => '',
+
+	//add attribute numero last invoice vente -->
+	'Class:Incident/Attribute:numero_end_invoice_vente' => 'Sales invoice finishing number',
+	'Class:Incident/Attribute:numero_end_invoice_vente+' => '',
+	
+	// add attribute numero last month vente -->
+	'Class:Incident/Attribute:numero_last_month_invoice_vente' => 'Sales invoice last month number',
+	'Class:Incident/Attribute:numero_last_month_invoice_vente+' => '',
+	
+	//add attribute chiffre d'affaires vente -->
+	'Class:Incident/Attribute:amount_turnover_vente' => 'Amount of the turnover',
+	'Class:Incident/Attribute:amount_turnover_vente+' => '',
+	
+	// add attribute bordereau bancaire vente -->
+	'Class:Incident/Attribute:bank_slip_vente' => 'Bank sales slip',
+	'Class:Incident/Attribute:bank_slip_vente+' => '',
+	'Class:Incident/Attribute:bank_slip_vente/Value:yes' =>'Yes',
+	'Class:Incident/Attribute:bank_slip_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:bank_slip_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:bank_slip_vente/Value:no+' => '',
+	
+	// add attribute avis d'opérations vente -->
+	'Class:Incident/Attribute:transaction_notice_vente' => 'Sale transaction notice',
+	'Class:Incident/Attribute:transaction_notice_vente+' => '',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:transaction_notice_vente/Value:no+' => '',
+	
+	// add attribute certificats de RS clients vente -->
+	'Class:Incident/Attribute:sr_certificates_vente' => 'customer RS certificates',
+	'Class:Incident/Attribute:sr_certificates_vente+' => '',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:yes+' => '',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:no' => 'No',
+	'Class:Incident/Attribute:sr_certificates_vente/Value:no+' => '',
+
+	// add attribute statement and documents facture banque -->
+	'Class:Incident/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
+	'Class:Incident/Attribute:statements_and_documents_banque+' => '',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:yes+' => '',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:no' => 'No',
+	'Class:Incident/Attribute:statements_and_documents_banque/Value:no+' => '',
+
+	// add attribute comment on reconciliation statement facture banque -->
+	'Class:Incident/Attribute:comment_on_reconciliation_statement_banque' => 'comment on the reconciliation statement from the previous month',
+	'Class:Incident/Attribute:comment_on_reconciliation_statement_banque+' => '',
+	
+	// add attribute exceptional order courrier (Visa) -->
+	'Class:Incident/Attribute:exceptional_order_courrier' => 'exceptional order courrier (Visa)',
+	'Class:Incident/Attribute:exceptional_order_courrier+' => '',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:yes' => 'Yes',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:yes+' => '',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:no' => 'No',
+	'Class:Incident/Attribute:exceptional_order_courrier/Value:no+' => '',
+
+	// add attribute month courrier -->
+	'Class:Incident/Attribute:month_courrier' => 'Month of courrier',
+	'Class:Incident/Attribute:month_courrier+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:1' => 'January',
+	'Class:Incident/Attribute:month_courrier/Value:1+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:2' => 'February',
+	'Class:Incident/Attribute:month_courrier/Value:2+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:3' => 'March',
+	'Class:Incident/Attribute:month_courrier/Value:3+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:4' => 'April',
+	'Class:Incident/Attribute:month_courrier/Value:4+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:5' => 'May',
+	'Class:Incident/Attribute:month_courrier/Value:5+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:6' => 'June',
+	'Class:Incident/Attribute:month_courrier/Value:6+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:7' => 'July',
+	'Class:Incident/Attribute:month_courrier/Value:7+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:8' => 'August',
+	'Class:Incident/Attribute:month_courrier/Value:8+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:9' => 'September',
+	'Class:Incident/Attribute:month_courrier/Value:9+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:10' => 'October',
+	'Class:Incident/Attribute:month_courrier/Value:10+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:11' => 'november',
+	'Class:Incident/Attribute:month_courrier/Value:11+' => '',
+	'Class:Incident/Attribute:month_courrier/Value:12' => 'December',
+	'Class:Incident/Attribute:month_courrier/Value:12+' => '',
+
+	// add attribute to block client URL -->
+	'Class:Incident/Attribute:block_client_ur' => 'Block client if :',
+	'Class:Incident/Attribute:block_client_ur+' => '',
+	'Class:Incident/Attribute:block_client_ur/Value:1' => 'He didn\'t make the payment',
+	'Class:Incident/Attribute:block_client_ur/Value:1+' => '',
+	'Class:Incident/Attribute:block_client_ur/Value:2' => 'He did pay his payments',
+	'Class:Incident/Attribute:block_client_ur/Value:2+' => '',
+	
+	// ^ End Here customization des courrier -->
 	'Class:Incident/Attribute:origin' => 'Origem',
 	'Class:Incident/Attribute:origin+' => '',
 	'Class:Incident/Attribute:origin/Value:mail' => 'Email',
@@ -4427,6 +4537,7 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Incident/Attribute:sla_ttr_over+' => '',
 	'Class:Incident/Attribute:time_spent' => 'Atraso resolução',
 	'Class:Incident/Attribute:time_spent+' => '',
+	/*
 	'Class:Incident/Attribute:resolution_code' => 'Código resolução',
 	'Class:Incident/Attribute:resolution_code+' => '',
 	'Class:Incident/Attribute:resolution_code/Value:assistance' => 'Assistência',
@@ -4443,6 +4554,19 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Incident/Attribute:resolution_code/Value:system update+' => 'Atualização sistema',
 	'Class:Incident/Attribute:resolution_code/Value:training' => 'Treinamento',
 	'Class:Incident/Attribute:resolution_code/Value:training+' => 'Treinamento',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:Incident/Attribute:resolution_code' => 'resolution code',
+	'Class:Incident/Attribute:resolution_code+' => '',
+	'Class:Incident/Attribute:resolution_code/Value:a valider' => 'To Validate',
+	'Class:Incident/Attribute:resolution_code/Value:a valider+' => 'To Validate',
+	'Class:Incident/Attribute:resolution_code/Value:en attente' => 'On Hold',
+	'Class:Incident/Attribute:resolution_code/Value:en attente+' => 'On Hold',
+	'Class:Incident/Attribute:resolution_code/Value:a refaire' => 'To Redo',
+	'Class:Incident/Attribute:resolution_code/Value:a refaire+' => 'To Redo',
+	'Class:Incident/Attribute:resolution_code/Value:a cloturer' => 'To Close',
+	'Class:Incident/Attribute:resolution_code/Value:a cloturer+' => 'To Close',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:Incident/Attribute:solution' => 'Solução',
 	'Class:Incident/Attribute:solution+' => '',
 	'Class:Incident/Attribute:pending_reason' => 'Razão pendência',
@@ -4840,14 +4964,6 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'No',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
 
-	// add attribute facture achat -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Purchase without any mention of payment',
-	'Class:UserRequest/Attribute:invoice_achat+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'With stamp',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Payment choice',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
-
 	// add attribute statement and documents facture banque -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
 	'Class:UserRequest/Attribute:statements_and_documents_banque+' => '',
@@ -4961,6 +5077,7 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '',
 	'Class:UserRequest/Attribute:time_spent' => 'Atraso resolução',
 	'Class:UserRequest/Attribute:time_spent+' => '',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => 'Código resolução',
 	'Class:UserRequest/Attribute:resolution_code+' => '',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'Assistência',
@@ -4977,6 +5094,19 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'Atualização sistema',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => 'Treinamento',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => 'Treinamento',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'To Close',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'To Close',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => 'Solução',
 	'Class:UserRequest/Attribute:solution+' => '',
 	'Class:UserRequest/Attribute:pending_reason' => 'Razão pendência',
@@ -5100,6 +5230,10 @@ ou entre em contato com o seu administrador do iTOP pois o servidor pode estar s
 	'Class:Contract/Attribute:cost_currency/Value:dollars+' => '',
 	'Class:Contract/Attribute:cost_currency/Value:euros' => 'Euros',
 	'Class:Contract/Attribute:cost_currency/Value:euros+' => '',
+	// * this been added as a customization for cfac contracts
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien' => 'TND',
+	'Class:Contract/Attribute:cost_currency/Value:dinar_tunisien+' => '',
+
 	'Class:Contract/Attribute:contracttype_id' => 'Tipo contrato',
 	'Class:Contract/Attribute:contracttype_id+' => '',
 	'Class:Contract/Attribute:contracttype_name' => 'Nome tipo contrato',

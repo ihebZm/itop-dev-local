@@ -41,8 +41,8 @@ Dict::Add('RU RU', 'Russian', 'Русский', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrie
-	'Brick:Portal:NewCourrier:Title' => 'Управление документами',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Следите за &nbsp;управлением документами.</p><p>Проверяйте ход решения, добавляйте комментарии и&nbsp;вложения, подтверждайте решение.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Следите за &nbsp;accounting mail.</p><p>Проверяйте ход решения, добавляйте комментарии и&nbsp;вложения, подтверждайте решение.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Текущие Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Следите за&nbsp;открытыми Courrier.</p><p>Проверяйте ход решения, добавляйте комментарии и&nbsp;вложения, подтверждайте решение.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier В работе',

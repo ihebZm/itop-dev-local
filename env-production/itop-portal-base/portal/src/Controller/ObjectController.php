@@ -1144,12 +1144,13 @@ class ObjectController extends BrickController
 		}
 		switch ($sOperation)
 		{
+			// care add vente case add achat
 			case 'add':
 				$sFieldName = $oRequestManipulator->ReadParam('field_name', '');
 				$sObjectClass = $oRequestManipulator->ReadParam('object_class', '');
 				$sTempId = $oRequestManipulator->ReadParam('temp_id', '');
-
-				if (empty($sObjectClass) || empty($sTempId))
+				$sTypeAttach = strval($oRequestManipulator->ReadParam('type_attachment', 'attachment_unknown'));
+				if (empty($sObjectClass) || empty($sTempId) || empty($sTypeAttach))
 				{
 					$aData['error'] = Dict::Format('UI:Error:2ParametersMissing', 'object_class', 'temp_id');
 				}
@@ -1170,7 +1171,7 @@ class ObjectController extends BrickController
 						$oAttachment->Set('contents', $oDocument);
 						// ^ customization cfac for disable attachement
 						$oAttachment->Set('status_comp', false);
-						$oAttachment->Set('type_attachment', 'attachment_unkown');
+						$oAttachment->Set('type_attachment', $sTypeAttach);
 						$oAttachment->Set('num_journal', '');
 						$oAttachment->Set('date_comptabilisation', null);
 						$oAttachment->Set('num_piece', '');

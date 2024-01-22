@@ -50,6 +50,10 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Aktiv',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inaktiv',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inaktiv',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => '',
+
 	'Class:Organization/Attribute:parent_id' => 'Mutterfirma',
 	'Class:Organization/Attribute:parent_id+' => 'Dachorganisation',
 	'Class:Organization/Attribute:parent_name' => 'Name der Mutterfirma',

@@ -1170,7 +1170,7 @@ class ObjectController extends BrickController
 						$oAttachment->Set('contents', $oDocument);
 						// ^ customization cfac for disable attachement
 						$oAttachment->Set('status_comp', false);
-						$oAttachment->Set('type_attachment', 'attachment_unkown');
+						$oAttachment->Set('type_attachment', 'attachment_unknown');
 						$oAttachment->Set('num_journal', '');
 						$oAttachment->Set('date_comptabilisation', null);
 						$oAttachment->Set('num_piece', '');

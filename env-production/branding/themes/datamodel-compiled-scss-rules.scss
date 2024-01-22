@@ -18,6 +18,7 @@ $ibo-dm-enum--Organization-status-active--complementary-color: $ibo-lifecycle-ac
 }
 $ibo-dm-enum--Organization-status-inactive--main-color: $ibo-lifecycle-inactive-state-primary-color !default;
 $ibo-dm-enum--Organization-status-inactive--complementary-color: $ibo-lifecycle-inactive-state-secondary-color !default;
+$ibo-dm-enum--Organization-status-unpaid--complementary-color: $ibo-lifecycle-unpaid-state-secondary-color !default;
 
 :root {
 	--ibo-dm-enum--Organization-status-inactive--main-color: #{$ibo-dm-enum--Organization-status-inactive--main-color};

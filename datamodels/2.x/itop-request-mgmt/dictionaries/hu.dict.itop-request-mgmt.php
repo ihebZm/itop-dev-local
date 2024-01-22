@@ -162,14 +162,6 @@ Dict::Add('HU HU', 'Hungarian', 'Magyar', array(
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '~~',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'No~~',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '~~',
-	
-	// add attribute facture achat -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Purchase without any mention of payment~~',
-	'Class:UserRequest/Attribute:invoice_achat+' => '~~',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'With stamp~~',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '~~',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Payment choice~~',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '~~',
 
 	// add attribute statement and documents facture banque -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents~~',
@@ -284,6 +276,7 @@ Dict::Add('HU HU', 'Hungarian', 'Magyar', array(
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '~~',
 	'Class:UserRequest/Attribute:time_spent' => 'Resolution delay~~',
 	'Class:UserRequest/Attribute:time_spent+' => '~~',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => 'Resolution code~~',
 	'Class:UserRequest/Attribute:resolution_code+' => '~~',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'assistance~~',
@@ -300,6 +293,19 @@ Dict::Add('HU HU', 'Hungarian', 'Magyar', array(
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'system update~~',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => 'training~~',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => 'training~~',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'A Valider~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'A Valider~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'En Attente~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'En Attente~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'A Refaire~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'A Refaire~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'A Cloturer~~',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'A Cloturer~~',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => 'Solution~~',
 	'Class:UserRequest/Attribute:solution+' => '~~',
 	'Class:UserRequest/Attribute:pending_reason' => 'Pending reason~~',

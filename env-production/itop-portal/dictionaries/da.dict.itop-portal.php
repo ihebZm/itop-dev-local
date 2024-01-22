@@ -41,8 +41,8 @@ Dict::Add('DA DA', 'Danish', 'Dansk', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'New courrier~~',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Follow up with your New courrier.</p><p>Check the progress, add comments, attach documents, acknowledge the solution.</p>~~',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail~~',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Follow up with your accounting mail.</p><p>Check the progress, add comments, attach documents, acknowledge the solution.</p>~~',
 	'Brick:Portal:OngoingCourrier:Title' => 'Ongoing Courrier~~',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Follow up with your ongoing Courrier.</p><p>Check the progress, add comments, attach documents, acknowledge the solution.</p>~~',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Not Counted~~',

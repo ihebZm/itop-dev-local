@@ -100,6 +100,16 @@ abstract class AbstractAttachmentsRenderer
 	/** @var \DBObjectSet */
 	protected $oAttachmentsSet;
 	/** @var \DBObjectSet */
+	protected $oAttachmentsVenteSet;
+	/** @var \DBObjectSet */
+	protected $oAttachmentsAchatSet;
+	/** @var \DBObjectSet */
+	protected $oAttachmentsBanqueSet;
+	/** @var \DBObjectSet */
+	protected $oAttachmentsOtherSet;
+	/** @var \DBObjectSet */
+	protected $oAttachmentsUnknownSet;
+	/** @var \DBObjectSet */
 	protected $oAttachmentsRequestSourrce;
 
 	/**
@@ -126,6 +136,22 @@ abstract class AbstractAttachmentsRenderer
 		// & get service type A for courrier show or not
 		$oSearchRequestService = DBObjectSearch::FromOQL('SELECT UserRequest WHERE id = :item_id');
 		$this->oAttachmentsRequestSourrce = new DBObjectSet($oSearchRequestService, array(), array('item_id' => $iObjKey));
+	
+		// & get attachment by type
+		$oSearchVente = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = :type_attachment');
+		$this->oAttachmentsVenteSet = new DBObjectSet($oSearchVente, array(), array('class' => $sObjClass, 'item_id' => $iObjKey, 'type_attachment' => 'attachment_vente'));
+
+		$oSearchAchat = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = :type_attachment');
+		$this->oAttachmentsAchatSet = new DBObjectSet($oSearchAchat, array(), array('class' => $sObjClass, 'item_id' => $iObjKey, 'type_attachment' => 'attachment_achat'));
+
+		$oSearchBanque = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = :type_attachment');
+		$this->oAttachmentsBanqueSet = new DBObjectSet($oSearchBanque, array(), array('class' => $sObjClass, 'item_id' => $iObjKey, 'type_attachment' => 'attachment_banque'));
+
+		$oSearchOther = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = :type_attachment');
+		$this->oAttachmentsOtherSet = new DBObjectSet($oSearchOther, array(), array('class' => $sObjClass, 'item_id' => $iObjKey, 'type_attachment' => 'attachment_other'));
+
+		$oSearchUnknown = DBObjectSearch::FromOQL('SELECT Attachment WHERE item_class = :class AND item_id = :item_id AND type_attachment = :type_attachment');
+		$this->oAttachmentsUnknownSet = new DBObjectSet($oSearchUnknown, array(), array('class' => $sObjClass, 'item_id' => $iObjKey, 'type_attachment' => 'attachment_unknown'));
 	}
 
 	/**
@@ -143,6 +169,52 @@ abstract class AbstractAttachmentsRenderer
 	{
 		return $this->oAttachmentsSet;
 	}
+
+	//^ This function is to count the number of attachment Vente
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsVenteSet()
+	{
+		return $this->oAttachmentsVenteSet;
+	}
+
+	//^ This function is to count the number of attachment Achat
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsAchatSet()
+	{
+		return $this->oAttachmentsAchatSet;
+	}
+
+	//^ This function is to count the number of attachment Banque
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsBanqueSet()
+	{
+		return $this->oAttachmentsBanqueSet;
+	}
+
+	//^ This function is to count the number of attachment Other
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsOtherSet()
+	{
+		return $this->oAttachmentsOtherSet;
+	}
+
+	//^ This function is to count the number of attachment Other
+	/**
+	 * @return \DBObjectSet
+	 */
+	public function GetAttachmentsUnknownSet()
+	{
+		return $this->oAttachmentsUnknownSet;
+	}
+
 // ! this to do this function just get liste to do the counting or any editing 
 	/**
 	 * @return \DBObjectSet
@@ -152,16 +224,48 @@ abstract class AbstractAttachmentsRenderer
 		$CourrierValidator = false;
 		while ($oIsCourrier = $this->oAttachmentsRequestSourrce->Fetch())
 		{
-			if($oIsCourrier->Get('servicesubcategory_id') == 18) {
-				$CourrierValidator = true;
+			if($oIsCourrier->Get('servicesubcategory_id') == 18) break;	
+			else {
+				return $CourrierValidator;
 			}	
 		}
+		$CourrierValidator = !$CourrierValidator;
 		return $CourrierValidator;
 	}
 
 	public function GetAttachmentsCount()
 	{
 		return $this->GetAttachmentsSet()->Count() + $this->GetTempAttachmentsSet()->Count();
+	}
+
+	//^ this function is to count Vente attachment
+	public function GetAttachmentsVenteCount()
+	{
+		return $this->GetAttachmentsVenteSet()->Count();
+	}
+
+	//^ this function is to count Achat attachment
+	public function GetAttachmentsAchatCount()
+	{
+		return $this->GetAttachmentsAchatSet()->Count();
+	}
+
+	//^ this function is to count Banque attachment
+	public function GetAttachmentsBanqueCount()
+	{
+		return $this->GetAttachmentsBanqueSet()->Count();
+	}
+
+	//^ this function is to count Other attachment
+	public function GetAttachmentsOtherCount()
+	{
+		return $this->GetAttachmentsOtherSet()->Count();
+	}
+
+	//^ this function is to count Unknown attachment
+	public function GetAttachmentsUnknownCount()
+	{
+		return $this->GetAttachmentsUnknownSet()->Count();
 	}
 
 	/**
@@ -174,9 +278,10 @@ abstract class AbstractAttachmentsRenderer
 	 * @return void will print using {@link oPage}
 	 */
 	public function RenderEditAttachmentsList($aAttachmentsDeleted = array(), $aAttachmentsDisabled = array())
-	{
-		$this->AddUploadButton();
+	{	
 
+		$this->AddUploadButton();
+		$this->SelectiveUploadButton();
 		$this->oPage->add('<div id="'.self::ATTACHMENTS_LIST_CONTAINER_ID.'">');
 		$this->AddAttachmentsListContent(true, true, $aAttachmentsDeleted, $aAttachmentsDisabled);
 		$this->oPage->add('</div>');
@@ -201,6 +306,52 @@ abstract class AbstractAttachmentsRenderer
 	{
 		$this->AddAttachmentsListContent(false, false, array(), array());
 	}
+
+	// ^ START HERE customization courrier cfac
+	protected function SelectiveUploadButton()
+	{		
+		// ^ this function is to call the validator of courrier
+		$CourrierValidator = $this->GetAttachmentsCourrierSet();
+		
+		if($CourrierValidator){
+			$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+			$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+			$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+			$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+			$sTypeBtnLabelUnkown = Dict::S('Portal:Button:TypeUndefined');
+
+			$countVente = $this->GetAttachmentsVenteCount();
+			$countAchat = $this->GetAttachmentsAchatCount();
+			$countBanque = $this->GetAttachmentsBanqueCount();
+			$countOther = $this->GetAttachmentsOtherCount();
+			$countUnknown = $this->GetAttachmentsUnknownCount();
+
+			$this->oPage->add('<div style="margin-top: 15px; margin-left: 5px; margin-bottom: 15px;">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_vente" type="button" style="font-size: 14px; background-color: #AFE1AF; color: #097969; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessVente()" value="'.$sTypeBtnLabelVente.'  ('.$countVente.')">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_achat" type="button" style="font-size: 14px; background-color: #A7C7E7; color: #0047AB; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessAchat()" value="'.$sTypeBtnLabelAchat.'  ('.$countAchat.')">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_banque" type="button" style="font-size: 14px; background-color: #FFE5B4; color: #CD7F32; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessBanque()" value="'.$sTypeBtnLabelBanque.'  ('.$countBanque.')">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_other" type="button" style="font-size: 14px; background-color: #f8baba; color: #A52A2A; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessOther()" value="'.$sTypeBtnLabelOther.'  ('.$countOther.')">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_unknown" type="button" style="font-size: 14px; background-color: #d3d3d3; color: #676767; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessUnknown()" value="'.$sTypeBtnLabelUnkown.'  ('.$countUnknown.')">');
+			$this->oPage->add('</div>');
+		}else {
+			$sTypeBtnLabelVente = Dict::S('Portal:Button:TypeVente');
+			$sTypeBtnLabelAchat = Dict::S('Portal:Button:TypeAchat');
+			$sTypeBtnLabelBanque = Dict::S('Portal:Button:TypeBanque');
+			$sTypeBtnLabelOther = Dict::S('Portal:Button:TypeOther');
+			$sTypeBtnLabelUnkown = Dict::S('Portal:Button:TypeUndefined');
+
+			$this->oPage->add('<div style="margin-top: 15px; margin-left: 5px; margin-bottom: 15px;">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_vente" type="hidden" style="font-size: 14px; background-color: #A7C7E7; color: #0047AB; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessVente()" value="'.$sTypeBtnLabelVente.'">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_achat" type="hidden" style="font-size: 14px; background-color: #AFE1AF; color: #097969; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessAchat()" value="'.$sTypeBtnLabelAchat.'">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_banque" type="hidden" style="font-size: 14px; background-color: #FFE5B4; color: #CD7F32; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessBanque()" value="'.$sTypeBtnLabelBanque.'">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_other" type="hidden" style="font-size: 14px; background-color: #f8baba; color: #A52A2A; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessOther()" value="'.$sTypeBtnLabelOther.'">');
+			$this->oPage->add('<input id="button_att_filtring_uploading_unknown" type="hidden" style="font-size: 14px; background-color: #d3d3d3; color: #676767; width: 125px; height: 40px; border: none; text-align: center; text-decoration: none; display: inline-block;border-radius: 50% 50%; font-weight: bolder; margin-right: 10px; cursor: pointer;" class="toggleInput" onclick="toggleBrightnessUnknown()" value="'.$sTypeBtnLabelUnkown.'">');
+			$this->oPage->add('</div>');
+		}
+		
+	}
+
+	// ^ END HERE customization courrier cfac
 
 	protected function AddUploadButton()
 	{
@@ -291,44 +442,244 @@ abstract class AbstractAttachmentsRenderer
 		 )
 	}
 	
-    $('#file').fileupload({
-		url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
-		formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass' },
-        dataType: 'json',
-		pasteZone: null, // Don't accept files via Chrome's copy/paste
-        done: function(e, data) {
-			if(typeof(data.result.error) != 'undefined')
-			{
-				if(data.result.error !== '')
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
 				{
-					alert(data.result.error);
-					return;
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
 				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
 			}
-			RefreshAttachmentsDisplay(data);
-		},
-	    send: function(e, data){
-	        // Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
-	        // Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
-	        var iTotalSizeInBytes = 0;
-	        for(var i = 0; i < data.files.length; i++)
-	        {
-	            iTotalSizeInBytes += data.files[i].size;
-	        }
-	        
-	        if(iTotalSizeInBytes > $iMaxUploadInBytes)
-	        {
-	            alert('$sFileTooBigLabelForJS');
-		        return false;
-		    }
-	    },
-        start: function() {
-        	$('#attachment_loading').show();
-		},
-        stop: function() {
-        	$('#attachment_loading').hide();
-		}
-    });
+		});
+	inputVente.addEventListener('click', () => {
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass', type_attachment: 'attachment_vente' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
+				{
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
+				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
+			}
+		});
+	});
+	inputAchat.addEventListener('click', () => {
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass', type_attachment: 'attachment_achat' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
+				{
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
+				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
+			}
+		});
+	});
+	inputBanque.addEventListener('click', () => {
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass', type_attachment: 'attachment_banque' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
+				{
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
+				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
+			}
+		});
+	});
+	inputOther.addEventListener('click', () => {
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass', type_attachment: 'attachment_other' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
+				{
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
+				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
+			}
+		});
+	});
+	inputUnknown.addEventListener('click', () => {
+		$('#file').fileupload({
+			url: GetAbsoluteUrlModulesRoot()+'itop-attachments/ajax.itop-attachment.php',
+			formData: { operation: 'add', temp_id: '$this->sTransactionId', obj_class: '$sClass', type_attachment: 'attachment_unknown' },
+			dataType: 'json',
+			pasteZone: null, // Don't accept files via Chrome's copy/paste
+			done: function(e, data) {
+				if(typeof(data.result.error) != 'undefined')
+				{
+					if(data.result.error !== '')
+					{
+						alert(data.result.error);
+						return;
+					}
+				}
+				RefreshAttachmentsDisplay(data);
+			},
+			send: function(e, data){
+				// Don't send attachment if size is greater than PHP post_max_size, otherwise it will break the request and all its parameters (\$_REQUEST, \$_POST, ...)
+				// Note: We loop on the files as the data structures is an array but in this case, we only upload 1 file at a time.
+				var iTotalSizeInBytes = 0;
+				for(var i = 0; i < data.files.length; i++)
+				{
+					iTotalSizeInBytes += data.files[i].size;
+				}
+				
+				if(iTotalSizeInBytes > $iMaxUploadInBytes)
+				{
+					alert('$sFileTooBigLabelForJS');
+					return false;
+				}
+			},
+			start: function() {
+				$('#attachment_loading').show();
+			},
+			stop: function() {
+				$('#attachment_loading').hide();
+			}
+		});
+	});
 
   $(document).on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
     e.preventDefault();
@@ -459,6 +810,161 @@ JS
 	protected function GetDisableAttachmentJs()
 	{
 		return <<<JS
+
+		var inputVente = document.getElementById('button_att_filtring_uploading_vente');
+		var inputAchat = document.getElementById('button_att_filtring_uploading_achat');
+		var inputBanque = document.getElementById('button_att_filtring_uploading_banque');
+		var inputOther = document.getElementById('button_att_filtring_uploading_other');
+		var inputUnknown = document.getElementById('button_att_filtring_uploading_unknown');
+		var dragValueAttach = 5;
+		var isVenteBright = true;
+		var isAchatBright = true;
+		var isBanqueBright = true;
+		var isOtherBright = true;
+		var isUnknownBright = true;
+
+		function toggleBrightnessVente() {
+			if (isVenteBright) {
+				inputVente.style.backgroundColor = '#d9ffd8'; // light color
+				inputVente.style.fontSize = '17px';
+				inputVente.style.fontWeight = '900';
+				inputVente.style.border = '3px solid #fccb06';				
+				var dragValueAttach = 1;
+				if(isAchatBright == false){
+					toggleBrightnessAchat();
+				}
+				if(isBanqueBright == false){
+					toggleBrightnessBanque();
+				}
+				if(isOtherBright == false){
+					toggleBrightnessOther();
+				}
+				if(isUnknownBright == false){
+					toggleBrightnessUnknown();
+				}
+				isVenteBright = false;
+				changeContent();
+			} else {
+				inputVente.style.backgroundColor = '#AFE1AF'; // Initial color
+				inputVente.style.fontSize = '14px';
+				inputVente.style.fontWeight = 'bolder';
+				inputVente.style.border = '0px';
+				isVenteBright = true;
+			}
+		}
+		function toggleBrightnessAchat() {
+			if (isAchatBright) {
+				inputAchat.style.backgroundColor = '#d4f1f9'; // light color
+				inputAchat.style.fontSize = '17px';
+				inputAchat.style.fontWeight = '900';
+				inputAchat.style.border = '3px solid #fccb06';
+				if (isVenteBright == false) {
+					toggleBrightnessVente();
+				}
+				if (isBanqueBright == false) {
+					toggleBrightnessBanque();
+				}
+				if (isOtherBright == false) {
+					toggleBrightnessOther();
+				}
+				if (isUnknownBright == false) {
+					toggleBrightnessUnknown();
+				}
+				isAchatBright = false;
+			} else {
+				inputAchat.style.backgroundColor = '#A7C7E7'; // Initial color
+				inputAchat.style.fontSize = '14px';
+				inputAchat.style.fontWeight = 'bolder';
+				inputAchat.style.border = '0px';
+				isAchatBright = true;
+			}
+		}
+
+		function toggleBrightnessBanque() {
+			if (isBanqueBright) {
+				inputBanque.style.backgroundColor = '#ffffd2'; // light color
+				inputBanque.style.fontSize = '17px';
+				inputBanque.style.fontWeight = '900';
+				inputBanque.style.border = '3px solid #fccb06';
+				if(isVenteBright == false){
+					toggleBrightnessVente();
+				}
+				if(isAchatBright == false){
+					toggleBrightnessAchat();
+				}
+				if(isOtherBright == false){
+					toggleBrightnessOther();
+				}
+				if(isUnknownBright == false){
+					toggleBrightnessUnknown();
+				}
+				isBanqueBright = false;
+			} else {
+				inputBanque.style.backgroundColor = '#FFE5B4'; // Initial color
+				inputBanque.style.fontSize = '14px';
+				inputBanque.style.fontWeight = 'bolder';
+				inputBanque.style.border = '0px';
+				isBanqueBright = true;
+			}
+		}
+		function toggleBrightnessOther() {
+			if (isOtherBright) {
+				inputOther.style.backgroundColor = '#ffd4d4'; // light color
+				inputOther.style.fontSize = '17px';
+				inputOther.style.fontWeight = '900';
+				inputOther.style.border = '3px solid #fccb06';
+				if(isVenteBright == false){
+					toggleBrightnessVente();
+				}
+				if(isAchatBright == false){
+					toggleBrightnessAchat();
+				}
+				if(isBanqueBright == false){
+					toggleBrightnessBanque();
+				}
+				if(isUnknownBright == false){
+					toggleBrightnessUnknown();
+				}
+				isOtherBright = false;
+			} else {
+				inputOther.style.backgroundColor = '#f8baba'; // Initial color
+				inputOther.style.fontSize = '14px';
+				inputOther.style.fontWeight = 'bolder';
+				inputOther.style.border = '0px';
+				isOtherBright = true;
+			}
+		}
+		function toggleBrightnessUnknown() {
+			if (isUnknownBright) {
+				inputUnknown.style.backgroundColor = '#ededed'; // light color
+				inputUnknown.style.fontSize = '17px';
+				inputUnknown.style.fontWeight = '900';
+				inputUnknown.style.border = '3px solid #fccb06';
+				if(isVenteBright == false){
+					toggleBrightnessVente();
+				}
+				if(isAchatBright == false){
+					toggleBrightnessAchat();
+				}
+				if(isBanqueBright == false){
+					toggleBrightnessBanque();
+				}
+				if(isOtherBright == false){
+					toggleBrightnessOther();
+				}
+				isUnknownBright = false;
+			} else {
+				inputUnknown.style.backgroundColor = '#d3d3d3'; // Initial color
+				inputUnknown.style.fontSize = '14px';
+				inputUnknown.style.fontWeight = 'bolder';
+				inputUnknown.style.border = '0px';
+				isUnknownBright = true;
+			}
+		}
+		function changeContent() {
+            // ! TODO filter the liste of table by type document
+        }
+	
 	function DisableAttachment(att_id)
 	{
 /*		var bDisable = true;
@@ -542,6 +1048,11 @@ JS;
 	protected function GetDeleteAttachmentJs()
 	{
 		return <<<JS
+		var inputVente = document.getElementById('attachment_plugin');
+		var inputAchat = document.getElementById('attachment_plugin');
+		var inputBanque = document.getElementById('attachment_plugin');
+		var inputOther = document.getElementById('attachment_plugin');
+		var inputUnknown = document.getElementById('attachment_plugin');
 	function RemoveAttachment(att_id)
 	{
 		var bDelete = true;
@@ -572,6 +1083,7 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		// ^ this function is to call the validator of courrier
 		$CourrierValidator = $this->GetAttachmentsCourrierSet();
 
+		// ! TODO this section it s taking true for no reason in the UR000-16
 		if ($this->GetAttachmentsCount() === 0)
 		{
 			$this->oPage->add(Dict::S('Attachments:NoAttachment'));
@@ -600,7 +1112,6 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		{
 			$this->oPage->add_script($this->GetDeleteAttachmentJs());
 		}
-		
 		//^ customization cfac for disable attachment
 		if ($bWithDisableButton && $CourrierValidator)
 		{
@@ -611,6 +1122,8 @@ class TableDetailsAttachmentsRenderer extends AbstractAttachmentsRenderer
 		$bIsEven = false;
 		$aAttachmentsDate = AttachmentsHelper::GetAttachmentsDateAddedFromDb($this->sObjClass, $this->iObjKey);
 		$aData = array();
+		// ! TODO this fucking need to make condition to change the array that we are fetching
+
 		while ($oAttachment = $this->oAttachmentsSet->Fetch())
 		{
 			$bIsEven = ($bIsEven) ? false : true;
@@ -706,7 +1219,6 @@ JS
 		// ^ this function is to call the validator of courrier
 		$CourrierValidator = $this->GetAttachmentsCourrierSet();
 		
-		
 		$iAttachmentId = $oAttachment->GetKey();
 
 		$bIsDeletedAttachment = false;
@@ -795,7 +1307,7 @@ JS
 					$changedSizeingSelect = str_replace('background-color:','background-color: #f8baba; color: #A52A2A;', $changedSizeingSelect);
 					$changedSelected = str_replace('value=""',$sTypeBtnLabelOther, $changedSizeingSelect);
 					$sTypeAttachmentCompCell = $changedSelected;
-				} else if ($sTypeAttachment == "attachment_unkown") {
+				} else if ($sTypeAttachment == "attachment_unknown") {
 					// ^ this is showing label of unkown document
 					$changedSizeingSelect = str_replace('type_doc_back_portal_','type_doc_back_portal_'.$sTypeAttachment, $selectButton);
 					$changedSizeingSelect = str_replace('background-color:','background-color: #d3d3d3; color: #676767;', $changedSizeingSelect);
@@ -807,7 +1319,7 @@ JS
 		
 		if ($bWithDeleteButton)
 		{
-			$selectButton = '<select class="form-select" style="width: 125px; text-align-last:center;" aria-label="Select button for document type"><option value="1" style="text-align: center; background-color: #A7C7E7; color: #0047AB; font-size: 15px;">'.$sTypeBtnLabelAchat.'</option><option value="2" style="text-align: center; background-color: #AFE1AF; color: #097969; font-size: 15px;">'.$sTypeBtnLabelVente.'</option><option value="3" style="text-align: center; background-color: #FFE5B4; color: #CD7F32; font-size: 15px;">'.$sTypeBtnLabelBanque.'</option><option value="4" style="text-align: center; background-color: #f8baba; color: #A52A2A; font-size: 15px;">'.$sTypeBtnLabelOther.'</option><option value="5" style="text-align: center; background-color: #d3d3d3; color: #676767; font-size: 15px;">'.$sTypeBtnLabelUnkown.'</option></select>';
+			$selectButton = '<select class="form-select" style="width: 125px; text-align-last:center;" aria-label="Select button for document type" disabled><option value="1" style="text-align: center; background-color: #A7C7E7; color: #0047AB; font-size: 15px;">'.$sTypeBtnLabelAchat.'</option><option value="2" style="text-align: center; background-color: #AFE1AF; color: #097969; font-size: 15px;">'.$sTypeBtnLabelVente.'</option><option value="3" style="text-align: center; background-color: #FFE5B4; color: #CD7F32; font-size: 15px;">'.$sTypeBtnLabelBanque.'</option><option value="4" style="text-align: center; background-color: #f8baba; color: #A52A2A; font-size: 15px;">'.$sTypeBtnLabelOther.'</option><option value="5" style="text-align: center; background-color: #d3d3d3; color: #676767; font-size: 15px;">'.$sTypeBtnLabelUnkown.'</option></select>';
 			$selectedOption = 'selected';
 			if ($sTypeAttachment != null )
 			{
@@ -827,7 +1339,7 @@ JS
 					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
 					$changedSelected = str_replace('value="4"', 'value="4"' . $selectedOption, $changedSizeingSelect);
 					$sTypeAttachmentCompCell = $changedSelected;
-				} else if ($sTypeAttachment == "attachment_unkown") {
+				} else if ($sTypeAttachment == "attachment_unknown") {
 					$changedSizeingSelect = str_replace('font-size: 15px;','font-size: 17px; font-weight: bolder;', $selectButton);
 					$changedSelected = str_replace('value="5"', 'value="5"' . $selectedOption, $changedSizeingSelect);
 					$sTypeAttachmentCompCell = $changedSelected;

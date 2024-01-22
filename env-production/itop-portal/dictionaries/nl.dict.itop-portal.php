@@ -41,8 +41,8 @@ Dict::Add('NL NL', 'Dutch', 'Nederlands', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'documentbeheer',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Ga verder met uw uitstekende documentbeheer.</p><p>Controleer de voortgang, voeg commentaar of documenten toe, bevestig de geboden oplossing.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Ga verder met uw uitstekende accounting mail.</p><p>Controleer de voortgang, voeg commentaar of documenten toe, bevestig de geboden oplossing.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Lopende Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Verder gaan met jouw openstaande Courrier.</p><p>Controleer de voortgang, voeg commentaar of documenten toe, bevestig de geboden oplossing.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Openstaand',

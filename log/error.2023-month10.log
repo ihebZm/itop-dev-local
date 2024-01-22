@@ -1,0 +1,1317 @@
+2023-10-03 12:31:34 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 448,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-03 12:32:22 | Error   | 2     | Parse error: Invalid body indentation level (expecting an indentation level of at least 2) | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 448,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-03 17:47:54 | Error   | 1     | Uncaught Error: Call to undefined function SelectiveUploadButtonHidden() in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:210
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#2 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-tickets\main.itop-tickets.php(280): cmdbAbstractObject->DisplayBareRelations(Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\env-production\itop-request-mgmt-itil\model.itop-request-mgmt-itil.php(760): _Ticket->DisplayBareRelations(Object(iTopWebPage), true | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 210,
+)
+2023-10-03 18:01:53 | Error   | 1     | Uncaught Error: Call to a member function Get() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:181
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(1004): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(215): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage) | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 181,
+)
+2023-10-03 18:16:34 | Error   | 1     | Uncaught Error: Cannot use object of type UserRequest as array in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:181
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(207): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#3 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\env-production\itop-tickets\main.itop-tickets.php(280): cmdbAbstractObject->DisplayBareRelations(Object(iTopWebPage), true)
+#5 C:\xampp\htdo | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 181,
+)
+2023-10-03 18:21:50 | Error   | 1     | Uncaught Error: Call to a member function Fetch() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:179
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(206): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#3 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\env-production\itop-tickets\main.itop-tickets.php(280): cmdbAbstractObject->DisplayBareRelations(Object(iTopWebPage), true)
+#5 C:\xampp\htdocs\iT | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 179,
+)
+2023-10-03 18:22:17 | Error   | 1     | Uncaught Error: Cannot use object of type UserRequest as array in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:181
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(205): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#3 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\env-production\itop-tickets\main.itop-tickets.php(280): cmdbAbstractObject->DisplayBareRelations(Object(iTopWebPage), true)
+#5 C:\xampp\htdo | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 181,
+)
+2023-10-03 18:24:36 | Error   | 1     | Uncaught Error: Call to a member function Get() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:184
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(205): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#3 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\env-production\itop-tickets\main.itop-tickets.php(280): cmdbAbstractObject->DisplayBareRelations(Object(iTopWebPage), true)
+#5 C:\xampp\htdocs\iTop | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 184,
+)
+2023-10-03 18:24:44 | Error   | 1     | Uncaught Error: Call to a member function Get() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:184
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(1002): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(213): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage) | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 184,
+)
+2023-10-03 18:24:56 | Error   | 1     | Uncaught Error: Call to a member function Get() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:184
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(1002): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(213): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage) | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 184,
+)
+2023-10-03 18:25:01 | Error   | 1     | Uncaught Error: Call to a member function Get() on null in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:184
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(1002): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(213): TableDetailsAttachmentsRenderer->AddAttachmentsListContent(true, true, Array, Array)
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage) | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 184,
+)
+2023-10-06 10:40:38 | Error   | 1     | Uncaught Error: Cannot use object of type UserRequest as array in C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php:181
+Stack trace:
+#0 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(240): AbstractAttachmentsRenderer->GetAttachmentsCourrierSet()
+#1 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\renderers.itop-attachments.php(210): AbstractAttachmentsRenderer->SelectiveUploadButton()
+#2 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(273): AbstractAttachmentsRenderer->RenderEditAttachmentsList()
+#3 C:\xampp\htdocs\iTop-develop\web\env-production\itop-attachments\main.itop-attachments.php(40): AttachmentPlugIn->DisplayAttachments(Object(UserRequest), Object(iTopWebPage), true)
+#4 C:\xampp\htdocs\iTop-develop\web\application\cmdbabstract.class.inc.php(863): AttachmentPlugIn->OnDisplayRelations(Object(UserRequest), Object(iTopWebPage), true)
+#5 C:\xampp\htdocs | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-attachments\\renderers.itop-attachments.php',
+  'line' => 181,
+)
+2023-10-06 10:52:44 | Error   | 1     | Error: Unexpected token NAME, found &#039;LIMIT&#039; in: SELECT UserRequest WHERE id = :item_id <span style="font-weight: bolder">LIMIT</span> 1. | IssueLog |||
+2023-10-06 10:53:08 | Error   | 1     | Error: Unexpected token NAME, found &#039;LIMIT&#039; in: SELECT UserRequest <span style="font-weight: bolder">LIMIT</span> 1 WHERE id = :item_id. | IssueLog |||
+2023-10-06 10:56:02 | Error   | 1     | Error: Unexpected token NAME, found &#039;LIMIT&#039; in: SELECT UserRequest WHERE id = :item_id <span style="font-weight: bolder">LIMIT</span> 1. | IssueLog |||
+2023-10-06 10:56:15 | Error   | 1     | Error: Unexpected token NUMVAL, found &#039;1&#039; in: SELECT UserRequest WHERE id = :item_id AND LIMIT <span style="font-weight: bolder">1</span>. | IssueLog |||
+2023-10-06 11:39:48 | Error   | 1     | Error: Unknown attribute ServiceSubcategory.status from class UserRequest. | IssueLog |||
+2023-10-06 11:40:03 | Error   | 1     | Error: Unknown attribute servicesubcategory.status from class UserRequest. | IssueLog |||
+2023-10-06 11:40:11 | Error   | 1     | Error: Unknown attribute serviceSubcategory.status from class UserRequest. | IssueLog |||
+2023-10-06 11:40:22 | Error   | 1     | Error: Unknown attribute servicesubcategory_status from class UserRequest. | IssueLog |||
+2023-10-06 12:07:49 | Error   | 2     | Unknown filter code - found 'servicesubcategory_name' at 54 in 'SELECT Ticket WHERE operational_status = 'closed' AND servicesubcategory_name != 'Asssitance Comptable et Fiscale Mensuelle Type A'', expecting {finalclass, friendlyname, operational_status, ref, org_id, org_id_friendlyname, org_id_obsolescence_flag, org_name, caller_id, caller_id_friendlyname, caller_id_obsolescence_flag, caller_name, team_id, team_id_friendlyname, team_id_obsolescence_flag, team_name, agent_id, agent_id_friendlyname, agent_id_obsolescence_flag, agent_name, title, description, start_date, end_date, last_update, close_date, private_log, id}, I would suggest to use '' | OqlNormalizeException |||
+array (
+  'exception class' => 'OqlNormalizeException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\oql\\oqlquery.class.inc.php',
+  'line' => 273,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/closed-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 16:56:51 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 16:56:52 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 16:58:22 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 16:58:22 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 17:02:54 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 17:11:58 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 17:12:23 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 18:21:06 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 18:23:04 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-11 18:24:20 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:19:42 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:20:26 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:44:27 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:49:57 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:49:57 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:50:37 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:50:37 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:54:25 | Error   | 2     | Parse error: syntax error, unexpected '}' | Symfony\Component\Debug\Exception\FatalThrowableError |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\FatalThrowableError',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1225,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:54:52 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:54:53 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:55:15 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 12:55:15 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 13:10:22 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1355,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 13:31:49 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1355,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 13:31:49 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1355,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 13:32:02 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1355,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 13:32:03 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1355,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:13:39 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1292,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:13:39 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1292,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:18:28 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:24:02 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:24:02 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:44:01 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:44:47 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 14:44:47 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1357,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 16:00:34 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/12/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxMiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 16:00:40 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 16:11:01 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-12 16:11:06 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-13 11:12:59 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-13 11:13:32 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-13 11:13:43 | Error   | 2     | Unknown attribute block_client_ur from class Incident | Exception |||
+array (
+  'exception class' => 'Exception',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 1672,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/create-from-factory/ServiceSubcategory/16/XFRpY2tldDo6Q3JlYXRlRnJvbVNlcnZpY2VTdWJjYXRlZ29yeQ==?ar_token=eyJydWxlcyI6WyJjb250YWN0LXRvLXVzZXJyZXF1ZXN0Iiwic2VydmljZXN1YmNhdGVnb3J5LXRvLXVzZXJyZXF1ZXN0IiwiZ28tdG8tb3Blbi1yZXF1ZXN0LW9uLXN1Ym1pdCJdLCJzb3VyY2VzIjp7IlNlcnZpY2VGYW1pbHkiOiIxIiwiU2VydmljZSI6IjEiLCJTZXJ2aWNlU3ViY2F0ZWdvcnkiOiIxNiJ9fQ%3D%3D&exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-13 11:26:43 | Error   | 2     | Combodo\iTop\Portal\Form\ObjectFormManager::OnSubmit at line 1225 : Erreur: L'objet n'a pas été créé. Vérifiez les objets liés et les attachements avant de soumettre à nouveau le formulaire. | IssueLog |||
+2023-10-13 11:27:27 | Error   | 2     | Combodo\iTop\Portal\Form\ObjectFormManager::OnSubmit at line 1225 : Erreur: L'objet n'a pas été créé. Vérifiez les objets liés et les attachements avant de soumettre à nouveau le formulaire. | IssueLog |||
+2023-10-13 11:28:17 | Error   | 1     | Error: Failed to issue SQL query: query = SELECT
+ DISTINCT `Incident`.`id` AS `Incidentid`,
+ `Incident_Ticket`.`operational_status` AS `Incidentoperational_status`,
+ `Incident_Ticket`.`ref` AS `Incidentref`,
+ `Incident_Ticket`.`org_id` AS `Incidentorg_id`,
+ `Organization_org_id`.`name` AS `Incidentorg_name`,
+ `Incident_Ticket`.`caller_id` AS `Incidentcaller_id`,
+ `Person_caller_id_Contact`.`name` AS `Incidentcaller_name`,
+ `Incident_Ticket`.`team_id` AS `Incidentteam_id`,
+ `Team_team_id_Contact`.`email` AS `Incidentteam_name`,
+ `Incident_Ticket`.`agent_id` AS `Incidentagent_id`,
+ `Person_agent_id_Contact`.`name` AS `Incidentagent_name`,
+ `Incident_Ticket`.`title` AS `Incidenttitle`,
+ `Incident_Ticket`.`description` AS `Incidentdescription`,
+ `Incident_Ticket`.`start_date` AS `Incidentstart_date`,
+ `Incident_Ticket`.`end_date` AS `Incidentend_date`,
+ `Incident_Ticket`.`last_update` AS `Incidentlast_update`,
+ `Incident_Ticket`.`close_date` AS `Incidentclose_date`,
+ `Incident_Ticket`.`private_log` AS `Incidentprivate_log`,
+ `Incident`.`status` AS `Incidentstatus`,
+ `Incident`.`impact` AS `Incidentimpact`,
+ `Incident`.`priority` AS `Incidentpriority`,
+ `Incident`.`urgency` AS `Incidenturgency`,
+ `Incident`.`origin` AS `Incidentorigin`,
+ `Incident`.`service_id` AS `Incidentservice_id`,
+ `Service_service_id`.`name` AS `Incidentservice_name`,
+ `Incident`.`servicesubcategory_id` AS `Incidentservicesubcategory_id`,
+ `ServiceSubcategory_servicesubcategory_id`.`name` AS `Incidentservicesubcategory_name`,
+ `Incident`.`escalation_flag` AS `Incidentescalation_flag`,
+ `Incident`.`escalation_reason` AS `Incidentescalation_reason`,
+ `Incident`.`assignment_date` AS `Incidentassignment_date`,
+ `Incident`.`resolution_date` AS `Incidentresolution_date`,
+ `Incident`.`last_pending_date` AS `Incidentlast_pending_date`,
+ `Incident`.`cumulatedpending_timespent` AS `Incidentcumulatedpending`,
+ `Incident`.`tto_timespent` AS `Incidenttto`,
+ `Incident`.`ttr_timespent` AS `Incidentttr`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_escalation_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidentsla_tto_passed`,
+ `Incident`.`tto_100_overrun` AS `Incidentsla_tto_over`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_escalation_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentsla_ttr_passed`,
+ `Incident`.`ttr_100_overrun` AS `Incidentsla_ttr_over`,
+ `Incident`.`time_spent` AS `Incidenttime_spent`,
+ `Incident`.`resolution_code` AS `Incidentresolution_code`,
+ `Incident`.`solution` AS `Incidentsolution`,
+ `Incident`.`pending_reason` AS `Incidentpending_reason`,
+ `Incident`.`parent_incident_id` AS `Incidentparent_incident_id`,
+ `Incident_parent_incident_id_Ticket`.`ref` AS `Incidentparent_incident_ref`,
+ `Incident`.`parent_problem_id` AS `Incidentparent_problem_id`,
+ `Problem_parent_problem_id_Ticket`.`ref` AS `Incidentparent_problem_ref`,
+ `Incident`.`parent_change_id` AS `Incidentparent_change_id`,
+ `Change_parent_change_id_Ticket`.`ref` AS `Incidentparent_change_ref`,
+ `Incident`.`public_log` AS `Incidentpublic_log`,
+ `Incident`.`user_satisfaction` AS `Incidentuser_satisfaction`,
+ `Incident`.`user_commment` AS `Incidentuser_comment`,
+ `Incident`.`type_person` AS `Incidenttype_person`,
+ `Incident`.`numero_start_invoice_vente` AS `Incidentnumero_start_invoice_vente`,
+ `Incident`.`numero_end_invoice_vente` AS `Incidentnumero_end_invoice_vente`,
+ `Incident`.`numero_last_month_invoice_vente` AS `Incidentnumero_last_month_invoice_vente`,
+ `Incident`.`amount_turnover_vente` AS `Incidentamount_turnover_vente`,
+ `Incident`.`bank_slip_vente` AS `Incidentbank_slip_vente`,
+ `Incident`.`transaction_notice_vente` AS `Incidenttransaction_notice_vente`,
+ `Incident`.`sr_certificates_vente` AS `Incidentsr_certificates_vente`,
+ `Incident`.`statements_and_documents_banque` AS `Incidentstatements_and_documents_banque`,
+ `Incident`.`comment_on_reconciliation_statement_banque` AS `Incidentcomment_on_reconciliation_statement_banque`,
+ `Incident`.`exceptional_order_courrier` AS `Incidentexceptional_order_courrier`,
+ `Incident`.`month_courrier` AS `Incidentmonth_courrier`,
+ `Incident`.`block_client_ur` AS `Incidentblock_client_ur`,
+ `Incident_Ticket`.`finalclass` AS `Incidentfinalclass`,
+ CAST(CONCAT(COALESCE(`Incident_Ticket`.`ref`, '')) AS CHAR) AS `Incidentfriendlyname`,
+ CAST(CONCAT(COALESCE(`Organization_org_id`.`name`, '')) AS CHAR) AS `Incidentorg_id_friendlyname`,
+ COALESCE((`Organization_org_id`.`status` = 'inactive'), 0) AS `Incidentorg_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_caller_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_caller_id_Contact`.`name`, '')) AS CHAR) AS `Incidentcaller_id_friendlyname`,
+ COALESCE((`Person_caller_id_Contact`.`status` = 'inactive'), 0) AS `Incidentcaller_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Team_team_id_Contact`.`name`, '')) AS CHAR) AS `Incidentteam_id_friendlyname`,
+ COALESCE((`Team_team_id_Contact`.`status` = 'inactive'), 0) AS `Incidentteam_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_agent_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_agent_id_Contact`.`name`, '')) AS CHAR) AS `Incidentagent_id_friendlyname`,
+ COALESCE((`Person_agent_id_Contact`.`status` = 'inactive'), 0) AS `Incidentagent_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Service_service_id`.`name`, '')) AS CHAR) AS `Incidentservice_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`ServiceSubcategory_servicesubcategory_id`.`name`, '')) AS CHAR) AS `Incidentservicesubcategory_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Incident_parent_incident_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_incident_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Problem_parent_problem_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_problem_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Change_parent_change_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_change_id_friendlyname`,
+ `Change_parent_change_id_Ticket`.`finalclass` AS `Incidentparent_change_id_finalclass_recall`,
+ `Incident`.`cumulatedpending_started` AS `Incidentcumulatedpending_started`,
+ `Incident`.`cumulatedpending_laststart` AS `Incidentcumulatedpending_laststart`,
+ `Incident`.`cumulatedpending_stopped` AS `Incidentcumulatedpending_stopped`,
+ `Incident`.`tto_started` AS `Incidenttto_started`,
+ `Incident`.`tto_laststart` AS `Incidenttto_laststart`,
+ `Incident`.`tto_stopped` AS `Incidenttto_stopped`,
+ `Incident`.`tto_75_deadline` AS `Incidenttto_75_deadline`,
+ `Incident`.`tto_75_passed` AS `Incidenttto_75_passed`,
+ `Incident`.`tto_75_triggered` AS `Incidenttto_75_triggered`,
+ `Incident`.`tto_75_overrun` AS `Incidenttto_75_overrun`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_100_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidenttto_100_passed`,
+ `Incident`.`tto_100_triggered` AS `Incidenttto_100_triggered`,
+ `Incident`.`tto_100_overrun` AS `Incidenttto_100_overrun`,
+ `Incident`.`ttr_started` AS `Incidentttr_started`,
+ `Incident`.`ttr_laststart` AS `Incidentttr_laststart`,
+ `Incident`.`ttr_stopped` AS `Incidentttr_stopped`,
+ `Incident`.`ttr_75_deadline` AS `Incidentttr_75_deadline`,
+ `Incident`.`ttr_75_passed` AS `Incidentttr_75_passed`,
+ `Incident`.`ttr_75_triggered` AS `Incidentttr_75_triggered`,
+ `Incident`.`ttr_75_overrun` AS `Incidentttr_75_overrun`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_100_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentttr_100_passed`,
+ `Incident`.`ttr_100_triggered` AS `Incidentttr_100_triggered`,
+ `Incident`.`ttr_100_overrun` AS `Incidentttr_100_overrun`,
+ `Incident`.`public_log_index` AS `Incidentpublic_log_index`,
+ `Incident_Ticket`.`description_format` AS `Incidentdescription_format`,
+ `Incident_Ticket`.`private_log_index` AS `Incidentprivate_log_index`
+ FROM 
+   `ticket_incident` AS `Incident`
+   LEFT JOIN 
+      `service` AS `Service_service_id`
+    ON `Incident`.`service_id` = `Service_service_id`.`id`
+   LEFT JOIN 
+      `servicesubcategory` AS `ServiceSubcategory_servicesubcategory_id`
+    ON `Incident`.`servicesubcategory_id` = `ServiceSubcategory_servicesubcategory_id`.`id`
+   LEFT JOIN 
+      `ticket` AS `Incident_parent_incident_id_Ticket`
+    ON `Incident`.`parent_incident_id` = `Incident_parent_incident_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Problem_parent_problem_id_Ticket`
+    ON `Incident`.`parent_problem_id` = `Problem_parent_problem_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Change_parent_change_id_Ticket`
+    ON `Incident`.`parent_change_id` = `Change_parent_change_id_Ticket`.`id`
+   INNER JOIN (
+      `ticket` AS `Incident_Ticket` 
+      INNER JOIN 
+         `organization` AS `Organization_org_id`
+       ON `Incident_Ticket`.`org_id` = `Organization_org_id`.`id`
+      LEFT JOIN (
+         `person` AS `Person_caller_id` 
+         INNER JOIN 
+            `contact` AS `Person_caller_id_Contact`
+          ON `Person_caller_id`.`id` = `Person_caller_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`caller_id` = `Person_caller_id`.`id`
+      LEFT JOIN 
+         `contact` AS `Team_team_id_Contact`
+       ON `Incident_Ticket`.`team_id` = `Team_team_id_Contact`.`id`
+      LEFT JOIN (
+         `person` AS `Person_agent_id` 
+         INNER JOIN 
+            `contact` AS `Person_agent_id_Contact`
+          ON `Person_agent_id`.`id` = `Person_agent_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`agent_id` = `Person_agent_id`.`id`
+   ) ON `Incident`.`id` = `Incident_Ticket`.`id`
+ WHERE (((((`Incident`.`id` = 0) AND COALESCE((`Team_team_id_Contact`.`finalclass` IN ('Team')), 1)) AND COALESCE((`Incident_parent_incident_id_Ticket`.`finalclass` IN ('Incident')), 1)) AND COALESCE((`Problem_parent_problem_id_Ticket`.`finalclass` IN ('Problem')), 1)) AND COALESCE((`Change_parent_change_id_Ticket`.`finalclass` IN ('RoutineChange', 'ApprovedChange', 'NormalChange', 'EmergencyChange', 'Change')), 1))
+  , mysql_errno = 1054, mysql_error = Unknown column 'Incident.type_person' in 'field list'. | IssueLog |||
+2023-10-13 13:55:33 | Error   | 2     | Combodo\iTop\Portal\Form\ObjectFormManager::OnSubmit at line 1225 : Erreur: L'objet n'a pas été créé. Vérifiez les objets liés et les attachements avant de soumettre à nouveau le formulaire. | IssueLog |||
+2023-10-13 13:57:06 | Error   | 2     | Combodo\iTop\Portal\Form\ObjectFormManager::OnSubmit at line 1225 : Erreur: L'objet n'a pas été créé. Vérifiez les objets liés et les attachements avant de soumettre à nouveau le formulaire. | IssueLog |||
+2023-10-13 13:57:45 | Error   | 1     | Error: Failed to issue SQL query: query = SELECT
+ DISTINCT `Incident`.`id` AS `Incidentid`,
+ `Incident_Ticket`.`operational_status` AS `Incidentoperational_status`,
+ `Incident_Ticket`.`ref` AS `Incidentref`,
+ `Incident_Ticket`.`org_id` AS `Incidentorg_id`,
+ `Organization_org_id`.`name` AS `Incidentorg_name`,
+ `Incident_Ticket`.`caller_id` AS `Incidentcaller_id`,
+ `Person_caller_id_Contact`.`name` AS `Incidentcaller_name`,
+ `Incident_Ticket`.`team_id` AS `Incidentteam_id`,
+ `Team_team_id_Contact`.`email` AS `Incidentteam_name`,
+ `Incident_Ticket`.`agent_id` AS `Incidentagent_id`,
+ `Person_agent_id_Contact`.`name` AS `Incidentagent_name`,
+ `Incident_Ticket`.`title` AS `Incidenttitle`,
+ `Incident_Ticket`.`description` AS `Incidentdescription`,
+ `Incident_Ticket`.`start_date` AS `Incidentstart_date`,
+ `Incident_Ticket`.`end_date` AS `Incidentend_date`,
+ `Incident_Ticket`.`last_update` AS `Incidentlast_update`,
+ `Incident_Ticket`.`close_date` AS `Incidentclose_date`,
+ `Incident_Ticket`.`private_log` AS `Incidentprivate_log`,
+ `Incident`.`status` AS `Incidentstatus`,
+ `Incident`.`impact` AS `Incidentimpact`,
+ `Incident`.`priority` AS `Incidentpriority`,
+ `Incident`.`urgency` AS `Incidenturgency`,
+ `Incident`.`origin` AS `Incidentorigin`,
+ `Incident`.`service_id` AS `Incidentservice_id`,
+ `Service_service_id`.`name` AS `Incidentservice_name`,
+ `Incident`.`servicesubcategory_id` AS `Incidentservicesubcategory_id`,
+ `ServiceSubcategory_servicesubcategory_id`.`name` AS `Incidentservicesubcategory_name`,
+ `Incident`.`escalation_flag` AS `Incidentescalation_flag`,
+ `Incident`.`escalation_reason` AS `Incidentescalation_reason`,
+ `Incident`.`assignment_date` AS `Incidentassignment_date`,
+ `Incident`.`resolution_date` AS `Incidentresolution_date`,
+ `Incident`.`last_pending_date` AS `Incidentlast_pending_date`,
+ `Incident`.`cumulatedpending_timespent` AS `Incidentcumulatedpending`,
+ `Incident`.`tto_timespent` AS `Incidenttto`,
+ `Incident`.`ttr_timespent` AS `Incidentttr`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_escalation_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidentsla_tto_passed`,
+ `Incident`.`tto_100_overrun` AS `Incidentsla_tto_over`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_escalation_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentsla_ttr_passed`,
+ `Incident`.`ttr_100_overrun` AS `Incidentsla_ttr_over`,
+ `Incident`.`time_spent` AS `Incidenttime_spent`,
+ `Incident`.`resolution_code` AS `Incidentresolution_code`,
+ `Incident`.`solution` AS `Incidentsolution`,
+ `Incident`.`pending_reason` AS `Incidentpending_reason`,
+ `Incident`.`parent_incident_id` AS `Incidentparent_incident_id`,
+ `Incident_parent_incident_id_Ticket`.`ref` AS `Incidentparent_incident_ref`,
+ `Incident`.`parent_problem_id` AS `Incidentparent_problem_id`,
+ `Problem_parent_problem_id_Ticket`.`ref` AS `Incidentparent_problem_ref`,
+ `Incident`.`parent_change_id` AS `Incidentparent_change_id`,
+ `Change_parent_change_id_Ticket`.`ref` AS `Incidentparent_change_ref`,
+ `Incident`.`public_log` AS `Incidentpublic_log`,
+ `Incident`.`user_satisfaction` AS `Incidentuser_satisfaction`,
+ `Incident`.`user_commment` AS `Incidentuser_comment`,
+ `Incident`.`type_person` AS `Incidenttype_person`,
+ `Incident`.`numero_start_invoice_vente` AS `Incidentnumero_start_invoice_vente`,
+ `Incident`.`numero_end_invoice_vente` AS `Incidentnumero_end_invoice_vente`,
+ `Incident`.`numero_last_month_invoice_vente` AS `Incidentnumero_last_month_invoice_vente`,
+ `Incident`.`amount_turnover_vente` AS `Incidentamount_turnover_vente`,
+ `Incident`.`bank_slip_vente` AS `Incidentbank_slip_vente`,
+ `Incident`.`transaction_notice_vente` AS `Incidenttransaction_notice_vente`,
+ `Incident`.`sr_certificates_vente` AS `Incidentsr_certificates_vente`,
+ `Incident`.`statements_and_documents_banque` AS `Incidentstatements_and_documents_banque`,
+ `Incident`.`comment_on_reconciliation_statement_banque` AS `Incidentcomment_on_reconciliation_statement_banque`,
+ `Incident`.`exceptional_order_courrier` AS `Incidentexceptional_order_courrier`,
+ `Incident`.`month_courrier` AS `Incidentmonth_courrier`,
+ `Incident`.`block_client_ur` AS `Incidentblock_client_ur`,
+ `Incident_Ticket`.`finalclass` AS `Incidentfinalclass`,
+ CAST(CONCAT(COALESCE(`Incident_Ticket`.`ref`, '')) AS CHAR) AS `Incidentfriendlyname`,
+ CAST(CONCAT(COALESCE(`Organization_org_id`.`name`, '')) AS CHAR) AS `Incidentorg_id_friendlyname`,
+ COALESCE((`Organization_org_id`.`status` = 'inactive'), 0) AS `Incidentorg_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_caller_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_caller_id_Contact`.`name`, '')) AS CHAR) AS `Incidentcaller_id_friendlyname`,
+ COALESCE((`Person_caller_id_Contact`.`status` = 'inactive'), 0) AS `Incidentcaller_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Team_team_id_Contact`.`name`, '')) AS CHAR) AS `Incidentteam_id_friendlyname`,
+ COALESCE((`Team_team_id_Contact`.`status` = 'inactive'), 0) AS `Incidentteam_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_agent_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_agent_id_Contact`.`name`, '')) AS CHAR) AS `Incidentagent_id_friendlyname`,
+ COALESCE((`Person_agent_id_Contact`.`status` = 'inactive'), 0) AS `Incidentagent_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Service_service_id`.`name`, '')) AS CHAR) AS `Incidentservice_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`ServiceSubcategory_servicesubcategory_id`.`name`, '')) AS CHAR) AS `Incidentservicesubcategory_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Incident_parent_incident_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_incident_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Problem_parent_problem_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_problem_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Change_parent_change_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_change_id_friendlyname`,
+ `Change_parent_change_id_Ticket`.`finalclass` AS `Incidentparent_change_id_finalclass_recall`,
+ `Incident`.`cumulatedpending_started` AS `Incidentcumulatedpending_started`,
+ `Incident`.`cumulatedpending_laststart` AS `Incidentcumulatedpending_laststart`,
+ `Incident`.`cumulatedpending_stopped` AS `Incidentcumulatedpending_stopped`,
+ `Incident`.`tto_started` AS `Incidenttto_started`,
+ `Incident`.`tto_laststart` AS `Incidenttto_laststart`,
+ `Incident`.`tto_stopped` AS `Incidenttto_stopped`,
+ `Incident`.`tto_75_deadline` AS `Incidenttto_75_deadline`,
+ `Incident`.`tto_75_passed` AS `Incidenttto_75_passed`,
+ `Incident`.`tto_75_triggered` AS `Incidenttto_75_triggered`,
+ `Incident`.`tto_75_overrun` AS `Incidenttto_75_overrun`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_100_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidenttto_100_passed`,
+ `Incident`.`tto_100_triggered` AS `Incidenttto_100_triggered`,
+ `Incident`.`tto_100_overrun` AS `Incidenttto_100_overrun`,
+ `Incident`.`ttr_started` AS `Incidentttr_started`,
+ `Incident`.`ttr_laststart` AS `Incidentttr_laststart`,
+ `Incident`.`ttr_stopped` AS `Incidentttr_stopped`,
+ `Incident`.`ttr_75_deadline` AS `Incidentttr_75_deadline`,
+ `Incident`.`ttr_75_passed` AS `Incidentttr_75_passed`,
+ `Incident`.`ttr_75_triggered` AS `Incidentttr_75_triggered`,
+ `Incident`.`ttr_75_overrun` AS `Incidentttr_75_overrun`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_100_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentttr_100_passed`,
+ `Incident`.`ttr_100_triggered` AS `Incidentttr_100_triggered`,
+ `Incident`.`ttr_100_overrun` AS `Incidentttr_100_overrun`,
+ `Incident`.`public_log_index` AS `Incidentpublic_log_index`,
+ `Incident_Ticket`.`description_format` AS `Incidentdescription_format`,
+ `Incident_Ticket`.`private_log_index` AS `Incidentprivate_log_index`
+ FROM 
+   `ticket_incident` AS `Incident`
+   LEFT JOIN 
+      `service` AS `Service_service_id`
+    ON `Incident`.`service_id` = `Service_service_id`.`id`
+   LEFT JOIN 
+      `servicesubcategory` AS `ServiceSubcategory_servicesubcategory_id`
+    ON `Incident`.`servicesubcategory_id` = `ServiceSubcategory_servicesubcategory_id`.`id`
+   LEFT JOIN 
+      `ticket` AS `Incident_parent_incident_id_Ticket`
+    ON `Incident`.`parent_incident_id` = `Incident_parent_incident_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Problem_parent_problem_id_Ticket`
+    ON `Incident`.`parent_problem_id` = `Problem_parent_problem_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Change_parent_change_id_Ticket`
+    ON `Incident`.`parent_change_id` = `Change_parent_change_id_Ticket`.`id`
+   INNER JOIN (
+      `ticket` AS `Incident_Ticket` 
+      INNER JOIN 
+         `organization` AS `Organization_org_id`
+       ON `Incident_Ticket`.`org_id` = `Organization_org_id`.`id`
+      LEFT JOIN (
+         `person` AS `Person_caller_id` 
+         INNER JOIN 
+            `contact` AS `Person_caller_id_Contact`
+          ON `Person_caller_id`.`id` = `Person_caller_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`caller_id` = `Person_caller_id`.`id`
+      LEFT JOIN 
+         `contact` AS `Team_team_id_Contact`
+       ON `Incident_Ticket`.`team_id` = `Team_team_id_Contact`.`id`
+      LEFT JOIN (
+         `person` AS `Person_agent_id` 
+         INNER JOIN 
+            `contact` AS `Person_agent_id_Contact`
+          ON `Person_agent_id`.`id` = `Person_agent_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`agent_id` = `Person_agent_id`.`id`
+   ) ON `Incident`.`id` = `Incident_Ticket`.`id`
+ WHERE (((((`Incident`.`id` = 0) AND COALESCE((`Team_team_id_Contact`.`finalclass` IN ('Team')), 1)) AND COALESCE((`Incident_parent_incident_id_Ticket`.`finalclass` IN ('Incident')), 1)) AND COALESCE((`Problem_parent_problem_id_Ticket`.`finalclass` IN ('Problem')), 1)) AND COALESCE((`Change_parent_change_id_Ticket`.`finalclass` IN ('RoutineChange', 'ApprovedChange', 'NormalChange', 'EmergencyChange', 'Change')), 1))
+  , mysql_errno = 1054, mysql_error = Unknown column 'Incident.type_person' in 'field list'. | IssueLog |||
+2023-10-13 13:57:51 | Error   | 1     | Error: Failed to issue SQL query: query = SELECT
+ DISTINCT `Incident`.`id` AS `Incidentid`,
+ `Incident_Ticket`.`operational_status` AS `Incidentoperational_status`,
+ `Incident_Ticket`.`ref` AS `Incidentref`,
+ `Incident_Ticket`.`org_id` AS `Incidentorg_id`,
+ `Organization_org_id`.`name` AS `Incidentorg_name`,
+ `Incident_Ticket`.`caller_id` AS `Incidentcaller_id`,
+ `Person_caller_id_Contact`.`name` AS `Incidentcaller_name`,
+ `Incident_Ticket`.`team_id` AS `Incidentteam_id`,
+ `Team_team_id_Contact`.`email` AS `Incidentteam_name`,
+ `Incident_Ticket`.`agent_id` AS `Incidentagent_id`,
+ `Person_agent_id_Contact`.`name` AS `Incidentagent_name`,
+ `Incident_Ticket`.`title` AS `Incidenttitle`,
+ `Incident_Ticket`.`description` AS `Incidentdescription`,
+ `Incident_Ticket`.`start_date` AS `Incidentstart_date`,
+ `Incident_Ticket`.`end_date` AS `Incidentend_date`,
+ `Incident_Ticket`.`last_update` AS `Incidentlast_update`,
+ `Incident_Ticket`.`close_date` AS `Incidentclose_date`,
+ `Incident_Ticket`.`private_log` AS `Incidentprivate_log`,
+ `Incident`.`status` AS `Incidentstatus`,
+ `Incident`.`impact` AS `Incidentimpact`,
+ `Incident`.`priority` AS `Incidentpriority`,
+ `Incident`.`urgency` AS `Incidenturgency`,
+ `Incident`.`origin` AS `Incidentorigin`,
+ `Incident`.`service_id` AS `Incidentservice_id`,
+ `Service_service_id`.`name` AS `Incidentservice_name`,
+ `Incident`.`servicesubcategory_id` AS `Incidentservicesubcategory_id`,
+ `ServiceSubcategory_servicesubcategory_id`.`name` AS `Incidentservicesubcategory_name`,
+ `Incident`.`escalation_flag` AS `Incidentescalation_flag`,
+ `Incident`.`escalation_reason` AS `Incidentescalation_reason`,
+ `Incident`.`assignment_date` AS `Incidentassignment_date`,
+ `Incident`.`resolution_date` AS `Incidentresolution_date`,
+ `Incident`.`last_pending_date` AS `Incidentlast_pending_date`,
+ `Incident`.`cumulatedpending_timespent` AS `Incidentcumulatedpending`,
+ `Incident`.`tto_timespent` AS `Incidenttto`,
+ `Incident`.`ttr_timespent` AS `Incidentttr`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_escalation_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidentsla_tto_passed`,
+ `Incident`.`tto_100_overrun` AS `Incidentsla_tto_over`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_escalation_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentsla_ttr_passed`,
+ `Incident`.`ttr_100_overrun` AS `Incidentsla_ttr_over`,
+ `Incident`.`time_spent` AS `Incidenttime_spent`,
+ `Incident`.`resolution_code` AS `Incidentresolution_code`,
+ `Incident`.`solution` AS `Incidentsolution`,
+ `Incident`.`pending_reason` AS `Incidentpending_reason`,
+ `Incident`.`parent_incident_id` AS `Incidentparent_incident_id`,
+ `Incident_parent_incident_id_Ticket`.`ref` AS `Incidentparent_incident_ref`,
+ `Incident`.`parent_problem_id` AS `Incidentparent_problem_id`,
+ `Problem_parent_problem_id_Ticket`.`ref` AS `Incidentparent_problem_ref`,
+ `Incident`.`parent_change_id` AS `Incidentparent_change_id`,
+ `Change_parent_change_id_Ticket`.`ref` AS `Incidentparent_change_ref`,
+ `Incident`.`public_log` AS `Incidentpublic_log`,
+ `Incident`.`user_satisfaction` AS `Incidentuser_satisfaction`,
+ `Incident`.`user_commment` AS `Incidentuser_comment`,
+ `Incident`.`type_person` AS `Incidenttype_person`,
+ `Incident`.`numero_start_invoice_vente` AS `Incidentnumero_start_invoice_vente`,
+ `Incident`.`numero_end_invoice_vente` AS `Incidentnumero_end_invoice_vente`,
+ `Incident`.`numero_last_month_invoice_vente` AS `Incidentnumero_last_month_invoice_vente`,
+ `Incident`.`amount_turnover_vente` AS `Incidentamount_turnover_vente`,
+ `Incident`.`bank_slip_vente` AS `Incidentbank_slip_vente`,
+ `Incident`.`transaction_notice_vente` AS `Incidenttransaction_notice_vente`,
+ `Incident`.`sr_certificates_vente` AS `Incidentsr_certificates_vente`,
+ `Incident`.`statements_and_documents_banque` AS `Incidentstatements_and_documents_banque`,
+ `Incident`.`comment_on_reconciliation_statement_banque` AS `Incidentcomment_on_reconciliation_statement_banque`,
+ `Incident`.`exceptional_order_courrier` AS `Incidentexceptional_order_courrier`,
+ `Incident`.`month_courrier` AS `Incidentmonth_courrier`,
+ `Incident`.`block_client_ur` AS `Incidentblock_client_ur`,
+ `Incident_Ticket`.`finalclass` AS `Incidentfinalclass`,
+ CAST(CONCAT(COALESCE(`Incident_Ticket`.`ref`, '')) AS CHAR) AS `Incidentfriendlyname`,
+ CAST(CONCAT(COALESCE(`Organization_org_id`.`name`, '')) AS CHAR) AS `Incidentorg_id_friendlyname`,
+ COALESCE((`Organization_org_id`.`status` = 'inactive'), 0) AS `Incidentorg_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_caller_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_caller_id_Contact`.`name`, '')) AS CHAR) AS `Incidentcaller_id_friendlyname`,
+ COALESCE((`Person_caller_id_Contact`.`status` = 'inactive'), 0) AS `Incidentcaller_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Team_team_id_Contact`.`name`, '')) AS CHAR) AS `Incidentteam_id_friendlyname`,
+ COALESCE((`Team_team_id_Contact`.`status` = 'inactive'), 0) AS `Incidentteam_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_agent_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_agent_id_Contact`.`name`, '')) AS CHAR) AS `Incidentagent_id_friendlyname`,
+ COALESCE((`Person_agent_id_Contact`.`status` = 'inactive'), 0) AS `Incidentagent_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Service_service_id`.`name`, '')) AS CHAR) AS `Incidentservice_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`ServiceSubcategory_servicesubcategory_id`.`name`, '')) AS CHAR) AS `Incidentservicesubcategory_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Incident_parent_incident_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_incident_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Problem_parent_problem_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_problem_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Change_parent_change_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_change_id_friendlyname`,
+ `Change_parent_change_id_Ticket`.`finalclass` AS `Incidentparent_change_id_finalclass_recall`,
+ `Incident`.`cumulatedpending_started` AS `Incidentcumulatedpending_started`,
+ `Incident`.`cumulatedpending_laststart` AS `Incidentcumulatedpending_laststart`,
+ `Incident`.`cumulatedpending_stopped` AS `Incidentcumulatedpending_stopped`,
+ `Incident`.`tto_started` AS `Incidenttto_started`,
+ `Incident`.`tto_laststart` AS `Incidenttto_laststart`,
+ `Incident`.`tto_stopped` AS `Incidenttto_stopped`,
+ `Incident`.`tto_75_deadline` AS `Incidenttto_75_deadline`,
+ `Incident`.`tto_75_passed` AS `Incidenttto_75_passed`,
+ `Incident`.`tto_75_triggered` AS `Incidenttto_75_triggered`,
+ `Incident`.`tto_75_overrun` AS `Incidenttto_75_overrun`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_100_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidenttto_100_passed`,
+ `Incident`.`tto_100_triggered` AS `Incidenttto_100_triggered`,
+ `Incident`.`tto_100_overrun` AS `Incidenttto_100_overrun`,
+ `Incident`.`ttr_started` AS `Incidentttr_started`,
+ `Incident`.`ttr_laststart` AS `Incidentttr_laststart`,
+ `Incident`.`ttr_stopped` AS `Incidentttr_stopped`,
+ `Incident`.`ttr_75_deadline` AS `Incidentttr_75_deadline`,
+ `Incident`.`ttr_75_passed` AS `Incidentttr_75_passed`,
+ `Incident`.`ttr_75_triggered` AS `Incidentttr_75_triggered`,
+ `Incident`.`ttr_75_overrun` AS `Incidentttr_75_overrun`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_100_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentttr_100_passed`,
+ `Incident`.`ttr_100_triggered` AS `Incidentttr_100_triggered`,
+ `Incident`.`ttr_100_overrun` AS `Incidentttr_100_overrun`,
+ `Incident`.`public_log_index` AS `Incidentpublic_log_index`,
+ `Incident_Ticket`.`description_format` AS `Incidentdescription_format`,
+ `Incident_Ticket`.`private_log_index` AS `Incidentprivate_log_index`
+ FROM 
+   `ticket_incident` AS `Incident`
+   LEFT JOIN 
+      `service` AS `Service_service_id`
+    ON `Incident`.`service_id` = `Service_service_id`.`id`
+   LEFT JOIN 
+      `servicesubcategory` AS `ServiceSubcategory_servicesubcategory_id`
+    ON `Incident`.`servicesubcategory_id` = `ServiceSubcategory_servicesubcategory_id`.`id`
+   LEFT JOIN 
+      `ticket` AS `Incident_parent_incident_id_Ticket`
+    ON `Incident`.`parent_incident_id` = `Incident_parent_incident_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Problem_parent_problem_id_Ticket`
+    ON `Incident`.`parent_problem_id` = `Problem_parent_problem_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Change_parent_change_id_Ticket`
+    ON `Incident`.`parent_change_id` = `Change_parent_change_id_Ticket`.`id`
+   INNER JOIN (
+      `ticket` AS `Incident_Ticket` 
+      INNER JOIN 
+         `organization` AS `Organization_org_id`
+       ON `Incident_Ticket`.`org_id` = `Organization_org_id`.`id`
+      LEFT JOIN (
+         `person` AS `Person_caller_id` 
+         INNER JOIN 
+            `contact` AS `Person_caller_id_Contact`
+          ON `Person_caller_id`.`id` = `Person_caller_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`caller_id` = `Person_caller_id`.`id`
+      LEFT JOIN 
+         `contact` AS `Team_team_id_Contact`
+       ON `Incident_Ticket`.`team_id` = `Team_team_id_Contact`.`id`
+      LEFT JOIN (
+         `person` AS `Person_agent_id` 
+         INNER JOIN 
+            `contact` AS `Person_agent_id_Contact`
+          ON `Person_agent_id`.`id` = `Person_agent_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`agent_id` = `Person_agent_id`.`id`
+   ) ON `Incident`.`id` = `Incident_Ticket`.`id`
+ WHERE (((((`Incident`.`id` = 0) AND COALESCE((`Team_team_id_Contact`.`finalclass` IN ('Team')), 1)) AND COALESCE((`Incident_parent_incident_id_Ticket`.`finalclass` IN ('Incident')), 1)) AND COALESCE((`Problem_parent_problem_id_Ticket`.`finalclass` IN ('Problem')), 1)) AND COALESCE((`Change_parent_change_id_Ticket`.`finalclass` IN ('RoutineChange', 'ApprovedChange', 'NormalChange', 'EmergencyChange', 'Change')), 1))
+  , mysql_errno = 1054, mysql_error = Unknown column 'Incident.type_person' in 'field list'. | IssueLog |||
+2023-10-13 13:57:55 | Error   | 1     | Error: Failed to issue SQL query: query = SELECT
+ DISTINCT `Incident`.`id` AS `Incidentid`,
+ `Incident_Ticket`.`operational_status` AS `Incidentoperational_status`,
+ `Incident_Ticket`.`ref` AS `Incidentref`,
+ `Incident_Ticket`.`org_id` AS `Incidentorg_id`,
+ `Organization_org_id`.`name` AS `Incidentorg_name`,
+ `Incident_Ticket`.`caller_id` AS `Incidentcaller_id`,
+ `Person_caller_id_Contact`.`name` AS `Incidentcaller_name`,
+ `Incident_Ticket`.`team_id` AS `Incidentteam_id`,
+ `Team_team_id_Contact`.`email` AS `Incidentteam_name`,
+ `Incident_Ticket`.`agent_id` AS `Incidentagent_id`,
+ `Person_agent_id_Contact`.`name` AS `Incidentagent_name`,
+ `Incident_Ticket`.`title` AS `Incidenttitle`,
+ `Incident_Ticket`.`description` AS `Incidentdescription`,
+ `Incident_Ticket`.`start_date` AS `Incidentstart_date`,
+ `Incident_Ticket`.`end_date` AS `Incidentend_date`,
+ `Incident_Ticket`.`last_update` AS `Incidentlast_update`,
+ `Incident_Ticket`.`close_date` AS `Incidentclose_date`,
+ `Incident_Ticket`.`private_log` AS `Incidentprivate_log`,
+ `Incident`.`status` AS `Incidentstatus`,
+ `Incident`.`impact` AS `Incidentimpact`,
+ `Incident`.`priority` AS `Incidentpriority`,
+ `Incident`.`urgency` AS `Incidenturgency`,
+ `Incident`.`origin` AS `Incidentorigin`,
+ `Incident`.`service_id` AS `Incidentservice_id`,
+ `Service_service_id`.`name` AS `Incidentservice_name`,
+ `Incident`.`servicesubcategory_id` AS `Incidentservicesubcategory_id`,
+ `ServiceSubcategory_servicesubcategory_id`.`name` AS `Incidentservicesubcategory_name`,
+ `Incident`.`escalation_flag` AS `Incidentescalation_flag`,
+ `Incident`.`escalation_reason` AS `Incidentescalation_reason`,
+ `Incident`.`assignment_date` AS `Incidentassignment_date`,
+ `Incident`.`resolution_date` AS `Incidentresolution_date`,
+ `Incident`.`last_pending_date` AS `Incidentlast_pending_date`,
+ `Incident`.`cumulatedpending_timespent` AS `Incidentcumulatedpending`,
+ `Incident`.`tto_timespent` AS `Incidenttto`,
+ `Incident`.`ttr_timespent` AS `Incidentttr`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_escalation_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidentsla_tto_passed`,
+ `Incident`.`tto_100_overrun` AS `Incidentsla_tto_over`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_escalation_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentsla_ttr_passed`,
+ `Incident`.`ttr_100_overrun` AS `Incidentsla_ttr_over`,
+ `Incident`.`time_spent` AS `Incidenttime_spent`,
+ `Incident`.`resolution_code` AS `Incidentresolution_code`,
+ `Incident`.`solution` AS `Incidentsolution`,
+ `Incident`.`pending_reason` AS `Incidentpending_reason`,
+ `Incident`.`parent_incident_id` AS `Incidentparent_incident_id`,
+ `Incident_parent_incident_id_Ticket`.`ref` AS `Incidentparent_incident_ref`,
+ `Incident`.`parent_problem_id` AS `Incidentparent_problem_id`,
+ `Problem_parent_problem_id_Ticket`.`ref` AS `Incidentparent_problem_ref`,
+ `Incident`.`parent_change_id` AS `Incidentparent_change_id`,
+ `Change_parent_change_id_Ticket`.`ref` AS `Incidentparent_change_ref`,
+ `Incident`.`public_log` AS `Incidentpublic_log`,
+ `Incident`.`user_satisfaction` AS `Incidentuser_satisfaction`,
+ `Incident`.`user_commment` AS `Incidentuser_comment`,
+ `Incident`.`type_person` AS `Incidenttype_person`,
+ `Incident`.`numero_start_invoice_vente` AS `Incidentnumero_start_invoice_vente`,
+ `Incident`.`numero_end_invoice_vente` AS `Incidentnumero_end_invoice_vente`,
+ `Incident`.`numero_last_month_invoice_vente` AS `Incidentnumero_last_month_invoice_vente`,
+ `Incident`.`amount_turnover_vente` AS `Incidentamount_turnover_vente`,
+ `Incident`.`bank_slip_vente` AS `Incidentbank_slip_vente`,
+ `Incident`.`transaction_notice_vente` AS `Incidenttransaction_notice_vente`,
+ `Incident`.`sr_certificates_vente` AS `Incidentsr_certificates_vente`,
+ `Incident`.`statements_and_documents_banque` AS `Incidentstatements_and_documents_banque`,
+ `Incident`.`comment_on_reconciliation_statement_banque` AS `Incidentcomment_on_reconciliation_statement_banque`,
+ `Incident`.`exceptional_order_courrier` AS `Incidentexceptional_order_courrier`,
+ `Incident`.`month_courrier` AS `Incidentmonth_courrier`,
+ `Incident`.`block_client_ur` AS `Incidentblock_client_ur`,
+ `Incident_Ticket`.`finalclass` AS `Incidentfinalclass`,
+ CAST(CONCAT(COALESCE(`Incident_Ticket`.`ref`, '')) AS CHAR) AS `Incidentfriendlyname`,
+ CAST(CONCAT(COALESCE(`Organization_org_id`.`name`, '')) AS CHAR) AS `Incidentorg_id_friendlyname`,
+ COALESCE((`Organization_org_id`.`status` = 'inactive'), 0) AS `Incidentorg_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_caller_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_caller_id_Contact`.`name`, '')) AS CHAR) AS `Incidentcaller_id_friendlyname`,
+ COALESCE((`Person_caller_id_Contact`.`status` = 'inactive'), 0) AS `Incidentcaller_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Team_team_id_Contact`.`name`, '')) AS CHAR) AS `Incidentteam_id_friendlyname`,
+ COALESCE((`Team_team_id_Contact`.`status` = 'inactive'), 0) AS `Incidentteam_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_agent_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_agent_id_Contact`.`name`, '')) AS CHAR) AS `Incidentagent_id_friendlyname`,
+ COALESCE((`Person_agent_id_Contact`.`status` = 'inactive'), 0) AS `Incidentagent_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Service_service_id`.`name`, '')) AS CHAR) AS `Incidentservice_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`ServiceSubcategory_servicesubcategory_id`.`name`, '')) AS CHAR) AS `Incidentservicesubcategory_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Incident_parent_incident_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_incident_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Problem_parent_problem_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_problem_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Change_parent_change_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_change_id_friendlyname`,
+ `Change_parent_change_id_Ticket`.`finalclass` AS `Incidentparent_change_id_finalclass_recall`,
+ `Incident`.`cumulatedpending_started` AS `Incidentcumulatedpending_started`,
+ `Incident`.`cumulatedpending_laststart` AS `Incidentcumulatedpending_laststart`,
+ `Incident`.`cumulatedpending_stopped` AS `Incidentcumulatedpending_stopped`,
+ `Incident`.`tto_started` AS `Incidenttto_started`,
+ `Incident`.`tto_laststart` AS `Incidenttto_laststart`,
+ `Incident`.`tto_stopped` AS `Incidenttto_stopped`,
+ `Incident`.`tto_75_deadline` AS `Incidenttto_75_deadline`,
+ `Incident`.`tto_75_passed` AS `Incidenttto_75_passed`,
+ `Incident`.`tto_75_triggered` AS `Incidenttto_75_triggered`,
+ `Incident`.`tto_75_overrun` AS `Incidenttto_75_overrun`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_100_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidenttto_100_passed`,
+ `Incident`.`tto_100_triggered` AS `Incidenttto_100_triggered`,
+ `Incident`.`tto_100_overrun` AS `Incidenttto_100_overrun`,
+ `Incident`.`ttr_started` AS `Incidentttr_started`,
+ `Incident`.`ttr_laststart` AS `Incidentttr_laststart`,
+ `Incident`.`ttr_stopped` AS `Incidentttr_stopped`,
+ `Incident`.`ttr_75_deadline` AS `Incidentttr_75_deadline`,
+ `Incident`.`ttr_75_passed` AS `Incidentttr_75_passed`,
+ `Incident`.`ttr_75_triggered` AS `Incidentttr_75_triggered`,
+ `Incident`.`ttr_75_overrun` AS `Incidentttr_75_overrun`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_100_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentttr_100_passed`,
+ `Incident`.`ttr_100_triggered` AS `Incidentttr_100_triggered`,
+ `Incident`.`ttr_100_overrun` AS `Incidentttr_100_overrun`,
+ `Incident`.`public_log_index` AS `Incidentpublic_log_index`,
+ `Incident_Ticket`.`description_format` AS `Incidentdescription_format`,
+ `Incident_Ticket`.`private_log_index` AS `Incidentprivate_log_index`
+ FROM 
+   `ticket_incident` AS `Incident`
+   LEFT JOIN 
+      `service` AS `Service_service_id`
+    ON `Incident`.`service_id` = `Service_service_id`.`id`
+   LEFT JOIN 
+      `servicesubcategory` AS `ServiceSubcategory_servicesubcategory_id`
+    ON `Incident`.`servicesubcategory_id` = `ServiceSubcategory_servicesubcategory_id`.`id`
+   LEFT JOIN 
+      `ticket` AS `Incident_parent_incident_id_Ticket`
+    ON `Incident`.`parent_incident_id` = `Incident_parent_incident_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Problem_parent_problem_id_Ticket`
+    ON `Incident`.`parent_problem_id` = `Problem_parent_problem_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Change_parent_change_id_Ticket`
+    ON `Incident`.`parent_change_id` = `Change_parent_change_id_Ticket`.`id`
+   INNER JOIN (
+      `ticket` AS `Incident_Ticket` 
+      INNER JOIN 
+         `organization` AS `Organization_org_id`
+       ON `Incident_Ticket`.`org_id` = `Organization_org_id`.`id`
+      LEFT JOIN (
+         `person` AS `Person_caller_id` 
+         INNER JOIN 
+            `contact` AS `Person_caller_id_Contact`
+          ON `Person_caller_id`.`id` = `Person_caller_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`caller_id` = `Person_caller_id`.`id`
+      LEFT JOIN 
+         `contact` AS `Team_team_id_Contact`
+       ON `Incident_Ticket`.`team_id` = `Team_team_id_Contact`.`id`
+      LEFT JOIN (
+         `person` AS `Person_agent_id` 
+         INNER JOIN 
+            `contact` AS `Person_agent_id_Contact`
+          ON `Person_agent_id`.`id` = `Person_agent_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`agent_id` = `Person_agent_id`.`id`
+   ) ON `Incident`.`id` = `Incident_Ticket`.`id`
+ WHERE (((((`Incident`.`id` = 0) AND COALESCE((`Team_team_id_Contact`.`finalclass` IN ('Team')), 1)) AND COALESCE((`Incident_parent_incident_id_Ticket`.`finalclass` IN ('Incident')), 1)) AND COALESCE((`Problem_parent_problem_id_Ticket`.`finalclass` IN ('Problem')), 1)) AND COALESCE((`Change_parent_change_id_Ticket`.`finalclass` IN ('RoutineChange', 'ApprovedChange', 'NormalChange', 'EmergencyChange', 'Change')), 1))
+  , mysql_errno = 1054, mysql_error = Unknown column 'Incident.type_person' in 'field list'. | IssueLog |||
+2023-10-16 10:02:31 | Error   | 1     | Error: Failed to issue SQL query: query = SELECT
+ DISTINCT `Incident`.`id` AS `Incidentid`,
+ `Incident_Ticket`.`operational_status` AS `Incidentoperational_status`,
+ `Incident_Ticket`.`ref` AS `Incidentref`,
+ `Incident_Ticket`.`org_id` AS `Incidentorg_id`,
+ `Organization_org_id`.`name` AS `Incidentorg_name`,
+ `Incident_Ticket`.`caller_id` AS `Incidentcaller_id`,
+ `Person_caller_id_Contact`.`name` AS `Incidentcaller_name`,
+ `Incident_Ticket`.`team_id` AS `Incidentteam_id`,
+ `Team_team_id_Contact`.`email` AS `Incidentteam_name`,
+ `Incident_Ticket`.`agent_id` AS `Incidentagent_id`,
+ `Person_agent_id_Contact`.`name` AS `Incidentagent_name`,
+ `Incident_Ticket`.`title` AS `Incidenttitle`,
+ `Incident_Ticket`.`description` AS `Incidentdescription`,
+ `Incident_Ticket`.`start_date` AS `Incidentstart_date`,
+ `Incident_Ticket`.`end_date` AS `Incidentend_date`,
+ `Incident_Ticket`.`last_update` AS `Incidentlast_update`,
+ `Incident_Ticket`.`close_date` AS `Incidentclose_date`,
+ `Incident_Ticket`.`private_log` AS `Incidentprivate_log`,
+ `Incident`.`status` AS `Incidentstatus`,
+ `Incident`.`impact` AS `Incidentimpact`,
+ `Incident`.`priority` AS `Incidentpriority`,
+ `Incident`.`urgency` AS `Incidenturgency`,
+ `Incident`.`origin` AS `Incidentorigin`,
+ `Incident`.`service_id` AS `Incidentservice_id`,
+ `Service_service_id`.`name` AS `Incidentservice_name`,
+ `Incident`.`servicesubcategory_id` AS `Incidentservicesubcategory_id`,
+ `ServiceSubcategory_servicesubcategory_id`.`name` AS `Incidentservicesubcategory_name`,
+ `Incident`.`escalation_flag` AS `Incidentescalation_flag`,
+ `Incident`.`escalation_reason` AS `Incidentescalation_reason`,
+ `Incident`.`assignment_date` AS `Incidentassignment_date`,
+ `Incident`.`resolution_date` AS `Incidentresolution_date`,
+ `Incident`.`last_pending_date` AS `Incidentlast_pending_date`,
+ `Incident`.`cumulatedpending_timespent` AS `Incidentcumulatedpending`,
+ `Incident`.`tto_timespent` AS `Incidenttto`,
+ `Incident`.`ttr_timespent` AS `Incidentttr`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_escalation_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidentsla_tto_passed`,
+ `Incident`.`tto_100_overrun` AS `Incidentsla_tto_over`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_escalation_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentsla_ttr_passed`,
+ `Incident`.`ttr_100_overrun` AS `Incidentsla_ttr_over`,
+ `Incident`.`time_spent` AS `Incidenttime_spent`,
+ `Incident`.`resolution_code` AS `Incidentresolution_code`,
+ `Incident`.`solution` AS `Incidentsolution`,
+ `Incident`.`pending_reason` AS `Incidentpending_reason`,
+ `Incident`.`parent_incident_id` AS `Incidentparent_incident_id`,
+ `Incident_parent_incident_id_Ticket`.`ref` AS `Incidentparent_incident_ref`,
+ `Incident`.`parent_problem_id` AS `Incidentparent_problem_id`,
+ `Problem_parent_problem_id_Ticket`.`ref` AS `Incidentparent_problem_ref`,
+ `Incident`.`parent_change_id` AS `Incidentparent_change_id`,
+ `Change_parent_change_id_Ticket`.`ref` AS `Incidentparent_change_ref`,
+ `Incident`.`public_log` AS `Incidentpublic_log`,
+ `Incident`.`user_satisfaction` AS `Incidentuser_satisfaction`,
+ `Incident`.`user_commment` AS `Incidentuser_comment`,
+ `Incident`.`type_person` AS `Incidenttype_person`,
+ `Incident`.`numero_start_invoice_vente` AS `Incidentnumero_start_invoice_vente`,
+ `Incident`.`numero_end_invoice_vente` AS `Incidentnumero_end_invoice_vente`,
+ `Incident`.`numero_last_month_invoice_vente` AS `Incidentnumero_last_month_invoice_vente`,
+ `Incident`.`amount_turnover_vente` AS `Incidentamount_turnover_vente`,
+ `Incident`.`bank_slip_vente` AS `Incidentbank_slip_vente`,
+ `Incident`.`transaction_notice_vente` AS `Incidenttransaction_notice_vente`,
+ `Incident`.`sr_certificates_vente` AS `Incidentsr_certificates_vente`,
+ `Incident`.`statements_and_documents_banque` AS `Incidentstatements_and_documents_banque`,
+ `Incident`.`comment_on_reconciliation_statement_banque` AS `Incidentcomment_on_reconciliation_statement_banque`,
+ `Incident`.`exceptional_order_courrier` AS `Incidentexceptional_order_courrier`,
+ `Incident`.`month_courrier` AS `Incidentmonth_courrier`,
+ `Incident`.`block_client_ur` AS `Incidentblock_client_ur`,
+ `Incident_Ticket`.`finalclass` AS `Incidentfinalclass`,
+ CAST(CONCAT(COALESCE(`Incident_Ticket`.`ref`, '')) AS CHAR) AS `Incidentfriendlyname`,
+ CAST(CONCAT(COALESCE(`Organization_org_id`.`name`, '')) AS CHAR) AS `Incidentorg_id_friendlyname`,
+ COALESCE((`Organization_org_id`.`status` = 'inactive'), 0) AS `Incidentorg_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_caller_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_caller_id_Contact`.`name`, '')) AS CHAR) AS `Incidentcaller_id_friendlyname`,
+ COALESCE((`Person_caller_id_Contact`.`status` = 'inactive'), 0) AS `Incidentcaller_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Team_team_id_Contact`.`name`, '')) AS CHAR) AS `Incidentteam_id_friendlyname`,
+ COALESCE((`Team_team_id_Contact`.`status` = 'inactive'), 0) AS `Incidentteam_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Person_agent_id`.`first_name`, ''), COALESCE(' ', ''), COALESCE(`Person_agent_id_Contact`.`name`, '')) AS CHAR) AS `Incidentagent_id_friendlyname`,
+ COALESCE((`Person_agent_id_Contact`.`status` = 'inactive'), 0) AS `Incidentagent_id_obsolescence_flag`,
+ CAST(CONCAT(COALESCE(`Service_service_id`.`name`, '')) AS CHAR) AS `Incidentservice_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`ServiceSubcategory_servicesubcategory_id`.`name`, '')) AS CHAR) AS `Incidentservicesubcategory_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Incident_parent_incident_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_incident_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Problem_parent_problem_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_problem_id_friendlyname`,
+ CAST(CONCAT(COALESCE(`Change_parent_change_id_Ticket`.`ref`, '')) AS CHAR) AS `Incidentparent_change_id_friendlyname`,
+ `Change_parent_change_id_Ticket`.`finalclass` AS `Incidentparent_change_id_finalclass_recall`,
+ `Incident`.`cumulatedpending_started` AS `Incidentcumulatedpending_started`,
+ `Incident`.`cumulatedpending_laststart` AS `Incidentcumulatedpending_laststart`,
+ `Incident`.`cumulatedpending_stopped` AS `Incidentcumulatedpending_stopped`,
+ `Incident`.`tto_started` AS `Incidenttto_started`,
+ `Incident`.`tto_laststart` AS `Incidenttto_laststart`,
+ `Incident`.`tto_stopped` AS `Incidenttto_stopped`,
+ `Incident`.`tto_75_deadline` AS `Incidenttto_75_deadline`,
+ `Incident`.`tto_75_passed` AS `Incidenttto_75_passed`,
+ `Incident`.`tto_75_triggered` AS `Incidenttto_75_triggered`,
+ `Incident`.`tto_75_overrun` AS `Incidenttto_75_overrun`,
+ `Incident`.`tto_100_deadline` AS `Incidenttto_100_deadline`,
+ `Incident`.`tto_100_passed` AS `Incidenttto_100_passed`,
+ `Incident`.`tto_100_triggered` AS `Incidenttto_100_triggered`,
+ `Incident`.`tto_100_overrun` AS `Incidenttto_100_overrun`,
+ `Incident`.`ttr_started` AS `Incidentttr_started`,
+ `Incident`.`ttr_laststart` AS `Incidentttr_laststart`,
+ `Incident`.`ttr_stopped` AS `Incidentttr_stopped`,
+ `Incident`.`ttr_75_deadline` AS `Incidentttr_75_deadline`,
+ `Incident`.`ttr_75_passed` AS `Incidentttr_75_passed`,
+ `Incident`.`ttr_75_triggered` AS `Incidentttr_75_triggered`,
+ `Incident`.`ttr_75_overrun` AS `Incidentttr_75_overrun`,
+ `Incident`.`ttr_100_deadline` AS `Incidentttr_100_deadline`,
+ `Incident`.`ttr_100_passed` AS `Incidentttr_100_passed`,
+ `Incident`.`ttr_100_triggered` AS `Incidentttr_100_triggered`,
+ `Incident`.`ttr_100_overrun` AS `Incidentttr_100_overrun`,
+ `Incident`.`public_log_index` AS `Incidentpublic_log_index`,
+ `Incident_Ticket`.`description_format` AS `Incidentdescription_format`,
+ `Incident_Ticket`.`private_log_index` AS `Incidentprivate_log_index`
+ FROM 
+   `ticket_incident` AS `Incident`
+   LEFT JOIN 
+      `service` AS `Service_service_id`
+    ON `Incident`.`service_id` = `Service_service_id`.`id`
+   LEFT JOIN 
+      `servicesubcategory` AS `ServiceSubcategory_servicesubcategory_id`
+    ON `Incident`.`servicesubcategory_id` = `ServiceSubcategory_servicesubcategory_id`.`id`
+   LEFT JOIN 
+      `ticket` AS `Incident_parent_incident_id_Ticket`
+    ON `Incident`.`parent_incident_id` = `Incident_parent_incident_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Problem_parent_problem_id_Ticket`
+    ON `Incident`.`parent_problem_id` = `Problem_parent_problem_id_Ticket`.`id`
+   LEFT JOIN 
+      `ticket` AS `Change_parent_change_id_Ticket`
+    ON `Incident`.`parent_change_id` = `Change_parent_change_id_Ticket`.`id`
+   INNER JOIN (
+      `ticket` AS `Incident_Ticket` 
+      INNER JOIN 
+         `organization` AS `Organization_org_id`
+       ON `Incident_Ticket`.`org_id` = `Organization_org_id`.`id`
+      LEFT JOIN (
+         `person` AS `Person_caller_id` 
+         INNER JOIN 
+            `contact` AS `Person_caller_id_Contact`
+          ON `Person_caller_id`.`id` = `Person_caller_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`caller_id` = `Person_caller_id`.`id`
+      LEFT JOIN 
+         `contact` AS `Team_team_id_Contact`
+       ON `Incident_Ticket`.`team_id` = `Team_team_id_Contact`.`id`
+      LEFT JOIN (
+         `person` AS `Person_agent_id` 
+         INNER JOIN 
+            `contact` AS `Person_agent_id_Contact`
+          ON `Person_agent_id`.`id` = `Person_agent_id_Contact`.`id`
+      ) ON `Incident_Ticket`.`agent_id` = `Person_agent_id`.`id`
+   ) ON `Incident`.`id` = `Incident_Ticket`.`id`
+ WHERE (((((`Incident`.`id` = 0) AND COALESCE((`Team_team_id_Contact`.`finalclass` IN ('Team')), 1)) AND COALESCE((`Incident_parent_incident_id_Ticket`.`finalclass` IN ('Incident')), 1)) AND COALESCE((`Problem_parent_problem_id_Ticket`.`finalclass` IN ('Problem')), 1)) AND COALESCE((`Change_parent_change_id_Ticket`.`finalclass` IN ('RoutineChange', 'ApprovedChange', 'NormalChange', 'EmergencyChange', 'Change')), 1))
+  , mysql_errno = 1054, mysql_error = Unknown column 'Incident.type_person' in 'field list'. | IssueLog |||
+2023-10-16 11:07:26 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 11:07:31 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 11:08:02 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 13:14:19 | Error   | 2     | Attempted to call an undefined method named "GetAttachmentCourrierTableRow" of class "Combodo\iTop\Renderer\Bootstrap\FieldRenderer\BsFileUploadFieldRenderer". | Symfony\Component\Debug\Exception\UndefinedMethodException |||
+array (
+  'exception class' => 'Symfony\\Component\\Debug\\Exception\\UndefinedMethodException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\sources\\Renderer\\Bootstrap\\FieldRenderer\\BsFileUploadFieldRenderer.php',
+  'line' => 1109,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/edit/UserRequest/1?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 13:20:35 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 13:20:35 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-16 13:25:16 | Error   | 2     | The controller must return a response (null given). Did you forget to add a return statement somewhere in your controller? | LogicException |||
+array (
+  'exception class' => 'LogicException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\lib\\symfony\\http-kernel\\HttpKernel.php',
+  'line' => 169,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-18 12:22:46 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-18 12:29:10 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-18 13:03:23 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-18 13:04:16 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-18 13:16:53 | Error   | 2     | Requête incorrecte | Symfony\Component\HttpKernel\Exception\HttpException |||
+array (
+  'exception class' => 'Symfony\\Component\\HttpKernel\\Exception\\HttpException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\env-production\\itop-portal-base\\portal\\src\\Controller\\ObjectController.php',
+  'line' => 1227,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/object/attachment/add?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-31 08:28:43 | Error   |       | Uncaught MySQLException: Could not connect to the DB server: host = localhost, user = root, mysql_errno = 2002, mysql_error = No connection could be made because the target machine actively refused it in C:\xampp\htdocs\iTop-develop\web\core\cmdbsource.class.inc.php:185
+ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\cmdbsource.class.inc.php',
+  'line' => 185,
+)
+2023-10-31 10:44:37 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user/display-as/list/opened?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-10-31 10:44:47 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user/display-as/list/waiting_approval?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)

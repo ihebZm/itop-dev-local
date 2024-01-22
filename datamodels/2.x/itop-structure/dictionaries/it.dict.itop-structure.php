@@ -43,6 +43,10 @@ Dict::Add('IT IT', 'Italian', 'Italiano', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Attivo',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inattivo',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inattivo',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => 'Parent',
 	'Class:Organization/Attribute:parent_id+' => 'Parent organization',
 	'Class:Organization/Attribute:parent_name' => 'Parent name',

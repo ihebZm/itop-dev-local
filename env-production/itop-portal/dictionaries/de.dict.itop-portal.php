@@ -41,8 +41,8 @@ Dict::Add('DE DE', 'German', 'Deutsch', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'Dokumentenverwaltungen',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Hier können Sie Ihre Dokumentenverwaltungen einsehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Hier können Sie Ihre accounting mail einsehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Offene Störungen/Anfragen',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Hier können Sie Ihre laufenden Anfragen und Störungsmeldungen ansehen,</p><p>den Verlauf verfolgen, Kommentare und Anhänge hinzufügen und gelöste Anfragen schließen.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Offen',

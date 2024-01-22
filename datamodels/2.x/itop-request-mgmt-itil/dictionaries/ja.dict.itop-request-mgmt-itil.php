@@ -156,14 +156,6 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'No',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
-	
-	// add attribute facture achat -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Purchase without any mention of payment',
-	'Class:UserRequest/Attribute:invoice_achat+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'With stamp',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Payment choice',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
 
 	// add attribute statement and documents facture banque -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
@@ -278,6 +270,7 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '',
 	'Class:UserRequest/Attribute:time_spent' => '解決遅れ',
 	'Class:UserRequest/Attribute:time_spent+' => '',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => '解決コード',
 	'Class:UserRequest/Attribute:resolution_code+' => '',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => '補助',
@@ -294,6 +287,19 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'システム更新',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => '研修',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => '研修',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'To Close',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'To Close',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => '解決',
 	'Class:UserRequest/Attribute:solution+' => '',
 	'Class:UserRequest/Attribute:pending_reason' => '保留理由',

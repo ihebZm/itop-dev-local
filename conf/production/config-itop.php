@@ -107,7 +107,7 @@ $MySettings = array(
 
 	// email_transport_smtp.host: host name or IP address (optional)
 	//	default: 'localhost'
-	'email_transport_smtp.host' => 'smtp.gmail.com',
+	'email_transport_smtp.host' => '',
 
 	// email_transport_smtp.password: Authentication password (optional)
 	//	default: ''

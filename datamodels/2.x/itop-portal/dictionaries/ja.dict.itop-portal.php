@@ -41,8 +41,8 @@ Dict::Add('JA JP', 'Japanese', '日本語', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrier
-	'Brick:Portal:NewCourrier:Title' => 'správy dokumentů',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Sledujte své správy dokumentů.</p><p>Zkontrolujte stav, přidejte komentář, přiložte dokumenty, potvrďte řešení.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Sledujte své accounting mail.</p><p>Zkontrolujte stav, přidejte komentář, přiložte dokumenty, potvrďte řešení.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Otevřené požadavky',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Sledujte své otevřené Courrier.</p><p>Zkontrolujte stav, přidejte komentář, přiložte dokumenty, potvrďte řešení.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Not Counted',

@@ -1233,7 +1233,6 @@
 									<div class="form_field" data-field-id="bank_slip_vente" data-field-flags="read_only"></div>
 									<div class="form_field" data-field-id="transaction_notice_vente" data-field-flags="read_only"></div>
 									<div class="form_field" data-field-id="sr_certificates_vente" data-field-flags="read_only"></div>
-									<div class="form_field" data-field-id="invoice_achat" data-field-flags="read_only"></div>
 									<div class="form_field" data-field-id="statements_and_documents_banque" data-field-flags="read_only"></div>
 									<div class="form_field" data-field-id="comment_on_reconciliation_statement_banque" data-field-flags="read_only"></div>
 								</div>

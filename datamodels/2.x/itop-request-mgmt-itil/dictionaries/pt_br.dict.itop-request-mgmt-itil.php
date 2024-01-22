@@ -156,14 +156,6 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:yes+' => '',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no' => 'No',
 	'Class:UserRequest/Attribute:sr_certificates_vente/Value:no+' => '',
-	
-	// add attribute facture achat -->
-	'Class:UserRequest/Attribute:invoice_achat' => 'Purchase without any mention of payment',
-	'Class:UserRequest/Attribute:invoice_achat+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp' => 'With stamp',
-	'Class:UserRequest/Attribute:invoice_achat/Value:with_stamp+' => '',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice' => 'Payment choice',
-	'Class:UserRequest/Attribute:invoice_achat/Value:payment_choice+' => '',
 
 	// add attribute statement and documents facture banque -->
 	'Class:UserRequest/Attribute:statements_and_documents_banque' => 'Bank statements and purchasing documents',
@@ -278,6 +270,7 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Class:UserRequest/Attribute:sla_ttr_over+' => '',
 	'Class:UserRequest/Attribute:time_spent' => 'Atraso resolução',
 	'Class:UserRequest/Attribute:time_spent+' => '',
+	/*
 	'Class:UserRequest/Attribute:resolution_code' => 'Código resolução',
 	'Class:UserRequest/Attribute:resolution_code+' => '',
 	'Class:UserRequest/Attribute:resolution_code/Value:assistance' => 'Assistência',
@@ -294,6 +287,19 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Class:UserRequest/Attribute:resolution_code/Value:system update+' => 'Atualização sistema',
 	'Class:UserRequest/Attribute:resolution_code/Value:training' => 'Treinamento',
 	'Class:UserRequest/Attribute:resolution_code/Value:training+' => 'Treinamento',
+	*/
+	// ^ START HERE Customization CFAC resolution de demande
+	'Class:UserRequest/Attribute:resolution_code' => 'resolution code',
+	'Class:UserRequest/Attribute:resolution_code+' => '',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:a valider+' => 'To Validate',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:en attente+' => 'On Hold',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a refaire+' => 'To Redo',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer' => 'To Close',
+	'Class:UserRequest/Attribute:resolution_code/Value:a cloturer+' => 'To Close',
+	// ^ END HERE Customization CFAC resolution de demande
 	'Class:UserRequest/Attribute:solution' => 'Solução',
 	'Class:UserRequest/Attribute:solution+' => '',
 	'Class:UserRequest/Attribute:pending_reason' => 'Razão pendência',

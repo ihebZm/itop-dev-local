@@ -69,6 +69,7 @@ try
 
 	switch ($sOperation)
 	{
+		// ^ this is UR add by default
 		case 'add':
 			$oPage = new JsonPage();
 			$oPage->SetOutputDataOnly(true);
@@ -81,6 +82,7 @@ try
 			);
 			$sClass = stripslashes(utils::ReadParam('obj_class', '', false, 'class'));
 			$sTempId = utils::ReadParam('temp_id', '', false, 'transaction_id');
+			$sTypeAttach = strval(utils::ReadParam('type_attachment', 'attachment_unknown'));
 			if (empty($sClass))
 			{
 				$aResult['error'] = "Missing argument 'obj_class'";
@@ -88,6 +90,10 @@ try
 			elseif (empty($sTempId))
 			{
 				$aResult['error'] = "Missing argument 'temp_id'";
+			}
+			elseif (empty($sTypeAttach))
+			{
+				$aResult['error'] = "Missing argument 'type_attachment'";
 			}
 			else
 			{
@@ -108,14 +114,16 @@ try
 					$oAttachment->SetDefaultOrgId();
 					$oAttachment->Set('contents', $oDoc);
 					// ^ customization cfac for disable attachement
+					// ! TODO to edit the uploading attachments
 					$oAttachment->Set('status_comp', false);
-					$oAttachment->Set('type_attachment', 'attachment_unkown');
+					$oAttachment->Set('type_attachment', $sTypeAttach);
 					$oAttachment->Set('num_journal', '');
 					$oAttachment->Set('date_comptabilisation', null);
 					$oAttachment->Set('num_piece', '');
 					// ^ customization cfac for disable attachement
 					$iAttId = $oAttachment->DBInsert();
 
+					// ! JSON will be sended here
 					$aResult['msg'] = htmlentities($oDoc->GetFileName(), ENT_QUOTES, 'UTF-8');
 					$aResult['icon'] = utils::GetAbsoluteUrlAppRoot().AttachmentPlugIn::GetFileIcon($oDoc->GetFileName());
 					$aResult['att_id'] = $iAttId;
@@ -149,8 +157,8 @@ try
 				$oAttachment->DBDelete();
 			}
 			break;
-		//^ end customization cfac
 
+		//^ end customization cfac
 		case 'refresh_attachments_render':
 			$sTempId = utils::ReadParam('temp_id', '', false, 'transaction_id');
 			RenderAttachments($oPage, $sTempId);

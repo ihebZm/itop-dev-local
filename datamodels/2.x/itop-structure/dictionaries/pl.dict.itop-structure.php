@@ -54,6 +54,9 @@ Dict::Add('PL PL', 'Polish', 'Polski', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Active~~',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inactive~~',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inactive~~',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid~~',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid~~',
 	'Class:Organization/Attribute:parent_id' => 'Parent~~',
 	'Class:Organization/Attribute:parent_id+' => 'Parent organization~~',
 	'Class:Organization/Attribute:parent_name' => 'Parent name~~',

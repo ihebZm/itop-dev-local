@@ -43,6 +43,10 @@ Dict::Add('HU HU', 'Hungarian', 'Magyar', array(
 	'Class:Organization/Attribute:status/Value:active+' => '',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inaktív',
 	'Class:Organization/Attribute:status/Value:inactive+' => '',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => '',
+	
 	'Class:Organization/Attribute:parent_id' => 'Felérendelt szervezeti egység',
 	'Class:Organization/Attribute:parent_id+' => '',
 	'Class:Organization/Attribute:parent_name' => 'Felérendelt szervezeti egység neve',

@@ -41,8 +41,8 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrie
-	'Brick:Portal:NewCourrier:Title' => 'gestão de documentos',
-	'Brick:Portal:NewCourrier:Title+' => '<p>Acompanhar suas solicitações gestão de documentos, adicionar comentários, anexar documentos e confirmar a solução.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'Accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>Acompanhar suas solicitações accounting mail, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => 'Em Courrier',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>Acompanhar suas solicitações em Courrier, adicionar comentários, anexar documentos e confirmar a solução.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => 'Courrier Abrir',

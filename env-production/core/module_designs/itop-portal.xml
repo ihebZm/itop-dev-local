@@ -484,6 +484,9 @@
       <!-- <class>Ticket</class> -->
       <fields>
         <field id="title"/>
+        <!-- customization courrier -->
+        <field id="month_courrier"/>
+        <!-- customization courrier -->
         <field id="start_date"/>
         <field id="status"/>
         <field id="service_id"/>
@@ -583,7 +586,7 @@
             <group id="all">
               <rank>1</rank>
               <title>Brick:Portal:ClosedRequests:Title</title>
-              <condition><![CDATA[SELECT Ticket]]></condition>
+              <condition><![CDATA[SELECT UserRequest AS U WHERE operational_status = 'closed' AND servicesubcategory_name != 'Asssitance Comptable et Fiscale Mensuelle Type A']]></condition>
             </group>
           </groups>
         </tabs>
@@ -910,7 +913,6 @@
                 <div class="form_field" data-field-id="bank_slip_vente" data-field-flags="read_only"></div>
                 <div class="form_field" data-field-id="transaction_notice_vente" data-field-flags="read_only"></div>
                 <div class="form_field" data-field-id="sr_certificates_vente" data-field-flags="read_only"></div>
-                <div class="form_field" data-field-id="invoice_achat" data-field-flags="read_only"></div>
                 <div class="form_field" data-field-id="statements_and_documents_banque" data-field-flags="read_only"></div>
                 <div class="form_field" data-field-id="comment_on_reconciliation_statement_banque" data-field-flags="read_only"></div>
               </div>

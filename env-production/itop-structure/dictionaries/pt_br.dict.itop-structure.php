@@ -44,6 +44,10 @@ Dict::Add('PT BR', 'Brazilian', 'Brazilian', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'Ativo',
 	'Class:Organization/Attribute:status/Value:inactive' => 'Inativo',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inativo',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Unpaid',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Unpaid',
+	
 	'Class:Organization/Attribute:parent_id' => 'Principal',
 	'Class:Organization/Attribute:parent_id+' => 'Organização principal',
 	'Class:Organization/Attribute:parent_name' => 'Nome principal',

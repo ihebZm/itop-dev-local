@@ -1,0 +1,119 @@
+2023-11-09 11:46:50 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 11:47:03 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:02:19 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-courrier-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:04:00 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:08:19 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:43:46 | Error   | 2     | Unknown class 'incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\metamodel.class.php',
+  'line' => 195,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:43:54 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:51:06 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 12:53:21 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 13:02:59 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 13:03:19 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 13:06:54 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 13:11:52 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-09 14:38:10 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-17 11:37:06 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-17 11:37:16 | Error   | 2     | Attempting to merge a filter of class 'UserRequest' with a filter of class 'Incident' | CoreException |||
+array (
+  'exception class' => 'CoreException',
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\dbobjectsearch.class.php',
+  'line' => 1243,
+  'uri' => 'http://localhost:8056/iTop-develop/web/pages/exec.php/manage/ongoing-tickets-for-portal-user?exec_module=itop-portal-base&exec_page=index.php&portal_id=itop-portal',
+)
+2023-11-28 17:50:12 | Error   |       | Uncaught MySQLException: Could not connect to the DB server: host = localhost, user = root, mysql_errno = 2002, mysql_error = No connection could be made because the target machine actively refused it in C:\xampp\htdocs\iTop-develop\web\core\cmdbsource.class.inc.php:185
+ | IssueLog |||
+array (
+  'type' => 1,
+  'file' => 'C:\\xampp\\htdocs\\iTop-develop\\web\\core\\cmdbsource.class.inc.php',
+  'line' => 185,
+)

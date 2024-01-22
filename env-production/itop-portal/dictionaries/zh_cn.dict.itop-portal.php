@@ -41,8 +41,8 @@ Dict::Add('ZH CN', 'Chinese', '简体中文', array(
 	'Brick:Portal:OngoingRequests:Tab:Waiting_Approval' => 'Waiting Approval',
 	// ^ approval customization
 	// ^ customisation cfac courrie
-	'Brick:Portal:NewCourrier:Title' => '文件管理',
-	'Brick:Portal:NewCourrier:Title+' => '<p>跟踪正在处理的工作文档管理.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
+	'Brick:Portal:NewCourrier:Title' => 'accounting mail',
+	'Brick:Portal:NewCourrier:Title+' => '<p>accounting mail.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
 	'Brick:Portal:OngoingCourrier:Title' => '正在处理的工单',
 	'Brick:Portal:OngoingCourrier:Title+' => '<p>跟踪正在处理的工单.</p><p>查询进度, 添加留言, 添加附件, 确认解决方案.</p>',
 	'Brick:Portal:OngoingCourrier:Tab:OnGoing' => '正在处理',

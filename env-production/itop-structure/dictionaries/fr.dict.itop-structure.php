@@ -72,6 +72,10 @@ Dict::Add('FR FR', 'French', 'Français', array(
 	'Class:Organization/Attribute:status/Value:active+' => 'active',
 	'Class:Organization/Attribute:status/Value:inactive' => 'inactive',
 	'Class:Organization/Attribute:status/Value:inactive+' => 'Inactive',
+	// customization cfac unpaid organization
+	'Class:Organization/Attribute:status/Value:unpaid' => 'Non payé',
+	'Class:Organization/Attribute:status/Value:unpaid+' => 'Non payé',
+	
 	'Class:Organization/Attribute:parent_id' => 'Organisation Parent',
 	'Class:Organization/Attribute:parent_id+' => 'Organisation parent',
 	'Class:Organization/Attribute:parent_name' => 'Nom du parent',
